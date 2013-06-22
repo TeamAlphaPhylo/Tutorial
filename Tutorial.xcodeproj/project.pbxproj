@@ -65,6 +65,10 @@
 		ACF9A6B5176927A70019592F /* 38.png in Resources */ = {isa = PBXBuildFile; fileRef = ACF9A69C176927A70019592F /* 38.png */; };
 		ACF9A6B6176927A70019592F /* 39.png in Resources */ = {isa = PBXBuildFile; fileRef = ACF9A69D176927A70019592F /* 39.png */; };
 		ACF9A6B7176927A70019592F /* 40.png in Resources */ = {isa = PBXBuildFile; fileRef = ACF9A69E176927A70019592F /* 40.png */; };
+		E0CFF61A17751A950033A781 /* waterdroplets.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E0CFF61917751A950033A781 /* waterdroplets.jpg */; };
+		E0CFF61D177529E20033A781 /* playerRegion.png in Resources */ = {isa = PBXBuildFile; fileRef = E0CFF61C177529E20033A781 /* playerRegion.png */; };
+		E0CFF61F17752F6C0033A781 /* hand.png in Resources */ = {isa = PBXBuildFile; fileRef = E0CFF61E17752F6C0033A781 /* hand.png */; };
+		E0CFF62117752F7B0033A781 /* deckdiscardPile.png in Resources */ = {isa = PBXBuildFile; fileRef = E0CFF62017752F7B0033A781 /* deckdiscardPile.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -131,6 +135,10 @@
 		ACF9A69C176927A70019592F /* 38.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 38.png; sourceTree = "<group>"; };
 		ACF9A69D176927A70019592F /* 39.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 39.png; sourceTree = "<group>"; };
 		ACF9A69E176927A70019592F /* 40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 40.png; sourceTree = "<group>"; };
+		E0CFF61917751A950033A781 /* waterdroplets.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = waterdroplets.jpg; sourceTree = "<group>"; };
+		E0CFF61C177529E20033A781 /* playerRegion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playerRegion.png; sourceTree = "<group>"; };
+		E0CFF61E17752F6C0033A781 /* hand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hand.png; sourceTree = "<group>"; };
+		E0CFF62017752F7B0033A781 /* deckdiscardPile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = deckdiscardPile.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +185,7 @@
 		AC177D571766953000328B24 /* Tutorial */ = {
 			isa = PBXGroup;
 			children = (
+				E0CFF61717751A430033A781 /* Game */,
 				AC177D601766953000328B24 /* AppDelegate.h */,
 				AC177D611766953000328B24 /* AppDelegate.m */,
 				AC177D691766953000328B24 /* MainStoryboard.storyboard */,
@@ -246,6 +255,33 @@
 				AC177D671766953000328B24 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E0CFF61717751A430033A781 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				E0CFF61B177529CD0033A781 /* png */,
+				E0CFF61817751A5B0033A781 /* jpg */,
+			);
+			name = Game;
+			sourceTree = "<group>";
+		};
+		E0CFF61817751A5B0033A781 /* jpg */ = {
+			isa = PBXGroup;
+			children = (
+				E0CFF61917751A950033A781 /* waterdroplets.jpg */,
+			);
+			name = jpg;
+			sourceTree = "<group>";
+		};
+		E0CFF61B177529CD0033A781 /* png */ = {
+			isa = PBXGroup;
+			children = (
+				E0CFF61E17752F6C0033A781 /* hand.png */,
+				E0CFF62017752F7B0033A781 /* deckdiscardPile.png */,
+				E0CFF61C177529E20033A781 /* playerRegion.png */,
+			);
+			name = png;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -351,6 +387,10 @@
 				ACD339BE1769394800083350 /* Apt_home.png in Resources */,
 				ACD339C0176939EB00083350 /* 23_Rev.png in Resources */,
 				ACD339C417693AAB00083350 /* back_Rev.png in Resources */,
+				E0CFF61A17751A950033A781 /* waterdroplets.jpg in Resources */,
+				E0CFF61D177529E20033A781 /* playerRegion.png in Resources */,
+				E0CFF61F17752F6C0033A781 /* hand.png in Resources */,
+				E0CFF62117752F7B0033A781 /* deckdiscardPile.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
