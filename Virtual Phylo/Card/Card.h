@@ -12,7 +12,7 @@
 @interface Card : NSObject
 {
     @private
-    int card_no;
+    int card_no; // card's id number
     id card_image;
     NSString *card_commName;
     NSString *card_latinName;

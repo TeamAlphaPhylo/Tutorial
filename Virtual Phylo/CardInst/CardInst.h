@@ -14,6 +14,7 @@
 @interface CardInst : NSObject
 // Should it be a child of CSSprite?
 // @interface CardInst : CCSprite
+// this class is kind of useless, i'll probably get rid of it later
 {
     
     id cardInst_Card; // the Card that CardInst is representing
