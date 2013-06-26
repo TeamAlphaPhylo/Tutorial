@@ -7,11 +7,13 @@
 //
 
 // An object that is acatually shown on the screen that keeps track of width/height/x/y
-// Should it be a child of CSSprite?
+
 
 #import <Foundation/Foundation.h>
 
 @interface CardInst : NSObject
+// Should it be a child of CSSprite?
+// @interface CardInst : CCSprite
 {
     
     id cardInst_Card; // the Card that CardInst is representing
@@ -25,7 +27,7 @@
 }
 
 // Changes the size of the CardInst
-- (void)changeWidth:(int)width andHeight:(int)width;
+- (void)changeWidth:(int)width andHeight:(int)height;
 
 // Changes the (x,y) position
 - (void)setX:(int)x andY:(int)y;

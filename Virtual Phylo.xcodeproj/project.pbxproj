@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		4478E409177B71370096B8FA /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = 4478E408177B71370096B8FA /* Card.m */; };
 		4478E40E177B749D0096B8FA /* CardInst.m in Sources */ = {isa = PBXBuildFile; fileRef = 4478E40D177B749D0096B8FA /* CardInst.m */; };
+		4478E414177B7C8A0096B8FA /* HelloWorldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4478E413177B7C8A0096B8FA /* HelloWorldLayer.m */; };
+		4478E417177B7CA30096B8FA /* IntroLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4478E416177B7CA30096B8FA /* IntroLayer.m */; };
 		545B702417751BAD00B550D8 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 545B702317751BAD00B550D8 /* QuartzCore.framework */; };
 		545B702617751BAD00B550D8 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 545B702517751BAD00B550D8 /* OpenGLES.framework */; };
 		545B702817751BAD00B550D8 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 545B702717751BAD00B550D8 /* OpenAL.framework */; };
@@ -541,8 +543,6 @@
 		E0B97689177637D500B0BB9A /* 99.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B974EE177637D500B0BB9A /* 99.png */; };
 		E0B9768A177637D500B0BB9A /* Thumbs.db in Resources */ = {isa = PBXBuildFile; fileRef = E0B974EF177637D500B0BB9A /* Thumbs.db */; };
 		E0B976A11776384300B0BB9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E0B9769A1776384300B0BB9A /* AppDelegate.m */; };
-		E0B976A21776384300B0BB9A /* HelloWorldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E0B9769D1776384300B0BB9A /* HelloWorldLayer.m */; };
-		E0B976A31776384300B0BB9A /* IntroLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E0B976A01776384300B0BB9A /* IntroLayer.m */; };
 		E0B976AF177638DB00B0BB9A /* arrowHand.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B976A6177638DB00B0BB9A /* arrowHand.png */; };
 		E0B976B0177638DB00B0BB9A /* arrowSwipe.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B976A7177638DB00B0BB9A /* arrowSwipe.png */; };
 		E0B976B1177638DB00B0BB9A /* card_back.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B976A8177638DB00B0BB9A /* card_back.png */; };
@@ -563,6 +563,10 @@
 		4478E408177B71370096B8FA /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Card.m; path = Card/Card.m; sourceTree = "<group>"; };
 		4478E40C177B749D0096B8FA /* CardInst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardInst.h; path = CardInst/CardInst.h; sourceTree = "<group>"; };
 		4478E40D177B749D0096B8FA /* CardInst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardInst.m; path = CardInst/CardInst.m; sourceTree = "<group>"; };
+		4478E412177B7C8A0096B8FA /* HelloWorldLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelloWorldLayer.h; sourceTree = "<group>"; };
+		4478E413177B7C8A0096B8FA /* HelloWorldLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelloWorldLayer.m; sourceTree = "<group>"; };
+		4478E415177B7CA30096B8FA /* IntroLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroLayer.h; sourceTree = "<group>"; };
+		4478E416177B7CA30096B8FA /* IntroLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroLayer.m; sourceTree = "<group>"; };
 		545B702017751BAD00B550D8 /* Virtual Phylo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Virtual Phylo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		545B702317751BAD00B550D8 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		545B702517751BAD00B550D8 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -1239,10 +1243,6 @@
 		E0B974EF177637D500B0BB9A /* Thumbs.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = Thumbs.db; sourceTree = "<group>"; };
 		E0B976991776384300B0BB9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E0B9769A1776384300B0BB9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		E0B9769C1776384300B0BB9A /* HelloWorldLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelloWorldLayer.h; sourceTree = "<group>"; };
-		E0B9769D1776384300B0BB9A /* HelloWorldLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelloWorldLayer.m; sourceTree = "<group>"; };
-		E0B9769F1776384300B0BB9A /* IntroLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroLayer.h; sourceTree = "<group>"; };
-		E0B976A01776384300B0BB9A /* IntroLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroLayer.m; sourceTree = "<group>"; };
 		E0B976A6177638DB00B0BB9A /* arrowHand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrowHand.png; sourceTree = "<group>"; };
 		E0B976A7177638DB00B0BB9A /* arrowSwipe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrowSwipe.png; sourceTree = "<group>"; };
 		E0B976A8177638DB00B0BB9A /* card_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = card_back.png; sourceTree = "<group>"; };
@@ -2157,8 +2157,8 @@
 		E0B9769B1776384300B0BB9A /* HelloWorldLayer */ = {
 			isa = PBXGroup;
 			children = (
-				E0B9769C1776384300B0BB9A /* HelloWorldLayer.h */,
-				E0B9769D1776384300B0BB9A /* HelloWorldLayer.m */,
+				4478E412177B7C8A0096B8FA /* HelloWorldLayer.h */,
+				4478E413177B7C8A0096B8FA /* HelloWorldLayer.m */,
 			);
 			path = HelloWorldLayer;
 			sourceTree = "<group>";
@@ -2166,8 +2166,8 @@
 		E0B9769E1776384300B0BB9A /* IntroLayer */ = {
 			isa = PBXGroup;
 			children = (
-				E0B9769F1776384300B0BB9A /* IntroLayer.h */,
-				E0B976A01776384300B0BB9A /* IntroLayer.m */,
+				4478E415177B7CA30096B8FA /* IntroLayer.h */,
+				4478E416177B7CA30096B8FA /* IntroLayer.m */,
 			);
 			path = IntroLayer;
 			sourceTree = "<group>";
@@ -2800,10 +2800,10 @@
 				545B71C217751BB600B550D8 /* vec4.c in Sources */,
 				545B71C717751BB600B550D8 /* main.m in Sources */,
 				E0B976A11776384300B0BB9A /* AppDelegate.m in Sources */,
-				E0B976A21776384300B0BB9A /* HelloWorldLayer.m in Sources */,
-				E0B976A31776384300B0BB9A /* IntroLayer.m in Sources */,
 				4478E409177B71370096B8FA /* Card.m in Sources */,
 				4478E40E177B749D0096B8FA /* CardInst.m in Sources */,
+				4478E414177B7C8A0096B8FA /* HelloWorldLayer.m in Sources */,
+				4478E417177B7CA30096B8FA /* IntroLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

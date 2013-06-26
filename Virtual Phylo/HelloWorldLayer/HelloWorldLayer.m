@@ -42,7 +42,7 @@
 	if( (self=[super init]) ) {
 		
 		// create and initialize a Label
-		CCLabelTTF *label = [CCLabelTTF labelWithString:@"Mac is the best </sarcasm>" fontName:@"Marker Felt" fontSize:32];
+		CCLabelTTF *label = [CCLabelTTF labelWithString:@"Where did our Storyboard go? --Brandon" fontName:@"Marker Felt" fontSize:32];
 
 		// ask director for the window size
 		CGSize size = [[CCDirector sharedDirector] winSize];
@@ -53,6 +53,17 @@
 		// add the label as a child to this Layer
 		[self addChild: label];
 		
+        
+        // This is where our first scene happens, where we should code stuff.
+        
+        
+        
+        
+        
+        
+        
+        
+        
         }
 	return self;
 }
