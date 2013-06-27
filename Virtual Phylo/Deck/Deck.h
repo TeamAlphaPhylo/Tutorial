@@ -10,7 +10,7 @@
 
 @interface Deck : NSObject{
     @private
-    int *deck_CardNos; // pointer to an array of card id numbers that 
+    int *deck_CardNos; // pointer to an array of card id numbers that represent what cards are in the deck
     NSString *deck_name;
     int deck_cardCount;
     

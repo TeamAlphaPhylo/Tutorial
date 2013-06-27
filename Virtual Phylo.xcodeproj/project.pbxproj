@@ -8,11 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		4478E409177B71370096B8FA /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = 4478E408177B71370096B8FA /* Card.m */; };
-		4478E40E177B749D0096B8FA /* CardInst.m in Sources */ = {isa = PBXBuildFile; fileRef = 4478E40D177B749D0096B8FA /* CardInst.m */; };
 		4478E414177B7C8A0096B8FA /* HelloWorldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4478E413177B7C8A0096B8FA /* HelloWorldLayer.m */; };
 		4478E417177B7CA30096B8FA /* IntroLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4478E416177B7CA30096B8FA /* IntroLayer.m */; };
-		4478E41D177B897F0096B8FA /* CardSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 4478E41C177B897F0096B8FA /* CardSprite.m */; };
 		4478E421177BAA580096B8FA /* Deck.m in Sources */ = {isa = PBXBuildFile; fileRef = 4478E420177BAA580096B8FA /* Deck.m */; };
+		4478E425177BB9480096B8FA /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 4478E424177BB9480096B8FA /* Player.m */; };
+		4478E429177BBD550096B8FA /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 4478E428177BBD550096B8FA /* Game.m */; };
+		4478E42D177BBFCA0096B8FA /* CardSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 4478E42C177BBFC00096B8FA /* CardSprite.m */; };
 		545B702417751BAD00B550D8 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 545B702317751BAD00B550D8 /* QuartzCore.framework */; };
 		545B702617751BAD00B550D8 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 545B702517751BAD00B550D8 /* OpenGLES.framework */; };
 		545B702817751BAD00B550D8 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 545B702717751BAD00B550D8 /* OpenAL.framework */; };
@@ -563,16 +564,18 @@
 /* Begin PBXFileReference section */
 		4478E407177B71370096B8FA /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Card.h; path = Card/Card.h; sourceTree = "<group>"; };
 		4478E408177B71370096B8FA /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Card.m; path = Card/Card.m; sourceTree = "<group>"; };
-		4478E40C177B749D0096B8FA /* CardInst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardInst.h; path = CardInst/CardInst.h; sourceTree = "<group>"; };
-		4478E40D177B749D0096B8FA /* CardInst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardInst.m; path = CardInst/CardInst.m; sourceTree = "<group>"; };
 		4478E412177B7C8A0096B8FA /* HelloWorldLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelloWorldLayer.h; sourceTree = "<group>"; };
 		4478E413177B7C8A0096B8FA /* HelloWorldLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelloWorldLayer.m; sourceTree = "<group>"; };
 		4478E415177B7CA30096B8FA /* IntroLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroLayer.h; sourceTree = "<group>"; };
 		4478E416177B7CA30096B8FA /* IntroLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroLayer.m; sourceTree = "<group>"; };
-		4478E41B177B897F0096B8FA /* CardSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardSprite.h; path = CardSprite/CardSprite.h; sourceTree = "<group>"; };
-		4478E41C177B897F0096B8FA /* CardSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardSprite.m; path = CardSprite/CardSprite.m; sourceTree = "<group>"; };
 		4478E41F177BAA580096B8FA /* Deck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Deck.h; path = Deck/Deck.h; sourceTree = "<group>"; };
 		4478E420177BAA580096B8FA /* Deck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Deck.m; path = Deck/Deck.m; sourceTree = "<group>"; };
+		4478E423177BB9480096B8FA /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Player.h; path = Player/Player.h; sourceTree = "<group>"; };
+		4478E424177BB9480096B8FA /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Player.m; path = Player/Player.m; sourceTree = "<group>"; };
+		4478E427177BBD550096B8FA /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Game.h; path = Game/Game.h; sourceTree = "<group>"; };
+		4478E428177BBD550096B8FA /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Game.m; path = Game/Game.m; sourceTree = "<group>"; };
+		4478E42B177BBFC00096B8FA /* CardSprite.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CardSprite.h; path = CardSprite/CardSprite.h; sourceTree = "<group>"; };
+		4478E42C177BBFC00096B8FA /* CardSprite.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CardSprite.m; path = CardSprite/CardSprite.m; sourceTree = "<group>"; };
 		545B702017751BAD00B550D8 /* Virtual Phylo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Virtual Phylo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		545B702317751BAD00B550D8 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		545B702517751BAD00B550D8 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -1296,24 +1299,6 @@
 			name = Card;
 			sourceTree = "<group>";
 		};
-		4478E40B177B748C0096B8FA /* CardInst */ = {
-			isa = PBXGroup;
-			children = (
-				4478E40C177B749D0096B8FA /* CardInst.h */,
-				4478E40D177B749D0096B8FA /* CardInst.m */,
-			);
-			name = CardInst;
-			sourceTree = "<group>";
-		};
-		4478E41A177B89600096B8FA /* CardSprite */ = {
-			isa = PBXGroup;
-			children = (
-				4478E41B177B897F0096B8FA /* CardSprite.h */,
-				4478E41C177B897F0096B8FA /* CardSprite.m */,
-			);
-			name = CardSprite;
-			sourceTree = "<group>";
-		};
 		4478E41E177BAA210096B8FA /* Deck */ = {
 			isa = PBXGroup;
 			children = (
@@ -1321,6 +1306,33 @@
 				4478E420177BAA580096B8FA /* Deck.m */,
 			);
 			name = Deck;
+			sourceTree = "<group>";
+		};
+		4478E422177BB9360096B8FA /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				4478E423177BB9480096B8FA /* Player.h */,
+				4478E424177BB9480096B8FA /* Player.m */,
+			);
+			name = Player;
+			sourceTree = "<group>";
+		};
+		4478E426177BBD480096B8FA /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				4478E427177BBD550096B8FA /* Game.h */,
+				4478E428177BBD550096B8FA /* Game.m */,
+			);
+			name = Game;
+			sourceTree = "<group>";
+		};
+		4478E42A177BBFB30096B8FA /* CardSprite */ = {
+			isa = PBXGroup;
+			children = (
+				4478E42B177BBFC00096B8FA /* CardSprite.h */,
+				4478E42C177BBFC00096B8FA /* CardSprite.m */,
+			);
+			name = CardSprite;
 			sourceTree = "<group>";
 		};
 		545B701717751BAD00B550D8 = {
@@ -1360,10 +1372,11 @@
 		545B703717751BAD00B550D8 /* Virtual Phylo */ = {
 			isa = PBXGroup;
 			children = (
+				4478E42A177BBFB30096B8FA /* CardSprite */,
+				4478E426177BBD480096B8FA /* Game */,
+				4478E422177BB9360096B8FA /* Player */,
 				4478E41E177BAA210096B8FA /* Deck */,
-				4478E41A177B89600096B8FA /* CardSprite */,
 				E0B976981776384300B0BB9A /* AppDelegate */,
-				4478E40B177B748C0096B8FA /* CardInst */,
 				4478E40A177B71400096B8FA /* Card */,
 				E0B9769B1776384300B0BB9A /* HelloWorldLayer */,
 				E0B9769E1776384300B0BB9A /* IntroLayer */,
@@ -2827,11 +2840,12 @@
 				545B71C717751BB600B550D8 /* main.m in Sources */,
 				E0B976A11776384300B0BB9A /* AppDelegate.m in Sources */,
 				4478E409177B71370096B8FA /* Card.m in Sources */,
-				4478E40E177B749D0096B8FA /* CardInst.m in Sources */,
 				4478E414177B7C8A0096B8FA /* HelloWorldLayer.m in Sources */,
 				4478E417177B7CA30096B8FA /* IntroLayer.m in Sources */,
-				4478E41D177B897F0096B8FA /* CardSprite.m in Sources */,
 				4478E421177BAA580096B8FA /* Deck.m in Sources */,
+				4478E425177BB9480096B8FA /* Player.m in Sources */,
+				4478E429177BBD550096B8FA /* Game.m in Sources */,
+				4478E42D177BBFCA0096B8FA /* CardSprite.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
