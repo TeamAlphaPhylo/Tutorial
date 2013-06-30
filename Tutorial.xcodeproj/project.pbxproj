@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC1069E2177FC81800E6F683 /* CCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC1069E1177FC81800E6F683 /* CCViewController.m */; };
 		AC177D521766953000328B24 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC177D511766953000328B24 /* UIKit.framework */; };
 		AC177D541766953000328B24 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC177D531766953000328B24 /* Foundation.framework */; };
 		AC177D561766953000328B24 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC177D551766953000328B24 /* CoreGraphics.framework */; };
@@ -72,6 +73,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AC1069E0177FC81800E6F683 /* CCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCViewController.h; sourceTree = "<group>"; };
+		AC1069E1177FC81800E6F683 /* CCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCViewController.m; sourceTree = "<group>"; };
 		AC177D4E1766953000328B24 /* Tutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tutorial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC177D511766953000328B24 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AC177D531766953000328B24 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -155,6 +158,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AC1069DF177FC81800E6F683 /* CCViewController */ = {
+			isa = PBXGroup;
+			children = (
+				AC1069E0177FC81800E6F683 /* CCViewController.h */,
+				AC1069E1177FC81800E6F683 /* CCViewController.m */,
+			);
+			path = CCViewController;
+			sourceTree = "<group>";
+		};
+		AC1069E4177FC8F000E6F683 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "View Controller";
+			sourceTree = "<group>";
+		};
 		AC177D451766953000328B24 = {
 			isa = PBXGroup;
 			children = (
@@ -185,6 +204,8 @@
 		AC177D571766953000328B24 /* Tutorial */ = {
 			isa = PBXGroup;
 			children = (
+				AC1069E4177FC8F000E6F683 /* View Controller */,
+				AC1069DF177FC81800E6F683 /* CCViewController */,
 				E0CFF61717751A430033A781 /* Game */,
 				AC177D601766953000328B24 /* AppDelegate.h */,
 				AC177D611766953000328B24 /* AppDelegate.m */,
@@ -404,6 +425,7 @@
 				AC177D5E1766953000328B24 /* main.m in Sources */,
 				AC177D621766953000328B24 /* AppDelegate.m in Sources */,
 				AC177D6E1766953000328B24 /* ViewController.m in Sources */,
+				AC1069E2177FC81800E6F683 /* CCViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

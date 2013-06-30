@@ -134,6 +134,11 @@
 		545B71C017751BB600B550D8 /* vec3.c in Sources */ = {isa = PBXBuildFile; fileRef = 545B71BF17751BB600B550D8 /* vec3.c */; };
 		545B71C217751BB600B550D8 /* vec4.c in Sources */ = {isa = PBXBuildFile; fileRef = 545B71C117751BB600B550D8 /* vec4.c */; };
 		545B71C717751BB600B550D8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 545B71C617751BB600B550D8 /* main.m */; };
+		AC40D112177FEB0F00E2C700 /* LoginBox.png in Resources */ = {isa = PBXBuildFile; fileRef = AC40D111177FEB0F00E2C700 /* LoginBox.png */; };
+		AC40D115177FEF9200E2C700 /* Others.png in Resources */ = {isa = PBXBuildFile; fileRef = AC40D113177FEF9200E2C700 /* Others.png */; };
+		AC40D118177FF57800E2C700 /* login.png in Resources */ = {isa = PBXBuildFile; fileRef = AC40D117177FF57800E2C700 /* login.png */; };
+		AC40D11C177FF8DE00E2C700 /* MainMenuLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = AC40D11B177FF8DE00E2C700 /* MainMenuLayer.m */; };
+		ACA0D36F177E52A60086E7A1 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = ACA0D36E177E52A60086E7A1 /* Default-Landscape~ipad.png */; };
 		E0B974F0177637D500B0BB9A /* 0.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B97355177637D200B0BB9A /* 0.png */; };
 		E0B974F1177637D500B0BB9A /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B97356177637D200B0BB9A /* 1.png */; };
 		E0B974F2177637D500B0BB9A /* 10.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B97357177637D200B0BB9A /* 10.png */; };
@@ -555,7 +560,6 @@
 		E0B976B5177638DB00B0BB9A /* playerRegion.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B976AC177638DB00B0BB9A /* playerRegion.png */; };
 		E0B976B6177638DB00B0BB9A /* waterdroplets.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E0B976AE177638DB00B0BB9A /* waterdroplets.jpg */; };
 		E0B976BB17763DEE00B0BB9A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B976B717763DEE00B0BB9A /* Default-568h@2x.png */; };
-		E0B976BC17763DEE00B0BB9A /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B976B817763DEE00B0BB9A /* Default-Landscape~ipad.png */; };
 		E0B976BD17763DEE00B0BB9A /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B976B917763DEE00B0BB9A /* Default.png */; };
 		E0B976BE17763DEE00B0BB9A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B976BA17763DEE00B0BB9A /* Default@2x.png */; };
 /* End PBXBuildFile section */
@@ -838,6 +842,12 @@
 		545B71C317751BB600B550D8 /* LICENSE_Kazmath.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = LICENSE_Kazmath.txt; path = libs/LICENSE_Kazmath.txt; sourceTree = "<group>"; };
 		545B71C517751BB600B550D8 /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
 		545B71C617751BB600B550D8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AC40D111177FEB0F00E2C700 /* LoginBox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LoginBox.png; sourceTree = "<group>"; };
+		AC40D113177FEF9200E2C700 /* Others.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Others.png; sourceTree = "<group>"; };
+		AC40D117177FF57800E2C700 /* login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login.png; sourceTree = "<group>"; };
+		AC40D11A177FF8DE00E2C700 /* MainMenuLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuLayer.h; sourceTree = "<group>"; };
+		AC40D11B177FF8DE00E2C700 /* MainMenuLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuLayer.m; sourceTree = "<group>"; };
+		ACA0D36E177E52A60086E7A1 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
 		E0B97355177637D200B0BB9A /* 0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 0.png; sourceTree = "<group>"; };
 		E0B97356177637D200B0BB9A /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
 		E0B97357177637D200B0BB9A /* 10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 10.png; sourceTree = "<group>"; };
@@ -1260,7 +1270,6 @@
 		E0B976AC177638DB00B0BB9A /* playerRegion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playerRegion.png; sourceTree = "<group>"; };
 		E0B976AE177638DB00B0BB9A /* waterdroplets.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = waterdroplets.jpg; sourceTree = "<group>"; };
 		E0B976B717763DEE00B0BB9A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "Resources/Default-568h@2x.png"; sourceTree = "<group>"; };
-		E0B976B817763DEE00B0BB9A /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Landscape~ipad.png"; path = "Resources/Default-Landscape~ipad.png"; sourceTree = "<group>"; };
 		E0B976B917763DEE00B0BB9A /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = Resources/Default.png; sourceTree = "<group>"; };
 		E0B976BA17763DEE00B0BB9A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "Resources/Default@2x.png"; sourceTree = "<group>"; };
 		E0B976BF17763DF400B0BB9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Resources/Info.plist; sourceTree = "<group>"; };
@@ -1370,6 +1379,7 @@
 		545B703717751BAD00B550D8 /* Virtual Phylo */ = {
 			isa = PBXGroup;
 			children = (
+				AC40D119177FF6A000E2C700 /* MainMenuLayer */,
 				4478E42A177BBFB30096B8FA /* CardSprite */,
 				4478E426177BBD480096B8FA /* Game */,
 				4478E422177BB9360096B8FA /* Player */,
@@ -1388,12 +1398,13 @@
 		545B703817751BAD00B550D8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				AC40D110177FEB0600E2C700 /* Misc */,
 				E0B976A4177638DB00B0BB9A /* Game */,
 				E0B97354177637D200B0BB9A /* Cards */,
 				E0B976BF17763DF400B0BB9A /* Info.plist */,
 				E0B976C017763DF400B0BB9A /* iTunesArtwork */,
+				ACA0D36E177E52A60086E7A1 /* Default-Landscape~ipad.png */,
 				E0B976B717763DEE00B0BB9A /* Default-568h@2x.png */,
-				E0B976B817763DEE00B0BB9A /* Default-Landscape~ipad.png */,
 				E0B976B917763DEE00B0BB9A /* Default.png */,
 				E0B976BA17763DEE00B0BB9A /* Default@2x.png */,
 			);
@@ -1760,6 +1771,25 @@
 				545B71C617751BB600B550D8 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AC40D110177FEB0600E2C700 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				AC40D117177FF57800E2C700 /* login.png */,
+				AC40D113177FEF9200E2C700 /* Others.png */,
+				AC40D111177FEB0F00E2C700 /* LoginBox.png */,
+			);
+			name = Misc;
+			sourceTree = "<group>";
+		};
+		AC40D119177FF6A000E2C700 /* MainMenuLayer */ = {
+			isa = PBXGroup;
+			children = (
+				AC40D11A177FF8DE00E2C700 /* MainMenuLayer.h */,
+				AC40D11B177FF8DE00E2C700 /* MainMenuLayer.m */,
+			);
+			name = MainMenuLayer;
 			sourceTree = "<group>";
 		};
 		E0B97354177637D200B0BB9A /* Cards */ = {
@@ -2712,9 +2742,12 @@
 				E0B976B5177638DB00B0BB9A /* playerRegion.png in Resources */,
 				E0B976B6177638DB00B0BB9A /* waterdroplets.jpg in Resources */,
 				E0B976BB17763DEE00B0BB9A /* Default-568h@2x.png in Resources */,
-				E0B976BC17763DEE00B0BB9A /* Default-Landscape~ipad.png in Resources */,
 				E0B976BD17763DEE00B0BB9A /* Default.png in Resources */,
 				E0B976BE17763DEE00B0BB9A /* Default@2x.png in Resources */,
+				ACA0D36F177E52A60086E7A1 /* Default-Landscape~ipad.png in Resources */,
+				AC40D112177FEB0F00E2C700 /* LoginBox.png in Resources */,
+				AC40D115177FEF9200E2C700 /* Others.png in Resources */,
+				AC40D118177FF57800E2C700 /* login.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2842,6 +2875,7 @@
 				4478E425177BB9480096B8FA /* Player.m in Sources */,
 				4478E42D177BBFCA0096B8FA /* CardSprite.m in Sources */,
 				4478E430177E34B00096B8FA /* Game.m in Sources */,
+				AC40D11C177FF8DE00E2C700 /* MainMenuLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
