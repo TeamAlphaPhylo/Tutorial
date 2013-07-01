@@ -123,7 +123,7 @@
 // (Roger) Adding a method that allowing user to enter their username and password
 -(void) addLoginFields
 {
-	CCLOG(@"Creating Login Field View...");
+	NSLog(@"Creating Login Field View...");
 	
 	// (Roger) add the text fields to the view
 	UIView *glView = [CCDirector sharedDirector].view;
@@ -134,9 +134,13 @@
 #pragma mark Verification Function
 // (Roger) Very simple verification
 - (void)verifyIdentity {
+    NSLog(@"Verifying Identity");
     if([usernameField.text isEqualToString: @"Herbert Tsang"] && [pwdField.text isEqualToString: @"sucks"]) {
+        NSLog(@"Identity Verified");
+        // TO-DO: Loading the user data into the main function
         [self jumpToMainMenu];
     } else {
+        CCLOG(@"Verification Failed. Popping up Error Message");
         [self showAlertView];
     }
 }
@@ -144,7 +148,7 @@
 // (Roger) Create a simple alert to show the username/password is wrong
 -(void) showAlertView
 {
-	CCLOG(@"Creating alert view ...");
+	NSLog(@"Creating alert view ...");
 	
 	UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"Login Error"
 														message:@"Invalid Username / Password"
@@ -157,9 +161,10 @@
 #pragma mark Switching Scene
 // (Roger) Switch the layer if the username and password are valid
 - (void)jumpToMainMenu {
-    NSLog(@"Jump to Main Menu scene");
+    NSLog(@"Dismissing/Releasing text fields");
     [usernameField removeFromSuperview];
     [pwdField removeFromSuperview];
+    NSLog(@"Jump to Main Menu scene");
     [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[MainMenuLayer scene] ]];
 }
 

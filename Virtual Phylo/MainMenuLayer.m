@@ -30,20 +30,17 @@
 {
     if( (self=[super init]) ) {
     
-    // create and initialize a Label
-    CCLabelTTF *label = [CCLabelTTF labelWithString:@"Main Menu Scene: To Be Done" fontName:@"Marker Felt" fontSize:64];
-    
-    // ask director for the window size
-    CGSize size = [[CCDirector sharedDirector] winSize];
-	
-    // position the label on the center of the screen
-    label.position =  ccp( size.width /2 , size.height/2 );
-    
-    // add the label as a child to this Layer
-    [self addChild: label];
-    
-}
-return self;
+        NSLog(@"Main Menu Layer Initialization");
+        
+        // add components created as children to this Layer (Notice there are added in a specific sequence)
+        [self setBackgroundColour];
+        [self setTilte];
+        [self setLeftMenu];
+        [self setExampleCard];
+        [self setUserInfo];
+
+    }
+    return self;
 }
 
 // on "dealloc" you need to release all your retained objects
@@ -57,5 +54,103 @@ return self;
 	[super dealloc];
 }
 
+// (Roger) Set up the background colour
+- (void) setBackgroundColour {
+    NSLog(@"Setting up Background Colour");
+    CCLayerColor *bgColour = [CCLayerColor layerWithColor:ccc4(0, 0, 102, 255)];
+    [self addChild:bgColour];
+}
 
+// (Roger) Set up the title at the top and miscellaneous
+- (void) setTilte {
+    NSLog(@"Setting up the Title at the top");
+    
+    // (Roger)create and initialize a Label
+    CCLabelTTF *label = [CCLabelTTF labelWithString:@"Main Menu" fontName:@"Verdana" fontSize:36];
+    // ask director for the window size
+    CGSize size = [[CCDirector sharedDirector] winSize];
+    // (Roger)position the label on the top of the screen
+    label.position =  ccp( size.width /2 , 730);
+    
+    // (Roger) Add black background to the title
+    CCSprite *titleBackground = [CCSprite spriteWithFile:@"TopTitleBackGround.png"];
+    titleBackground.position = ccp(size.width / 2, 738);
+    
+    // (Roger) Create a menu to handle the 'switch account' request
+    CCMenuItemImage *switchAccountBtn = [CCMenuItemImage itemWithNormalImage:@"switchAccount.png" selectedImage:@"switchAccount.png" target:self selector:@selector(jumpToLogin)];
+    CCMenu *switchAccount = [CCMenu menuWithItems:switchAccountBtn, nil];
+    switchAccount.position = ccp(950, 728);
+    
+    [self addChild:titleBackground];
+    [self addChild:switchAccount];
+    [self addChild: label];
+}
+
+// (Roger) Set up the menu at the left side (contains 'Game', 'Deck', and 'Settings')
+-(void) setLeftMenu {
+    NSLog(@"Setting up the main menu at the left side");
+    CCMenuItemImage *gameBtn = [CCMenuItemImage itemWithNormalImage:@"gameBtn.png" selectedImage:@"gameBtn.png" target:self selector:@selector(jumpToGame)];
+    CCMenuItemImage *deckBtn = [CCMenuItemImage itemWithNormalImage:@"deckBtn.png" selectedImage:@"deckBtn.png" target:self selector:@selector(jumpToDeck)];
+    CCMenuItemImage *settingsBtn = [CCMenuItemImage itemWithNormalImage:@"settingsBtn.png" selectedImage:@"settingsBtn.png" target:self selector:@selector(jumpToSettings)];
+    CCMenu *leftMenu = [CCMenu menuWithItems: gameBtn, deckBtn, settingsBtn, nil];
+    // Setting up the layout and position
+    [leftMenu alignItemsVerticallyWithPadding: 100];
+    leftMenu.position = ccp(100, 280);
+    
+    [self addChild: leftMenu];
+    
+}
+
+// (Roger) Set up the 'Today's Card' Section
+-(void) setExampleCard {
+    NSLog(@"Setting up the example card at the central area");
+    
+    // (Roger) Set up the general background
+    CCSprite *centralBackground = [CCSprite spriteWithFile:@"cardBackground.png"];
+    centralBackground.position = ccp(512, 250);
+    
+    // (Roger) Set up the label - "Today's Card"
+    CCLabelTTF *areaTitle = [CCLabelTTF labelWithString:@"Today's Card" fontName:@"Verdana" fontSize:26];
+    areaTitle.position = ccp(512, 480);
+    
+    // (Roger) Randomly pick up a card as today's card
+    int cardIndex = arc4random() % 400;
+    NSString *cardPath = [NSString stringWithFormat:@"%d%@", cardIndex, @".png"];
+    
+    CCSprite *exampleCard = [CCSprite spriteWithFile:cardPath];
+    exampleCard.position = ccp(512, 230);
+
+    
+    [self addChild:centralBackground];
+    [self addChild:areaTitle];
+    [self addChild:exampleCard];
+}
+
+// (Roger) Set up user information field
+// TO-DO: Need implementation
+-(void)setUserInfo {
+    NSLog(@"Setting up the example card at the central area");
+    CCLabelTTF *tempTitle = [CCLabelTTF labelWithString:@"To-Do: User Info Fetching and Display" fontName:@"Verdana" fontSize:46];
+    tempTitle.position = ccp(512, 600);
+    [self addChild:tempTitle];
+
+}
+
+// (Roger) Set up a button jumping back to log in screen (log out and/or relogging in)
+// TO-DO: Log out function and Main function
+- (void)jumpToLogin {
+    NSLog(@"Jump back to Login scene");
+    [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.5 scene:[HelloWorldLayer scene] ]];
+}
+
+// (Roger) Set methods to jump to different scenes
+- (void)jumpToGame {
+    // TO-DO: To be implemented
+}
+- (void)jumpToDeck {
+    // TO-DO: To be implemented
+}
+- (void)jumpToSettings {
+    // TO-DO: To be implemented
+}
 @end

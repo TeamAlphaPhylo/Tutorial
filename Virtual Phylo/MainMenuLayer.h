@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
+// import HelloWorldLayer for jumping back
+#import "HelloWorldLayer.h"
 
 @interface MainMenuLayer : CCLayer {
     
