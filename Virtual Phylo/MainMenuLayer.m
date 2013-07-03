@@ -34,7 +34,7 @@
         
         // add components created as children to this Layer (Notice there are added in a specific sequence)
         [self setBackgroundColour];
-        [self setTilte];
+        [self setTitle];
         [self setLeftMenu];
         [self setExampleCard];
         [self setUserInfo];
@@ -62,7 +62,7 @@
 }
 
 // (Roger) Set up the title at the top and miscellaneous
-- (void) setTilte {
+- (void) setTitle {
     NSLog(@"Setting up the Title at the top");
     
     // (Roger)create and initialize a Label

@@ -13,7 +13,7 @@
 		4478E421177BAA580096B8FA /* Deck.m in Sources */ = {isa = PBXBuildFile; fileRef = 4478E420177BAA580096B8FA /* Deck.m */; };
 		4478E425177BB9480096B8FA /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 4478E424177BB9480096B8FA /* Player.m */; };
 		4478E42D177BBFCA0096B8FA /* CardSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 4478E42C177BBFC00096B8FA /* CardSprite.m */; };
-		4478E430177E34B00096B8FA /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 4478E42F177E34B00096B8FA /* Game.m */; };
+		4478E4361784E0E50096B8FA /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 4478E4351784E0E50096B8FA /* Game.m */; };
 		545B702417751BAD00B550D8 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 545B702317751BAD00B550D8 /* QuartzCore.framework */; };
 		545B702617751BAD00B550D8 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 545B702517751BAD00B550D8 /* OpenGLES.framework */; };
 		545B702817751BAD00B550D8 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 545B702717751BAD00B550D8 /* OpenAL.framework */; };
@@ -583,8 +583,8 @@
 		4478E424177BB9480096B8FA /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Player.m; path = Player/Player.m; sourceTree = "<group>"; };
 		4478E42B177BBFC00096B8FA /* CardSprite.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CardSprite.h; path = CardSprite/CardSprite.h; sourceTree = "<group>"; };
 		4478E42C177BBFC00096B8FA /* CardSprite.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CardSprite.m; path = CardSprite/CardSprite.m; sourceTree = "<group>"; };
-		4478E42E177E34B00096B8FA /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Game.h; path = Game/Game.h; sourceTree = "<group>"; };
-		4478E42F177E34B00096B8FA /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Game.m; path = Game/Game.m; sourceTree = "<group>"; };
+		4478E4341784E0E50096B8FA /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Game.h; path = Game/Game.h; sourceTree = "<group>"; };
+		4478E4351784E0E50096B8FA /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Game.m; path = Game/Game.m; sourceTree = "<group>"; };
 		545B702017751BAD00B550D8 /* Virtual Phylo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Virtual Phylo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		545B702317751BAD00B550D8 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		545B702517751BAD00B550D8 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -1339,8 +1339,8 @@
 		4478E426177BBD480096B8FA /* Game */ = {
 			isa = PBXGroup;
 			children = (
-				4478E42E177E34B00096B8FA /* Game.h */,
-				4478E42F177E34B00096B8FA /* Game.m */,
+				4478E4341784E0E50096B8FA /* Game.h */,
+				4478E4351784E0E50096B8FA /* Game.m */,
 			);
 			name = Game;
 			sourceTree = "<group>";
@@ -2914,8 +2914,8 @@
 				4478E421177BAA580096B8FA /* Deck.m in Sources */,
 				4478E425177BB9480096B8FA /* Player.m in Sources */,
 				4478E42D177BBFCA0096B8FA /* CardSprite.m in Sources */,
-				4478E430177E34B00096B8FA /* Game.m in Sources */,
 				AC40D11C177FF8DE00E2C700 /* MainMenuLayer.m in Sources */,
+				4478E4361784E0E50096B8FA /* Game.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
