@@ -7,7 +7,9 @@
 //
 
 #import "MainMenuLayer.h"
+#import "Game.h"
 
+// (Roger) BUG: Missing 226.png, 385.png
 
 @implementation MainMenuLayer
 
@@ -114,7 +116,9 @@
     areaTitle.position = ccp(512, 480);
     
     // (Roger) Randomly pick up a card as today's card
-    int cardIndex = arc4random() % 400;
+    // (Roger) Set the max card count as 50, otherwise it will cause exceptions due to the lack of sime cards
+    int cardIndex = arc4random() % 50;
+    NSLog(@"Choose %d.png as Today's card", cardIndex);
     NSString *cardPath = [NSString stringWithFormat:@"%d%@", cardIndex, @".png"];
     
     CCSprite *exampleCard = [CCSprite spriteWithFile:cardPath];
@@ -129,7 +133,7 @@
 // (Roger) Set up user information field
 // TO-DO: Need implementation
 -(void)setUserInfo {
-    NSLog(@"Setting up the example card at the central area");
+    NSLog(@"Setting up the user info bar below the top title");
     CCLabelTTF *tempTitle = [CCLabelTTF labelWithString:@"To-Do: User Info Fetching and Display" fontName:@"Verdana" fontSize:46];
     tempTitle.position = ccp(512, 600);
     [self addChild:tempTitle];
@@ -145,7 +149,8 @@
 
 // (Roger) Set methods to jump to different scenes
 - (void)jumpToGame {
-    // TO-DO: To be implemented
+    NSLog(@"Jump to Game scene");
+    [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.5 scene:[Game scene]]];
 }
 - (void)jumpToDeck {
     // TO-DO: To be implemented

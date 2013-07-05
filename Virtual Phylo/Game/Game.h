@@ -9,8 +9,14 @@
 #import <Foundation/Foundation.h>
 #import "CCLayer.h"
 #import "cocos2d.h"
+#import "MainMenuLayer.h"
+
+// (Roger) Test on the CoreData function
+#import "CoreData.h"
+
+// (Roger) Commented out "import" argument below due to the redundency
 // import HelloWorldLayer for jumping back
-#import "HelloWorldLayer.h"
+//#import "HelloWorldLayer.h"
 
 @interface Game : CCLayer
 {

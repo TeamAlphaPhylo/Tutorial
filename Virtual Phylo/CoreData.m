@@ -1,0 +1,41 @@
+//
+//  CoreData.m
+//  Virtual Phylo
+//
+//  Created by Roger Zhao on 2013-07-04.
+//  Copyright (c) 2013 Group_12. All rights reserved.
+//
+
+#import "CoreData.h"
+
+@implementation CoreData
+
+@synthesize tempTest;
+
+// (Roger) Implement the public constructor
++(id) sharedCore {
+    static CoreData *sharedMyCore = nil;
+    // (Roger) Using the GCD to manipulate and maintain the thread
+    static dispatch_once_t token;
+    // (Roger) Dispatch once, referring to the Apple Dev Docs
+    dispatch_once(&token, ^ {
+        // (Roger) Self-initiation
+        sharedMyCore = [[self alloc] init];
+    });
+    // (Roger) Return itself for further access
+    return sharedMyCore;
+}
+
+-(id) init {
+    if(self = [super init]) {
+        // (Roger) Be careful about the init, double check the syntax
+        tempTest = [[NSString alloc] initWithString: @"Test for accessing the core data"];
+    }
+    
+    return self;
+}
+
+//- (void) dealloc {
+//    // Never be called
+//}
+@end

@@ -15,6 +15,7 @@
     
 }
 
+// (Roger) To be implemented.
 // I want a method that initalizes the CardSprite with the image it should be representing, the (x,y) coordinate it should spawn at, and the width/height it should have.
 // - (void)spriteInit;
 

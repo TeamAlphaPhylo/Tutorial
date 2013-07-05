@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 Group_12. All rights reserved.
 //
 
+// (Roger) Thought: The player object will be only initialed when the game started.
+
 #import <Foundation/Foundation.h>
 
 @interface Player : NSObject{

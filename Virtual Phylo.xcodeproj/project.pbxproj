@@ -145,6 +145,8 @@
 		AC89CD001781019600267A60 /* settingsBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = AC89CCFD1781019600267A60 /* settingsBtn.png */; };
 		AC89CD0817810D3B00267A60 /* cardBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = AC89CD0717810D3B00267A60 /* cardBackground.png */; };
 		ACA0D36F177E52A60086E7A1 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = ACA0D36E177E52A60086E7A1 /* Default-Landscape~ipad.png */; };
+		ACCB11D817866B7A000FF618 /* mainMenu.png in Resources */ = {isa = PBXBuildFile; fileRef = ACCB11D717866B7A000FF618 /* mainMenu.png */; };
+		ACCB11DD17867B61000FF618 /* CoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = ACCB11DC17867B61000FF618 /* CoreData.m */; };
 		E0B974F0177637D500B0BB9A /* 0.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B97355177637D200B0BB9A /* 0.png */; };
 		E0B974F1177637D500B0BB9A /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B97356177637D200B0BB9A /* 1.png */; };
 		E0B974F2177637D500B0BB9A /* 10.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B97357177637D200B0BB9A /* 10.png */; };
@@ -860,6 +862,9 @@
 		AC89CCFD1781019600267A60 /* settingsBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settingsBtn.png; sourceTree = "<group>"; };
 		AC89CD0717810D3B00267A60 /* cardBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cardBackground.png; sourceTree = "<group>"; };
 		ACA0D36E177E52A60086E7A1 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
+		ACCB11D717866B7A000FF618 /* mainMenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mainMenu.png; sourceTree = "<group>"; };
+		ACCB11DB17867B61000FF618 /* CoreData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreData.h; sourceTree = "<group>"; };
+		ACCB11DC17867B61000FF618 /* CoreData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreData.m; sourceTree = "<group>"; };
 		E0B97355177637D200B0BB9A /* 0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 0.png; sourceTree = "<group>"; };
 		E0B97356177637D200B0BB9A /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
 		E0B97357177637D200B0BB9A /* 10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 10.png; sourceTree = "<group>"; };
@@ -1391,6 +1396,7 @@
 		545B703717751BAD00B550D8 /* Virtual Phylo */ = {
 			isa = PBXGroup;
 			children = (
+				ACCB11DA17867ABC000FF618 /* CoreData */,
 				AC40D119177FF6A000E2C700 /* MainMenuLayer */,
 				4478E42A177BBFB30096B8FA /* CardSprite */,
 				4478E426177BBD480096B8FA /* Game */,
@@ -1788,6 +1794,7 @@
 		AC40D110177FEB0600E2C700 /* Misc */ = {
 			isa = PBXGroup;
 			children = (
+				ACCB11D617866A11000FF618 /* Shared Texture */,
 				AC89CCFA1781015200267A60 /* MainMenuLayer */,
 				AC89CCF91781013000267A60 /* LoginLayer */,
 			);
@@ -1820,10 +1827,27 @@
 				AC89CCFB1781019500267A60 /* deckBtn.png */,
 				AC89CCFC1781019600267A60 /* gameBtn.png */,
 				AC89CCFD1781019600267A60 /* settingsBtn.png */,
-				AC89CCF51780F42E00267A60 /* TopTitleBackGround.png */,
 				AC89CCF71780F4EF00267A60 /* switchAccount.png */,
 			);
 			name = MainMenuLayer;
+			sourceTree = "<group>";
+		};
+		ACCB11D617866A11000FF618 /* Shared Texture */ = {
+			isa = PBXGroup;
+			children = (
+				ACCB11D717866B7A000FF618 /* mainMenu.png */,
+				AC89CCF51780F42E00267A60 /* TopTitleBackGround.png */,
+			);
+			name = "Shared Texture";
+			sourceTree = "<group>";
+		};
+		ACCB11DA17867ABC000FF618 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				ACCB11DB17867B61000FF618 /* CoreData.h */,
+				ACCB11DC17867B61000FF618 /* CoreData.m */,
+			);
+			name = CoreData;
 			sourceTree = "<group>";
 		};
 		E0B97354177637D200B0BB9A /* Cards */ = {
@@ -2788,6 +2812,7 @@
 				AC89CCFF1781019600267A60 /* gameBtn.png in Resources */,
 				AC89CD001781019600267A60 /* settingsBtn.png in Resources */,
 				AC89CD0817810D3B00267A60 /* cardBackground.png in Resources */,
+				ACCB11D817866B7A000FF618 /* mainMenu.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2916,6 +2941,7 @@
 				4478E42D177BBFCA0096B8FA /* CardSprite.m in Sources */,
 				AC40D11C177FF8DE00E2C700 /* MainMenuLayer.m in Sources */,
 				4478E4361784E0E50096B8FA /* Game.m in Sources */,
+				ACCB11DD17867B61000FF618 /* CoreData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
