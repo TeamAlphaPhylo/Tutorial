@@ -13,7 +13,7 @@
 {
     @private
     int card_no; // card's id number
-    id card_image;
+    NSString *card_imageName;
     NSString *card_commName;
     NSString *card_latinName;
     int card_scale;
@@ -25,4 +25,8 @@
     NSString *card_effect;
     NSString *card_climate;
 }
+
+// (Brandon) initialize a card with the card number, use the card number to figure out which data to load
+- (id) initWithCardNo: cardNo;
+
 @end

@@ -36,7 +36,7 @@
         [self setBackgroundColour];
         [self setTitle];
         //[self setLeftMenu];
-        //[self setExampleCard];
+        [self setExampleCard];
         //[self setUserInfo];
         
     }
@@ -91,6 +91,11 @@
 - (void)jumpToMainMenu {
     NSLog(@"Jump back to Main Menu scene");
     [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.5 scene:[MainMenuLayer scene]]];
+}
+
+- (void) setExampleCard {
+    // (Brandon) eventually, I wanna test out initalizing a CardSprite algorithmically 
+    // CardSprite *exCard;
 }
 
 @end

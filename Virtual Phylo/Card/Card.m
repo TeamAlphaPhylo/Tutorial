@@ -10,4 +10,17 @@
 
 @implementation Card
 
+- (id) initWithCardNo: cardNo
+{
+    if (self = [super init])
+    {
+        card_no = cardNo;
+        // (Brandon)
+        // need to fix this
+        // card_imageName = @card_no + ".png";
+        
+    }
+    return self;
+}
+
 @end

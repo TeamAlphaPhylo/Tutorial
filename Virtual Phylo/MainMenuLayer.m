@@ -40,6 +40,8 @@
         [self setLeftMenu];
         [self setExampleCard];
         [self setUserInfo];
+        // (Brandon) initalize the MasterCardArray to keep track of all card data, which can be accessed by any class so long as MainMenuLayer never gets deallocated
+        // MasterCard *masterCardArray = [[MasterCard alloc] init];
 
     }
     return self;
@@ -85,7 +87,7 @@
     
     [self addChild:titleBackground];
     [self addChild:switchAccount];
-    [self addChild: label];
+    [self addChild:label];
 }
 
 // (Roger) Set up the menu at the left side (contains 'Game', 'Deck', and 'Settings')

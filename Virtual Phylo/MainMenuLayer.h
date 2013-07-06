@@ -8,8 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
-// import HelloWorldLayer for jumping back
+// (Roger) import HelloWorldLayer for jumping back
 #import "HelloWorldLayer.h"
+// (Brandon) import the objects we've created
+#import "CardSprite.h"
+#import "MasterCard.h"
 
 @interface MainMenuLayer : CCLayer {
     

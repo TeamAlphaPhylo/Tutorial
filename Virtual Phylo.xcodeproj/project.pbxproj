@@ -14,6 +14,7 @@
 		4478E425177BB9480096B8FA /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 4478E424177BB9480096B8FA /* Player.m */; };
 		4478E42D177BBFCA0096B8FA /* CardSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 4478E42C177BBFC00096B8FA /* CardSprite.m */; };
 		4478E4361784E0E50096B8FA /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 4478E4351784E0E50096B8FA /* Game.m */; };
+		4478E43A17877F8B0096B8FA /* MasterCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 4478E43917877F8B0096B8FA /* MasterCard.m */; };
 		545B702417751BAD00B550D8 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 545B702317751BAD00B550D8 /* QuartzCore.framework */; };
 		545B702617751BAD00B550D8 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 545B702517751BAD00B550D8 /* OpenGLES.framework */; };
 		545B702817751BAD00B550D8 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 545B702717751BAD00B550D8 /* OpenAL.framework */; };
@@ -587,6 +588,8 @@
 		4478E42C177BBFC00096B8FA /* CardSprite.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CardSprite.m; path = CardSprite/CardSprite.m; sourceTree = "<group>"; };
 		4478E4341784E0E50096B8FA /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Game.h; path = Game/Game.h; sourceTree = "<group>"; };
 		4478E4351784E0E50096B8FA /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Game.m; path = Game/Game.m; sourceTree = "<group>"; };
+		4478E43817877F8B0096B8FA /* MasterCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MasterCard.h; path = MasterCard/MasterCard.h; sourceTree = "<group>"; };
+		4478E43917877F8B0096B8FA /* MasterCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MasterCard.m; path = MasterCard/MasterCard.m; sourceTree = "<group>"; };
 		545B702017751BAD00B550D8 /* Virtual Phylo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Virtual Phylo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		545B702317751BAD00B550D8 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		545B702517751BAD00B550D8 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -1359,6 +1362,15 @@
 			name = CardSprite;
 			sourceTree = "<group>";
 		};
+		4478E43717877F610096B8FA /* MasterCard */ = {
+			isa = PBXGroup;
+			children = (
+				4478E43817877F8B0096B8FA /* MasterCard.h */,
+				4478E43917877F8B0096B8FA /* MasterCard.m */,
+			);
+			name = MasterCard;
+			sourceTree = "<group>";
+		};
 		545B701717751BAD00B550D8 = {
 			isa = PBXGroup;
 			children = (
@@ -1403,6 +1415,7 @@
 				4478E422177BB9360096B8FA /* Player */,
 				4478E41E177BAA210096B8FA /* Deck */,
 				E0B976981776384300B0BB9A /* AppDelegate */,
+				4478E43717877F610096B8FA /* MasterCard */,
 				4478E40A177B71400096B8FA /* Card */,
 				E0B9769B1776384300B0BB9A /* HelloWorldLayer */,
 				E0B9769E1776384300B0BB9A /* IntroLayer */,
@@ -2942,6 +2955,7 @@
 				AC40D11C177FF8DE00E2C700 /* MainMenuLayer.m in Sources */,
 				4478E4361784E0E50096B8FA /* Game.m in Sources */,
 				ACCB11DD17867B61000FF618 /* CoreData.m in Sources */,
+				4478E43A17877F8B0096B8FA /* MasterCard.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
