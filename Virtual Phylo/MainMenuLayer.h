@@ -12,7 +12,7 @@
 #import "HelloWorldLayer.h"
 // (Brandon) import the objects we've created
 #import "CardSprite.h"
-#import "MasterCard.h"
+
 
 @interface MainMenuLayer : CCLayer {
     

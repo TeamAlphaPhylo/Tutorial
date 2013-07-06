@@ -40,9 +40,7 @@
         [self setLeftMenu];
         [self setExampleCard];
         [self setUserInfo];
-        // (Brandon) initalize the MasterCardArray to keep track of all card data, which can be accessed by any class so long as MainMenuLayer never gets deallocated
-        // MasterCard *masterCardArray = [[MasterCard alloc] init];
-
+        
     }
     return self;
 }

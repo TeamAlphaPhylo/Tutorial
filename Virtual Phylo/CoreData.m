@@ -24,6 +24,11 @@
     });
     // (Roger) Return itself for further access
     return sharedMyCore;
+    
+    // (Brandon) initalize the MasterCardArray to keep track of all card data, which can be accessed by any class so long as MainMenuLayer never gets deallocated
+    // coreData_MasterCardArray = [[MasterCard alloc] init];
+
+    
 }
 
 -(id) init {
