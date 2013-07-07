@@ -15,7 +15,6 @@
 @interface HelloWorldLayer : CCLayer <UIAlertViewDelegate, UITextFieldDelegate> {
     UITextField* usernameField;
     UITextField* pwdField;
-//    UIView* glView;
 }
 
 // returns a CCScene that contains the HelloWorldLayer as the only child

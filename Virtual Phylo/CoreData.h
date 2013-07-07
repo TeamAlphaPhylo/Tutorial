@@ -15,9 +15,8 @@
 
 @interface CoreData : NSObject {
     NSString *tempTest;
-    MasterCard coreData_MasterCardArray;
+    MasterCard *coreData_MasterCardArray;
 }
-
 // (Roger) Declare a string here
 @property (nonatomic, retain) NSString *tempTest;
 

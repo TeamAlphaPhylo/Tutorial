@@ -135,6 +135,11 @@
 		545B71C017751BB600B550D8 /* vec3.c in Sources */ = {isa = PBXBuildFile; fileRef = 545B71BF17751BB600B550D8 /* vec3.c */; };
 		545B71C217751BB600B550D8 /* vec4.c in Sources */ = {isa = PBXBuildFile; fileRef = 545B71C117751BB600B550D8 /* vec4.c */; };
 		545B71C717751BB600B550D8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 545B71C617751BB600B550D8 /* main.m */; };
+		AC1048061788F0E900C2D9E7 /* DeckChoose.png in Resources */ = {isa = PBXBuildFile; fileRef = AC1048051788F0E900C2D9E7 /* DeckChoose.png */; };
+		AC1048091788F7FE00C2D9E7 /* GameGuestLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = AC1048081788F7FE00C2D9E7 /* GameGuestLogin.m */; };
+		AC10480C178901D100C2D9E7 /* GuestDeckChoose.m in Sources */ = {isa = PBXBuildFile; fileRef = AC10480B178901D100C2D9E7 /* GuestDeckChoose.m */; };
+		AC10480F1789033000C2D9E7 /* GameTable.m in Sources */ = {isa = PBXBuildFile; fileRef = AC10480E1789033000C2D9E7 /* GameTable.m */; };
+		AC1F3D1C17890E0200B4B2C6 /* waterdroplets.png in Resources */ = {isa = PBXBuildFile; fileRef = AC1F3D1B17890E0200B4B2C6 /* waterdroplets.png */; };
 		AC40D112177FEB0F00E2C700 /* LoginBox.png in Resources */ = {isa = PBXBuildFile; fileRef = AC40D111177FEB0F00E2C700 /* LoginBox.png */; };
 		AC40D115177FEF9200E2C700 /* Others.png in Resources */ = {isa = PBXBuildFile; fileRef = AC40D113177FEF9200E2C700 /* Others.png */; };
 		AC40D118177FF57800E2C700 /* login.png in Resources */ = {isa = PBXBuildFile; fileRef = AC40D117177FF57800E2C700 /* login.png */; };
@@ -145,6 +150,7 @@
 		AC89CCFF1781019600267A60 /* gameBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = AC89CCFC1781019600267A60 /* gameBtn.png */; };
 		AC89CD001781019600267A60 /* settingsBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = AC89CCFD1781019600267A60 /* settingsBtn.png */; };
 		AC89CD0817810D3B00267A60 /* cardBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = AC89CD0717810D3B00267A60 /* cardBackground.png */; };
+		AC8ADD2F1788DF8E007758FD /* CCScrollLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = AC8ADD2E1788DF8E007758FD /* CCScrollLayer.m */; };
 		ACA0D36F177E52A60086E7A1 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = ACA0D36E177E52A60086E7A1 /* Default-Landscape~ipad.png */; };
 		ACCB11D817866B7A000FF618 /* mainMenu.png in Resources */ = {isa = PBXBuildFile; fileRef = ACCB11D717866B7A000FF618 /* mainMenu.png */; };
 		ACCB11DD17867B61000FF618 /* CoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = ACCB11DC17867B61000FF618 /* CoreData.m */; };
@@ -573,6 +579,18 @@
 		E0B976BE17763DEE00B0BB9A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B976BA17763DEE00B0BB9A /* Default@2x.png */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		AC24557E1788D824001F4129 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		4478E407177B71370096B8FA /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Card.h; path = Card/Card.h; sourceTree = "<group>"; };
 		4478E408177B71370096B8FA /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Card.m; path = Card/Card.m; sourceTree = "<group>"; };
@@ -853,6 +871,14 @@
 		545B71C317751BB600B550D8 /* LICENSE_Kazmath.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = LICENSE_Kazmath.txt; path = libs/LICENSE_Kazmath.txt; sourceTree = "<group>"; };
 		545B71C517751BB600B550D8 /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
 		545B71C617751BB600B550D8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AC1048051788F0E900C2D9E7 /* DeckChoose.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DeckChoose.png; sourceTree = "<group>"; };
+		AC1048071788F7FE00C2D9E7 /* GameGuestLogin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameGuestLogin.h; sourceTree = "<group>"; };
+		AC1048081788F7FE00C2D9E7 /* GameGuestLogin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameGuestLogin.m; sourceTree = "<group>"; };
+		AC10480A178901D100C2D9E7 /* GuestDeckChoose.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuestDeckChoose.h; sourceTree = "<group>"; };
+		AC10480B178901D100C2D9E7 /* GuestDeckChoose.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuestDeckChoose.m; sourceTree = "<group>"; };
+		AC10480D1789032F00C2D9E7 /* GameTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameTable.h; sourceTree = "<group>"; };
+		AC10480E1789033000C2D9E7 /* GameTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameTable.m; sourceTree = "<group>"; };
+		AC1F3D1B17890E0200B4B2C6 /* waterdroplets.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = waterdroplets.png; sourceTree = "<group>"; };
 		AC40D111177FEB0F00E2C700 /* LoginBox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LoginBox.png; sourceTree = "<group>"; };
 		AC40D113177FEF9200E2C700 /* Others.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Others.png; sourceTree = "<group>"; };
 		AC40D117177FF57800E2C700 /* login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login.png; sourceTree = "<group>"; };
@@ -864,6 +890,8 @@
 		AC89CCFC1781019600267A60 /* gameBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gameBtn.png; sourceTree = "<group>"; };
 		AC89CCFD1781019600267A60 /* settingsBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settingsBtn.png; sourceTree = "<group>"; };
 		AC89CD0717810D3B00267A60 /* cardBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cardBackground.png; sourceTree = "<group>"; };
+		AC8ADD2D1788DF8E007758FD /* CCScrollLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCScrollLayer.h; sourceTree = "<group>"; };
+		AC8ADD2E1788DF8E007758FD /* CCScrollLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCScrollLayer.m; sourceTree = "<group>"; };
 		ACA0D36E177E52A60086E7A1 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
 		ACCB11D717866B7A000FF618 /* mainMenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mainMenu.png; sourceTree = "<group>"; };
 		ACCB11DB17867B61000FF618 /* CoreData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreData.h; sourceTree = "<group>"; };
@@ -1349,6 +1377,12 @@
 			children = (
 				4478E4341784E0E50096B8FA /* Game.h */,
 				4478E4351784E0E50096B8FA /* Game.m */,
+				AC1048071788F7FE00C2D9E7 /* GameGuestLogin.h */,
+				AC1048081788F7FE00C2D9E7 /* GameGuestLogin.m */,
+				AC10480A178901D100C2D9E7 /* GuestDeckChoose.h */,
+				AC10480B178901D100C2D9E7 /* GuestDeckChoose.m */,
+				AC10480D1789032F00C2D9E7 /* GameTable.h */,
+				AC10480E1789033000C2D9E7 /* GameTable.m */,
 			);
 			name = Game;
 			sourceTree = "<group>";
@@ -1409,6 +1443,7 @@
 			isa = PBXGroup;
 			children = (
 				ACCB11DA17867ABC000FF618 /* CoreData */,
+				AC1048031788E02800C2D9E7 /* ScrollLayer */,
 				AC40D119177FF6A000E2C700 /* MainMenuLayer */,
 				4478E42A177BBFB30096B8FA /* CardSprite */,
 				4478E426177BBD480096B8FA /* Game */,
@@ -1802,6 +1837,23 @@
 				545B71C617751BB600B550D8 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AC1048031788E02800C2D9E7 /* ScrollLayer */ = {
+			isa = PBXGroup;
+			children = (
+				AC8ADD2D1788DF8E007758FD /* CCScrollLayer.h */,
+				AC8ADD2E1788DF8E007758FD /* CCScrollLayer.m */,
+			);
+			name = ScrollLayer;
+			sourceTree = "<group>";
+		};
+		AC1048041788F0D100C2D9E7 /* Game: Deck */ = {
+			isa = PBXGroup;
+			children = (
+				AC1048051788F0E900C2D9E7 /* DeckChoose.png */,
+			);
+			name = "Game: Deck";
 			sourceTree = "<group>";
 		};
 		AC40D110177FEB0600E2C700 /* Misc */ = {
@@ -2312,6 +2364,7 @@
 		E0B976A4177638DB00B0BB9A /* Game */ = {
 			isa = PBXGroup;
 			children = (
+				AC1048041788F0D100C2D9E7 /* Game: Deck */,
 				E0B976A5177638DB00B0BB9A /* PlayerRegion */,
 				E0B976AD177638DB00B0BB9A /* PlayingField */,
 			);
@@ -2336,6 +2389,7 @@
 		E0B976AD177638DB00B0BB9A /* PlayingField */ = {
 			isa = PBXGroup;
 			children = (
+				AC1F3D1B17890E0200B4B2C6 /* waterdroplets.png */,
 				E0B976AE177638DB00B0BB9A /* waterdroplets.jpg */,
 			);
 			path = PlayingField;
@@ -2351,6 +2405,7 @@
 				545B701C17751BAD00B550D8 /* Sources */,
 				545B701D17751BAD00B550D8 /* Frameworks */,
 				545B701E17751BAD00B550D8 /* Resources */,
+				AC24557E1788D824001F4129 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -2826,6 +2881,8 @@
 				AC89CD001781019600267A60 /* settingsBtn.png in Resources */,
 				AC89CD0817810D3B00267A60 /* cardBackground.png in Resources */,
 				ACCB11D817866B7A000FF618 /* mainMenu.png in Resources */,
+				AC1048061788F0E900C2D9E7 /* DeckChoose.png in Resources */,
+				AC1F3D1C17890E0200B4B2C6 /* waterdroplets.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2956,6 +3013,10 @@
 				4478E4361784E0E50096B8FA /* Game.m in Sources */,
 				ACCB11DD17867B61000FF618 /* CoreData.m in Sources */,
 				4478E43A17877F8B0096B8FA /* MasterCard.m in Sources */,
+				AC8ADD2F1788DF8E007758FD /* CCScrollLayer.m in Sources */,
+				AC1048091788F7FE00C2D9E7 /* GameGuestLogin.m in Sources */,
+				AC10480C178901D100C2D9E7 /* GuestDeckChoose.m in Sources */,
+				AC10480F1789033000C2D9E7 /* GameTable.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

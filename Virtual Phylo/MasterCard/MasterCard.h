@@ -12,8 +12,13 @@
 @interface MasterCard : NSObject
 {
     @public
-    NSArray *masterCard_cards;
-    @private
-    int count;
+    // (Roger) Use NSMutableArray instead of the static array for update functions
+    //    NSArray *masterCard_cards;
+    
+    NSMutableArray *masterCardList;
+    
+    // (Roger) This part is substituted by the #Define in the .m implementation
+    //    @private
+    //    int count;
 }
 @end

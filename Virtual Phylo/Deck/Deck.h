@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CoreData.h"
 
 @interface Deck : NSObject{
     @private
