@@ -15,10 +15,13 @@
     // (Roger) Use NSMutableArray instead of the static array for update functions
     //    NSArray *masterCard_cards;
     
-    NSMutableArray *masterCardList;
+//    NSMutableArray *masterCardList;
     
     // (Roger) This part is substituted by the #Define in the .m implementation
     //    @private
     //    int count;
 }
+
+@property (nonatomic, retain) NSMutableArray *masterCardList;
+
 @end

@@ -9,15 +9,21 @@
 #import "Card.h"
 
 @implementation Card
+@synthesize card_no;
+@synthesize card_imageName;
 
-- (id) initWithCardNo: cardNo
+//+ (Card*) initWithCardNo: cardNo
+- (id) initWithCardNo : cardNo
 {
     if (self = [super init])
     {
         card_no = cardNo;
         // (Brandon)
         // need to fix this
+        // (Roger) Fixed!
         // card_imageName = @card_no + ".png";
+        card_imageName = [NSString stringWithFormat:@"%d%@", card_no, @".png"];
+        NSLog(@"%@", card_imageName);
         
     }
     return self;

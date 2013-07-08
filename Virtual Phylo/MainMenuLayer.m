@@ -34,6 +34,10 @@
     
         NSLog(@"Main Menu Layer Initialization");
         
+        // (Roger) Test on the MasterCard initialization
+        CoreData *core = [CoreData sharedCore];
+        
+        
         // add components created as children to this Layer (Notice there are added in a specific sequence)
         [self setBackgroundColour];
         [self setTitle];

@@ -10,6 +10,7 @@
 #define CARD_COUNT 50
 
 @implementation MasterCard
+@synthesize masterCardList;
 
 - (id) init
 {
@@ -22,8 +23,17 @@
 //        for (int i = 0; i < count; i++) {
             // masterCard_cards  = [[Card alloc] initWithCardNo:i];
 //        }
+        // (Roger) Initialization of Mutable array
+        masterCardList = [[NSMutableArray alloc] init];
         for(int i = 0; i < CARD_COUNT; i++) {
-            [masterCardList addObject:@"To Be Done"];
+            Card *cardInstantiation = [Card alloc];
+            cardInstantiation = [cardInstantiation initWithCardNo: i];
+            [masterCardList addObject: cardInstantiation];
+        }
+//        NSLog(@"%@", [[masterCardList objectAtIndex: 0] card_imageName]);
+        for(int i = 0; i < CARD_COUNT; i++) {
+            Card *temp = [masterCardList objectAtIndex:i];
+            NSLog(@"%@", temp.card_imageName);
         }
         
     }

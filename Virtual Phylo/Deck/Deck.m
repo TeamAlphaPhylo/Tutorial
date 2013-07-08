@@ -10,4 +10,19 @@
 
 @implementation Deck
 
+// (Roger) Add Synthesization
+@synthesize deckCards;
+@synthesize deckName;
+
+// (Roger) init method as usual
+- (id) init
+{
+    if (self = [super init]) {
+        
+    }
+    
+    return self;
+    
+}
+
 @end

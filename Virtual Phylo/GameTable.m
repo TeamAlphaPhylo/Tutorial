@@ -67,6 +67,25 @@
     upperPlayerRegion.position = ccp(screenSize.width / 2, 691);
     [self addChild:upperPlayerRegion];
     
+    CCSprite *lowerPlayerHand = [CCSprite spriteWithFile:@"hand.png"];
+    lowerPlayerHand.position = ccp(screenSize.width / 2, 70);
+    [self addChild:lowerPlayerHand];
+    
+    CCSprite *upperPlayerHand = [CCSprite spriteWithFile:@"hand.png"];
+    upperPlayerHand.position = ccp(screenSize.width / 2, 698);
+    [self addChild:upperPlayerHand];
+    
+    CCSprite *lowerDeckDiscardPile = [CCSprite spriteWithFile:@"deckdiscardPile.png"];
+    lowerDeckDiscardPile.position = ccp(50, 70);
+    [self addChild:lowerDeckDiscardPile];
+    
+    CCSprite *upperDeckDiscardPile = [CCSprite spriteWithFile:@"deckdiscardPile.png"];
+    upperDeckDiscardPile.position = ccp(964, 698);
+    [self addChild:upperDeckDiscardPile];
+    
+    // (Roger) Intend to implement the card deck on the right (to pick the card) as a menu or something
+    // (Roger) Those arrows are also going to be done as the menu
+    // (Roger) But I don't know how to implement hiding the hand area. (Use Layers ?)
 }
 
 

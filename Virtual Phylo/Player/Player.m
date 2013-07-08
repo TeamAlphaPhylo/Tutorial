@@ -11,4 +11,22 @@
 
 @implementation Player
 
+// (Roger) Synthesization
+@synthesize playerPoints;
+@synthesize username;
+@synthesize password;
+@synthesize deckList;
+@synthesize unlockedCards;
+
+// (Roger) init method as usual
+- (id) init
+{
+    if (self = [super init]) {
+    
+    }
+    
+    return self;
+    
+}
+
 @end

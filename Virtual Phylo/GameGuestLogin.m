@@ -123,7 +123,7 @@
     background.position = ccp(winSize.width/2, winSize.height/2);
     [self addChild:background];
     
-    // add labels as children to this Layer
+    // (Roger) Add labels as children to this Layer
     [self addChild: title];
     [self addChild: username];
     [self addChild: password];

@@ -11,6 +11,7 @@
 @implementation CoreData
 
 @synthesize tempTest;
+@synthesize coreData_MasterCardArray;
 
 // (Roger) Implement the public constructor
 +(id) sharedCore {
@@ -33,8 +34,11 @@
 
 -(id) init {
     if(self = [super init]) {
+        NSLog(@"CoreData Class Initialization");
         // (Roger) Be careful about the init, double check the syntax
         tempTest = [[NSString alloc] initWithString: @"Test for accessing the core data"];
+        NSLog(@"Init CoreData");
+        coreData_MasterCardArray = [[MasterCard alloc] init];
     }
     
     return self;

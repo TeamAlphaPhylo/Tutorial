@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 Group_12. All rights reserved.
 //
 
+
+// (Roger) I don't quite understand why should we have a CardSprite class here.
 #import "CardSprite.h"
 
 @implementation CardSprite

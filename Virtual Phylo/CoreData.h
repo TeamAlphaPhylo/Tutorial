@@ -19,6 +19,8 @@
 }
 // (Roger) Declare a string here
 @property (nonatomic, retain) NSString *tempTest;
+// (Roger) and a masterCardArray
+@property (nonatomic, retain) MasterCard *coreData_MasterCardArray;
 
 // (Roger) Declare a "quasi-constructor" for accessing the object 
 + (id)sharedCore;
