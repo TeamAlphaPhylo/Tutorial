@@ -19,6 +19,7 @@
 {
     // (Roger) I don't think those private variables are going to be implemented here.
     // (Roger) because there will be several scenes in the Game part
+    // (Brandon) kk
 //    @private
 //        id game_PlayerA;
 //        id game_playerB;

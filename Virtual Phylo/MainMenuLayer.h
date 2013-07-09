@@ -13,6 +13,7 @@
 // (Brandon) import the objects we've created
 //#import "CardSprite.h"
 // (Roger) I don't get it... since all the info stored in the CoreData class
+// (Brandon) I wrote that code before seeing your CoreData class. Your idea works better.
 
 #import "MasterCard.h"
 

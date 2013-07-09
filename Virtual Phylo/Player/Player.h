@@ -7,7 +7,7 @@
 //
 
 // (Roger) I think we could combine Player class and Account class into one "Player" class
-
+// (Brandon) Yeah, this is probably a better idea.
 // (Roger) (Thought) We could use XML for data passing between server and application
 
 #import <Foundation/Foundation.h>
@@ -28,11 +28,15 @@
 @property (nonatomic, retain) NSMutableArray *deckList;
 // (Roger) Use an integer array to represent the unlocked card
 @property (nonatomic, retain) NSMutableArray *unlockedCards;
+
 // (Roger) The last sign on and creation date will be implemented later
+
 // (Roger) (Question) What is the difference between last signed on and signed on?
-//@property (nonatomic, retain) NSString *lastSignedOn;
-//@property (nonatomic, retain) NSString *accountCreatedOn;
-//@property (nonatomic, retain) NSString *signedOn;
+// (Brandon) (Answer) lastSignedOn kept track of the date that one last signed up, and signedOn was a boolean value telling you if the account was currently active. I'm not really sure whether it's necessary, but it's a thought.
+
+//@property (nonatomic, retain) int *lastSignedOn;
+//@property (nonatomic, retain) int *accountCreatedOn;
+//@property (nonatomic, retain) BOOL *signedOn;
 
 
 

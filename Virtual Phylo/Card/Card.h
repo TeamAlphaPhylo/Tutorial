@@ -14,6 +14,7 @@
     // (Roger) if we set those methods as private, we have to set a bunch of "setters" and "getters" to fetch the data
     // (Roger) Also, it would be hard to modify / update card information.
     // (Roger) The encapsulation seems to be unnecessary here.
+    // (Brandon) isn't it necessary though? if I alter one card's card_scale, I don't want all the card's card_scale to change with it. Plus, setters and getters don't seem all that difficult to do.
 //    @private
     @public
 //    int card_no; // card's id number

@@ -22,6 +22,7 @@
         // need to fix this
         // (Roger) Fixed!
         // card_imageName = @card_no + ".png";
+        // (Brandon) yaaay!
         card_imageName = [NSString stringWithFormat:@"%d%@", card_no, @".png"];
         NSLog(@"%@", card_imageName);
         
