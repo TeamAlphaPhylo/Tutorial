@@ -96,7 +96,7 @@
     
     // (Roger) Create a password field
     pwdField = [[UITextField alloc] initWithFrame:pwdPosition];
-    pwdField.text = @"sucks";
+    pwdField.text = @"sucks!!";
     pwdField.borderStyle = UITextBorderStyleRoundedRect;
     pwdField.delegate = self;
     
@@ -119,9 +119,13 @@
     // (Roger) Setup a background
     CGSize winSize = [[CCDirector sharedDirector] winSize];
     
-    CCSprite *background = [CCSprite spriteWithFile:@"LoginBox.png"];
+    CCSprite *background = [CCSprite spriteWithFile:@"background_main.png"];
     background.position = ccp(winSize.width/2, winSize.height/2);
     [self addChild:background];
+    
+    CCSprite *loginbox = [CCSprite spriteWithFile:@"box.png"];
+    background.position = ccp(winSize.width/2, winSize.height/2);
+    [self addChild:loginbox];
     
     // (Roger) Add labels as children to this Layer
     [self addChild: title];
@@ -130,9 +134,9 @@
     
     // (Roger) Add Buttons
     //        CCSprite *loginBtn = [CCSprite spriteWithFile: @"Login.png"];
-    CCMenuItemImage *loginBtn = [CCMenuItemImage itemWithNormalImage:@"login.png"selectedImage:@"login.png" target:self selector:@selector(verifyIdentity)];
+    CCMenuItemImage *loginBtn = [CCMenuItemImage itemWithNormalImage:@"Sign.png"selectedImage:@"Sign.png" target:self selector:@selector(verifyIdentity)];
     // (Roger) The external link has not been implemented
-    CCMenuItemImage *othersBtn = [CCMenuItemImage itemWithNormalImage:@"Others.png" selectedImage:@"Others.png" target:nil selector:nil];
+    CCMenuItemImage *othersBtn = [CCMenuItemImage itemWithNormalImage:@"Register.png" selectedImage:@"Register.png" target:nil selector:nil];
     CCMenu *menu = [CCMenu menuWithItems:loginBtn, othersBtn, nil];
     [menu alignItemsHorizontallyWithPadding: 50];
     menu.position = CGPointMake(550, 230);
