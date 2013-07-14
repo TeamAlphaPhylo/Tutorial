@@ -14,8 +14,13 @@
 @interface GameTable : CCLayer {
     PlayerLayerBot *_pBot;
     PlayerLayerTop *_pTop;
+    CCSprite *background;
+    CCSprite *selSprite;
+    NSMutableArray *movableSprites;
 }
 
 +(CCScene *) scene;
 -(id) initWithPlayer1:(PlayerLayerBot *)pBot Player2:(PlayerLayerTop *)pTop;
+-(void) addSprites;
+-(void) setBackground;
 @end

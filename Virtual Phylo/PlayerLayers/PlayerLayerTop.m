@@ -27,7 +27,7 @@
     CGSize winSize = [CCDirector sharedDirector].winSize;
     
     CCSprite *upperPlayerRegion = [CCSprite spriteWithFile: @"playerRegion.png"];
-    upperPlayerRegion.position = ccp(winSize.width / 2, 691);
+    upperPlayerRegion.position = ccp(winSize.width / 2, 693);
     [self addChild:upperPlayerRegion];
     
 

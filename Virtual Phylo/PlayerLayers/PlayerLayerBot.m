@@ -27,7 +27,7 @@
     
      CGSize winSize = [CCDirector sharedDirector].winSize;
      CCSprite *lowerPlayerRegion = [CCSprite spriteWithFile: @"playerRegion.png"];
-     lowerPlayerRegion.position = ccp(winSize.width / 2, 77);
+     lowerPlayerRegion.position = ccp(winSize.width / 2, 75);
     [self addChild:lowerPlayerRegion];
     
      CCSprite *lowerPlayerHand = [CCSprite spriteWithFile:@"hand.png"];
