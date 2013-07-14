@@ -62,7 +62,7 @@
 	[super dealloc];
 }
 
-// (Brandon) add some card sprites to fool around with
+// (Brandon) add some card sprites to fool around with, use this same means of adding cards to hand?
 - (void) addSprites {
     
     CGSize winSize = [CCDirector sharedDirector].winSize;
@@ -90,12 +90,16 @@
     }
     if (newSprite != selSprite) {
         [selSprite stopAllActions];
+        
+        /*
+        // make selected sprite wiggle when touched
         [selSprite runAction:[CCRotateTo actionWithDuration:0.1 angle:0]];
         CCRotateTo * rotLeft = [CCRotateBy actionWithDuration:0.1 angle:-4.0];
         CCRotateTo * rotCenter = [CCRotateBy actionWithDuration:0.1 angle:0.0];
         CCRotateTo * rotRight = [CCRotateBy actionWithDuration:0.1 angle:4.0];
         CCSequence * rotSeq = [CCSequence actions:rotLeft, rotCenter, rotRight, rotCenter, nil];
         [newSprite runAction:[CCRepeatForever actionWithAction:rotSeq]];
+        */
         selSprite = newSprite;
     }
 }
@@ -107,13 +111,16 @@
 }
 
 
+
+
 // (Roger) Set up the background
 - (void) setBackground {
     CGSize winSize = [CCDirector sharedDirector].winSize;
 //    menu.position = ccp(screenSize.width/2, 50);
     NSLog(@"Setting up Game Table Background Image");
-    background = [CCSprite spriteWithFile: @"green.png"];
-    background.scale = 2.0;
+    background = [CCSprite spriteWithFile: @"green.jpg"];
+    background.rotation = 90.0;
+    background.scale = 1.5; // (Brandon) I need this to work.
     // (Roger) Set up the position as the center
     background.position = ccp(winSize.width / 2, winSize.height / 2);
     [self addChild:background];
@@ -154,17 +161,22 @@
 - (CGPoint)boundLayerPos:(CGPoint)newPos {
     CGSize winSize = [CCDirector sharedDirector].winSize;
     CGPoint retval = newPos;
-    retval.x = MIN(retval.x, background.contentSize.width-winSize.width);
-    retval.x = MAX(retval.x, -background.contentSize.width+winSize.width);
-    retval.y = self.position.y;
+    retval.y = MIN(retval.y, background.contentSize.width-winSize.width+300);
+    retval.y = MAX(retval.y, -background.contentSize.width+winSize.width-300);
+    retval.x = MIN(retval.x, background.contentSize.height-winSize.height-100);
+    retval.x = MAX(retval.x, -background.contentSize.height+winSize.height+100);
     return retval;
 }
 
 - (void)panForTranslation:(CGPoint)translation {
+    // (Brandon) if a sprite is touched, move the sprite
     if (selSprite) {
         CGPoint newPos = ccpAdd(selSprite.position, translation);
         selSprite.position = newPos;
-    } else {
+        
+    // (Brandon) if the background is touched, move the sprite
+        // note, this still works if you're touching the hand, because the background is beneath it, needs fixing
+    } else if (background) {
         CGPoint newPos = ccpAdd(self.position, translation);
         self.position = [self boundLayerPos:newPos];
     }
