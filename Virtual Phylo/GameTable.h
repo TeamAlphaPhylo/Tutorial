@@ -8,11 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
+#import "PlayerLayerBot.h"
+#import "PlayerLayerTop.h"
 
 @interface GameTable : CCLayer {
-    
+    PlayerLayerBot *_pBot;
+    PlayerLayerTop *_pTop;
 }
 
 +(CCScene *) scene;
-
+-(id) initWithPlayer1:(PlayerLayerBot *)pBot Player2:(PlayerLayerTop *)pTop;
 @end

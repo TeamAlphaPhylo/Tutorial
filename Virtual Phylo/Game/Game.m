@@ -14,11 +14,15 @@
 {
 	// 'scene' is an autorelease object.
 	CCScene *scene = [CCScene node];
+    
+    
 	
 	// (Roger) Please be careful here, after the copy and paste, remember to change the object type of the layer
     // (Roger) Change the object type to this class (name). Otherwise it will take very long time to debug it.
     // (BUG)	MainMenuLayer *layer = [MainMenuLayer node];
-	Game *layer = [Game node];
+	
+    
+    Game *layer = [Game node];
     // add layer as a child to scene
 	[scene addChild: layer];
 	
@@ -31,7 +35,6 @@
     if( (self=[super init]) ) {
         
         NSLog(@"Game Layer Initialization");
-        
         // add components created as children to this Layer (Notice there are added in a specific sequence)
         [self setBackgroundColour];
         [self setTitle];
@@ -138,7 +141,7 @@
 }
 
 - (CCMenu*) AddChooseBtn {
-    CCMenuItemImage *chooseBtn = [CCMenuItemImage itemWithNormalImage:@"DeckChoose.png" selectedImage:@"DeckChoose.png" target:self selector:@selector(jumpToGuestLogin)];
+    CCMenuItemImage *chooseBtn = [CCMenuItemImage itemWithNormalImage:@"DeckChoose.png" selectedImage:@"DeckChoose.png" target:self selector:@selector(jumpToGameTable)];
     CCMenu *menu = [CCMenu menuWithItems: chooseBtn, nil];
     CGSize screenSize = [CCDirector sharedDirector].winSize;
     menu.position = ccp(screenSize.width/2, 50);
@@ -150,6 +153,11 @@
 - (void)jumpToGuestLogin {
     NSLog(@"Jump to Guest Login scene");
     [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.5 scene:[GameGuestLogin scene] ]];
+}
+
+- (void)jumpToGameTable {
+    NSLog(@"Jump to Guest Login scene");
+    [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.5 scene:[GameTable scene] ]];
 }
 
 

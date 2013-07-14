@@ -16,6 +16,15 @@
 	// 'scene' is an autorelease object.
 	CCScene *scene = [CCScene node];
 	
+    // (Brandon) PlayerLayers act as layers or regions for the players
+    PlayerLayerBot *pBot = [PlayerLayerBot node];
+    [scene addChild:pBot z:2];
+    
+    PlayerLayerTop *pTop = [PlayerLayerTop node];
+    [scene addChild:pTop z:1];
+    
+     
+     
 	// 'layer' is an autorelease object.
 	GameTable *layer = [GameTable node];
 	
@@ -26,12 +35,14 @@
 	return scene;
 }
 
--(id) init
+-(id) init//WithPlayer1:(PlayerLayerBot *)pBot Player2:(PlayerLayerTop *)pTop
 {
     if( (self=[super init]) ) {
         
         NSLog(@"Game Table Layer Initialization");
         
+        //_pBot = pBot;
+        //_pTop = pTop;
         // add components created as children to this Layer (Notice there are added in a specific sequence)
         [self setBackground];
     }
@@ -51,14 +62,16 @@
 
 // (Roger) Set up the background
 - (void) setBackground {
-    CGSize screenSize = [CCDirector sharedDirector].winSize;
+    CGSize winSize = [CCDirector sharedDirector].winSize;
 //    menu.position = ccp(screenSize.width/2, 50);
     NSLog(@"Setting up Game Table Background Image");
-    CCSprite *tableBackground = [CCSprite spriteWithFile: @"waterdroplets.png"];
+    CCSprite *tableBackground = [CCSprite spriteWithFile: @"green.jpg"];
     // (Roger) Set up the position as the center
-    tableBackground.position = ccp(screenSize.width / 2, screenSize.height / 2);
+    tableBackground.position = ccp(winSize.width / 2, winSize.height / 2);
     [self addChild:tableBackground];
     
+    
+    /*
     CCSprite *lowerPlayerRegion = [CCSprite spriteWithFile: @"playerRegion.png"];
     lowerPlayerRegion.position = ccp(screenSize.width / 2, 77);
     [self addChild:lowerPlayerRegion];
@@ -82,6 +95,7 @@
     CCSprite *upperDeckDiscardPile = [CCSprite spriteWithFile:@"deckdiscardPile.png"];
     upperDeckDiscardPile.position = ccp(964, 698);
     [self addChild:upperDeckDiscardPile];
+     */
     
     // (Roger) Intend to implement the card deck on the right (to pick the card) as a menu or something
     // (Roger) Those arrows are also going to be done as the menu

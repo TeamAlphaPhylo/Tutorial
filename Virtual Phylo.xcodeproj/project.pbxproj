@@ -15,6 +15,9 @@
 		4478E42D177BBFCA0096B8FA /* CardSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 4478E42C177BBFC00096B8FA /* CardSprite.m */; };
 		4478E4361784E0E50096B8FA /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 4478E4351784E0E50096B8FA /* Game.m */; };
 		4478E43A17877F8B0096B8FA /* MasterCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 4478E43917877F8B0096B8FA /* MasterCard.m */; };
+		44A46F8D179242A600D5FFE3 /* green.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 44A46F8C179242A600D5FFE3 /* green.jpg */; };
+		44A46F991792482F00D5FFE3 /* PlayerLayerBot.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A46F981792482F00D5FFE3 /* PlayerLayerBot.m */; };
+		44A46F9C1792483F00D5FFE3 /* PlayerLayerTop.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A46F9B1792483F00D5FFE3 /* PlayerLayerTop.m */; };
 		545B702417751BAD00B550D8 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 545B702317751BAD00B550D8 /* QuartzCore.framework */; };
 		545B702617751BAD00B550D8 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 545B702517751BAD00B550D8 /* OpenGLES.framework */; };
 		545B702817751BAD00B550D8 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 545B702717751BAD00B550D8 /* OpenAL.framework */; };
@@ -203,6 +206,11 @@
 		4478E4351784E0E50096B8FA /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Game.m; path = Game/Game.m; sourceTree = "<group>"; };
 		4478E43817877F8B0096B8FA /* MasterCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MasterCard.h; path = MasterCard/MasterCard.h; sourceTree = "<group>"; };
 		4478E43917877F8B0096B8FA /* MasterCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MasterCard.m; path = MasterCard/MasterCard.m; sourceTree = "<group>"; };
+		44A46F8C179242A600D5FFE3 /* green.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = green.jpg; sourceTree = "<group>"; };
+		44A46F971792482F00D5FFE3 /* PlayerLayerBot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayerLayerBot.h; path = PlayerLayers/PlayerLayerBot.h; sourceTree = "<group>"; };
+		44A46F981792482F00D5FFE3 /* PlayerLayerBot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayerLayerBot.m; path = PlayerLayers/PlayerLayerBot.m; sourceTree = "<group>"; };
+		44A46F9A1792483F00D5FFE3 /* PlayerLayerTop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayerLayerTop.h; path = PlayerLayers/PlayerLayerTop.h; sourceTree = "<group>"; };
+		44A46F9B1792483F00D5FFE3 /* PlayerLayerTop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayerLayerTop.m; path = PlayerLayers/PlayerLayerTop.m; sourceTree = "<group>"; };
 		545B702017751BAD00B550D8 /* Virtual Phylo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Virtual Phylo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		545B702317751BAD00B550D8 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		545B702517751BAD00B550D8 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -571,8 +579,6 @@
 				AC1048081788F7FE00C2D9E7 /* GameGuestLogin.m */,
 				AC10480A178901D100C2D9E7 /* GuestDeckChoose.h */,
 				AC10480B178901D100C2D9E7 /* GuestDeckChoose.m */,
-				AC10480D1789032F00C2D9E7 /* GameTable.h */,
-				AC10480E1789033000C2D9E7 /* GameTable.m */,
 			);
 			name = Game;
 			sourceTree = "<group>";
@@ -593,6 +599,34 @@
 				4478E43917877F8B0096B8FA /* MasterCard.m */,
 			);
 			name = MasterCard;
+			sourceTree = "<group>";
+		};
+		44A46F8B179242A600D5FFE3 /* GameBoard */ = {
+			isa = PBXGroup;
+			children = (
+				44A46F8C179242A600D5FFE3 /* green.jpg */,
+			);
+			path = GameBoard;
+			sourceTree = "<group>";
+		};
+		44A46F8E1792454800D5FFE3 /* GameTable */ = {
+			isa = PBXGroup;
+			children = (
+				AC10480D1789032F00C2D9E7 /* GameTable.h */,
+				AC10480E1789033000C2D9E7 /* GameTable.m */,
+			);
+			name = GameTable;
+			sourceTree = "<group>";
+		};
+		44A46F93179245EA00D5FFE3 /* PlayerLayer */ = {
+			isa = PBXGroup;
+			children = (
+				44A46F971792482F00D5FFE3 /* PlayerLayerBot.h */,
+				44A46F981792482F00D5FFE3 /* PlayerLayerBot.m */,
+				44A46F9A1792483F00D5FFE3 /* PlayerLayerTop.h */,
+				44A46F9B1792483F00D5FFE3 /* PlayerLayerTop.m */,
+			);
+			name = PlayerLayer;
 			sourceTree = "<group>";
 		};
 		545B701717751BAD00B550D8 = {
@@ -632,11 +666,13 @@
 		545B703717751BAD00B550D8 /* Virtual Phylo */ = {
 			isa = PBXGroup;
 			children = (
+				4478E426177BBD480096B8FA /* Game */,
+				44A46F8E1792454800D5FFE3 /* GameTable */,
+				44A46F93179245EA00D5FFE3 /* PlayerLayer */,
 				ACCB11DA17867ABC000FF618 /* CoreData */,
 				AC1048031788E02800C2D9E7 /* ScrollLayer */,
 				AC40D119177FF6A000E2C700 /* MainMenuLayer */,
 				4478E42A177BBFB30096B8FA /* CardSprite */,
-				4478E426177BBD480096B8FA /* Game */,
 				4478E422177BB9360096B8FA /* Player */,
 				4478E41E177BAA210096B8FA /* Deck */,
 				E0B976981776384300B0BB9A /* AppDelegate */,
@@ -1149,6 +1185,7 @@
 		E0B976A4177638DB00B0BB9A /* Game */ = {
 			isa = PBXGroup;
 			children = (
+				44A46F8B179242A600D5FFE3 /* GameBoard */,
 				AC1048041788F0D100C2D9E7 /* Game: Deck */,
 				E0B976A5177638DB00B0BB9A /* PlayerRegion */,
 				E0B976AD177638DB00B0BB9A /* PlayingField */,
@@ -1263,6 +1300,7 @@
 				54C09CC1178F7F38006FC5A8 /* login_box.png in Resources */,
 				54C09CC2178F7F38006FC5A8 /* user_register.png in Resources */,
 				54C09CC3178F7F38006FC5A8 /* user_signin.png in Resources */,
+				44A46F8D179242A600D5FFE3 /* green.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1397,6 +1435,8 @@
 				AC1048091788F7FE00C2D9E7 /* GameGuestLogin.m in Sources */,
 				AC10480C178901D100C2D9E7 /* GuestDeckChoose.m in Sources */,
 				AC10480F1789033000C2D9E7 /* GameTable.m in Sources */,
+				44A46F991792482F00D5FFE3 /* PlayerLayerBot.m in Sources */,
+				44A46F9C1792483F00D5FFE3 /* PlayerLayerTop.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -128,7 +128,7 @@
 }
 
 - (CCMenu*) AddChooseBtn {
-    CCMenuItemImage *chooseBtn = [CCMenuItemImage itemWithNormalImage:@"DeckChoose.png" selectedImage:@"DeckChoose.png" target:self selector:@selector(jumpToGuestLogin)];
+    CCMenuItemImage *chooseBtn = [CCMenuItemImage itemWithNormalImage:@"DeckChoose.png" selectedImage:@"DeckChoose.png" target:self selector:@selector(jumpToGameTable)];
     CCMenu *menu = [CCMenu menuWithItems: chooseBtn, nil];
     CGSize screenSize = [CCDirector sharedDirector].winSize;
     menu.position = ccp(screenSize.width/2, 50);
@@ -137,7 +137,7 @@
 }
 
 // (Roger) Jump to Guest Login Scene
-- (void)jumpToGuestLogin {
+- (void)jumpToGameTable {
     NSLog(@"Jump to Guest Login scene");
     [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.5 scene:[GameTable scene] ]];
 }

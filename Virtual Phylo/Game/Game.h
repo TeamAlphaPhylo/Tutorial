@@ -11,12 +11,16 @@
 #import "MainMenuLayer.h"
 #import "CCScrollLayer.h"
 #import "GameGuestLogin.h"
+#import "GameTable.h"
+
 
 // (Roger) Test on the CoreData function
 #import "CoreData.h"
 
 @interface Game : CCLayer
 {
+    
+
     // (Roger) I don't think those private variables are going to be implemented here.
     // (Roger) because there will be several scenes in the Game part
     // (Brandon) kk
