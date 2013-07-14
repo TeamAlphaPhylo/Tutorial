@@ -34,6 +34,7 @@
         
         // add components created as children to this Layer (Notice there are added in a specific sequence)
         [self setBackground];
+        [self addCardScroller];
     }
     return self;
 }
@@ -68,11 +69,11 @@
     [self addChild:upperPlayerRegion];
     
     CCSprite *lowerPlayerHand = [CCSprite spriteWithFile:@"hand.png"];
-    lowerPlayerHand.position = ccp(screenSize.width / 2, 70);
+    lowerPlayerHand.position = ccp(470, 70);
     [self addChild:lowerPlayerHand];
     
     CCSprite *upperPlayerHand = [CCSprite spriteWithFile:@"hand.png"];
-    upperPlayerHand.position = ccp(screenSize.width / 2, 698);
+    upperPlayerHand.position = ccp(550, 698);
     [self addChild:upperPlayerHand];
     
     CCSprite *lowerDeckDiscardPile = [CCSprite spriteWithFile:@"deckdiscardPile.png"];
@@ -88,5 +89,40 @@
     // (Roger) But I don't know how to implement hiding the hand area. (Use Layers ?)
 }
 
+- (void) addCardScroller {
+    NSLog(@"Trying to add CCScroll View.");
+    
+    // (Roger) First set up a window size holder
+    CGSize winSize = [[CCDirector sharedDirector] winSize];
+    // (Roger) Setting up an NSMutableArray (To be corporated with CoreData function)
+    // (Roger) Storing the Sprite instances
+    NSMutableArray *cardArray = [NSMutableArray array];
+    
+    // Horizontal scroller
+    for (int i = 0; i < 50; i++) {
+        CCSelectableItem *page = [[CCSelectableItem alloc] initWithNormalColor:ccc4(0,0,0,0) andSelectectedColor:ccc4(190, 150, 150, 255) andWidth:77 andHeight:100];
+        
+        NSString *card_imageName = [NSString stringWithFormat:@"%d%@", i, @".png"];
+
+        CCSprite *image = [CCSprite spriteWithFile: card_imageName];
+        
+        image.position = ccp(page.contentSize.width/2, page.contentSize.height/2);
+        // The card dimensions are 264 * 407 (Width * Height)
+        [image setScale: (float) 100 / 407];
+        
+        [page addChild:image];
+        
+        [cardArray addObject:page];
+    }
+    
+    CCItemsScroller *lowerHandScoller = [CCItemsScroller itemsScrollerWithItems:cardArray andOrientation:CCItemsScrollerHorizontal andRect:CGRectMake(106, 17, winSize.width - 300, 150)];
+    lowerHandScoller.delegate = self;
+    [self addChild:lowerHandScoller];
+}
+
+// (Roger) Implement the interface requirements
+-(void)itemsScroller:(CCItemsScroller *)sender didSelectItemIndex:(int)index{
+
+}
 
 @end

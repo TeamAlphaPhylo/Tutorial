@@ -8,10 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
+#import "CCItemsScroller.h"
+#import "CCSelectableItem.h"
 
-@interface GameTable : CCLayer {
-    
-}
+@interface GameTable : CCLayer<CCItemsScrollerDelegate>
 
 +(CCScene *) scene;
 

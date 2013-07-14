@@ -129,6 +129,7 @@
     [self addChild: menu];
     // This is where our first scene happens, where we should code stuff.
     
+    // (Roger) Notice the sequence is really important, otherwise it will cause exceptions
     // (Roger) Add login boxes
     [self addLoginFields];
     // (Roger) Enable the touch function

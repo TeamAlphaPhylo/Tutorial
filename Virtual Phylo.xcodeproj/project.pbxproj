@@ -139,6 +139,8 @@
 		54C09CC1178F7F38006FC5A8 /* login_box.png in Resources */ = {isa = PBXBuildFile; fileRef = 54C09CBD178F7F37006FC5A8 /* login_box.png */; };
 		54C09CC2178F7F38006FC5A8 /* user_register.png in Resources */ = {isa = PBXBuildFile; fileRef = 54C09CBE178F7F37006FC5A8 /* user_register.png */; };
 		54C09CC3178F7F38006FC5A8 /* user_signin.png in Resources */ = {isa = PBXBuildFile; fileRef = 54C09CBF178F7F38006FC5A8 /* user_signin.png */; };
+		AC0BFA6917923F570048AD89 /* CCItemsScroller.m in Sources */ = {isa = PBXBuildFile; fileRef = AC0BFA6817923F570048AD89 /* CCItemsScroller.m */; };
+		AC0BFA6C1792428B0048AD89 /* CCSelectableItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AC0BFA6B1792428B0048AD89 /* CCSelectableItem.m */; };
 		AC1048061788F0E900C2D9E7 /* DeckChoose.png in Resources */ = {isa = PBXBuildFile; fileRef = AC1048051788F0E900C2D9E7 /* DeckChoose.png */; };
 		AC1048091788F7FE00C2D9E7 /* GameGuestLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = AC1048081788F7FE00C2D9E7 /* GameGuestLogin.m */; };
 		AC10480C178901D100C2D9E7 /* GuestDeckChoose.m in Sources */ = {isa = PBXBuildFile; fileRef = AC10480B178901D100C2D9E7 /* GuestDeckChoose.m */; };
@@ -470,6 +472,10 @@
 		54C09CBD178F7F37006FC5A8 /* login_box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_box.png; sourceTree = "<group>"; };
 		54C09CBE178F7F37006FC5A8 /* user_register.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user_register.png; sourceTree = "<group>"; };
 		54C09CBF178F7F38006FC5A8 /* user_signin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user_signin.png; sourceTree = "<group>"; };
+		AC0BFA6717923F570048AD89 /* CCItemsScroller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCItemsScroller.h; sourceTree = "<group>"; };
+		AC0BFA6817923F570048AD89 /* CCItemsScroller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCItemsScroller.m; sourceTree = "<group>"; };
+		AC0BFA6A1792428B0048AD89 /* CCSelectableItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCSelectableItem.h; sourceTree = "<group>"; };
+		AC0BFA6B1792428B0048AD89 /* CCSelectableItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCSelectableItem.m; sourceTree = "<group>"; };
 		AC1048051788F0E900C2D9E7 /* DeckChoose.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DeckChoose.png; sourceTree = "<group>"; };
 		AC1048071788F7FE00C2D9E7 /* GameGuestLogin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameGuestLogin.h; sourceTree = "<group>"; };
 		AC1048081788F7FE00C2D9E7 /* GameGuestLogin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameGuestLogin.m; sourceTree = "<group>"; };
@@ -565,6 +571,7 @@
 		4478E426177BBD480096B8FA /* Game */ = {
 			isa = PBXGroup;
 			children = (
+				AC0BFA63179216690048AD89 /* ScrollView */,
 				4478E4341784E0E50096B8FA /* Game.h */,
 				4478E4351784E0E50096B8FA /* Game.m */,
 				AC1048071788F7FE00C2D9E7 /* GameGuestLogin.h */,
@@ -1029,6 +1036,17 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		AC0BFA63179216690048AD89 /* ScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				AC0BFA6A1792428B0048AD89 /* CCSelectableItem.h */,
+				AC0BFA6B1792428B0048AD89 /* CCSelectableItem.m */,
+				AC0BFA6717923F570048AD89 /* CCItemsScroller.h */,
+				AC0BFA6817923F570048AD89 /* CCItemsScroller.m */,
+			);
+			name = ScrollView;
+			sourceTree = "<group>";
+		};
 		AC1048031788E02800C2D9E7 /* ScrollLayer */ = {
 			isa = PBXGroup;
 			children = (
@@ -1397,6 +1415,8 @@
 				AC1048091788F7FE00C2D9E7 /* GameGuestLogin.m in Sources */,
 				AC10480C178901D100C2D9E7 /* GuestDeckChoose.m in Sources */,
 				AC10480F1789033000C2D9E7 /* GameTable.m in Sources */,
+				AC0BFA6917923F570048AD89 /* CCItemsScroller.m in Sources */,
+				AC0BFA6C1792428B0048AD89 /* CCSelectableItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
