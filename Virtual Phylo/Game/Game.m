@@ -62,7 +62,7 @@
     NSLog(@"Setting up the Title at the top");
     
     // (Roger) Testing on the CoreData function
-//    CoreData *core = [CoreData sharedCore];
+    // CoreData *core = [CoreData sharedCore];
     // (Roger) (Updated) The preliminary CoreData function test: Passed
     
     

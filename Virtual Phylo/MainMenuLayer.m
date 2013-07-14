@@ -8,6 +8,8 @@
 
 #import "MainMenuLayer.h"
 #import "Game.h"
+#import "DeckBuilder.h"
+//#import "Settings.h"
 
 // (Roger) BUG: Missing 226.png, 385.png
 
@@ -35,7 +37,7 @@
         NSLog(@"Main Menu Layer Initialization");
         
         // (Roger) Test on the MasterCard initialization
-        CoreData *core = [CoreData sharedCore];
+        // CoreData *core = [CoreData sharedCore];
         
         
         // add components created as children to this Layer (Notice there are added in a specific sequence)
@@ -158,7 +160,8 @@
     [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.5 scene:[Game scene]]];
 }
 - (void)jumpToDeck {
-    // TO-DO: To be implemented
+    NSLog(@"Jump to Deck Builder scene");
+    [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.5 scene:[DeckBuilder scene]]];
 }
 - (void)jumpToSettings {
     // TO-DO: To be implemented

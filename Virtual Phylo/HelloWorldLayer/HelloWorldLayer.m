@@ -2,7 +2,7 @@
 //  HelloWorldLayer.m
 //  Virtual Phylo
 //
-//  Created by Darkroot on 6/21/13.
+//  Created by Petr Krakora on 6/21/13.
 //  Copyright Group_12 2013. All rights reserved.
 //
 
@@ -73,7 +73,7 @@
         // CCSprite *loginBtn = [CCSprite spriteWithFile: @"Login.png"];
         CCMenuItemImage *loginBtn = [CCMenuItemImage itemWithNormalImage:@"user_signin.png"selectedImage:@"user_signin.png" target:self selector:@selector(verifyIdentity)];
         // (Roger) The external link has not been implemented
-        CCMenuItemImage *othersBtn = [CCMenuItemImage itemWithNormalImage:@"user_register.png" selectedImage:@"user_register.png" target:self selector:@selector(writeToTextFile)];
+        CCMenuItemImage *othersBtn = [CCMenuItemImage itemWithNormalImage:@"user_register.png" selectedImage:@"user_register.png" target:self selector:@selector(registerAccount)];
         CCMenu *menu = [CCMenu menuWithItems:loginBtn, othersBtn, nil];
         [menu alignItemsHorizontallyWithPadding: 40];
         menu.position = CGPointMake(510, 260);
@@ -116,7 +116,7 @@
 
 #pragma mark Verification Function
 // (Roger) Very simple verification
-- (void)verifyIdentity {
+- (void) verifyIdentity {
     NSArray *paths = NSSearchPathForDirectoriesInDomains
     (NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
@@ -144,8 +144,8 @@
     NSLog(@"Finishing Verifying");
 }
 
-//Method writes a string to a text file
-- (void)writeToTextFile {
+//(Petr) Checks and registers new account
+- (void) registerAccount {
     //get the documents directory:
     NSArray *paths = NSSearchPathForDirectoriesInDomains
     (NSDocumentDirectory, NSUserDomainMask, YES);
@@ -155,28 +155,58 @@
     NSString *fileName = [NSString stringWithFormat:@"%@/textfile.txt",
                           documentsDirectory];
     
-    //Alert infromation and formating
-    NSString *first = [NSString stringWithFormat:@"Username is: %@\n", usernameField.text];
-    NSString *second = [NSString stringWithFormat:@"Password is: %@\n", pwdField.text];
-    NSString *third = [NSString stringWithFormat:@"Is the infromation correct?\n"];
+    NSString *contents = [[NSString alloc] initWithContentsOfFile:fileName encoding:nil error:nil];
     
-    NSString *content = [NSString stringWithFormat:@"%@,%@", usernameField.text, pwdField.text];
+    //Testing, displays content of file
+    //NSLog(contents);
     
-    //save content to the documents directory
-    [content writeToFile:fileName
-              atomically:NO
+    NSArray *usernames = [contents componentsSeparatedByString:@","];
+    
+    bool *pass = true;
+    NSString *message;
+    
+    //Check if username exists already
+    for (int i = 0; i < ((sizeof(usernames) - 2)); i +=2) {
+        if([usernameField.text isEqualToString: usernames[i]]) {
+            pass = false;
+            break;
+        } else {
+            pass = true;
+        }
+    }
+    
+    if (pass) {
+        //Alert infromation and formating
+        NSString *first = [NSString stringWithFormat:@"Username is: %@\n", usernameField.text];
+        NSString *second = [NSString stringWithFormat:@"Password is: %@\n", pwdField.text];
+        NSString *third = [NSString stringWithFormat:@"Is the infromation correct?\n"];
+        message = [NSString stringWithFormat:@"%@%@%@", first, second, third];
+        
+        UIAlertView* newaccount = [[UIAlertView alloc] initWithTitle:@"Created account"
+                                                             message:message
+                                                            delegate:self
+                                                   cancelButtonTitle:@"No"
+                                                   otherButtonTitles:@"Yes", nil];
+        [newaccount show];
+        
+        //save and write data to the documents directory
+        NSString *data = [NSString stringWithFormat:@"%@,%@", usernameField.text, pwdField.text];
+        [data writeToFile:fileName
+               atomically:NO
                 encoding:NSStringEncodingConversionAllowLossy
-                   error:nil];
-    
-    NSString *message = [NSString stringWithFormat:@"%@%@%@", first, second, third];
-    
-    UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"Created account"
-														message:message
-													   delegate:self
-											  cancelButtonTitle:@"No"
-											  otherButtonTitles:@"Yes", nil];
-	[alertView show];
-    
+                error:nil];
+        NSLog(@"New account made");
+        
+    } else {
+        message = [NSString stringWithFormat:@"Account already exists with username %@", usernameField.text];
+        UIAlertView* newerror = [[UIAlertView alloc] initWithTitle:@"Registration error"
+                                                           message:message
+                                                          delegate:self
+                                                 cancelButtonTitle: nil
+                                                 otherButtonTitles:@"Yes", nil];
+        
+        [newerror show];
+    }
 }
 
 // (Roger) Create a simple alert to show the username/password is wrong

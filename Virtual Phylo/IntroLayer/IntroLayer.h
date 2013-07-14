@@ -2,7 +2,7 @@
 //  IntroLayer.h
 //  Virtual Phylo
 //
-//  Created by Darkroot on 6/21/13.
+//  Created by Petr Krakora on 6/21/13.
 //  Copyright Group_12 2013. All rights reserved.
 //
 

@@ -139,6 +139,7 @@
 		54C09CC1178F7F38006FC5A8 /* login_box.png in Resources */ = {isa = PBXBuildFile; fileRef = 54C09CBD178F7F37006FC5A8 /* login_box.png */; };
 		54C09CC2178F7F38006FC5A8 /* user_register.png in Resources */ = {isa = PBXBuildFile; fileRef = 54C09CBE178F7F37006FC5A8 /* user_register.png */; };
 		54C09CC3178F7F38006FC5A8 /* user_signin.png in Resources */ = {isa = PBXBuildFile; fileRef = 54C09CBF178F7F38006FC5A8 /* user_signin.png */; };
+		54FCE5691792346D0095B434 /* DeckBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 54FCE5681792346D0095B434 /* DeckBuilder.m */; };
 		AC1048061788F0E900C2D9E7 /* DeckChoose.png in Resources */ = {isa = PBXBuildFile; fileRef = AC1048051788F0E900C2D9E7 /* DeckChoose.png */; };
 		AC1048091788F7FE00C2D9E7 /* GameGuestLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = AC1048081788F7FE00C2D9E7 /* GameGuestLogin.m */; };
 		AC10480C178901D100C2D9E7 /* GuestDeckChoose.m in Sources */ = {isa = PBXBuildFile; fileRef = AC10480B178901D100C2D9E7 /* GuestDeckChoose.m */; };
@@ -470,6 +471,8 @@
 		54C09CBD178F7F37006FC5A8 /* login_box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_box.png; sourceTree = "<group>"; };
 		54C09CBE178F7F37006FC5A8 /* user_register.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user_register.png; sourceTree = "<group>"; };
 		54C09CBF178F7F38006FC5A8 /* user_signin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user_signin.png; sourceTree = "<group>"; };
+		54FCE5671792346D0095B434 /* DeckBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeckBuilder.h; sourceTree = "<group>"; };
+		54FCE5681792346D0095B434 /* DeckBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeckBuilder.m; sourceTree = "<group>"; };
 		AC1048051788F0E900C2D9E7 /* DeckChoose.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DeckChoose.png; sourceTree = "<group>"; };
 		AC1048071788F7FE00C2D9E7 /* GameGuestLogin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameGuestLogin.h; sourceTree = "<group>"; };
 		AC1048081788F7FE00C2D9E7 /* GameGuestLogin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameGuestLogin.m; sourceTree = "<group>"; };
@@ -637,6 +640,7 @@
 				AC40D119177FF6A000E2C700 /* MainMenuLayer */,
 				4478E42A177BBFB30096B8FA /* CardSprite */,
 				4478E426177BBD480096B8FA /* Game */,
+				54FCE56617922E840095B434 /* DeckBuilder */,
 				4478E422177BB9360096B8FA /* Player */,
 				4478E41E177BAA210096B8FA /* Deck */,
 				E0B976981776384300B0BB9A /* AppDelegate */,
@@ -1029,6 +1033,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		54FCE56617922E840095B434 /* DeckBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				54FCE5671792346D0095B434 /* DeckBuilder.h */,
+				54FCE5681792346D0095B434 /* DeckBuilder.m */,
+			);
+			name = DeckBuilder;
+			sourceTree = "<group>";
+		};
 		AC1048031788E02800C2D9E7 /* ScrollLayer */ = {
 			isa = PBXGroup;
 			children = (
@@ -1397,6 +1410,7 @@
 				AC1048091788F7FE00C2D9E7 /* GameGuestLogin.m in Sources */,
 				AC10480C178901D100C2D9E7 /* GuestDeckChoose.m in Sources */,
 				AC10480F1789033000C2D9E7 /* GameTable.m in Sources */,
+				54FCE5691792346D0095B434 /* DeckBuilder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
