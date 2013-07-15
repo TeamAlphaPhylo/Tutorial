@@ -2,7 +2,7 @@
 //  PlayerLayerTop.h
 //  Virtual Phylo
 //
-//  Created by Suban K on 2013-07-13.
+//  Created by Brandon Wong on 2013-07-13.
 //  Copyright 2013 Group_12. All rights reserved.
 //
 

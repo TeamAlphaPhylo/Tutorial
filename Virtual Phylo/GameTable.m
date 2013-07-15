@@ -24,7 +24,6 @@
     [scene addChild:pTop z:1];
     
      
-     
 	// 'layer' is an autorelease object.
 	GameTable *layer = [GameTable node];
 	
