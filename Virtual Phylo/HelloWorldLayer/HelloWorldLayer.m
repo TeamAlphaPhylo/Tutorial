@@ -47,14 +47,14 @@
         
         // (Roger) Create a username field
         usernameField = [[UITextField alloc] initWithFrame:usernamePosition];
-        usernameField.text = @"Herbert Tsang";
+        usernameField.text = @"username";
         // (Roger) Regular text field with rounded corners
         usernameField.borderStyle = UITextBorderStyleRoundedRect;
         usernameField.delegate = self;
         
         // (Roger) Create a password field
         pwdField = [[UITextField alloc] initWithFrame:pwdPosition];
-        pwdField.text = @"sucks";
+        pwdField.text = @"pass";
         pwdField.borderStyle = UITextBorderStyleRoundedRect;
         pwdField.delegate = self;
         
@@ -115,7 +115,7 @@
 }
 
 #pragma mark Verification Function
-// (Roger) Very simple verification
+// (Petr) Simple verfictional and Registeration (offline)
 - (void) verifyIdentity {
     NSArray *paths = NSSearchPathForDirectoriesInDomains
     (NSDocumentDirectory, NSUserDomainMask, YES);
@@ -126,13 +126,18 @@
                                                     usedEncoding:nil
                                                            error:nil];
     NSArray *usernames = [content componentsSeparatedByString:@","];
-    bool *fail = false;
+    
+    bool *fail = true;
+    
+    NSLog(@"size is: %lu", (unsigned long)([usernames count] - 1));
     
     NSLog(@"Verifying Identity");
-    for (int i = 0; i < ((sizeof(usernames) - 2)); i +=2) {
+    for (int i = 0; i < (([usernames count] - 1)); i +=2) {
+        NSLog(@"Testing username: %@ and password: %@", usernames[i], usernames[i+1]);
         if([usernameField.text isEqualToString: usernames[i]] && [pwdField.text isEqualToString: usernames[i+1]]) {
             NSLog(@"Identity Verified");
             // TO-DO: Loading the user data into the main function
+            fail = false;
             [self jumpToMainMenu];
             break;
         } else {
@@ -156,7 +161,6 @@
                           documentsDirectory];
     
     NSString *contents = [[NSString alloc] initWithContentsOfFile:fileName encoding:nil error:nil];
-    
     //Testing, displays content of file
     //NSLog(contents);
     
@@ -166,7 +170,7 @@
     NSString *message;
     
     //Check if username exists already
-    for (int i = 0; i < ((sizeof(usernames) - 2)); i +=2) {
+    for (int i = 0; i <= (([usernames count] - 1)); i +=2) {
         if([usernameField.text isEqualToString: usernames[i]]) {
             pass = false;
             break;
@@ -190,7 +194,16 @@
         [newaccount show];
         
         //save and write data to the documents directory
-        NSString *data = [NSString stringWithFormat:@"%@,%@", usernameField.text, pwdField.text];
+        NSString *data;
+        if ([contents isEqualToString:@""])
+            data = [NSString stringWithFormat:@"%@,%@", usernameField.text, pwdField.text];
+        else
+            data = [NSString stringWithFormat:@"%@,%@,%@", contents, usernameField.text, pwdField.text];
+        
+        //Empty data
+        //data = @"";
+        
+        //Save data to fileName
         [data writeToFile:fileName
                atomically:NO
                 encoding:NSStringEncodingConversionAllowLossy
