@@ -138,7 +138,7 @@
 // TO-DO: Need implementation
 -(void)setUserInfo {
     NSLog(@"Setting up the user info bar below the top title");
-    CCLabelTTF *tempTitle = [CCLabelTTF labelWithString:@"To-Do: User Info Fetching and Display" fontName:@"Verdana" fontSize:46];
+    CCLabelTTF *tempTitle = [CCLabelTTF labelWithString:@"testUser1" fontName:@"Verdana" fontSize:46];
     tempTitle.position = ccp(512, 600);
     [self addChild:tempTitle];
     NSLog(@"bar done");

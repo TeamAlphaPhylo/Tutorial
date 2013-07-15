@@ -103,7 +103,7 @@
 
 #pragma mark Login Function
 
-// (Roger) Adding a method that allowing user to enter their username and password
+// (Roger) Adds appropriate fields to allow user to enter their username and password
 -(void) addLoginFields
 {
 	NSLog(@"Creating Login Field View...");
@@ -144,7 +144,7 @@
     NSLog(@"Finishing Verifying");
 }
 
-//Method writes a string to a text file
+// writes input string to a text file
 - (void)writeToTextFile {
     //get the documents directory:
     NSArray *paths = NSSearchPathForDirectoriesInDomains
@@ -179,7 +179,7 @@
     
 }
 
-// (Roger) Create a simple alert to show the username/password is wrong
+// (Roger) creates an alert to show the username/password is wrong
 -(void) showAlertView
 {
 	NSLog(@"Creating alert view ...");
@@ -193,6 +193,7 @@
 }
 
 #pragma mark Switching Scene
+
 // (Roger) Switch the layer if the username and password are valid
 - (void)jumpToMainMenu {
     NSLog(@"Dismissing/Releasing text fields");

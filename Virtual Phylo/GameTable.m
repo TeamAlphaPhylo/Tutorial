@@ -20,11 +20,11 @@
     
     // (Brandon) PlayerLayers act as layers or regions for the players
     PlayerLayerBot *pBot = [PlayerLayerBot node];
-    [scene addChild:pBot z:1];
+    [scene addChild:pBot z:1]; // z-index: 1, above the playing field
     pBot.touchEnabled = YES;
     
     PlayerLayerTop *pTop = [PlayerLayerTop node];
-    [scene addChild:pTop z:1];
+    [scene addChild:pTop z:1]; // z-index: 1
     
 	// 'layer' is an autorelease object.
 	GameTable *layer = [GameTable node];
@@ -130,7 +130,7 @@
     NSLog(@"Select Bottom %d Card", index);
 }
 
-// (Brandon) allow touch
+// (Brandon) keeps track of which sprite is being touched
 - (void)selectSpriteForTouch:(CGPoint)touchLocation {
     CCSprite * newSprite = nil;
     for (CCSprite *sprite in movableSprites) {

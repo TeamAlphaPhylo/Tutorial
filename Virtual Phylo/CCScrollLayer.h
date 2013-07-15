@@ -1,6 +1,3 @@
-// (Roger) Source: http://stackoverflow.com/questions/13327515/ccscrolllayer-or-other-way-to-make-gallery-view-vertically-scrollable
-// (Roger) This modified class is chosen due to the deprecated function in the official Cocos2D Git Repository
-
 //
 // CCScrollLayer.h
 //
@@ -12,6 +9,12 @@
 //
 // Copyright 2011 Stepan Generalov
 //
+
+
+// (Roger) Source: http://stackoverflow.com/questions/13327515/ccscrolllayer-or-other-way-to-make-gallery-view-vertically-scrollable
+// (Roger) This modified class is chosen due to the deprecated function in the official Cocos2D Git Repository
+
+
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
 // in the Software without restriction, including without limitation the rights

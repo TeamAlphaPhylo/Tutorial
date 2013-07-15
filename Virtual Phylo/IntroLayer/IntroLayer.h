@@ -10,12 +10,16 @@
 // When you import this file, you import all the cocos2d classes
 #import "cocos2d.h"
 
-// HelloWorldLayer
+// Intro Screen
+
+// (Brandon):
+// first layer that is seen by the user
+// introduces what the app is
 @interface IntroLayer : CCLayer
 {
 }
 
 // returns a CCScene that contains the HelloWorldLayer as the only child
 +(CCScene *) scene;
-
+-(void)onEnter;
 @end

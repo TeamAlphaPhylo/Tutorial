@@ -11,17 +11,42 @@
 // (Roger) import HelloWorldLayer for jumping back
 #import "HelloWorldLayer.h"
 #import "CCMenuAdvancedTest.h"
-// (Brandon) import the objects we've created
-//#import "CardSprite.h"
-// (Roger) I don't get it... since all the info stored in the CoreData class
-// (Brandon) I wrote that code before seeing your CoreData class. Your idea works better.
-
 #import "MasterCard.h"
+
+
+// Main Menu Screen
+// gives the option to switch between settings, login, and deck screens
+
 
 @interface MainMenuLayer : CCLayer {
     
 }
 
 +(CCScene *) scene;
+// adds title image with other necessary images
+-(void) setTitle;
+
+// adds left menu UI
+-(void) setLeftMenu;
+
+// adds Card of the Day
+-(void) setExampleCard;
+
+// adds User Info to Top of Page
+-(void)setUserInfo;
+
+// jump back to Login Screen
+-(void)jumpToLogin;
+
+// jump to Game Screen
+-(void)jumpToGame;
+
+// jump to Deck Screen
+-(void)jumpToDeck;
+
+// jump to Settings Screen
+-(void)jumpToSettings;
+
+
 
 @end

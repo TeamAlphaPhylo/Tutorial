@@ -82,10 +82,10 @@
     [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.5 scene:[MainMenuLayer scene]]];
 }
 
-- (void) setExampleCard {
-    // (Brandon) eventually, I wanna test out initalizing a CardSprite algorithmically
-    // CardSprite *exCard;
-}
+//- (void) setExampleCard {
+//    // (Brandon) eventually, I wanna test out initalizing a CardSprite algorithmically
+//    // CardSprite *exCard;
+//}
 
 // (Roger) some of this function components need to be extracted for fetching the deck info and meet encapsulation purpose
 - (void) deckChooser {

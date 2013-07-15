@@ -11,6 +11,7 @@
 
 // (Roger) Create an object which will be handled by the OS and it can be accessed
 // (Roger) during the running life of the application
+
 #import "MasterCard.h"
 
 @interface CoreData : NSObject {

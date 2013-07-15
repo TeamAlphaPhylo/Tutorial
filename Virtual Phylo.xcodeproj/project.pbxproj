@@ -1446,21 +1446,15 @@
 			name = Player;
 			sourceTree = "<group>";
 		};
-		4478E426177BBD480096B8FA /* Game */ = {
+		4478E426177BBD480096B8FA /* GameScene */ = {
 			isa = PBXGroup;
 			children = (
-				ACE6A23C1793981700886FF0 /* PlayerLayers */,
-				AC0BFA63179216690048AD89 /* ScrollViewLibrary */,
-				4478E4341784E0E50096B8FA /* Game.h */,
-				4478E4351784E0E50096B8FA /* Game.m */,
-				AC1048071788F7FE00C2D9E7 /* GameGuestLogin.h */,
-				AC1048081788F7FE00C2D9E7 /* GameGuestLogin.m */,
-				AC10480A178901D100C2D9E7 /* GuestDeckChoose.h */,
-				AC10480B178901D100C2D9E7 /* GuestDeckChoose.m */,
-				AC10480D1789032F00C2D9E7 /* GameTable.h */,
-				AC10480E1789033000C2D9E7 /* GameTable.m */,
+				44B31B3517946D5B00002191 /* Game */,
+				44B31B3617946D6000002191 /* GaneGuestLogin */,
+				44B31B3717946D6A00002191 /* GameGuestChoose */,
+				AC1048031788E02800C2D9E7 /* ScrollLayer */,
 			);
-			name = Game;
+			name = GameScene;
 			sourceTree = "<group>";
 		};
 		4478E42A177BBFB30096B8FA /* CardSprite */ = {
@@ -1479,6 +1473,84 @@
 				4478E43917877F8B0096B8FA /* MasterCard.m */,
 			);
 			name = MasterCard;
+			sourceTree = "<group>";
+		};
+		44B31B3217946BA400002191 /* Scenes and Layers */ = {
+			isa = PBXGroup;
+			children = (
+				E0B9769E1776384300B0BB9A /* IntroScene */,
+				E0B9769B1776384300B0BB9A /* HelloWorldScene */,
+				AC40D119177FF6A000E2C700 /* MainMenuScene */,
+				4478E426177BBD480096B8FA /* GameScene */,
+				44B31B3817946D7B00002191 /* GameTableScene */,
+			);
+			name = "Scenes and Layers";
+			sourceTree = "<group>";
+		};
+		44B31B3317946BCE00002191 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Objects;
+			sourceTree = "<group>";
+		};
+		44B31B3417946BE100002191 /* Unfinished */ = {
+			isa = PBXGroup;
+			children = (
+				4478E42A177BBFB30096B8FA /* CardSprite */,
+				4478E41E177BAA210096B8FA /* Deck */,
+				4478E422177BB9360096B8FA /* Player */,
+				4478E43717877F610096B8FA /* MasterCard */,
+				4478E40A177B71400096B8FA /* Card */,
+				ACCB11DA17867ABC000FF618 /* CoreData */,
+			);
+			name = Unfinished;
+			sourceTree = "<group>";
+		};
+		44B31B3517946D5B00002191 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				4478E4341784E0E50096B8FA /* Game.h */,
+				4478E4351784E0E50096B8FA /* Game.m */,
+			);
+			name = Game;
+			sourceTree = "<group>";
+		};
+		44B31B3617946D6000002191 /* GaneGuestLogin */ = {
+			isa = PBXGroup;
+			children = (
+				AC1048071788F7FE00C2D9E7 /* GameGuestLogin.h */,
+				AC1048081788F7FE00C2D9E7 /* GameGuestLogin.m */,
+			);
+			name = GaneGuestLogin;
+			sourceTree = "<group>";
+		};
+		44B31B3717946D6A00002191 /* GameGuestChoose */ = {
+			isa = PBXGroup;
+			children = (
+				AC10480A178901D100C2D9E7 /* GuestDeckChoose.h */,
+				AC10480B178901D100C2D9E7 /* GuestDeckChoose.m */,
+			);
+			name = GameGuestChoose;
+			sourceTree = "<group>";
+		};
+		44B31B3817946D7B00002191 /* GameTableScene */ = {
+			isa = PBXGroup;
+			children = (
+				44B31B3917946DDA00002191 /* GameTable */,
+				ACE6A23C1793981700886FF0 /* PlayerLayers */,
+				AC0BFA63179216690048AD89 /* ScrollViewLibrary */,
+			);
+			name = GameTableScene;
+			sourceTree = "<group>";
+		};
+		44B31B3917946DDA00002191 /* GameTable */ = {
+			isa = PBXGroup;
+			children = (
+				AC10480D1789032F00C2D9E7 /* GameTable.h */,
+				AC10480E1789033000C2D9E7 /* GameTable.m */,
+			);
+			name = GameTable;
 			sourceTree = "<group>";
 		};
 		545B701717751BAD00B550D8 = {
@@ -1518,18 +1590,10 @@
 		545B703717751BAD00B550D8 /* Virtual Phylo */ = {
 			isa = PBXGroup;
 			children = (
-				ACCB11DA17867ABC000FF618 /* CoreData */,
-				AC1048031788E02800C2D9E7 /* ScrollLayer */,
-				AC40D119177FF6A000E2C700 /* MainMenuLayer */,
-				4478E42A177BBFB30096B8FA /* CardSprite */,
-				4478E426177BBD480096B8FA /* Game */,
-				4478E422177BB9360096B8FA /* Player */,
-				4478E41E177BAA210096B8FA /* Deck */,
+				44B31B3217946BA400002191 /* Scenes and Layers */,
+				44B31B3317946BCE00002191 /* Objects */,
+				44B31B3417946BE100002191 /* Unfinished */,
 				E0B976981776384300B0BB9A /* AppDelegate */,
-				4478E40A177B71400096B8FA /* Card */,
-				E0B9769B1776384300B0BB9A /* HelloWorldLayer */,
-				E0B9769E1776384300B0BB9A /* IntroLayer */,
-				4478E43717877F610096B8FA /* MasterCard */,
 				545B703817751BAD00B550D8 /* Resources */,
 				545B705017751BAE00B550D8 /* libs */,
 				545B71C417751BB600B550D8 /* Supporting Files */,
@@ -1953,13 +2017,13 @@
 			name = Misc;
 			sourceTree = "<group>";
 		};
-		AC40D119177FF6A000E2C700 /* MainMenuLayer */ = {
+		AC40D119177FF6A000E2C700 /* MainMenuScene */ = {
 			isa = PBXGroup;
 			children = (
 				AC40D11A177FF8DE00E2C700 /* MainMenuLayer.h */,
 				AC40D11B177FF8DE00E2C700 /* MainMenuLayer.m */,
 			);
-			name = MainMenuLayer;
+			name = MainMenuScene;
 			sourceTree = "<group>";
 		};
 		AC89CCF91781013000267A60 /* LoginLayer */ = {
@@ -2469,21 +2533,23 @@
 			path = AppDelegate;
 			sourceTree = "<group>";
 		};
-		E0B9769B1776384300B0BB9A /* HelloWorldLayer */ = {
+		E0B9769B1776384300B0BB9A /* HelloWorldScene */ = {
 			isa = PBXGroup;
 			children = (
 				4478E412177B7C8A0096B8FA /* HelloWorldLayer.h */,
 				4478E413177B7C8A0096B8FA /* HelloWorldLayer.m */,
 			);
+			name = HelloWorldScene;
 			path = HelloWorldLayer;
 			sourceTree = "<group>";
 		};
-		E0B9769E1776384300B0BB9A /* IntroLayer */ = {
+		E0B9769E1776384300B0BB9A /* IntroScene */ = {
 			isa = PBXGroup;
 			children = (
 				4478E415177B7CA30096B8FA /* IntroLayer.h */,
 				4478E416177B7CA30096B8FA /* IntroLayer.m */,
 			);
+			name = IntroScene;
 			path = IntroLayer;
 			sourceTree = "<group>";
 		};
