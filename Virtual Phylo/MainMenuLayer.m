@@ -35,7 +35,7 @@
         NSLog(@"Main Menu Layer Initialization");
         
         // (Roger) Test on the MasterCard initialization
-        CoreData *core = [CoreData sharedCore];
+//        CoreData *core = [CoreData sharedCore];
         
         
         // add components created as children to this Layer (Notice there are added in a specific sequence)
@@ -161,6 +161,8 @@
     // TO-DO: To be implemented
 }
 - (void)jumpToSettings {
+    NSLog(@"Jump to Game scene");
+//    [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.5 scene:[CCMenuAdvancedTestLayer scene]]];
     // TO-DO: To be implemented
 }
 @end

@@ -10,9 +10,20 @@
 #import "cocos2d.h"
 #import "CCItemsScroller.h"
 #import "CCSelectableItem.h"
+#import "PlayerLayerBot.h"
+#import "PlayerLayerTop.h"
 
-@interface GameTable : CCLayer<CCItemsScrollerDelegate>
+@interface GameTable : CCLayer<CCItemsScrollerDelegate>{
+    PlayerLayerBot *pBot;
+    PlayerLayerTop *pTop;
+    CCSprite *background;
+    CCSprite *selSprite;
+    NSMutableArray *movableSprites;
+}
 
+@property (nonatomic, retain) PlayerLayerBot *pBot;
+@property (nonatomic, retain) PlayerLayerTop *pTop;
+//  <CCItemsScrollerDelegate>
 +(CCScene *) scene;
 
 @end

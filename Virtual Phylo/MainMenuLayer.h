@@ -10,6 +10,7 @@
 #import "cocos2d.h"
 // (Roger) import HelloWorldLayer for jumping back
 #import "HelloWorldLayer.h"
+#import "CCMenuAdvancedTest.h"
 // (Brandon) import the objects we've created
 //#import "CardSprite.h"
 // (Roger) I don't get it... since all the info stored in the CoreData class

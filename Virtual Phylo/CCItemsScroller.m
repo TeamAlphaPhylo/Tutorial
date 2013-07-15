@@ -132,6 +132,8 @@ enum
     CGPoint touchPoint = [touch locationInView:[touch view]];
     touchPoint = [[CCDirector sharedDirector] convertToGL:touchPoint];    
     
+    // (Roger) Modified Library to make it work only in the scroll part
+    if((touchPoint.x > _rect.origin.x) && (touchPoint.x < (_rect.origin.x + _rect.size.width)) && (touchPoint.y > _rect.origin.y) && (touchPoint.y < (_rect.origin.y + _rect.size.height))) {
     if ( _state != kCCScrollLayerStateSliding )
     {
         _state = kCCScrollLayerStateSliding;
@@ -175,6 +177,7 @@ enum
         }
         
         self.position = ccp(_offset.x, _offset.y);
+    }
     }
 }
 
@@ -229,7 +232,7 @@ enum
         [lastSelectedChild setIsSelected:NO];
     }
     
-    if([currentChild respondsToSelector:@selector(makeItemBigger)]){
+    if([currentChild respondsToSelector:@selector(setIsSelected:)]){
         [currentChild setIsSelected:YES];
         
     }
@@ -240,7 +243,4 @@ enum
         [_delegate itemsScroller:self didSelectItemIndex:index];
 }
 
-- (void)makeItemBigger {
-    [self setContentSize:CGSizeMake(200, 400)];
-}
 @end
