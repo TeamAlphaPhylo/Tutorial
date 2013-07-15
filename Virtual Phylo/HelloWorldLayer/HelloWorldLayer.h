@@ -26,16 +26,19 @@
 +(CCScene *) scene;
 
 // allows user to enter their username and password
--(void) addLoginFields;
+-(void)addLoginFields;
 
 // verifies if username matches password
 -(void)verifyIdentity;
 
-// writes input string to a text file
--(void)writeToTextFile;
+// checks and registers new account
+-(void)registerAccount;
+
+//// writes input string to a text file
+//-(void)writeToTextFile;
 
 // creates an alert to show the username/password is wrong
--(void) showAlertView;
+-(void)showAlertView;
 
 // jump to Main Menu Screen
 -(void)jumpToMainMenu;

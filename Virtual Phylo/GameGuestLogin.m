@@ -150,15 +150,12 @@
 
 // (Roger) Very simple verification
 - (void)verifyIdentity {
-    NSArray *paths = NSSearchPathForDirectoriesInDomains
-    (NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentsDirectory = [paths objectAtIndex:0];
-    NSString *fileName = [NSString stringWithFormat:@"%@/textfile.txt",
-                          documentsDirectory];
-    NSString *content = [[NSString alloc] initWithContentsOfFile:fileName
-                                                    usedEncoding:nil
-                                                           error:nil];
-    NSArray *usernames = [content componentsSeparatedByString:@","];
+//    NSArray *paths = NSSearchPathForDirectoriesInDomains
+//    (NSDocumentDirectory, NSUserDomainMask, YES);
+//    NSString *documentsDirectory = [paths objectAtIndex:0];
+//    NSString *fileName = [NSString stringWithFormat:@"%@/textfile.txt", documentsDirectory];
+//    NSString *content = [[NSString alloc] initWithContentsOfFile:fileName usedEncoding:nil error:nil];
+//    NSArray *usernames = [content componentsSeparatedByString:@","];
     bool *fail = false;
     
     NSLog(@"Verifying Identity");
