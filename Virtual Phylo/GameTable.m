@@ -119,10 +119,12 @@
     CGSize screenSize = [CCDirector sharedDirector].winSize;
 ////    menu.position = ccp(screenSize.width/2, 50);
     NSLog(@"Setting up Game Table Background Image");
-    CCSprite *tableBackground = [CCSprite spriteWithFile: @"waterdroplets.png"];
+    background = [CCSprite spriteWithFile: @"green.jpg"];
+    background.rotation = 90.0;
+    background.scale = 1.5;
     // (Roger) Set up the position as the center
-    tableBackground.position = ccp(screenSize.width / 2, screenSize.height / 2);
-    [self addChild:tableBackground z:-2];
+    background.position = ccp(screenSize.width / 2, screenSize.height / 2);
+    [self addChild:background z:-2];
 }
 
 // (Roger) Implement the interface requirements

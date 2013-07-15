@@ -46,17 +46,33 @@
 -(void) setBackground {
     
     CGSize winSize = [CCDirector sharedDirector].winSize;
+    
+    // add brown player region background
     CCSprite *lowerPlayerRegion = [CCSprite spriteWithFile: @"playerRegion.png"];
-    lowerPlayerRegion.position = ccp(winSize.width / 2, 77);
+    lowerPlayerRegion.position = ccp(winSize.width / 2, 74);
     [self addChild:lowerPlayerRegion];
     
+    // add hand box rect
     CCSprite *lowerPlayerHand = [CCSprite spriteWithFile:@"hand.png"];
     lowerPlayerHand.position = ccp(470, 70);
     [self addChild:lowerPlayerHand];
     
+    // add discard pile rect
     CCSprite *lowerDeckDiscardPile = [CCSprite spriteWithFile:@"deckdiscardPile.png"];
     lowerDeckDiscardPile.position = ccp(50, 70);
     [self addChild:lowerDeckDiscardPile];
+    
+    // add deck pile rect
+    CCSprite *lowerDeckDrawPile = [CCSprite spriteWithFile:@"deckdiscardPile.png"];
+    lowerDeckDrawPile.position = ccp(975, 70);
+    [self addChild:lowerDeckDrawPile];
+    
+    // add card_back image to deck pile rect
+    CCSprite *lowerDeckSprite = [CCSprite spriteWithFile:@"card_back.png"];
+    lowerDeckSprite.position = ccp(975, 70);
+    lowerDeckSprite.scale = .25;
+    [self addChild:lowerDeckSprite];
+
     
 }
 

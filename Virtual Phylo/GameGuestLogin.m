@@ -94,14 +94,14 @@
     
     // (Roger) Create a username field
     usernameField = [[UITextField alloc] initWithFrame:usernamePosition];
-    usernameField.text = @"Herbert Tsang";
+    usernameField.text = @"Username";
     // (Roger) Regular text field with rounded corners
     usernameField.borderStyle = UITextBorderStyleRoundedRect;
     usernameField.delegate = self;
     
     // (Roger) Create a password field
     pwdField = [[UITextField alloc] initWithFrame:pwdPosition];
-    pwdField.text = @"sucks";
+    pwdField.text = @"Password";
     pwdField.borderStyle = UITextBorderStyleRoundedRect;
     pwdField.delegate = self;
     
@@ -162,16 +162,18 @@
     bool *fail = false;
     
     NSLog(@"Verifying Identity");
-    for (int i = 0; i < ((sizeof(usernames) - 2)); i +=2) {
-        if([usernameField.text isEqualToString: usernames[i]] && [pwdField.text isEqualToString: usernames[i+1]]) {
-            NSLog(@"Identity Verified");
-            // TO-DO: Loading the user data into the main function
-            [self jumpToGuestDeckChoose];
-            break;
-        } else {
-            fail = true;
-        }
-    }
+    [self jumpToGuestDeckChoose];
+    // (Brandon) needs fixing for next version
+//    for (int i = 0; i < ((sizeof(usernames) - 2)); i +=2) {
+//        if([usernameField.text isEqualToString: usernames[i]] && [pwdField.text isEqualToString: usernames[i+1]]) {
+//            NSLog(@"Identity Verified");
+//            // TO-DO: Loading the user data into the main function
+//            [self jumpToGuestDeckChoose];
+//            break;
+//        } else {
+//            fail = true;
+//        }
+//    }
     if (fail)
         [self showAlertView];
     NSLog(@"Finishing Verifying");

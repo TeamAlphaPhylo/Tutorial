@@ -54,7 +54,7 @@
 // allows the interface to detect touch, and send coordinates where the touch is happening
 - (BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event;
 
-// send coordinates for translation of GameTable layer/playing field
+// send coordinates for translation of GameTable layer/playing field, watches for max/min translation
 - (CGPoint)boundLayerPos:(CGPoint)newPos;
 
 // translate the playing field

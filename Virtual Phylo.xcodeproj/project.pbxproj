@@ -1452,7 +1452,6 @@
 				44B31B3517946D5B00002191 /* Game */,
 				44B31B3617946D6000002191 /* GaneGuestLogin */,
 				44B31B3717946D6A00002191 /* GameGuestChoose */,
-				AC1048031788E02800C2D9E7 /* ScrollLayer */,
 			);
 			name = GameScene;
 			sourceTree = "<group>";
@@ -1487,11 +1486,13 @@
 			name = "Scenes and Layers";
 			sourceTree = "<group>";
 		};
-		44B31B3317946BCE00002191 /* Objects */ = {
+		44B31B3317946BCE00002191 /* Altered Cocos2d */ = {
 			isa = PBXGroup;
 			children = (
+				AC1048031788E02800C2D9E7 /* ScrollLayer */,
+				AC0BFA63179216690048AD89 /* ScrollViewLibrary */,
 			);
-			name = Objects;
+			name = "Altered Cocos2d";
 			sourceTree = "<group>";
 		};
 		44B31B3417946BE100002191 /* Unfinished */ = {
@@ -1539,7 +1540,6 @@
 			children = (
 				44B31B3917946DDA00002191 /* GameTable */,
 				ACE6A23C1793981700886FF0 /* PlayerLayers */,
-				AC0BFA63179216690048AD89 /* ScrollViewLibrary */,
 			);
 			name = GameTableScene;
 			sourceTree = "<group>";
@@ -1591,7 +1591,7 @@
 			isa = PBXGroup;
 			children = (
 				44B31B3217946BA400002191 /* Scenes and Layers */,
-				44B31B3317946BCE00002191 /* Objects */,
+				44B31B3317946BCE00002191 /* Altered Cocos2d */,
 				44B31B3417946BE100002191 /* Unfinished */,
 				E0B976981776384300B0BB9A /* AppDelegate */,
 				545B703817751BAD00B550D8 /* Resources */,

@@ -26,7 +26,7 @@
 -(void) addCardScroller;
 
 // hand hiding functionality, to hide hand from opposing player
--(void)hideImagePlayerBot;
+-(void)hideImagePlayerTop;
 
 // itemScroller for hand
 -(void)itemsScroller:(CCItemsScroller *)sender didSelectItemIndex:(int)index;
