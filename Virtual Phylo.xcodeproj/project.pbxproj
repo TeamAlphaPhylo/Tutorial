@@ -145,7 +145,6 @@
 		AC1048091788F7FE00C2D9E7 /* GameGuestLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = AC1048081788F7FE00C2D9E7 /* GameGuestLogin.m */; };
 		AC10480C178901D100C2D9E7 /* GuestDeckChoose.m in Sources */ = {isa = PBXBuildFile; fileRef = AC10480B178901D100C2D9E7 /* GuestDeckChoose.m */; };
 		AC10480F1789033000C2D9E7 /* GameTable.m in Sources */ = {isa = PBXBuildFile; fileRef = AC10480E1789033000C2D9E7 /* GameTable.m */; };
-		AC1F3D1C17890E0200B4B2C6 /* waterdroplets.png in Resources */ = {isa = PBXBuildFile; fileRef = AC1F3D1B17890E0200B4B2C6 /* waterdroplets.png */; };
 		AC40D112177FEB0F00E2C700 /* LoginBox.png in Resources */ = {isa = PBXBuildFile; fileRef = AC40D111177FEB0F00E2C700 /* LoginBox.png */; };
 		AC40D115177FEF9200E2C700 /* Others.png in Resources */ = {isa = PBXBuildFile; fileRef = AC40D113177FEF9200E2C700 /* Others.png */; };
 		AC40D118177FF57800E2C700 /* login.png in Resources */ = {isa = PBXBuildFile; fileRef = AC40D117177FF57800E2C700 /* login.png */; };
@@ -608,7 +607,6 @@
 		E0B976B3177638DB00B0BB9A /* hand.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B976AA177638DB00B0BB9A /* hand.png */; };
 		E0B976B4177638DB00B0BB9A /* handBarrier.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B976AB177638DB00B0BB9A /* handBarrier.png */; };
 		E0B976B5177638DB00B0BB9A /* playerRegion.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B976AC177638DB00B0BB9A /* playerRegion.png */; };
-		E0B976B6177638DB00B0BB9A /* waterdroplets.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E0B976AE177638DB00B0BB9A /* waterdroplets.jpg */; };
 		E0B976BB17763DEE00B0BB9A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B976B717763DEE00B0BB9A /* Default-568h@2x.png */; };
 		E0B976BD17763DEE00B0BB9A /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B976B917763DEE00B0BB9A /* Default.png */; };
 		E0B976BE17763DEE00B0BB9A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B976BA17763DEE00B0BB9A /* Default@2x.png */; };
@@ -921,7 +919,6 @@
 		AC10480B178901D100C2D9E7 /* GuestDeckChoose.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuestDeckChoose.m; sourceTree = "<group>"; };
 		AC10480D1789032F00C2D9E7 /* GameTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameTable.h; sourceTree = "<group>"; };
 		AC10480E1789033000C2D9E7 /* GameTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameTable.m; sourceTree = "<group>"; };
-		AC1F3D1B17890E0200B4B2C6 /* waterdroplets.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = waterdroplets.png; sourceTree = "<group>"; };
 		AC40D111177FEB0F00E2C700 /* LoginBox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LoginBox.png; sourceTree = "<group>"; };
 		AC40D113177FEF9200E2C700 /* Others.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Others.png; sourceTree = "<group>"; };
 		AC40D117177FF57800E2C700 /* login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login.png; sourceTree = "<group>"; };
@@ -1390,7 +1387,6 @@
 		E0B976AA177638DB00B0BB9A /* hand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hand.png; sourceTree = "<group>"; };
 		E0B976AB177638DB00B0BB9A /* handBarrier.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = handBarrier.png; sourceTree = "<group>"; };
 		E0B976AC177638DB00B0BB9A /* playerRegion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playerRegion.png; sourceTree = "<group>"; };
-		E0B976AE177638DB00B0BB9A /* waterdroplets.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = waterdroplets.jpg; sourceTree = "<group>"; };
 		E0B976B717763DEE00B0BB9A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "Resources/Default-568h@2x.png"; sourceTree = "<group>"; };
 		E0B976B917763DEE00B0BB9A /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = Resources/Default.png; sourceTree = "<group>"; };
 		E0B976BA17763DEE00B0BB9A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "Resources/Default@2x.png"; sourceTree = "<group>"; };
@@ -2584,8 +2580,6 @@
 		E0B976AD177638DB00B0BB9A /* PlayingField */ = {
 			isa = PBXGroup;
 			children = (
-				AC1F3D1B17890E0200B4B2C6 /* waterdroplets.png */,
-				E0B976AE177638DB00B0BB9A /* waterdroplets.jpg */,
 			);
 			path = PlayingField;
 			sourceTree = "<group>";
@@ -2652,7 +2646,6 @@
 				E0B976B3177638DB00B0BB9A /* hand.png in Resources */,
 				E0B976B4177638DB00B0BB9A /* handBarrier.png in Resources */,
 				E0B976B5177638DB00B0BB9A /* playerRegion.png in Resources */,
-				E0B976B6177638DB00B0BB9A /* waterdroplets.jpg in Resources */,
 				E0B976BB17763DEE00B0BB9A /* Default-568h@2x.png in Resources */,
 				E0B976BD17763DEE00B0BB9A /* Default.png in Resources */,
 				E0B976BE17763DEE00B0BB9A /* Default@2x.png in Resources */,
@@ -2668,7 +2661,6 @@
 				AC89CD0817810D3B00267A60 /* cardBackground.png in Resources */,
 				ACCB11D817866B7A000FF618 /* mainMenu.png in Resources */,
 				AC1048061788F0E900C2D9E7 /* DeckChoose.png in Resources */,
-				AC1F3D1C17890E0200B4B2C6 /* waterdroplets.png in Resources */,
 				54C09CC0178F7F38006FC5A8 /* background_main.png in Resources */,
 				54C09CC1178F7F38006FC5A8 /* login_box.png in Resources */,
 				54C09CC2178F7F38006FC5A8 /* user_register.png in Resources */,

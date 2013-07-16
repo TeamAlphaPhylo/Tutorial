@@ -57,7 +57,7 @@
     
     
     // (Roger)create and initialize a Label
-    CCLabelTTF *label = [CCLabelTTF labelWithString:@"Game: Host Player Deck Choosing" fontName:@"Verdana" fontSize:36];
+    CCLabelTTF *label = [CCLabelTTF labelWithString:@"Game: Guest Player Deck Choosing" fontName:@"Verdana" fontSize:36];
     // ask director for the window size
     CGSize size = [[CCDirector sharedDirector] winSize];
     // (Roger)position the label on the top of the screen

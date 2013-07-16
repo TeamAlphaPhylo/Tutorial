@@ -11,8 +11,6 @@
 #import "cocos2d.h"
 
 // Intro Screen
-
-// (Brandon):
 // first layer that is seen by the user
 // introduces what the app is
 @interface IntroLayer : CCLayer

@@ -12,8 +12,6 @@
 #import "MainMenuLayer.h"
 
 // Login Screen
-
-// (Brandon): 
 // first screen that user interacts with
 // registers accounts, saves accounts, allows login with registered accounts
 

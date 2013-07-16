@@ -121,7 +121,7 @@
     
     // (Roger) Randomly pick up a card as today's card
     // (Roger) Set the max card count as 50, otherwise it will cause exceptions due to the lack of sime cards
-    int cardIndex = 0;
+    int cardIndex = arc4random() % 50;
     NSLog(@"Choose %d.png as Today's card", cardIndex);
     NSString *cardPath = [NSString stringWithFormat:@"%d%@", cardIndex, @".png"];
     
