@@ -116,7 +116,7 @@
 {
     if (!show_hide) {
         NSLog(@"Top Player Hide Hand ");
-        [self runAction:[CCMoveTo actionWithDuration:0.5 position:ccp(0,110)]];
+        [self runAction:[CCMoveTo actionWithDuration:0.5 position:ccp(0,117)]];
         show_hide = true;
     } else {
         NSLog(@"Top Player Show Hand ");

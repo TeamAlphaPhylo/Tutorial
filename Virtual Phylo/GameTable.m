@@ -80,40 +80,6 @@
 	[super dealloc];
 }
 
-//- (void) addCardScroller {
-//    NSLog(@"Trying to add CCScroll View.");
-//    
-//    // (Roger) First set up a window size holder
-//    CGSize winSize = [[CCDirector sharedDirector] winSize];
-//    // (Roger) Setting up an NSMutableArray (To be corporated with CoreData function)
-//    // (Roger) Storing the Sprite instances
-//    NSMutableArray *cardArray = [NSMutableArray array];
-//    
-//    // Horizontal scroller
-//    for (int i = 0; i < 50; i++) {
-//        CCSelectableItem *page = [[CCSelectableItem alloc] initWithNormalColor:ccc4(0,0,0,0) andSelectectedColor:ccc4(190, 150, 150, 255) andWidth:77 andHeight:100];
-//        
-//        NSString *card_imageName = [NSString stringWithFormat:@"%d%@", i, @".png"];
-//        //        NSString *small_imageName = [NSString stringWithFormat:@"_%d%@", i, @".png"];
-//        
-//        
-//        CCMenuItemImage *image = [CCMenuItemImage itemWithNormalImage:card_imageName selectedImage:card_imageName];
-//        
-//        image.position = ccp(page.contentSize.width/2, page.contentSize.height/2);
-//        // The card dimensions are 264 * 407 (Width * Height)
-//        [image setScale: (float) 100 / 407];
-//        
-//        [page addChild:image];
-//        
-//        [cardArray addObject:page];
-//    }
-//    
-//    CCItemsScroller *lowerHandScoller = [CCItemsScroller itemsScrollerWithItems:cardArray andOrientation:CCItemsScrollerHorizontal andRect:CGRectMake(106, 17, winSize.width - 300, 150)];
-//    lowerHandScoller.delegate = self;
-//    [self addChild:lowerHandScoller z:100];
-//}
-
-
 // (Roger) Set up the background
 - (void) setBackground {
     CGSize screenSize = [CCDirector sharedDirector].winSize;
@@ -138,21 +104,23 @@
     for (CCSprite *sprite in movableSprites) {
         if (CGRectContainsPoint(sprite.boundingBox, touchLocation)) {
             newSprite = sprite;
+            [newSprite runAction:[CCEaseInOut actionWithAction:[CCScaleTo actionWithDuration:1 scaleX:1.0 scaleY:1.0] rate:8.0]];
             break;
         }
     }
     if (newSprite != selSprite) {
         [selSprite stopAllActions];
+//        id scaleUpAction =  [CCEaseInOut actionWithAction:[CCScaleTo actionWithDuration:1 scaleX:1.0 scaleY:1.0] rate:2.0];
+//        id scaleDownAction = [CCEaseInOut actionWithAction:[CCScaleTo actionWithDuration:0.5 scaleX:0.8 scaleY:0.8] rate:2.0];
         
-        /*
          // make selected sprite wiggle when touched
-         [selSprite runAction:[CCRotateTo actionWithDuration:0.1 angle:0]];
-         CCRotateTo * rotLeft = [CCRotateBy actionWithDuration:0.1 angle:-4.0];
-         CCRotateTo * rotCenter = [CCRotateBy actionWithDuration:0.1 angle:0.0];
-         CCRotateTo * rotRight = [CCRotateBy actionWithDuration:0.1 angle:4.0];
-         CCSequence * rotSeq = [CCSequence actions:rotLeft, rotCenter, rotRight, rotCenter, nil];
-         [newSprite runAction:[CCRepeatForever actionWithAction:rotSeq]];
-         */
+         [selSprite runAction:[CCEaseInOut actionWithAction:[CCScaleTo actionWithDuration:1 scaleX:0.4 scaleY:0.4] rate:8.0]];
+//         CCRotateTo * rotLeft = [CCRotateBy actionWithDuration:0.1 angle:-4.0];
+//         CCRotateTo * rotCenter = [CCRotateBy actionWithDuration:0.1 angle:0.0];
+//         CCRotateTo * rotRight = [CCRotateBy actionWithDuration:0.1 angle:4.0];
+//         CCSequence * rotSeq = [CCSequence actions:rotLeft, rotCenter, rotRight, rotCenter, nil];
+//         [newSprite runAction:[CCRepeatForever actionWithAction:rotSeq]];
+        
         selSprite = newSprite;
     }
 }
@@ -167,7 +135,8 @@
     CGSize winSize = [CCDirector sharedDirector].winSize;
     CGPoint retval = newPos;
     retval.y = MIN(retval.y, background.contentSize.width-winSize.width+300);
-    retval.y = MAX(retval.y, -background.contentSize.width+winSize.width-300);
+    // (Roger) Modified to match the bound
+    retval.y = MAX(retval.y, -background.contentSize.width+winSize.width-280);
     retval.x = MIN(retval.x, background.contentSize.height-winSize.height-100);
     retval.x = MAX(retval.x, -background.contentSize.height+winSize.height+100);
     return retval;
