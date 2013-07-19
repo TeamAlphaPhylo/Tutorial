@@ -24,6 +24,8 @@ enum
 
 @synthesize delegate = _delegate;
 @synthesize orientation = _orientation;
+//@synthesize tagArray;
+//@synthesize doubleTapRecognizer = _doubleTapRecognizer;
 
 +(id)itemsScrollerWithItems:(NSArray *)items andOrientation:(CCItemsScrollerOrientations)orientation andRect:(CGRect)rect{
     return [[self alloc] initWithItems:items andOrientation:(CCItemsScrollerOrientations)orientation andRect:rect];
@@ -35,7 +37,8 @@ enum
     if(self){
         _rect = rect;
         _orientation = orientation;
-        
+        // (Roger) Initialization of the array
+//        tagArray = [[NSMutableArray alloc] init];
         self.TouchEnabled = YES;
         [self updateItems:items];
     }
@@ -44,6 +47,8 @@ enum
 }
 
 -(void)updateItems:(NSArray*)items{
+//    [tagArray removeAllObjects];
+    [self removeAllChildrenWithCleanup:YES];
     int i = 0;
     CGFloat x = 0;
     CGFloat y = 0;
@@ -76,7 +81,8 @@ enum
         if(_orientation == CCItemsScrollerVertical){
             y = (i * item.contentSize.height);
         }
-        
+        NSLog(@"Update function: current index adding = %d", item.tag);
+//        [tagArray addObject: item.tag];
         item.tag = i;
         item.position = ccp(x, y);
         
@@ -134,8 +140,8 @@ enum
     
     // (Roger) Modified Library to make it work only in the scroll part
     if((touchPoint.x > _rect.origin.x) && (touchPoint.x < (_rect.origin.x + _rect.size.width)) && (touchPoint.y > _rect.origin.y) && (touchPoint.y < (_rect.origin.y + _rect.size.height))) {
-    if ( _state != kCCScrollLayerStateSliding )
-    {
+        if ( _state != kCCScrollLayerStateSliding )
+        {
         _state = kCCScrollLayerStateSliding;
         
         _startSwipe = CGPointMake(_offset.x - touchPoint.x, _offset.y - touchPoint.y);
@@ -241,6 +247,59 @@ enum
     
     if([_delegate respondsToSelector:@selector(itemsScroller:didSelectItemIndex:)])
         [_delegate itemsScroller:self didSelectItemIndex:index];
+}
+
+// (Roger) This function is going to identify the double tap action and remove the item of the tapped item and return the image tag (a.k.a. the card tag of the selected item)
+// (Roger) Input: The tap position; Output: the card index of the selected item.
+-(int)doubleTap:(CGPoint)tapPosition {
+    int selectedItem = -1;
+    tapPosition = [[CCDirector sharedDirector] convertToGL:tapPosition];
+    
+    CGFloat touchX = 0;
+    CGFloat touchY = 0;
+    
+    if(_orientation == CCItemsScrollerHorizontal){
+        touchY = tapPosition.y;
+        touchX = self.position.x*-1 + tapPosition.x;
+    }
+    
+    if(_orientation == CCItemsScrollerVertical){
+        touchX = tapPosition.x;
+        touchY = self.position.y - tapPosition.y;
+        
+        if(touchY < 0)
+            touchY *= -1;
+    }
+    
+    for (CCLayer *item in self.children) {
+        BOOL isX = NO;
+        BOOL isY = NO;
+        
+        if(_orientation == CCItemsScrollerHorizontal){
+            isX = (touchX >= item.position.x && touchX <= item.position.x + item.contentSize.width);
+            isY = (touchY >= self.position.y && touchY <= self.position.y + item.contentSize.height);
+        }
+        
+        if(_orientation == CCItemsScrollerVertical){
+            isX = (touchX >= item.position.x && touchX <= item.contentSize.width);
+            isY = (touchY >= item.position.y && touchY <= item.position.y + item.contentSize.height);
+        }
+        
+        if(isX && isY){
+//            [self setSelectedItemIndex:item.tag];
+            selectedItem = item.tag;
+            break;
+        }
+    }
+    NSLog(@"Index: %d item is selected", selectedItem);
+    return selectedItem;
+//    if(selectedItem != -1) {
+////        return [tagArray objectAtIndex:selectedItem];
+//        
+//    } else {
+//        // (Roger) Return -1 as the error message
+//        return selectedItem;
+//    }
 }
 
 @end

@@ -590,6 +590,9 @@
 		AC89CD0817810D3B00267A60 /* cardBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = AC89CD0717810D3B00267A60 /* cardBackground.png */; };
 		AC8ADD2F1788DF8E007758FD /* CCScrollLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = AC8ADD2E1788DF8E007758FD /* CCScrollLayer.m */; };
 		ACA0D36F177E52A60086E7A1 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = ACA0D36E177E52A60086E7A1 /* Default-Landscape~ipad.png */; };
+		ACBDA8B1179745570048B605 /* arrowSwipeCardExchange.png in Resources */ = {isa = PBXBuildFile; fileRef = ACBDA8B0179745560048B605 /* arrowSwipeCardExchange.png */; };
+		ACBDA8B417974F480048B605 /* tempNo.png in Resources */ = {isa = PBXBuildFile; fileRef = ACBDA8B217974F470048B605 /* tempNo.png */; };
+		ACBDA8B517974F480048B605 /* tempYes.png in Resources */ = {isa = PBXBuildFile; fileRef = ACBDA8B317974F470048B605 /* tempYes.png */; };
 		ACCB11D817866B7A000FF618 /* mainMenu.png in Resources */ = {isa = PBXBuildFile; fileRef = ACCB11D717866B7A000FF618 /* mainMenu.png */; };
 		ACCB11DD17867B61000FF618 /* CoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = ACCB11DC17867B61000FF618 /* CoreData.m */; };
 		ACE6A23F1793983F00886FF0 /* PlayerLayerBot.m in Sources */ = {isa = PBXBuildFile; fileRef = ACE6A23E1793983F00886FF0 /* PlayerLayerBot.m */; };
@@ -919,6 +922,7 @@
 		AC10480B178901D100C2D9E7 /* GuestDeckChoose.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuestDeckChoose.m; sourceTree = "<group>"; };
 		AC10480D1789032F00C2D9E7 /* GameTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameTable.h; sourceTree = "<group>"; };
 		AC10480E1789033000C2D9E7 /* GameTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameTable.m; sourceTree = "<group>"; };
+		AC1782F117987C8900EA74E1 /* ScrollerProtocols.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollerProtocols.h; sourceTree = "<group>"; };
 		AC40D111177FEB0F00E2C700 /* LoginBox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LoginBox.png; sourceTree = "<group>"; };
 		AC40D113177FEF9200E2C700 /* Others.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Others.png; sourceTree = "<group>"; };
 		AC40D117177FF57800E2C700 /* login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login.png; sourceTree = "<group>"; };
@@ -1366,6 +1370,9 @@
 		AC8ADD2D1788DF8E007758FD /* CCScrollLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCScrollLayer.h; sourceTree = "<group>"; };
 		AC8ADD2E1788DF8E007758FD /* CCScrollLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCScrollLayer.m; sourceTree = "<group>"; };
 		ACA0D36E177E52A60086E7A1 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
+		ACBDA8B0179745560048B605 /* arrowSwipeCardExchange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrowSwipeCardExchange.png; sourceTree = "<group>"; };
+		ACBDA8B217974F470048B605 /* tempNo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tempNo.png; sourceTree = "<group>"; };
+		ACBDA8B317974F470048B605 /* tempYes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tempYes.png; sourceTree = "<group>"; };
 		ACCB11D717866B7A000FF618 /* mainMenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mainMenu.png; sourceTree = "<group>"; };
 		ACCB11DB17867B61000FF618 /* CoreData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreData.h; sourceTree = "<group>"; };
 		ACCB11DC17867B61000FF618 /* CoreData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreData.m; sourceTree = "<group>"; };
@@ -1982,6 +1989,7 @@
 				AC0BFA6B1792428B0048AD89 /* CCSelectableItem.m */,
 				AC0BFA6717923F570048AD89 /* CCItemsScroller.h */,
 				AC0BFA6817923F570048AD89 /* CCItemsScroller.m */,
+				AC1782F117987C8900EA74E1 /* ScrollerProtocols.h */,
 			);
 			name = ScrollViewLibrary;
 			sourceTree = "<group>";
@@ -2554,7 +2562,6 @@
 			children = (
 				AC1048041788F0D100C2D9E7 /* Game: Deck */,
 				E0B976A5177638DB00B0BB9A /* PlayerRegion */,
-				E0B976AD177638DB00B0BB9A /* PlayingField */,
 			);
 			name = Game;
 			path = Resources/Game;
@@ -2563,6 +2570,9 @@
 		E0B976A5177638DB00B0BB9A /* PlayerRegion */ = {
 			isa = PBXGroup;
 			children = (
+				ACBDA8B217974F470048B605 /* tempNo.png */,
+				ACBDA8B317974F470048B605 /* tempYes.png */,
+				ACBDA8B0179745560048B605 /* arrowSwipeCardExchange.png */,
 				ACE6A2451793E4BA00886FF0 /* arrowSwipeRev.png */,
 				ACE6A2461793E4BA00886FF0 /* unHideRev.png */,
 				ACE6A2431793DD5500886FF0 /* unHide.png */,
@@ -2575,13 +2585,6 @@
 				E0B976AC177638DB00B0BB9A /* playerRegion.png */,
 			);
 			path = PlayerRegion;
-			sourceTree = "<group>";
-		};
-		E0B976AD177638DB00B0BB9A /* PlayingField */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = PlayingField;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -3101,6 +3104,9 @@
 				ACE6A2441793DD5600886FF0 /* unHide.png in Resources */,
 				ACE6A2471793E4BB00886FF0 /* arrowSwipeRev.png in Resources */,
 				ACE6A2481793E4BB00886FF0 /* unHideRev.png in Resources */,
+				ACBDA8B1179745570048B605 /* arrowSwipeCardExchange.png in Resources */,
+				ACBDA8B417974F480048B605 /* tempNo.png in Resources */,
+				ACBDA8B517974F480048B605 /* tempYes.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

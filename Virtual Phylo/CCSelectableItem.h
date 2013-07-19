@@ -7,6 +7,8 @@
 
 #import "cocos2d.h"
 #import "CCItemsScroller.h"
+@class CCItemsScroller;
+#import "ScrollerProtocols.h"
 
 @interface CCSelectableItem : CCLayerColor<CCSelectableItemDelegate>
 

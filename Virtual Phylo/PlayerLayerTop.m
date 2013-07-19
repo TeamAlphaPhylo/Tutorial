@@ -10,7 +10,7 @@
 
 
 @implementation PlayerLayerTop
-@synthesize show_hide;
+@synthesize hidden;
 @synthesize selected_card_index;
 
 
@@ -30,7 +30,7 @@
         // (Roger) Set Padding
         [HidePlayerTop alignItemsVerticallyWithPadding:30];
         // (Roger) Initialize the properties
-        show_hide = false;
+        hidden = false;
         selected_card_index = 0;
         // (Roger) Add them into the layer
         // (Roger) The library has been slightly modified to meet the requirement
@@ -41,6 +41,16 @@
         [self setBackground];
     }
     return self;
+}
+
+- (void) dealloc
+{
+	// in case you have something to dealloc, do it in this method
+	// in this particular example nothing needs to be released.
+	// cocos2d will automatically release all the children (Label)
+	
+	// don't forget to call "super dealloc"
+	[super dealloc];
 }
 
 -(void) setBackground {
@@ -85,7 +95,7 @@
     NSMutableArray *cardArray = [NSMutableArray array];
     
     // Horizontal scroller
-    for (int i = 0; i < 50; i++) {
+    for (int i = 1; i < 50; i++) {
         CCSelectableItem *pageTop = [[CCSelectableItem alloc] initWithNormalColor:ccc4(0,0,0,0) andSelectectedColor:ccc4(190, 150, 150, 255) andWidth:77 andHeight:100];
         
         NSString *card_imageName = [NSString stringWithFormat:@"%d%@", i, @".png"];
@@ -114,14 +124,14 @@
 
 - (void)hideImagePlayerTop
 {
-    if (!show_hide) {
+    if (!hidden) {
         NSLog(@"Top Player Hide Hand ");
         [self runAction:[CCMoveTo actionWithDuration:0.5 position:ccp(0,117)]];
-        show_hide = true;
+        hidden = true;
     } else {
         NSLog(@"Top Player Show Hand ");
         [self runAction:[CCMoveTo actionWithDuration:0.5 position:ccp(0,0)]];
-        show_hide = false;
+        hidden = false;
     }
 }
 

@@ -22,6 +22,9 @@
 @property (nonatomic, retain) NSString *tempTest;
 // (Roger) and a masterCardArray
 @property (nonatomic, retain) MasterCard *coreData_MasterCardArray;
+// (Roger) Declare a cards on the table array to keep the record of cards
+@property (nonatomic, retain) NSMutableArray *cardsOnTable;
+
 
 // (Roger) Declare a "quasi-constructor" for accessing the object 
 + (id)sharedCore;

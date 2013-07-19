@@ -7,12 +7,16 @@
 //
 
 #import "PlayerLayerBot.h"
+#define DEFAULT_DISCARD_INDEX -1
+#define BOTTOM_PLAYER_INDEX_TAG_BASE 0
 
 
 @implementation PlayerLayerBot
-@synthesize show_hide;
+@synthesize hidden;
 @synthesize selected_card_index;
-
+@synthesize discard_card_index;
+@synthesize cardsOnHand;
+@synthesize lowerHandScroller;
 
 -(id) init
 {
@@ -30,8 +34,11 @@
         // (Roger) Set Padding
         [HidePlayerBot alignItemsVerticallyWithPadding:30];
         // (Roger) Initialize the properties
-        show_hide = false;
+        hidden = false;
         selected_card_index = 0;
+        discard_card_index = DEFAULT_DISCARD_INDEX;
+        cardsOnHand = [[NSMutableArray alloc] init];
+        lowerHandScroller = nil;
         // (Roger) Add them into the layer
         // (Roger) The library has been slightly modified to meet the requirement
         [self addChild:HidePlayerBot z:2];
@@ -41,6 +48,16 @@
         [self setBackground];
     }
     return self;
+}
+
+- (void) dealloc
+{
+	// in case you have something to dealloc, do it in this method
+	// in this particular example nothing needs to be released.
+	// cocos2d will automatically release all the children (Label)
+	
+	// don't forget to call "super dealloc"
+	[super dealloc];
 }
 
 -(void) setBackground {
@@ -83,40 +100,43 @@
     CGSize winSize = [[CCDirector sharedDirector] winSize];
     // (Roger) Setting up an NSMutableArray (To be corporated with CoreData function)
     // (Roger) Storing the Sprite instances
-    NSMutableArray *cardArray = [NSMutableArray array];
+//    NSMutableArray *cardArray = [NSMutableArray array];
     
     // Horizontal scroller
-    for (int i = 0; i < 50; i++) {
+    // (Roger) Notice the card index with 0 has been eliminated for debugging purpose (nil)
+    for (int i = 0; i < 9; i++) {
         CCSelectableItem *page = [[CCSelectableItem alloc] initWithNormalColor:ccc4(0,0,0,0) andSelectectedColor:ccc4(190, 150, 150, 255) andWidth:77 andHeight:100];
         
         NSString *card_imageName = [NSString stringWithFormat:@"%d%@", i, @".png"];        
-        
-        CCMenuItemImage *image = [CCMenuItemImage itemWithNormalImage:card_imageName selectedImage:card_imageName target:self selector:@selector(testAddingCard)];
-        
+
+        CCMenuItemImage *image = [CCMenuItemImage itemWithNormalImage:card_imageName selectedImage:card_imageName target:self selector:nil];
+
         image.position = ccp(page.contentSize.width/2, page.contentSize.height/2);
         // The card dimensions are 264 * 407 (Width * Height)
         [image setScale: (float) 100 / 407];
-        
+        // (Roger) Set up the image tag (Notice the tag here only applies to the bottom player tag)
+        image.tag = i;
+        page.tag = image.tag;
         [page addChild:image];
         
-        [cardArray addObject:page];
+        [cardsOnHand addObject:page];
     }
     
-    CCItemsScroller *lowerHandScoller = [CCItemsScroller itemsScrollerWithItems:cardArray andOrientation:CCItemsScrollerHorizontal andRect:CGRectMake(106, 20, winSize.width - 300, 155)];
-    //    lowerHandScoller.delegate = self;
-    [self addChild:lowerHandScoller z:3];
+    lowerHandScroller = [CCItemsScroller itemsScrollerWithItems:cardsOnHand andOrientation:CCItemsScrollerHorizontal andRect:CGRectMake(106, 20, winSize.width - 300, 155)];
+//    lowerHandScroller.tag = 5001;
+    [self addChild:lowerHandScroller z:3];
 }
 
 - (void)hideImagePlayerBot
 {
-    if (!show_hide) {
+    if (!hidden) {
         NSLog(@"Hide Hand ");
         [self runAction:[CCMoveTo actionWithDuration:0.5 position:ccp(0,-110)]];
-        show_hide = true;
+        hidden = true;
     } else {
         NSLog(@"Show Hand ");
         [self runAction:[CCMoveTo actionWithDuration:0.5 position:ccp(0,0)]];
-        show_hide = false;
+        hidden = false;
     }
 }
 
@@ -127,11 +147,44 @@
 
 -(void)testAddingCard
 {
-    NSString *card_imageName = [NSString stringWithFormat:@"%d%@", selected_card_index, @".png"];
-    CCSprite *card = [CCSprite spriteWithFile:card_imageName];
-    card.scale = 0.4;
-    card.position = CGPointMake(500, 500);
-    [self addChild:card];
+//    NSString *card_imageName = [NSString stringWithFormat:@"%d%@", selected_card_index, @".png"];
+//    CCSprite *card = [CCSprite spriteWithFile:card_imageName];
+//    card.scale = 0.4;
+//    card.position = CGPointMake(500, 500);
+//    [self addChild:card];
+}
+
+-(void)addCardtoDiscardPile: (int) cardIndex {
+    if(cardIndex < 1000) {
+        // (Roger) First to release the previous discard card sprite to save some system resource
+        [self releasePreviousDiscardCard];
+        
+        // (Roger) Create a new card with the specific card index
+        NSLog(@"Adding Card to discard pile, card index: %d", cardIndex);
+        NSString *card_imageName = [NSString stringWithFormat:@"%d%@", cardIndex, @".png"];
+        CCSprite *card = [CCSprite spriteWithFile:card_imageName];
+        
+        // (Roger) Set the discard card index
+        discard_card_index = cardIndex;
+        
+        // (Roger) Set up the attribute of the card
+        card.position = CGPointMake(50, 71);
+        card.tag = BOTTOM_PLAYER_INDEX_TAG_BASE + cardIndex;
+        [card setScale: (float) 100 / 407];
+        
+        // (Roger) Add it into the discard part
+        [self addChild:card z:2];
+    } else {
+        NSLog(@"Data Error");
+    }
+}
+
+- (void)releasePreviousDiscardCard {
+    if(discard_card_index != -1) {
+        CCSprite *tempCard = (CCSprite*)[self getChildByTag:discard_card_index];
+        [self removeChild:tempCard cleanup:YES];
+        discard_card_index = DEFAULT_DISCARD_INDEX;
+    }
 }
 
 @end

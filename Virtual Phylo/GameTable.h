@@ -11,20 +11,18 @@
 #import "CCItemsScroller.h"
 #import "CCSelectableItem.h"
 #import "PlayerLayerBot.h"
+@class PlayerLayerBot;
 #import "PlayerLayerTop.h"
+@class PlayerLayerTop;
+#import "CoreData.h"
+#import "ScrollerProtocols.h"
 
 // GamePlaying Screen
 // The interface where two players use their decks to play the Phylo Trading Card Game
 
 // GameTable is the Layer that consists of the cards in play, or the Playing Field
 @interface GameTable : CCLayer<CCItemsScrollerDelegate>{
-    
-    // Player 1's hand/discard/draw pile space
-    PlayerLayerBot *pBot;
-    
-    // Player 2's hand/discard/draw pile space
-    PlayerLayerTop *pTop;
-    
+
     CCSprite *background;
     
     // keeps track of which sprite is selected by touch, so that it can be moved
@@ -32,10 +30,28 @@
     
     // an array of all movable sprites
     NSMutableArray *movableSprites;
+    
+    UITapGestureRecognizer * _doubleTapRecognizer;
 }
 
-@property (nonatomic, retain) PlayerLayerBot *pBot;
-@property (nonatomic, retain) PlayerLayerTop *pTop;
+@property bool cardAtDiscardArea;
+@property (nonatomic, retain) CCSprite *selectedCard;
+@property (nonatomic, retain) NSMutableArray *cardsOnTable;
+// (Roger) Declare a CGPoint Variable to keep the record of the touch starting point of the card
+@property CGPoint startPosition;
+@property (retain) UITapGestureRecognizer *doubleTapRecognizer;
+
+@property CGPoint origin;
+
+@property float discardPilePosBottomX;
+@property float discardPilePosBottomY;
+
+@property float discardPilePosTopX;
+@property float discardPilePosTopY;
+
+@property CGPoint adjustedTapLoc;
+
+@property int duplicateCounts;
 //  <CCItemsScrollerDelegate>
 +(CCScene *) scene;
 
@@ -65,6 +81,8 @@
     // if sprite is touched, only move sprite
 - (void)ccTouchMoved:(UITouch *)touch withEvent:(UIEvent *)event;
 
+//- (void)testInternalPassing;
 
+//- (void)putCardBack: (int)cardIndex;
 
 @end

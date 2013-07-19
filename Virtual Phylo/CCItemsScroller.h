@@ -6,6 +6,10 @@
 //
 
 #import "cocos2d.h"
+#import "PlayerLayerBot.h"
+@class PlayerLayerBot;
+#import "PlayerLayerTop.h"
+@class PlayerLayerTop;
 
 typedef enum{
     CCItemsScrollerVertical,
@@ -14,10 +18,17 @@ typedef enum{
 
 @protocol CCItemsScrollerDelegate;
 
-@interface CCItemsScroller : CCLayer
+@interface CCItemsScroller : CCLayer {
+//    UITapGestureRecognizer * _doubleTapRecognizer;
+}
 
 @property (strong, nonatomic) id<CCItemsScrollerDelegate> delegate;
 @property (assign, nonatomic) CCItemsScrollerOrientations orientation;
+//@property (nonatomic, assign) NSMutableArray *tagArray;
+//@property (retain) UITapGestureRecognizer * doubleTapRecognizer;
+//@property
+
+
 
 +(id)itemsScrollerWithItems:(NSArray*)items andOrientation:(CCItemsScrollerOrientations)orientation andRect:(CGRect)rect;
 
@@ -25,28 +36,6 @@ typedef enum{
 
 -(void)updateItems:(NSArray*)items;
 
-@end
-
-
-// PROTOCOL
-@protocol CCItemsScrollerDelegate <NSObject>
-
-@required
-
-- (void)itemsScroller:(CCItemsScroller *)sender didSelectItemIndex:(int)index;
-
-@optional
-
-- (void)itemsScrollerScrollingStarted:(CCItemsScroller *)sender;
-
-@end
-
-
-// PROTOCOL
-@protocol CCSelectableItemDelegate <NSObject>
-
-@optional
-
--(void)setIsSelected:(BOOL)isSelected;
+-(int)doubleTap:(CGPoint)tapPosition;
 
 @end

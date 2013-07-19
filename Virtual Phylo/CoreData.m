@@ -12,6 +12,7 @@
 
 @synthesize tempTest;
 @synthesize coreData_MasterCardArray;
+@synthesize cardsOnTable;
 
 // (Roger) Implement the public constructor
 +(id) sharedCore {
@@ -37,6 +38,10 @@
         NSLog(@"CoreData Class Initialization");
         // (Roger) Be careful about the init, double check the syntax
         tempTest = [[NSString alloc] initWithString: @"Test for accessing the core data"];
+        cardsOnTable = [[NSMutableArray alloc] initWithObjects: [NSNumber numberWithInt:0], [NSNumber numberWithInt:1], [NSNumber numberWithInt:2], [NSNumber numberWithInt:3], [NSNumber numberWithInt:4], nil];
+        for(int i = 0; i < cardsOnTable.count; i++) {
+            NSLog(@"%d", [[cardsOnTable objectAtIndex:i] integerValue]);
+        }
         NSLog(@"Init CoreData");
         coreData_MasterCardArray = [[MasterCard alloc] init];
     }

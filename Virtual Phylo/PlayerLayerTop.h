@@ -10,6 +10,8 @@
 #import "cocos2d.h"
 #import "CCSelectableItem.h"
 #import "CCItemsScroller.h"
+@class CCItemsScroller;
+#import "ScrollerProtocols.h"
 
 // Player Layer
 // the layer that shows a players draw pile, discard pile, and hand
@@ -34,6 +36,6 @@
 // adding card to hand
 -(void)testAddingCard;
 
-@property bool show_hide;
+@property bool hidden;
 @property int selected_card_index;
 @end
