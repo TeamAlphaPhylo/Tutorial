@@ -10,7 +10,6 @@
 		4478E409177B71370096B8FA /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = 4478E408177B71370096B8FA /* Card.m */; };
 		4478E414177B7C8A0096B8FA /* HelloWorldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4478E413177B7C8A0096B8FA /* HelloWorldLayer.m */; };
 		4478E417177B7CA30096B8FA /* IntroLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4478E416177B7CA30096B8FA /* IntroLayer.m */; };
-		4478E421177BAA580096B8FA /* Deck.m in Sources */ = {isa = PBXBuildFile; fileRef = 4478E420177BAA580096B8FA /* Deck.m */; };
 		4478E425177BB9480096B8FA /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 4478E424177BB9480096B8FA /* Player.m */; };
 		4478E42D177BBFCA0096B8FA /* CardSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 4478E42C177BBFC00096B8FA /* CardSprite.m */; };
 		4478E4361784E0E50096B8FA /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 4478E4351784E0E50096B8FA /* Game.m */; };
@@ -135,6 +134,7 @@
 		545B71C017751BB600B550D8 /* vec3.c in Sources */ = {isa = PBXBuildFile; fileRef = 545B71BF17751BB600B550D8 /* vec3.c */; };
 		545B71C217751BB600B550D8 /* vec4.c in Sources */ = {isa = PBXBuildFile; fileRef = 545B71C117751BB600B550D8 /* vec4.c */; };
 		545B71C717751BB600B550D8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 545B71C617751BB600B550D8 /* main.m */; };
+		548406C0179A453D00EF404F /* CurrentUsers.m in Sources */ = {isa = PBXBuildFile; fileRef = 548406BF179A453D00EF404F /* CurrentUsers.m */; };
 		54C09CC0178F7F38006FC5A8 /* background_main.png in Resources */ = {isa = PBXBuildFile; fileRef = 54C09CBC178F7F37006FC5A8 /* background_main.png */; };
 		54C09CC1178F7F38006FC5A8 /* login_box.png in Resources */ = {isa = PBXBuildFile; fileRef = 54C09CBD178F7F37006FC5A8 /* login_box.png */; };
 		54C09CC2178F7F38006FC5A8 /* user_register.png in Resources */ = {isa = PBXBuildFile; fileRef = 54C09CBE178F7F37006FC5A8 /* user_register.png */; };
@@ -193,8 +193,6 @@
 		4478E413177B7C8A0096B8FA /* HelloWorldLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelloWorldLayer.m; sourceTree = "<group>"; };
 		4478E415177B7CA30096B8FA /* IntroLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroLayer.h; sourceTree = "<group>"; };
 		4478E416177B7CA30096B8FA /* IntroLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroLayer.m; sourceTree = "<group>"; };
-		4478E41F177BAA580096B8FA /* Deck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Deck.h; path = Deck/Deck.h; sourceTree = "<group>"; };
-		4478E420177BAA580096B8FA /* Deck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Deck.m; path = Deck/Deck.m; sourceTree = "<group>"; };
 		4478E423177BB9480096B8FA /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Player.h; path = Player/Player.h; sourceTree = "<group>"; };
 		4478E424177BB9480096B8FA /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Player.m; path = Player/Player.m; sourceTree = "<group>"; };
 		4478E42B177BBFC00096B8FA /* CardSprite.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CardSprite.h; path = CardSprite/CardSprite.h; sourceTree = "<group>"; };
@@ -466,6 +464,8 @@
 		545B71C317751BB600B550D8 /* LICENSE_Kazmath.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = LICENSE_Kazmath.txt; path = libs/LICENSE_Kazmath.txt; sourceTree = "<group>"; };
 		545B71C517751BB600B550D8 /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
 		545B71C617751BB600B550D8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		548406BE179A453D00EF404F /* CurrentUsers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurrentUsers.h; sourceTree = "<group>"; };
+		548406BF179A453D00EF404F /* CurrentUsers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurrentUsers.m; sourceTree = "<group>"; };
 		54C09CBC178F7F37006FC5A8 /* background_main.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_main.png; sourceTree = "<group>"; };
 		54C09CBD178F7F37006FC5A8 /* login_box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_box.png; sourceTree = "<group>"; };
 		54C09CBE178F7F37006FC5A8 /* user_register.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user_register.png; sourceTree = "<group>"; };
@@ -543,15 +543,6 @@
 				4478E408177B71370096B8FA /* Card.m */,
 			);
 			name = Card;
-			sourceTree = "<group>";
-		};
-		4478E41E177BAA210096B8FA /* Deck */ = {
-			isa = PBXGroup;
-			children = (
-				4478E41F177BAA580096B8FA /* Deck.h */,
-				4478E420177BAA580096B8FA /* Deck.m */,
-			);
-			name = Deck;
 			sourceTree = "<group>";
 		};
 		4478E422177BB9360096B8FA /* Player */ = {
@@ -633,6 +624,7 @@
 		545B703717751BAD00B550D8 /* Virtual Phylo */ = {
 			isa = PBXGroup;
 			children = (
+				548406C1179A454E00EF404F /* CurrentUsers */,
 				ACCB11DA17867ABC000FF618 /* CoreData */,
 				AC1048031788E02800C2D9E7 /* ScrollLayer */,
 				AC40D119177FF6A000E2C700 /* MainMenuLayer */,
@@ -640,7 +632,6 @@
 				4478E426177BBD480096B8FA /* Game */,
 				54FCE56617922E840095B434 /* DeckBuilder */,
 				4478E422177BB9360096B8FA /* Player */,
-				4478E41E177BAA210096B8FA /* Deck */,
 				E0B976981776384300B0BB9A /* AppDelegate */,
 				4478E40A177B71400096B8FA /* Card */,
 				E0B9769B1776384300B0BB9A /* HelloWorldLayer */,
@@ -1031,6 +1022,16 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		548406C1179A454E00EF404F /* CurrentUsers */ = {
+			isa = PBXGroup;
+			children = (
+				548406BE179A453D00EF404F /* CurrentUsers.h */,
+				548406BF179A453D00EF404F /* CurrentUsers.m */,
+			);
+			name = CurrentUsers;
+			path = HelloWorldLayer;
+			sourceTree = "<group>";
+		};
 		54FCE56617922E840095B434 /* DeckBuilder */ = {
 			isa = PBXGroup;
 			children = (
@@ -1395,7 +1396,6 @@
 				4478E409177B71370096B8FA /* Card.m in Sources */,
 				4478E414177B7C8A0096B8FA /* HelloWorldLayer.m in Sources */,
 				4478E417177B7CA30096B8FA /* IntroLayer.m in Sources */,
-				4478E421177BAA580096B8FA /* Deck.m in Sources */,
 				4478E425177BB9480096B8FA /* Player.m in Sources */,
 				4478E42D177BBFCA0096B8FA /* CardSprite.m in Sources */,
 				AC40D11C177FF8DE00E2C700 /* MainMenuLayer.m in Sources */,
@@ -1407,6 +1407,7 @@
 				AC10480C178901D100C2D9E7 /* GuestDeckChoose.m in Sources */,
 				AC10480F1789033000C2D9E7 /* GameTable.m in Sources */,
 				54FCE5691792346D0095B434 /* DeckBuilder.m in Sources */,
+				548406C0179A453D00EF404F /* CurrentUsers.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

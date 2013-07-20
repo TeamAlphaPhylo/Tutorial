@@ -86,7 +86,7 @@
         // (Roger) Enable the touch function
         self.touchEnabled = YES;
         
-        }
+    }
 	return self;
 }
 
@@ -136,9 +136,13 @@
         NSLog(@"Testing username: %@ and password: %@", usernames[i], usernames[i+1]);
         if([usernameField.text isEqualToString: usernames[i]] && [pwdField.text isEqualToString: usernames[i+1]]) {
             NSLog(@"Identity Verified");
-            // TO-DO: Loading the user data into the main function
             fail = false;
-            [self jumpToMainMenu];
+            
+            //User data persistent storage
+            CurrentUsers* user = [[CurrentUsers alloc] init];
+            [user addUser:usernameField.text];
+
+            [self jumpToMainMenu:user];
             break;
         } else {
             fail = true;
@@ -151,6 +155,10 @@
 
 //(Petr) Checks and registers new account
 - (void) registerAccount {
+    //Create class data file
+    Player* player = [[Player alloc] init];
+    [player createPlayer:usernameField.text];
+    
     //get the documents directory:
     NSArray *paths = NSSearchPathForDirectoriesInDomains
     (NSDocumentDirectory, NSUserDomainMask, YES);
@@ -206,8 +214,8 @@
         //Save data to fileName
         [data writeToFile:fileName
                atomically:NO
-                encoding:NSStringEncodingConversionAllowLossy
-                error:nil];
+                 encoding:NSStringEncodingConversionAllowLossy
+                    error:nil];
         NSLog(@"New account made");
         
     } else {
@@ -237,7 +245,7 @@
 
 #pragma mark Switching Scene
 // (Roger) Switch the layer if the username and password are valid
-- (void)jumpToMainMenu {
+- (void)jumpToMainMenu:(NSObject *)user {
     NSLog(@"Dismissing/Releasing text fields");
     [usernameField removeFromSuperview];
     [pwdField removeFromSuperview];
