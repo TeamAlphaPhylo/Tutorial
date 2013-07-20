@@ -26,10 +26,10 @@
     CCSprite *background;
     
     // keeps track of which sprite is selected by touch, so that it can be moved
-    CCSprite *selSprite;
+//    CCSprite *selSprite;
     
     // an array of all movable sprites
-    NSMutableArray *movableSprites;
+//    NSMutableArray *movableSprites;
     
     UITapGestureRecognizer * _doubleTapRecognizer;
 }
@@ -49,9 +49,15 @@
 @property float discardPilePosTopX;
 @property float discardPilePosTopY;
 
+@property float translationAdjustX;
+@property float translationAdjustY;
+
 @property CGPoint adjustedTapLoc;
 
 @property int duplicateCounts;
+
+@property bool touchGameTable;
+
 //  <CCItemsScrollerDelegate>
 +(CCScene *) scene;
 

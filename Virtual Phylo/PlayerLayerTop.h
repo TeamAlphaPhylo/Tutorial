@@ -11,6 +11,8 @@
 #import "CCSelectableItem.h"
 #import "CCItemsScroller.h"
 @class CCItemsScroller;
+#import "GameTable.h"
+@class GameTable;
 #import "ScrollerProtocols.h"
 
 // Player Layer
@@ -33,9 +35,16 @@
 // itemScroller for hand
 -(void)itemsScroller:(CCItemsScroller *)sender didSelectItemIndex:(int)index;
 
-// adding card to hand
--(void)testAddingCard;
+-(void)addCardtoDiscardPile: (int) cardIndex;
+
+- (void)releasePreviousDiscardCard;
+
 
 @property bool hidden;
 @property int selected_card_index;
+@property int discard_card_index;
+@property (nonatomic, retain) NSMutableArray* cardsOnHand;
+@property (nonatomic, retain) CCItemsScroller* upperHandScroller;
+@property bool TopHand;
+
 @end

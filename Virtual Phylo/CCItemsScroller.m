@@ -24,11 +24,24 @@ enum
 
 @synthesize delegate = _delegate;
 @synthesize orientation = _orientation;
-//@synthesize tagArray;
-//@synthesize doubleTapRecognizer = _doubleTapRecognizer;
 
 +(id)itemsScrollerWithItems:(NSArray *)items andOrientation:(CCItemsScrollerOrientations)orientation andRect:(CGRect)rect{
     return [[self alloc] initWithItems:items andOrientation:(CCItemsScrollerOrientations)orientation andRect:rect];
+}
+
+// (Roger) This class is in control of the boundary of the scroller
+-(void) visit
+{
+    CGRect _glRect = CC_RECT_POINTS_TO_PIXELS(_rect);
+    
+    //glPushMatrix();
+    glEnable(GL_SCISSOR_TEST);
+    glScissor(_glRect.origin.x, _glRect.origin.y, _glRect.size.width, _glRect.size.height);
+    
+    [super visit];
+    
+    glDisable(GL_SCISSOR_TEST);
+    //glPopMatrix();
 }
 
 -(id)initWithItems:(NSArray *)items andOrientation:(CCItemsScrollerOrientations)orientation andRect:(CGRect)rect{
@@ -37,9 +50,8 @@ enum
     if(self){
         _rect = rect;
         _orientation = orientation;
-        // (Roger) Initialization of the array
-//        tagArray = [[NSMutableArray alloc] init];
-        self.TouchEnabled = YES;
+
+//        self.TouchEnabled = YES;
         [self updateItems:items];
     }
     
@@ -47,11 +59,12 @@ enum
 }
 
 -(void)updateItems:(NSArray*)items{
-//    [tagArray removeAllObjects];
     [self removeAllChildrenWithCleanup:YES];
     int i = 0;
     CGFloat x = 0;
     CGFloat y = 0;
+    
+    NSLog(@"[CCItemsScroller] Updating Items");
     
     for (CCLayer *item in items)
     {
@@ -81,8 +94,7 @@ enum
         if(_orientation == CCItemsScrollerVertical){
             y = (i * item.contentSize.height);
         }
-        NSLog(@"Update function: current index adding = %d", item.tag);
-//        [tagArray addObject: item.tag];
+        
         item.tag = i;
         item.position = ccp(x, y);
         
@@ -104,93 +116,63 @@ enum
     }
 }
 
--(void) visit
+-(void)handleTouchMoved: (CGPoint) touchPoint
 {
-    CGRect _glRect = CC_RECT_POINTS_TO_PIXELS(_rect);
-    
-    //glPushMatrix();
-    glEnable(GL_SCISSOR_TEST);
-    glScissor(_glRect.origin.x, _glRect.origin.y, _glRect.size.width, _glRect.size.height);
-    
-    [super visit];
-    
-    glDisable(GL_SCISSOR_TEST);
-    //glPopMatrix();
-}
-
-- (void)registerWithTouchDispatcher
-{	
-    CCTouchDispatcher *dispatcher = [[CCDirector sharedDirector] touchDispatcher];
-    int priority = kCCMenuHandlerPriority - 1;
-    
-    [dispatcher addTargetedDelegate:self priority:priority swallowsTouches:NO];
-}
-
--(BOOL) ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event
-{
-    _state = kCCScrollLayerStateIdle;
-    
-    return YES;
-}
-
-- (void)ccTouchMoved:(UITouch *)touch withEvent:(UIEvent *)event
-{
-    CGPoint touchPoint = [touch locationInView:[touch view]];
-    touchPoint = [[CCDirector sharedDirector] convertToGL:touchPoint];    
+    touchPoint = [[CCDirector sharedDirector] convertToGL:touchPoint];
     
     // (Roger) Modified Library to make it work only in the scroll part
     if((touchPoint.x > _rect.origin.x) && (touchPoint.x < (_rect.origin.x + _rect.size.width)) && (touchPoint.y > _rect.origin.y) && (touchPoint.y < (_rect.origin.y + _rect.size.height))) {
+        NSLog(@"Handling Sliding???");
         if ( _state != kCCScrollLayerStateSliding )
         {
-        _state = kCCScrollLayerStateSliding;
-        
-        _startSwipe = CGPointMake(_offset.x - touchPoint.x, _offset.y - touchPoint.y);
-        
-        if ([_delegate respondsToSelector:@selector(scrollLayerScrollingStarted:)])
-            [_delegate itemsScrollerScrollingStarted:self];
-    }
-    
-    if (_state == kCCScrollLayerStateSliding)
-    {
-        if(_orientation == CCItemsScrollerHorizontal){
-            _offset.x = _startSwipe.x + touchPoint.x;
-
-            if(_offset.x > _rect.origin.x){
-                _offset.x = _rect.origin.x;
-            }
-            else if(_offset.x < -(self.contentSize.width-_rect.size.width-_rect.origin.x)){
-                _offset.x = -(self.contentSize.width-_rect.size.width-_rect.origin.x);
-            }
-        }
-        
-        if(_orientation == CCItemsScrollerVertical){
-            _offset.y = _startSwipe.y + touchPoint.y;
+            _state = kCCScrollLayerStateSliding;
             
-            if(_startSwipe.y < touchPoint.y){
-                if (_offset.y > _rect.origin.y) {
-                    _offset.y = _rect.origin.y;
-                }else
-                if (_offset.y < -(self.contentSize.height-_rect.size.height-_rect.origin.y))
-                {
-                    _offset.y = -(self.contentSize.height-_rect.size.height-_rect.origin.y);
-                }
-            }
-            else {
-                if (_offset.y > _rect.origin.y) {
-                    _offset.y = _rect.origin.y;
-                }
-            }
+            _startSwipe = CGPointMake(_offset.x - touchPoint.x, _offset.y - touchPoint.y);
+            
+            if ([_delegate respondsToSelector:@selector(scrollLayerScrollingStarted:)])
+                [_delegate itemsScrollerScrollingStarted:self];
         }
         
-        self.position = ccp(_offset.x, _offset.y);
-    }
+        if (_state == kCCScrollLayerStateSliding)
+        {
+            if(_orientation == CCItemsScrollerHorizontal){
+                _offset.x = _startSwipe.x + touchPoint.x;
+                
+                if(_offset.x > _rect.origin.x){
+                    _offset.x = _rect.origin.x;
+                }
+                else if(_offset.x < -(self.contentSize.width-_rect.size.width-_rect.origin.x)){
+                    _offset.x = -(self.contentSize.width-_rect.size.width-_rect.origin.x);
+                }
+            }
+            
+            if(_orientation == CCItemsScrollerVertical){
+                _offset.y = _startSwipe.y + touchPoint.y;
+                
+                if(_startSwipe.y < touchPoint.y){
+                    if (_offset.y > _rect.origin.y) {
+                        _offset.y = _rect.origin.y;
+                    }else
+                        if (_offset.y < -(self.contentSize.height-_rect.size.height-_rect.origin.y))
+                        {
+                            _offset.y = -(self.contentSize.height-_rect.size.height-_rect.origin.y);
+                        }
+                }
+                else {
+                    if (_offset.y > _rect.origin.y) {
+                        _offset.y = _rect.origin.y;
+                    }
+                }
+            }
+            
+            self.position = ccp(_offset.x, _offset.y);
+        }
     }
 }
 
--(void)ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event{
-    CGPoint touchPoint = [touch locationInView:[touch view]];
-    touchPoint = [[CCDirector sharedDirector] convertToGL:touchPoint];    
-
+-(void)handleTouchEnded:(CGPoint) touchPoint{
+    touchPoint = [[CCDirector sharedDirector] convertToGL:touchPoint];
+    
     CGFloat touchX = 0;
     CGFloat touchY = 0;
     
@@ -216,7 +198,7 @@ enum
             isY = (touchY >= self.position.y && touchY <= self.position.y + item.contentSize.height);
         }
         
-        if(_orientation == CCItemsScrollerVertical){        
+        if(_orientation == CCItemsScrollerVertical){
             isX = (touchX >= item.position.x && touchX <= item.contentSize.width);
             isY = (touchY >= item.position.y && touchY <= item.position.y + item.contentSize.height);
         }
@@ -228,6 +210,7 @@ enum
         }
     }
 }
+
 
 -(void)setSelectedItemIndex:(NSInteger)index{
     id currentChild = [self getChildByTag:index];
@@ -293,13 +276,6 @@ enum
     }
     NSLog(@"Index: %d item is selected", selectedItem);
     return selectedItem;
-//    if(selectedItem != -1) {
-////        return [tagArray objectAtIndex:selectedItem];
-//        
-//    } else {
-//        // (Roger) Return -1 as the error message
-//        return selectedItem;
-//    }
 }
 
 @end

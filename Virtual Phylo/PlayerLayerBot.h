@@ -37,9 +37,6 @@
 // itemScroller for hand
 -(void)itemsScroller:(CCItemsScroller *)sender didSelectItemIndex:(int)index;
 
-// adding card to hand
--(void)testAddingCard;
-
 -(void)addCardtoDiscardPile: (int) cardIndex;
 
 - (void)releasePreviousDiscardCard;
@@ -51,5 +48,6 @@
 @property int discard_card_index;
 @property (nonatomic, retain) NSMutableArray* cardsOnHand;
 @property (nonatomic, retain) CCItemsScroller* lowerHandScroller;
+@property bool BottomHand;
 
 @end

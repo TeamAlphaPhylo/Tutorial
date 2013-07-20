@@ -17,14 +17,13 @@
 @synthesize discard_card_index;
 @synthesize cardsOnHand;
 @synthesize lowerHandScroller;
+@synthesize BottomHand;
 
 -(id) init
 {
     if( (self=[super init]) ) {
         
         NSLog(@"Player Layer Bot");
-        // (Roger) Add delegate
-        [[[CCDirector sharedDirector] touchDispatcher] addTargetedDelegate:self priority:0 swallowsTouches:YES];
         // (Roger) Add two menu items to let use hide/unhide their hand
         CCMenuItemImage *hide = [CCMenuItemImage itemWithNormalImage:@"arrowSwipe.png" selectedImage:@"arrowSwipe.png" target:self selector:@selector(hideImagePlayerBot)];
         CCMenuItemImage *unhide = [CCMenuItemImage itemWithNormalImage:@"unHide.png" selectedImage:@"unHide.png" target:self selector:@selector(hideImagePlayerBot)];
@@ -39,6 +38,7 @@
         discard_card_index = DEFAULT_DISCARD_INDEX;
         cardsOnHand = [[NSMutableArray alloc] init];
         lowerHandScroller = nil;
+        BottomHand = TRUE;
         // (Roger) Add them into the layer
         // (Roger) The library has been slightly modified to meet the requirement
         [self addChild:HidePlayerBot z:2];
@@ -104,27 +104,25 @@
     
     // Horizontal scroller
     // (Roger) Notice the card index with 0 has been eliminated for debugging purpose (nil)
-    for (int i = 0; i < 9; i++) {
+    for (int i = 0; i < 10; i++) {
         CCSelectableItem *page = [[CCSelectableItem alloc] initWithNormalColor:ccc4(0,0,0,0) andSelectectedColor:ccc4(190, 150, 150, 255) andWidth:77 andHeight:100];
         
         NSString *card_imageName = [NSString stringWithFormat:@"%d%@", i, @".png"];        
 
-        CCMenuItemImage *image = [CCMenuItemImage itemWithNormalImage:card_imageName selectedImage:card_imageName target:self selector:nil];
+        CCSprite *image = [CCSprite spriteWithFile: card_imageName];
 
         image.position = ccp(page.contentSize.width/2, page.contentSize.height/2);
         // The card dimensions are 264 * 407 (Width * Height)
         [image setScale: (float) 100 / 407];
         // (Roger) Set up the image tag (Notice the tag here only applies to the bottom player tag)
         image.tag = i;
-        page.tag = image.tag;
         [page addChild:image];
         
         [cardsOnHand addObject:page];
     }
     
     lowerHandScroller = [CCItemsScroller itemsScrollerWithItems:cardsOnHand andOrientation:CCItemsScrollerHorizontal andRect:CGRectMake(106, 20, winSize.width - 300, 155)];
-//    lowerHandScroller.tag = 5001;
-    [self addChild:lowerHandScroller z:3];
+    [self addChild:lowerHandScroller z:2];
 }
 
 - (void)hideImagePlayerBot
@@ -145,14 +143,6 @@
     selected_card_index = index;
 }
 
--(void)testAddingCard
-{
-//    NSString *card_imageName = [NSString stringWithFormat:@"%d%@", selected_card_index, @".png"];
-//    CCSprite *card = [CCSprite spriteWithFile:card_imageName];
-//    card.scale = 0.4;
-//    card.position = CGPointMake(500, 500);
-//    [self addChild:card];
-}
 
 -(void)addCardtoDiscardPile: (int) cardIndex {
     if(cardIndex < 1000) {

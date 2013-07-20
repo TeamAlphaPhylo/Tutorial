@@ -19,15 +19,10 @@ typedef enum{
 @protocol CCItemsScrollerDelegate;
 
 @interface CCItemsScroller : CCLayer {
-//    UITapGestureRecognizer * _doubleTapRecognizer;
 }
 
 @property (strong, nonatomic) id<CCItemsScrollerDelegate> delegate;
 @property (assign, nonatomic) CCItemsScrollerOrientations orientation;
-//@property (nonatomic, assign) NSMutableArray *tagArray;
-//@property (retain) UITapGestureRecognizer * doubleTapRecognizer;
-//@property
-
 
 
 +(id)itemsScrollerWithItems:(NSArray*)items andOrientation:(CCItemsScrollerOrientations)orientation andRect:(CGRect)rect;
@@ -37,5 +32,8 @@ typedef enum{
 -(void)updateItems:(NSArray*)items;
 
 -(int)doubleTap:(CGPoint)tapPosition;
+
+-(void)handleTouchMoved: (CGPoint) touchPoint;
+-(void)handleTouchEnded:(CGPoint) touchPoint;
 
 @end
