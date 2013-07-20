@@ -41,7 +41,7 @@
         
         
         // add components created as children to this Layer (Notice there are added in a specific sequence)
-        [self setBackgroundColour];
+        //[self setBackgroundColour];
         [self setTitle];
         [self setLeftMenu];
         [self setExampleCard];
@@ -63,47 +63,54 @@
 }
 
 // (Roger) Set up the background colour
-- (void) setBackgroundColour {
+/*- (void) setBackgroundColour {
     NSLog(@"Setting up Background Colour");
     CCLayerColor *bgColour = [CCLayerColor layerWithColor:ccc4(0, 0, 102, 255)];
     [self addChild:bgColour];
-}
+}*/
 
 // (Roger) Set up the title at the top and miscellaneous
 - (void) setTitle {
     NSLog(@"Setting up the Title at the top");
+    
+    CGSize winSize = [[CCDirector sharedDirector] winSize];
     
     // (Roger)create and initialize a Label
     CCLabelTTF *label = [CCLabelTTF labelWithString:@"Main Menu" fontName:@"Verdana" fontSize:36];
     // ask director for the window size
     CGSize size = [[CCDirector sharedDirector] winSize];
     // (Roger)position the label on the top of the screen
-    label.position =  ccp( size.width /2 , 730);
+    label.position =  ccp( size.width / 2 , 730);
     
     // (Roger) Add black background to the title
-    CCSprite *titleBackground = [CCSprite spriteWithFile:@"TopTitleBackGround.png"];
-    titleBackground.position = ccp(size.width / 2, 738);
+    CCSprite *titleBackground= [CCSprite spriteWithFile:@"background_main.png"];
+    titleBackground.position = ccp(winSize.width/2, winSize.height/2);
     
     // (Roger) Create a menu to handle the 'switch account' request
-    CCMenuItemImage *switchAccountBtn = [CCMenuItemImage itemWithNormalImage:@"switchAccount.png" selectedImage:@"switchAccount.png" target:self selector:@selector(jumpToLogin)];
+    CCMenuItemImage *switchAccountBtn = [CCMenuItemImage itemWithNormalImage:@"switch_account.png" selectedImage:@"switch_account.png" target:self selector:@selector(jumpToLogin)];
     CCMenu *switchAccount = [CCMenu menuWithItems:switchAccountBtn, nil];
-    switchAccount.position = ccp(950, 728);
+    switchAccount.position = ccp(925, 738);
+    
+    // (Petr Create a top bar for account data)
+    CCSprite *topBar = [CCSprite spriteWithFile:@"top_bar.png"];
+    topBar.position = ccp(500 , winSize.height - 25);
     
     [self addChild:titleBackground];
-    [self addChild:switchAccount];
     [self addChild:label];
+    [self addChild:topBar];
+    [self addChild:switchAccount];
 }
 
 // (Roger) Set up the menu at the left side (contains 'Game', 'Deck', and 'Settings')
 -(void) setLeftMenu {
     NSLog(@"Setting up the main menu at the left side");
-    CCMenuItemImage *gameBtn = [CCMenuItemImage itemWithNormalImage:@"gameBtn.png" selectedImage:@"gameBtn.png" target:self selector:@selector(jumpToGame)];
-    CCMenuItemImage *deckBtn = [CCMenuItemImage itemWithNormalImage:@"deckBtn.png" selectedImage:@"deckBtn.png" target:self selector:@selector(jumpToDeck)];
-    CCMenuItemImage *settingsBtn = [CCMenuItemImage itemWithNormalImage:@"settingsBtn.png" selectedImage:@"settingsBtn.png" target:self selector:@selector(jumpToSettings)];
+    CCMenuItemImage *gameBtn = [CCMenuItemImage itemWithNormalImage:@"play.png" selectedImage:@"play.png" target:self selector:@selector(jumpToGame)];
+    CCMenuItemImage *deckBtn = [CCMenuItemImage itemWithNormalImage:@"deck_builder.png" selectedImage:@"deck_builder.png" target:self selector:@selector(jumpToDeck)];
+    CCMenuItemImage *settingsBtn = [CCMenuItemImage itemWithNormalImage:@"settings_menu.png" selectedImage:@"settings_menu.png" target:self selector:@selector(jumpToSettings)];
     CCMenu *leftMenu = [CCMenu menuWithItems: gameBtn, deckBtn, settingsBtn, nil];
     // Setting up the layout and position
-    [leftMenu alignItemsVerticallyWithPadding: 100];
-    leftMenu.position = ccp(100, 280);
+    [leftMenu alignItemsVerticallyWithPadding: 50];
+    leftMenu.position = ccp(100, 380);
     
     [self addChild: leftMenu];
     
@@ -114,12 +121,12 @@
     NSLog(@"Setting up the example card at the central area");
     
     // (Roger) Set up the general background
-    CCSprite *centralBackground = [CCSprite spriteWithFile:@"cardBackground.png"];
-    centralBackground.position = ccp(512, 250);
+    CCSprite *centralBackground = [CCSprite spriteWithFile:@"card_of_the_day.png"];
+    centralBackground.position = ccp(550, 350);
     
     // (Roger) Set up the label - "Today's Card"
-    CCLabelTTF *areaTitle = [CCLabelTTF labelWithString:@"Today's Card" fontName:@"Verdana" fontSize:26];
-    areaTitle.position = ccp(512, 480);
+    //CCLabelTTF *areaTitle = [CCLabelTTF labelWithString:@"Today's Card" fontName:@"Verdana" fontSize:26];
+    //areaTitle.position = ccp(512, 480);
     
     // (Roger) Randomly pick up a card as today's card
     // (Roger) Set the max card count as 50, otherwise it will cause exceptions due to the lack of sime cards
@@ -128,11 +135,11 @@
     NSString *cardPath = [NSString stringWithFormat:@"%d%@", cardIndex, @".png"];
     
     CCSprite *exampleCard = [CCSprite spriteWithFile:cardPath];
-    exampleCard.position = ccp(512, 230);
+    exampleCard.position = ccp(550, 330);
 
     
     [self addChild:centralBackground];
-    [self addChild:areaTitle];
+    //[self addChild:areaTitle];
     [self addChild:exampleCard];
 }
 
@@ -141,7 +148,7 @@
 -(void)setUserInfo {
     NSLog(@"Setting up the user info bar below the top title");
     CCLabelTTF *tempTitle = [CCLabelTTF labelWithString:@"To-Do: User Info Fetching and Display" fontName:@"Verdana" fontSize:46];
-    tempTitle.position = ccp(512, 600);
+    tempTitle.position = ccp(25, 100);
     [self addChild:tempTitle];
     NSLog(@"bar done");
 

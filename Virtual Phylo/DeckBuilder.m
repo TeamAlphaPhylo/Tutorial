@@ -54,7 +54,28 @@
     [self addChild:bgColour];
 }
 
+// (Alex) this is where data from file is gotten
+- (void) getData {
+    NSString *file = [[NSBundle mainBundle] pathForResource:@"AnimalData" ofType:@"txt"];
+    NSString *content = [[NSString alloc] initWithContentsOfFile:file
+                                                usedEncoding:nil
+                                                error:nil];
+    NSArray *data = [content componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"\r\n"]];
+    
+    NSLog(@"size is: %lu", (unsigned long)([data count] - 1));
+    NSLog(@"Card data:");
+    //Gets a single line of data
+    NSLog(data[0]);
+    
+    //Data now in split into it's componenets
+    NSArray *split = [data[0] componentsSeparatedByString:@";"];
+    
+    //Gets names, change array index to get diffrent information
+    NSLog(split[0]);
+}
+
 - (void) listCards {
+    [self getData];
     int lastPositionX = 80;
     int lastPositionY = 650;
     NSLog(@"Listing cards from user deck");

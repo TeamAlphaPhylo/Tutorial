@@ -139,22 +139,21 @@
 		54C09CC1178F7F38006FC5A8 /* login_box.png in Resources */ = {isa = PBXBuildFile; fileRef = 54C09CBD178F7F37006FC5A8 /* login_box.png */; };
 		54C09CC2178F7F38006FC5A8 /* user_register.png in Resources */ = {isa = PBXBuildFile; fileRef = 54C09CBE178F7F37006FC5A8 /* user_register.png */; };
 		54C09CC3178F7F38006FC5A8 /* user_signin.png in Resources */ = {isa = PBXBuildFile; fileRef = 54C09CBF178F7F38006FC5A8 /* user_signin.png */; };
+		54E92CEA179795E6008AAECB /* switch_account.png in Resources */ = {isa = PBXBuildFile; fileRef = 54E92CE9179795E6008AAECB /* switch_account.png */; };
+		54E92CED17979646008AAECB /* settings_menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 54E92CEB17979646008AAECB /* settings_menu.png */; };
+		54E92CEE17979646008AAECB /* top_bar.png in Resources */ = {isa = PBXBuildFile; fileRef = 54E92CEC17979646008AAECB /* top_bar.png */; };
+		54E92CF217979652008AAECB /* card_of_the_day.png in Resources */ = {isa = PBXBuildFile; fileRef = 54E92CEF17979652008AAECB /* card_of_the_day.png */; };
+		54E92CF317979652008AAECB /* deck_builder.png in Resources */ = {isa = PBXBuildFile; fileRef = 54E92CF017979652008AAECB /* deck_builder.png */; };
+		54E92CF417979652008AAECB /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = 54E92CF117979652008AAECB /* play.png */; };
+		54E92CF61797A978008AAECB /* AnimalData.txt in Resources */ = {isa = PBXBuildFile; fileRef = 54E92CF51797A978008AAECB /* AnimalData.txt */; };
 		54FCE5691792346D0095B434 /* DeckBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 54FCE5681792346D0095B434 /* DeckBuilder.m */; };
 		AC1048061788F0E900C2D9E7 /* DeckChoose.png in Resources */ = {isa = PBXBuildFile; fileRef = AC1048051788F0E900C2D9E7 /* DeckChoose.png */; };
 		AC1048091788F7FE00C2D9E7 /* GameGuestLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = AC1048081788F7FE00C2D9E7 /* GameGuestLogin.m */; };
 		AC10480C178901D100C2D9E7 /* GuestDeckChoose.m in Sources */ = {isa = PBXBuildFile; fileRef = AC10480B178901D100C2D9E7 /* GuestDeckChoose.m */; };
 		AC10480F1789033000C2D9E7 /* GameTable.m in Sources */ = {isa = PBXBuildFile; fileRef = AC10480E1789033000C2D9E7 /* GameTable.m */; };
 		AC1F3D1C17890E0200B4B2C6 /* waterdroplets.png in Resources */ = {isa = PBXBuildFile; fileRef = AC1F3D1B17890E0200B4B2C6 /* waterdroplets.png */; };
-		AC40D112177FEB0F00E2C700 /* LoginBox.png in Resources */ = {isa = PBXBuildFile; fileRef = AC40D111177FEB0F00E2C700 /* LoginBox.png */; };
-		AC40D115177FEF9200E2C700 /* Others.png in Resources */ = {isa = PBXBuildFile; fileRef = AC40D113177FEF9200E2C700 /* Others.png */; };
-		AC40D118177FF57800E2C700 /* login.png in Resources */ = {isa = PBXBuildFile; fileRef = AC40D117177FF57800E2C700 /* login.png */; };
 		AC40D11C177FF8DE00E2C700 /* MainMenuLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = AC40D11B177FF8DE00E2C700 /* MainMenuLayer.m */; };
 		AC89CCF61780F42E00267A60 /* TopTitleBackGround.png in Resources */ = {isa = PBXBuildFile; fileRef = AC89CCF51780F42E00267A60 /* TopTitleBackGround.png */; };
-		AC89CCF81780F4EF00267A60 /* switchAccount.png in Resources */ = {isa = PBXBuildFile; fileRef = AC89CCF71780F4EF00267A60 /* switchAccount.png */; };
-		AC89CCFE1781019600267A60 /* deckBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = AC89CCFB1781019500267A60 /* deckBtn.png */; };
-		AC89CCFF1781019600267A60 /* gameBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = AC89CCFC1781019600267A60 /* gameBtn.png */; };
-		AC89CD001781019600267A60 /* settingsBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = AC89CCFD1781019600267A60 /* settingsBtn.png */; };
-		AC89CD0817810D3B00267A60 /* cardBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = AC89CD0717810D3B00267A60 /* cardBackground.png */; };
 		AC8ADD2F1788DF8E007758FD /* CCScrollLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = AC8ADD2E1788DF8E007758FD /* CCScrollLayer.m */; };
 		ACA0D36F177E52A60086E7A1 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = ACA0D36E177E52A60086E7A1 /* Default-Landscape~ipad.png */; };
 		ACCB11D817866B7A000FF618 /* mainMenu.png in Resources */ = {isa = PBXBuildFile; fileRef = ACCB11D717866B7A000FF618 /* mainMenu.png */; };
@@ -471,6 +470,13 @@
 		54C09CBD178F7F37006FC5A8 /* login_box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_box.png; sourceTree = "<group>"; };
 		54C09CBE178F7F37006FC5A8 /* user_register.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user_register.png; sourceTree = "<group>"; };
 		54C09CBF178F7F38006FC5A8 /* user_signin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user_signin.png; sourceTree = "<group>"; };
+		54E92CE9179795E6008AAECB /* switch_account.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = switch_account.png; sourceTree = "<group>"; };
+		54E92CEB17979646008AAECB /* settings_menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings_menu.png; sourceTree = "<group>"; };
+		54E92CEC17979646008AAECB /* top_bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = top_bar.png; sourceTree = "<group>"; };
+		54E92CEF17979652008AAECB /* card_of_the_day.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = card_of_the_day.png; sourceTree = "<group>"; };
+		54E92CF017979652008AAECB /* deck_builder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = deck_builder.png; sourceTree = "<group>"; };
+		54E92CF117979652008AAECB /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
+		54E92CF51797A978008AAECB /* AnimalData.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AnimalData.txt; sourceTree = "<group>"; };
 		54FCE5671792346D0095B434 /* DeckBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeckBuilder.h; sourceTree = "<group>"; };
 		54FCE5681792346D0095B434 /* DeckBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeckBuilder.m; sourceTree = "<group>"; };
 		AC1048051788F0E900C2D9E7 /* DeckChoose.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DeckChoose.png; sourceTree = "<group>"; };
@@ -481,17 +487,9 @@
 		AC10480D1789032F00C2D9E7 /* GameTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameTable.h; sourceTree = "<group>"; };
 		AC10480E1789033000C2D9E7 /* GameTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameTable.m; sourceTree = "<group>"; };
 		AC1F3D1B17890E0200B4B2C6 /* waterdroplets.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = waterdroplets.png; sourceTree = "<group>"; };
-		AC40D111177FEB0F00E2C700 /* LoginBox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LoginBox.png; sourceTree = "<group>"; };
-		AC40D113177FEF9200E2C700 /* Others.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Others.png; sourceTree = "<group>"; };
-		AC40D117177FF57800E2C700 /* login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login.png; sourceTree = "<group>"; };
 		AC40D11A177FF8DE00E2C700 /* MainMenuLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuLayer.h; sourceTree = "<group>"; };
 		AC40D11B177FF8DE00E2C700 /* MainMenuLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuLayer.m; sourceTree = "<group>"; };
 		AC89CCF51780F42E00267A60 /* TopTitleBackGround.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TopTitleBackGround.png; sourceTree = "<group>"; };
-		AC89CCF71780F4EF00267A60 /* switchAccount.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = switchAccount.png; sourceTree = "<group>"; };
-		AC89CCFB1781019500267A60 /* deckBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = deckBtn.png; sourceTree = "<group>"; };
-		AC89CCFC1781019600267A60 /* gameBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gameBtn.png; sourceTree = "<group>"; };
-		AC89CCFD1781019600267A60 /* settingsBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settingsBtn.png; sourceTree = "<group>"; };
-		AC89CD0717810D3B00267A60 /* cardBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cardBackground.png; sourceTree = "<group>"; };
 		AC8ADD2D1788DF8E007758FD /* CCScrollLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCScrollLayer.h; sourceTree = "<group>"; };
 		AC8ADD2E1788DF8E007758FD /* CCScrollLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCScrollLayer.m; sourceTree = "<group>"; };
 		ACA0D36E177E52A60086E7A1 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
@@ -1062,6 +1060,7 @@
 		AC40D110177FEB0600E2C700 /* Misc */ = {
 			isa = PBXGroup;
 			children = (
+				54E92CF51797A978008AAECB /* AnimalData.txt */,
 				ACCB11D617866A11000FF618 /* Shared Texture */,
 				AC89CCFA1781015200267A60 /* MainMenuLayer */,
 				AC89CCF91781013000267A60 /* LoginLayer */,
@@ -1085,9 +1084,6 @@
 				54C09CBD178F7F37006FC5A8 /* login_box.png */,
 				54C09CBE178F7F37006FC5A8 /* user_register.png */,
 				54C09CBF178F7F38006FC5A8 /* user_signin.png */,
-				AC40D113177FEF9200E2C700 /* Others.png */,
-				AC40D111177FEB0F00E2C700 /* LoginBox.png */,
-				AC40D117177FF57800E2C700 /* login.png */,
 			);
 			name = LoginLayer;
 			sourceTree = "<group>";
@@ -1095,11 +1091,12 @@
 		AC89CCFA1781015200267A60 /* MainMenuLayer */ = {
 			isa = PBXGroup;
 			children = (
-				AC89CD0717810D3B00267A60 /* cardBackground.png */,
-				AC89CCFB1781019500267A60 /* deckBtn.png */,
-				AC89CCFC1781019600267A60 /* gameBtn.png */,
-				AC89CCFD1781019600267A60 /* settingsBtn.png */,
-				AC89CCF71780F4EF00267A60 /* switchAccount.png */,
+				54E92CEF17979652008AAECB /* card_of_the_day.png */,
+				54E92CF017979652008AAECB /* deck_builder.png */,
+				54E92CF117979652008AAECB /* play.png */,
+				54E92CEB17979646008AAECB /* settings_menu.png */,
+				54E92CEC17979646008AAECB /* top_bar.png */,
+				54E92CE9179795E6008AAECB /* switch_account.png */,
 			);
 			name = MainMenuLayer;
 			sourceTree = "<group>";
@@ -1260,15 +1257,7 @@
 				E0B976BD17763DEE00B0BB9A /* Default.png in Resources */,
 				E0B976BE17763DEE00B0BB9A /* Default@2x.png in Resources */,
 				ACA0D36F177E52A60086E7A1 /* Default-Landscape~ipad.png in Resources */,
-				AC40D112177FEB0F00E2C700 /* LoginBox.png in Resources */,
-				AC40D115177FEF9200E2C700 /* Others.png in Resources */,
-				AC40D118177FF57800E2C700 /* login.png in Resources */,
 				AC89CCF61780F42E00267A60 /* TopTitleBackGround.png in Resources */,
-				AC89CCF81780F4EF00267A60 /* switchAccount.png in Resources */,
-				AC89CCFE1781019600267A60 /* deckBtn.png in Resources */,
-				AC89CCFF1781019600267A60 /* gameBtn.png in Resources */,
-				AC89CD001781019600267A60 /* settingsBtn.png in Resources */,
-				AC89CD0817810D3B00267A60 /* cardBackground.png in Resources */,
 				ACCB11D817866B7A000FF618 /* mainMenu.png in Resources */,
 				AC1048061788F0E900C2D9E7 /* DeckChoose.png in Resources */,
 				AC1F3D1C17890E0200B4B2C6 /* waterdroplets.png in Resources */,
@@ -1276,6 +1265,13 @@
 				54C09CC1178F7F38006FC5A8 /* login_box.png in Resources */,
 				54C09CC2178F7F38006FC5A8 /* user_register.png in Resources */,
 				54C09CC3178F7F38006FC5A8 /* user_signin.png in Resources */,
+				54E92CEA179795E6008AAECB /* switch_account.png in Resources */,
+				54E92CED17979646008AAECB /* settings_menu.png in Resources */,
+				54E92CEE17979646008AAECB /* top_bar.png in Resources */,
+				54E92CF217979652008AAECB /* card_of_the_day.png in Resources */,
+				54E92CF317979652008AAECB /* deck_builder.png in Resources */,
+				54E92CF417979652008AAECB /* play.png in Resources */,
+				54E92CF61797A978008AAECB /* AnimalData.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
