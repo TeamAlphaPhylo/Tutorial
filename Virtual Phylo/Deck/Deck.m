@@ -18,16 +18,31 @@ bool scale=false;
 bool climate=false;
 bool terrain=false;
 bool evolutionTree=false;
+bool initialCheck=true;
+bool a_dCheck=false;
+bool e_kCheck=false;
+
+
 
 // (Roger) Add Synthesization
 @synthesize deckCards;
 @synthesize deckName;
+//@synthesize pBot;
+static SearchIn *pBot = nil;
+
 
 + (CCScene *) scene
 {
     CCScene *scene = [CCScene node];
+    
+    SearchIn *_pBot = [SearchIn node];
+    [scene addChild:_pBot z:1]; // z-index: 1, above the playing fields
+    pBot = _pBot;
+    
     Deck *layer = [Deck node];
     [scene addChild:layer];
+    
+    
     return scene;
 }
 // (Roger) init method as usual
@@ -36,6 +51,7 @@ bool evolutionTree=false;
     if (self = [super init])
     {
         NSLog(@"Deck Initialization");
+        [[[CCDirector sharedDirector] touchDispatcher] addTargetedDelegate:self priority:0 swallowsTouches:YES];
         [self setBackground];
         [self setTopLMenu];
         [self setTopRMenu];
@@ -54,11 +70,7 @@ bool evolutionTree=false;
     background = [CCSprite spriteWithFile:@"greenDeck.jpg"];
     background.scale=0.8;
     background.position = ccp(screenSize.width/2, screenSize.height/2);
-    [self addChild:background z:-1];
-    
-    CCSprite *lowerPlayerHand = [CCSprite spriteWithFile:@"deckHand.png"];
-    lowerPlayerHand.position = ccp(screenSize.width/2, 65);
-    [self addChild:lowerPlayerHand];
+    [self addChild:background z:-2];
 }
 
 - (void) setTopLMenu
@@ -182,12 +194,12 @@ bool evolutionTree=false;
 - (void) dietMenuSet
 {
     NSLog(@"show the menu of the diet");
-    CCMenuItem *yellow = [CCMenuItemImage itemWithNormalImage:@"yellow.png" selectedImage:@"yellow.png" target:self selector:@selector(yellowArray)];
-    CCMenuItem *black = [CCMenuItemImage itemWithNormalImage:@"black.png" selectedImage:@"black.png" target:self selector:@selector(blackArray)];
-    CCMenuItem *green = [CCMenuItemImage itemWithNormalImage:@"green.png" selectedImage:@"green.png" target:self selector:@selector(greenArray)];
-    CCMenuItem *brown = [CCMenuItemImage itemWithNormalImage:@"brown.png" selectedImage:@"brown.png" target:self selector:@selector(brownArray)];
-    CCMenuItem *red = [CCMenuItemImage itemWithNormalImage:@"red.png" selectedImage:@"red.png" target:self selector:@selector(redArray)];
-    CCMenu *pointsMenu = [CCMenu menuWithItems:yellow,black,green,brown,red, nil];
+    CCMenuItem *photosynthetic = [CCMenuItemImage itemWithNormalImage:@"photosynthetic.png" selectedImage:@"photosynthetic.png" target:self selector:@selector(photosyntheticArray)];
+    CCMenuItem *molecular = [CCMenuItemImage itemWithNormalImage:@"molecular.png" selectedImage:@"molecular.png" target:self selector:@selector(molecularArray)];
+    CCMenuItem *herbivore = [CCMenuItemImage itemWithNormalImage:@"herbivore.png" selectedImage:@"herbivore.png" target:self selector:@selector(herbivoreArray)];
+    CCMenuItem *omnivore = [CCMenuItemImage itemWithNormalImage:@"omnivore.png" selectedImage:@"omnivore.png" target:self selector:@selector(omnivoreArray)];
+    CCMenuItem *carnivore = [CCMenuItemImage itemWithNormalImage:@"carnivore.png" selectedImage:@"carnivore.png" target:self selector:@selector(carnivoreArray)];
+    CCMenu *pointsMenu = [CCMenu menuWithItems:photosynthetic,molecular,herbivore,omnivore,carnivore, nil];
     [pointsMenu alignItemsVerticallyWithPadding:-10];
     pointsMenu.position = ccp(197, 259);
     if (diet == false)
@@ -232,9 +244,12 @@ bool evolutionTree=false;
     CCMenuItemImage *scale4 = [CCMenuItemImage itemWithNormalImage:@"point4.png" selectedImage:@"point4.png" target:self selector:@selector(scale4Array)];
     CCMenuItemImage *scale5 = [CCMenuItemImage itemWithNormalImage:@"point5.png" selectedImage:@"point5.png" target:self selector:@selector(scale5Array)];
     CCMenuItemImage *scale6 = [CCMenuItemImage itemWithNormalImage:@"point6.png" selectedImage:@"point6.png" target:self selector:@selector(scale6Array)];
-    CCMenu *pointsMenu = [CCMenu menuWithItems:scale1,scale2,scale3,scale4,scale5,scale6, nil];
+    CCMenuItemImage *scale7 = [CCMenuItemImage itemWithNormalImage:@"point7.png" selectedImage:@"point7.png" target:self selector:@selector(scale7Array)];
+    CCMenuItemImage *scale8 = [CCMenuItemImage itemWithNormalImage:@"point8.png" selectedImage:@"point8.png" target:self selector:@selector(scale8Array)];
+    CCMenuItemImage *scale9 = [CCMenuItemImage itemWithNormalImage:@"point9.png" selectedImage:@"point9.png" target:self selector:@selector(scale9Array)];
+    CCMenu *pointsMenu = [CCMenu menuWithItems:scale1,scale2,scale3,scale4,scale5,scale6,scale7,scale8,scale9,nil];
     [pointsMenu alignItemsVerticallyWithPadding:-10];
-    pointsMenu.position = ccp(449, 277);
+    pointsMenu.position = ccp(449, 333);
     if (scale == false)
     {
         [self addChild:pointsMenu z:+1 tag: 4];
@@ -352,6 +367,39 @@ bool evolutionTree=false;
     }
 }
 
+- (void)selectSpriteForTouch:(CGPoint)touchLocation {
+    CCSprite * newSprite = nil;
+    for (CCSprite *sprite in movableSprites) {
+        if (CGRectContainsPoint(sprite.boundingBox, touchLocation)) {
+            newSprite = sprite;
+            break;
+        }
+    }
+    if (newSprite != selSprite) {
+        [selSprite stopAllActions];
+        
+        /*
+         // make selected sprite wiggle when touched
+         [selSprite runAction:[CCRotateTo actionWithDuration:0.1 angle:0]];
+         CCRotateTo * rotLeft = [CCRotateBy actionWithDuration:0.1 angle:-4.0];
+         CCRotateTo * rotCenter = [CCRotateBy actionWithDuration:0.1 angle:0.0];
+         CCRotateTo * rotRight = [CCRotateBy actionWithDuration:0.1 angle:4.0];
+         CCSequence * rotSeq = [CCSequence actions:rotLeft, rotCenter, rotRight, rotCenter, nil];
+         [newSprite runAction:[CCRepeatForever actionWithAction:rotSeq]];
+         */
+        selSprite = newSprite;
+    }
+}
+
+-(void)itemsScroller:(ItemsScroller *)sender didSelectItemIndex:(int)index{
+    NSLog(@"Select Bottom %d Card", index);
+}
+
+- (BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event {
+    CGPoint touchLocation = [self convertTouchToNodeSpace:touch];
+    [self selectSpriteForTouch:touchLocation];
+    return TRUE;
+}
 
 - (void) jumpToMenu
 {
@@ -365,6 +413,31 @@ bool evolutionTree=false;
     [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.5 scene:[Deck scene]]];
 
 }
+
+- (void) a_dArray
+{
+    initialCheck=false;
+    a_dCheck = true;
+    e_kCheck = false;
+    //[pBot testCalling];
+    [pBot addCardScrollerwithboolean1:initialCheck andBool2:a_dCheck andBool3:e_kCheck];
+    
+}
+
+- (void) e_kArray
+{
+    initialCheck=false;
+    a_dCheck = false;
+    e_kCheck = true;
+    //[pBot testCalling];
+    
+    [pBot addCardScrollerwithboolean1:initialCheck andBool2:a_dCheck andBool3:e_kCheck];
+    
+}
+
+
+
+
 
 
  
