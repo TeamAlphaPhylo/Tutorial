@@ -236,7 +236,7 @@ enum
 // (Roger) Input: The tap position; Output: the card index of the selected item.
 -(int)doubleTap:(CGPoint)tapPosition {
     int selectedItem = -1;
-    tapPosition = [[CCDirector sharedDirector] convertToGL:tapPosition];
+//    tapPosition = [[CCDirector sharedDirector] convertToGL:tapPosition];
     
     CGFloat touchX = 0;
     CGFloat touchY = 0;
@@ -254,9 +254,12 @@ enum
             touchY *= -1;
     }
     
+    NSLog(@"Double Tap (ItemScroller Handling) Touch X = %f, Touch Y = %f", touchX, touchY);
+    
     for (CCLayer *item in self.children) {
         BOOL isX = NO;
         BOOL isY = NO;
+        NSLog(@"(CCItemScroller)item position: (%f, %f)", item.position.x, item.position.y);
         
         if(_orientation == CCItemsScrollerHorizontal){
             isX = (touchX >= item.position.x && touchX <= item.position.x + item.contentSize.width);

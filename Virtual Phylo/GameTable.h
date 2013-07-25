@@ -52,7 +52,7 @@
 @property float translationAdjustX;
 @property float translationAdjustY;
 
-@property CGPoint adjustedTapLoc;
+@property CGPoint touchLoc;
 
 @property int duplicateCounts;
 

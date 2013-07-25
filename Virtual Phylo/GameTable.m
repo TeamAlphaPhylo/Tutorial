@@ -35,7 +35,7 @@
 
 @synthesize origin;
 
-@synthesize adjustedTapLoc;
+@synthesize touchLoc;
 
 @synthesize duplicateCounts;
 
@@ -95,9 +95,6 @@ static PlayerLayerTop *pTop = nil;
         discardPilePosTopX = 5;
         discardPilePosTopY = 614;
         
-        adjustedTapLoc.x = 0;
-        adjustedTapLoc.y = 0;
-        
         translationAdjustX = 0;
         translationAdjustY = 0;
         
@@ -124,7 +121,7 @@ static PlayerLayerTop *pTop = nil;
         NSString *card_imageName = [NSString stringWithFormat:@"%d%@", i, @".png"];
         CCSprite *card = [CCSprite spriteWithFile:card_imageName];
         float offsetFraction = ((float)(i+1))/ 5;
-        card.position = ccp(winSize.width*offsetFraction, winSize.height/2);
+        card.position = CGPointMake(winSize.width*offsetFraction, winSize.height/2);
         card.scale = 0.4;
         [self addChild:card z:2 tag:i];
         [cardsOnTable addObject:card];
@@ -163,35 +160,37 @@ static PlayerLayerTop *pTop = nil;
 // (Brandon) keeps track of which sprite is being touched
 - (void)selectSpriteForTouch:(CGPoint)touchLocation {
 // (Roger) The size of discard card image is 81*120
-//    CCSprite * newSprite = nil;
     selectedCard = nil;
     for (CCSprite *sprite in cardsOnTable) {
         if (CGRectContainsPoint(sprite.boundingBox, touchLocation)) {
-            NSLog(@"The card has been chosed");
             startPosition = touchLocation;
             selectedCard = sprite;
-//            newSprite = sprite;
-//            [newSprite runAction:[CCEaseInOut actionWithAction:[CCScaleTo actionWithDuration:1 scaleX:1.0 scaleY:1.0] rate:10.0]];
+            NSLog(@"The card has been chosed, tag = %d", selectedCard.tag);
             break;
         }
     }
     
     // (Roger) Set other cards at the back of the newly chosen card
-    for (CCSprite *sprite in cardsOnTable) {
-        [sprite setZOrder: 2];
-    }
     if(selectedCard != nil) {
+        for (CCSprite *sprite in cardsOnTable) {
+            [sprite setZOrder: 2];
+        }
         [selectedCard setZOrder:3];
     }
-//    if (newSprite != selSprite) {
-////        [selSprite stopAllActions];
-//        selSprite = newSprite;
-//    }
+    
+    // (Roger) If the card is not selected, notify me
+    if(selectedCard == nil) {
+        NSLog(@"GmaeTable(selectSpriteForTouch): No card is selected.");
+    }
 }
 
 - (BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event {
     CGPoint touchLocation = [self convertTouchToNodeSpace:touch];
-    // (Roger) Make sure the touch location is on the game table no in the hand scroller, otherwise it will give exceptions
+    NSLog(@"ccTouchBegan (Coordinate): X = %f, Y = %f", touchLocation.x, touchLocation.y);
+    // (Roger)(to be tested)
+    touchLoc = touchLocation;
+    
+    // (Roger) Figure out the touch location and make the judgemnet of top / bottom player hand
     bool tapTopPlayerHand = CGRectContainsPoint(CGRectMake(0 + translationAdjustX, 0 + translationAdjustY, 1024, 154), touchLocation);
     bool tapBottomPlayerHand = CGRectContainsPoint(CGRectMake(0 + translationAdjustX, 614 + translationAdjustY, 1024, 768), touchLocation);
     
@@ -211,17 +210,10 @@ static PlayerLayerTop *pTop = nil;
     // (Roger) If the bottom bar is not hidden and the player clicked on that OR if the top bar is not hidden and the player clicked on that, only those two conditions would cause the TouchEvent be ignored. And let it handled by the scroller touch dispatch itself.
     
     if (touchGameTable) {
+        NSLog(@"[GameTable : CCTouchMoved] Touch @ GameTable");
         // (Roger) Make sure the touch location is on the game table no in the hand scroller, otherwise it will give exceptions
-        // (Roger) use the special value of -1 as the flag
         CGPoint touchLocation = [self convertTouchToNodeSpace:touch];
-        CCSprite *selectedSprite = -1;
-        for (CCSprite *sprite in cardsOnTable) {
-            if (CGRectContainsPoint(sprite.boundingBox, touchLocation)) {
-                selectedSprite = sprite;
-                break;
-            }
-        }
-        NSLog(@"[GameTable : CCTouchMoved] Card selected and moved");
+        // (Roger) If the play touches the game table, no matter whether the card is chosen or not, it will let panForTranslation() method to handle it.
         CGPoint oldTouchLocation = [touch previousLocationInView:touch.view];
         oldTouchLocation = [[CCDirector sharedDirector] convertToGL:oldTouchLocation];
         oldTouchLocation = [self convertToNodeSpace:oldTouchLocation];
@@ -269,23 +261,10 @@ static PlayerLayerTop *pTop = nil;
 
 - (void)ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event
 {
-    if(touchGameTable) {
+    if(touchGameTable && selectedCard != nil) {
+        // (Roger) TO-DO: Handle the card moving to the top player hand
         CGPoint touchLocation = [self convertTouchToNodeSpace:touch];
-        
-        // (Roger) Pseudo-code
-        /*
-            if (the card is moved to the discard pile area) {
-                if (the bottom hand is visible) {
-                    if (cardIndex belongs to the player at the bottom) {
-                        Add the card to the discard pile;
-                    } else {
-                        Bounce it back to the origin area;
-                    }
-                } else {
-                    Keep it here
-                }
-         */
-        // (Roger) Maybe there is somthing wrong with the selection of the hand scroller
+        // (Roger) if the card is moved to the bottom player discard pile 
         if (CGRectContainsPoint(CGRectMake(discardPilePosBottomX, discardPilePosBottomY, 81, 120), touchLocation) && cardAtDiscardArea) {
             int selectedCardIndex = selectedCard.tag;
             NSLog(@"%f, %f", touchLocation.x, touchLocation.y);
@@ -293,10 +272,12 @@ static PlayerLayerTop *pTop = nil;
                 if(selectedCardIndex < 1000 || selectedCardIndex >= 10000) {
                     NSLog(@"The transfer discard card to the discard pile");
                     [self removeChild:selectedCard cleanup:YES];
+                    [cardsOnTable removeObject:selectedCard];
                     // (Roger) (Bug) Memory Access Bug
+                    // (Roger) Currently the movableSprites is disabled
     //                [movableSprites removeObject:selectedCard];
                     // (Roger) Notify the playerLayerBot to add the card to the discard pile
-                    PlayerLayerBot* pBot = (PlayerLayerBot*)[self.parent getChildByTag:9996];
+//                    PlayerLayerBot* pBot = (PlayerLayerBot*)[self.parent getChildByTag:9996];
                     if (selectedCardIndex >= 10000) {
                         while (selectedCardIndex >= 10000) {
                             selectedCardIndex = selectedCardIndex - 10000;
@@ -311,13 +292,25 @@ static PlayerLayerTop *pTop = nil;
                 }
             }
         }
-        NSLog(@"Touch Ended:%@", touch);
-    } else {
+//        NSLog(@"Touch Ended:%@", touch);
+        /*
+         LocationInView
+         (0, 0)-----(X, 0)
+         |              |
+         |              |
+         (0, Y)-----(X, Y)
+         */
+    } else if (touchGameTable && selectedCard == nil) {
         CGPoint touchPoint = [touch locationInView:[touch view]];
-//        CGPoint touchPoint = [self convertTouchToNodeSpace:touch];
-        NSLog(@"HAND SCROLLER CORDINATE: X = %f, Y = %f", touchPoint.x, touchPoint.y);
+        NSLog(@"(TouchEnded) Coordinate (locationInView) @ GameTable: X = %f, Y = %f", touchPoint.x, touchPoint.y);
+    }
+    else {
+        // TO-DO: Add upper hand scroller touch events 
+        CGPoint touchPoint = [touch locationInView:[touch view]];
+        NSLog(@"(TouchEnded) Coordinate (locationInView) @ HAND SCROLLER: X = %f, Y = %f", touchPoint.x, touchPoint.y);
         [[pBot lowerHandScroller] handleTouchEnded:touchPoint];
     }
+    selectedCard = nil;
 }
 
 //- (void)putCardBack: (int)cardIndex {
@@ -370,13 +363,9 @@ static PlayerLayerTop *pTop = nil;
 
 - (void)panForTranslation:(CGPoint)translation {
     // (Brandon) if a sprite is touched, move the sprite
-    if (selectedCard) {
+    if (selectedCard != nil) {
         CGPoint newPos = ccpAdd(selectedCard.position, translation);
         selectedCard.position = newPos;
-        
-        // (Brandon) if the background is touched, move the sprite
-        // note, this still works if you're touching the hand, because the background is beneath it, needs fixing
-//    } else if (background) {
     } else {
         CGPoint newPos = ccpAdd(self.position, translation);
         discardPilePosBottomX = discardPilePosBottomX - translation.x;
@@ -386,21 +375,30 @@ static PlayerLayerTop *pTop = nil;
         origin.x = origin.x - translation.x;
         origin.y = origin.y - translation.y;
         
+        // (Roger)(Tested) If the screen move upwards, translation Y++, if the screen move to the right, translation X++
         translationAdjustX = translationAdjustX - translation.x;
         translationAdjustY = translationAdjustY - translation.y;
         
-        NSLog(@"%f, %f", origin.x, origin.y);
+        NSLog(@"Origin X: %f, Y: %f", origin.x, origin.y);
+        NSLog(@"Translation Cumulative Adjustment: X: %f, Y: %f", translationAdjustX, translationAdjustY);
+        
+        // (Roger)(BUG_TESTING) The translation has no bound, which causes asynchronized translation and origin
+        // (Roger)(Fixed)(Tested) Translation is bounded
         if (origin.x < -277) {
             origin.x = -277;
+            translationAdjustX = -277;
         }
         if (origin.x > 268) {
             origin.x = 268;
+            translationAdjustX = 268;
         }
         if (origin.y > 868) {
             origin.y = 868;
+            translationAdjustY = 868;
         }
         if (origin.y < -880) {
             origin.y = -880;
+            translationAdjustY = -880;
         }
         
         if (discardPilePosBottomX < -277) {
@@ -467,17 +465,19 @@ static PlayerLayerTop *pTop = nil;
     bool tapBottomPlayerHand = CGRectContainsPoint(CGRectMake(0, 614, 1024, 768), tapLocation);
     
     // (Roger) Maybe adjusted tap coordinate
-    tapLocation.x = tapLocation.x + translationAdjustX;
-    tapLocation.y = tapLocation.y + translationAdjustY;
+    touchLoc.x = touchLoc.x - translationAdjustX;
+    touchLoc.y = touchLoc.y - translationAdjustY;
+
     
-    
+    NSLog(@"Touch Loc X = %f, Touch Loc Y = %f", touchLoc.x, touchLoc.y);
+    NSLog(@"Tap Loc X = %f, Tap Loc Y = %f", tapLocation.x, tapLocation.y);
     
     
     if(tapBottomPlayerHand && ![pBot hidden]) {
         CCLOG(@"Tapped at the bottom!");
-            NSLog(@"Adj. Tap Loc X = %f, Adj. Tap Loc Y = %f", adjustedTapLoc.x, adjustedTapLoc.y);
-            NSLog(@"Tap Loc X = %f, Adj. Tap Loc Y = %f", tapLocation.x, tapLocation.y);
-            int selectedCardIndex = [pBot.lowerHandScroller doubleTap:tapLocation];
+//            int selectedCardIndex = [pBot.lowerHandScroller doubleTap:tapLocation];
+            int selectedCardIndex = [pBot.lowerHandScroller doubleTap:touchLoc];
+
             if(selectedCardIndex != -1) {
                 CCSelectableItem* itemToBeRemoved = nil;
                 NSMutableArray *cardsOnHand = pBot.cardsOnHand;
@@ -530,9 +530,7 @@ static PlayerLayerTop *pTop = nil;
             }
     } else if(tapTopPlayerHand && ![pTop hidden]) {
         CCLOG(@"Tapped at the Top!");
-        NSLog(@"Adj. Tap Loc X = %f, Adj. Tap Loc Y = %f", adjustedTapLoc.x, adjustedTapLoc.y);
-        NSLog(@"Tap Loc X = %f, Adj. Tap Loc Y = %f", tapLocation.x, tapLocation.y);
-        int selectedCardIndex = [pBot.lowerHandScroller doubleTap:tapLocation];
+        int selectedCardIndex = [pBot.lowerHandScroller doubleTap:touchLoc];
         if(selectedCardIndex != -1) {
             CCSelectableItem* itemToBeRemoved = nil;
             NSMutableArray *cardsOnHand = pBot.cardsOnHand;
@@ -585,17 +583,21 @@ static PlayerLayerTop *pTop = nil;
         }
     } else {
         CCLOG(@"Tapped at the game table");
-        NSLog(@"Tap Location: X: %f, Y: %f", tapLocation.x, tapLocation.y);
         int spriteTag = -1;
-        CCSprite *selectedSprite;
-        for (CCSprite *sprite in cardsOnTable) {
-            if (CGRectContainsPoint(sprite.boundingBox, tapLocation)) {
-                selectedSprite = sprite;
-                spriteTag = selectedSprite.tag;
-                NSLog(@"Haddling Tap (GameTable): Tap on a Sprite is detected. Index = %d", spriteTag);
-                break;
-            }
+        if(selectedCard != nil) {
+            spriteTag = selectedCard.tag;
         }
+//        CCSprite *selectedSprite;
+//        for (CCSprite *sprite in cardsOnTable) {
+////            if (CGRectContainsPoint(sprite.boundingBox, tapLocation)) {
+//            NSLog(@"Double Tap, Sprite Location:　(%f, %f)", sprite.position.x, sprite.position.y);
+//            if (CGRectContainsPoint(sprite.boundingBox, tapLocation)) {
+//                selectedSprite = sprite;
+//                spriteTag = selectedSprite.tag;
+//                NSLog(@"Haddling Tap (GameTable): Tap on a Sprite is detected. Index = %d", spriteTag);
+//                break;
+//            }
+//        }
         if(spriteTag != -1 && (spriteTag < 1000 || spriteTag >= 10000)) {
             bool duplicated = FALSE;
             while (spriteTag >= 10000){
@@ -621,16 +623,16 @@ static PlayerLayerTop *pTop = nil;
             
             [pBot.lowerHandScroller updateItems:pBot.cardsOnHand];
             
-            [cardsOnTable removeObject:selectedSprite];
+            [cardsOnTable removeObject:selectedCard];
             
-            [self removeChild:selectedSprite cleanup:YES];
+            [self removeChild:selectedCard cleanup:YES];
             
             if(duplicated) {
                 duplicateCounts--;
             }
             
             
-        } else if(spriteTag != -1 && (selectedSprite.tag >= 1000 && selectedSprite.tag < 2000)) {
+        } else if(spriteTag != -1 && (spriteTag >= 1000 && spriteTag < 2000)) {
             NSLog(@"To Be implemented, top player hand");
         } else {
             
