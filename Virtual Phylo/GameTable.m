@@ -198,8 +198,9 @@ static PlayerLayerTop *pTop = nil;
     if(gameTableCondition) {
         NSLog(@"%f, %f", touchLocation.x, touchLocation.y);
         [self selectSpriteForTouch:touchLocation];
-        return TRUE;
+        
     }
+    return TRUE;
 }
 
 - (CGPoint)boundLayerPos:(CGPoint)newPos {

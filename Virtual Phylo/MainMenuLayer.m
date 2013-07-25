@@ -8,6 +8,7 @@
 
 #import "MainMenuLayer.h"
 #import "Game.h"
+#import "Deck.h"
 
 // (Roger) BUG: Missing 226.png, 385.png
 
@@ -159,6 +160,7 @@
 }
 - (void)jumpToDeck {
     // TO-DO: To be implemented
+    [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.5 scene:[Deck scene]]];
 }
 - (void)jumpToSettings {
     NSLog(@"Jump to Game scene");
