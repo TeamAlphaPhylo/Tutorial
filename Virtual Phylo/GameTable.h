@@ -34,7 +34,8 @@
     UITapGestureRecognizer * _doubleTapRecognizer;
 }
 
-@property bool cardAtDiscardArea;
+@property bool cardAtBottomDiscardArea;
+@property bool cardAtTopDiscardArea;
 @property (nonatomic, retain) CCSprite *selectedCard;
 @property (nonatomic, retain) NSMutableArray *cardsOnTable;
 // (Roger) Declare a CGPoint Variable to keep the record of the touch starting point of the card

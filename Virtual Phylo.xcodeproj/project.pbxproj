@@ -580,16 +580,16 @@
 		AC634CFB179335AA0039CA14 /* 429.png in Resources */ = {isa = PBXBuildFile; fileRef = AC634B4C179335AA0039CA14 /* 429.png */; };
 		AC634CFC179335AA0039CA14 /* 430.png in Resources */ = {isa = PBXBuildFile; fileRef = AC634B4D179335AA0039CA14 /* 430.png */; };
 		AC634CFD179335AA0039CA14 /* 431.png in Resources */ = {isa = PBXBuildFile; fileRef = AC634B4E179335AA0039CA14 /* 431.png */; };
-		AC634D041793386A0039CA14 /* _0.png in Resources */ = {isa = PBXBuildFile; fileRef = AC634D021793386A0039CA14 /* _0.png */; };
-		AC634D051793386A0039CA14 /* _1.png in Resources */ = {isa = PBXBuildFile; fileRef = AC634D031793386A0039CA14 /* _1.png */; };
 		AC89CCF61780F42E00267A60 /* TopTitleBackGround.png in Resources */ = {isa = PBXBuildFile; fileRef = AC89CCF51780F42E00267A60 /* TopTitleBackGround.png */; };
-		AC89CCF81780F4EF00267A60 /* switchAccount.png in Resources */ = {isa = PBXBuildFile; fileRef = AC89CCF71780F4EF00267A60 /* switchAccount.png */; };
-		AC89CCFE1781019600267A60 /* deckBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = AC89CCFB1781019500267A60 /* deckBtn.png */; };
-		AC89CCFF1781019600267A60 /* gameBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = AC89CCFC1781019600267A60 /* gameBtn.png */; };
-		AC89CD001781019600267A60 /* settingsBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = AC89CCFD1781019600267A60 /* settingsBtn.png */; };
-		AC89CD0817810D3B00267A60 /* cardBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = AC89CD0717810D3B00267A60 /* cardBackground.png */; };
 		AC8ADD2F1788DF8E007758FD /* CCScrollLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = AC8ADD2E1788DF8E007758FD /* CCScrollLayer.m */; };
 		ACA0D36F177E52A60086E7A1 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = ACA0D36E177E52A60086E7A1 /* Default-Landscape~ipad.png */; };
+		ACA4C46017A317ED00BDCC9A /* SettingsLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = ACA4C45F17A317ED00BDCC9A /* SettingsLayer.m */; };
+		ACA4C46717A3237C00BDCC9A /* setting_changeBG.png in Resources */ = {isa = PBXBuildFile; fileRef = ACA4C46217A3237C00BDCC9A /* setting_changeBG.png */; };
+		ACA4C46817A3237C00BDCC9A /* setting_changeMusic.png in Resources */ = {isa = PBXBuildFile; fileRef = ACA4C46317A3237C00BDCC9A /* setting_changeMusic.png */; };
+		ACA4C46917A3237C00BDCC9A /* setting_saveChanges.png in Resources */ = {isa = PBXBuildFile; fileRef = ACA4C46417A3237C00BDCC9A /* setting_saveChanges.png */; };
+		ACA4C46A17A3237C00BDCC9A /* setting_text.png in Resources */ = {isa = PBXBuildFile; fileRef = ACA4C46517A3237C00BDCC9A /* setting_text.png */; };
+		ACA4C46B17A3237C00BDCC9A /* setting_title.png in Resources */ = {isa = PBXBuildFile; fileRef = ACA4C46617A3237C00BDCC9A /* setting_title.png */; };
+		ACA4C46D17A329AA00BDCC9A /* setting_backMenu.png in Resources */ = {isa = PBXBuildFile; fileRef = ACA4C46C17A329AA00BDCC9A /* setting_backMenu.png */; };
 		ACBDA8B1179745570048B605 /* arrowSwipeCardExchange.png in Resources */ = {isa = PBXBuildFile; fileRef = ACBDA8B0179745560048B605 /* arrowSwipeCardExchange.png */; };
 		ACBDA8B417974F480048B605 /* tempNo.png in Resources */ = {isa = PBXBuildFile; fileRef = ACBDA8B217974F470048B605 /* tempNo.png */; };
 		ACBDA8B517974F480048B605 /* tempYes.png in Resources */ = {isa = PBXBuildFile; fileRef = ACBDA8B317974F470048B605 /* tempYes.png */; };
@@ -600,6 +600,29 @@
 		ACE6A2441793DD5600886FF0 /* unHide.png in Resources */ = {isa = PBXBuildFile; fileRef = ACE6A2431793DD5500886FF0 /* unHide.png */; };
 		ACE6A2471793E4BB00886FF0 /* arrowSwipeRev.png in Resources */ = {isa = PBXBuildFile; fileRef = ACE6A2451793E4BA00886FF0 /* arrowSwipeRev.png */; };
 		ACE6A2481793E4BB00886FF0 /* unHideRev.png in Resources */ = {isa = PBXBuildFile; fileRef = ACE6A2461793E4BA00886FF0 /* unHideRev.png */; };
+		ACF39BEE17A1CFCE001BE718 /* cardOfTheDay.png in Resources */ = {isa = PBXBuildFile; fileRef = ACF39BE417A1CFCE001BE718 /* cardOfTheDay.png */; };
+		ACF39BEF17A1CFCE001BE718 /* dove.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ACF39BE517A1CFCE001BE718 /* dove.jpg */; };
+		ACF39BF017A1CFCE001BE718 /* klugFusion.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ACF39BE617A1CFCE001BE718 /* klugFusion.jpg */; };
+		ACF39BF117A1CFCE001BE718 /* menuTitle.png in Resources */ = {isa = PBXBuildFile; fileRef = ACF39BE717A1CFCE001BE718 /* menuTitle.png */; };
+		ACF39BF217A1CFCE001BE718 /* navButton.png in Resources */ = {isa = PBXBuildFile; fileRef = ACF39BE817A1CFCE001BE718 /* navButton.png */; };
+		ACF39BF317A1CFCE001BE718 /* smallButton.png in Resources */ = {isa = PBXBuildFile; fileRef = ACF39BE917A1CFCE001BE718 /* smallButton.png */; };
+		ACF39BF417A1CFCE001BE718 /* swirl.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ACF39BEA17A1CFCE001BE718 /* swirl.jpg */; };
+		ACF39BF517A1CFCE001BE718 /* topCorner.png in Resources */ = {isa = PBXBuildFile; fileRef = ACF39BEB17A1CFCE001BE718 /* topCorner.png */; };
+		ACF39BF617A1CFCE001BE718 /* waterDroplets.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ACF39BEC17A1CFCE001BE718 /* waterDroplets.jpg */; };
+		ACF39BF717A1CFCE001BE718 /* websiteButton.png in Resources */ = {isa = PBXBuildFile; fileRef = ACF39BED17A1CFCE001BE718 /* websiteButton.png */; };
+		ACF39BF917A1D2CF001BE718 /* green2.png in Resources */ = {isa = PBXBuildFile; fileRef = ACF39BF817A1D2CF001BE718 /* green2.png */; };
+		ACF39C0417A1D3D0001BE718 /* text_cardOfTheDay.png in Resources */ = {isa = PBXBuildFile; fileRef = ACF39BFA17A1D3CF001BE718 /* text_cardOfTheDay.png */; };
+		ACF39C0517A1D3D0001BE718 /* text_deckBuilder.png in Resources */ = {isa = PBXBuildFile; fileRef = ACF39BFB17A1D3D0001BE718 /* text_deckBuilder.png */; };
+		ACF39C0617A1D3D0001BE718 /* text_mainMenu.png in Resources */ = {isa = PBXBuildFile; fileRef = ACF39BFC17A1D3D0001BE718 /* text_mainMenu.png */; };
+		ACF39C0717A1D3D0001BE718 /* text_phyloWebsite.png in Resources */ = {isa = PBXBuildFile; fileRef = ACF39BFD17A1D3D0001BE718 /* text_phyloWebsite.png */; };
+		ACF39C0817A1D3D0001BE718 /* text_playPhylo.png in Resources */ = {isa = PBXBuildFile; fileRef = ACF39BFE17A1D3D0001BE718 /* text_playPhylo.png */; };
+		ACF39C0917A1D3D0001BE718 /* text_settings.png in Resources */ = {isa = PBXBuildFile; fileRef = ACF39BFF17A1D3D0001BE718 /* text_settings.png */; };
+		ACF39C0A17A1D3D0001BE718 /* text_switchAccount.png in Resources */ = {isa = PBXBuildFile; fileRef = ACF39C0017A1D3D0001BE718 /* text_switchAccount.png */; };
+		ACF39C0B17A1D3D0001BE718 /* text_teamAlpha.png in Resources */ = {isa = PBXBuildFile; fileRef = ACF39C0117A1D3D0001BE718 /* text_teamAlpha.png */; };
+		ACF39C0C17A1D3D0001BE718 /* text_virtualPhyloWebsite.png in Resources */ = {isa = PBXBuildFile; fileRef = ACF39C0217A1D3D0001BE718 /* text_virtualPhyloWebsite.png */; };
+		ACF39C0D17A1D3D0001BE718 /* text_wikipedia.png in Resources */ = {isa = PBXBuildFile; fileRef = ACF39C0317A1D3D0001BE718 /* text_wikipedia.png */; };
+		ACF39C1017A1F0BE001BE718 /* topRect.png in Resources */ = {isa = PBXBuildFile; fileRef = ACF39C0E17A1F0BC001BE718 /* topRect.png */; };
+		ACF39C1117A1F0BE001BE718 /* botRect.png in Resources */ = {isa = PBXBuildFile; fileRef = ACF39C0F17A1F0BE001BE718 /* botRect.png */; };
 		E0B974F0177637D500B0BB9A /* 0.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B97355177637D200B0BB9A /* 0.png */; };
 		E0B9768A177637D500B0BB9A /* Thumbs.db in Resources */ = {isa = PBXBuildFile; fileRef = E0B974EF177637D500B0BB9A /* Thumbs.db */; };
 		E0B976A11776384300B0BB9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E0B9769A1776384300B0BB9A /* AppDelegate.m */; };
@@ -1359,17 +1382,18 @@
 		AC634B4C179335AA0039CA14 /* 429.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 429.png; path = Cards/429.png; sourceTree = SOURCE_ROOT; };
 		AC634B4D179335AA0039CA14 /* 430.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 430.png; path = Cards/430.png; sourceTree = SOURCE_ROOT; };
 		AC634B4E179335AA0039CA14 /* 431.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 431.png; path = Cards/431.png; sourceTree = SOURCE_ROOT; };
-		AC634D021793386A0039CA14 /* _0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = _0.png; path = Cards/_0.png; sourceTree = SOURCE_ROOT; };
-		AC634D031793386A0039CA14 /* _1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = _1.png; path = Cards/_1.png; sourceTree = SOURCE_ROOT; };
 		AC89CCF51780F42E00267A60 /* TopTitleBackGround.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TopTitleBackGround.png; sourceTree = "<group>"; };
-		AC89CCF71780F4EF00267A60 /* switchAccount.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = switchAccount.png; sourceTree = "<group>"; };
-		AC89CCFB1781019500267A60 /* deckBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = deckBtn.png; sourceTree = "<group>"; };
-		AC89CCFC1781019600267A60 /* gameBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gameBtn.png; sourceTree = "<group>"; };
-		AC89CCFD1781019600267A60 /* settingsBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settingsBtn.png; sourceTree = "<group>"; };
-		AC89CD0717810D3B00267A60 /* cardBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cardBackground.png; sourceTree = "<group>"; };
 		AC8ADD2D1788DF8E007758FD /* CCScrollLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCScrollLayer.h; sourceTree = "<group>"; };
 		AC8ADD2E1788DF8E007758FD /* CCScrollLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCScrollLayer.m; sourceTree = "<group>"; };
 		ACA0D36E177E52A60086E7A1 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
+		ACA4C45E17A317ED00BDCC9A /* SettingsLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsLayer.h; sourceTree = "<group>"; };
+		ACA4C45F17A317ED00BDCC9A /* SettingsLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsLayer.m; sourceTree = "<group>"; };
+		ACA4C46217A3237C00BDCC9A /* setting_changeBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setting_changeBG.png; sourceTree = "<group>"; };
+		ACA4C46317A3237C00BDCC9A /* setting_changeMusic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setting_changeMusic.png; sourceTree = "<group>"; };
+		ACA4C46417A3237C00BDCC9A /* setting_saveChanges.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setting_saveChanges.png; sourceTree = "<group>"; };
+		ACA4C46517A3237C00BDCC9A /* setting_text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setting_text.png; sourceTree = "<group>"; };
+		ACA4C46617A3237C00BDCC9A /* setting_title.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setting_title.png; sourceTree = "<group>"; };
+		ACA4C46C17A329AA00BDCC9A /* setting_backMenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setting_backMenu.png; sourceTree = "<group>"; };
 		ACBDA8B0179745560048B605 /* arrowSwipeCardExchange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrowSwipeCardExchange.png; sourceTree = "<group>"; };
 		ACBDA8B217974F470048B605 /* tempNo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tempNo.png; sourceTree = "<group>"; };
 		ACBDA8B317974F470048B605 /* tempYes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tempYes.png; sourceTree = "<group>"; };
@@ -1383,6 +1407,29 @@
 		ACE6A2431793DD5500886FF0 /* unHide.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unHide.png; sourceTree = "<group>"; };
 		ACE6A2451793E4BA00886FF0 /* arrowSwipeRev.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrowSwipeRev.png; sourceTree = "<group>"; };
 		ACE6A2461793E4BA00886FF0 /* unHideRev.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unHideRev.png; sourceTree = "<group>"; };
+		ACF39BE417A1CFCE001BE718 /* cardOfTheDay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cardOfTheDay.png; sourceTree = "<group>"; };
+		ACF39BE517A1CFCE001BE718 /* dove.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dove.jpg; sourceTree = "<group>"; };
+		ACF39BE617A1CFCE001BE718 /* klugFusion.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = klugFusion.jpg; sourceTree = "<group>"; };
+		ACF39BE717A1CFCE001BE718 /* menuTitle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menuTitle.png; sourceTree = "<group>"; };
+		ACF39BE817A1CFCE001BE718 /* navButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navButton.png; sourceTree = "<group>"; };
+		ACF39BE917A1CFCE001BE718 /* smallButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smallButton.png; sourceTree = "<group>"; };
+		ACF39BEA17A1CFCE001BE718 /* swirl.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = swirl.jpg; sourceTree = "<group>"; };
+		ACF39BEB17A1CFCE001BE718 /* topCorner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = topCorner.png; sourceTree = "<group>"; };
+		ACF39BEC17A1CFCE001BE718 /* waterDroplets.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = waterDroplets.jpg; sourceTree = "<group>"; };
+		ACF39BED17A1CFCE001BE718 /* websiteButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = websiteButton.png; sourceTree = "<group>"; };
+		ACF39BF817A1D2CF001BE718 /* green2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green2.png; sourceTree = "<group>"; };
+		ACF39BFA17A1D3CF001BE718 /* text_cardOfTheDay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = text_cardOfTheDay.png; sourceTree = "<group>"; };
+		ACF39BFB17A1D3D0001BE718 /* text_deckBuilder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = text_deckBuilder.png; sourceTree = "<group>"; };
+		ACF39BFC17A1D3D0001BE718 /* text_mainMenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = text_mainMenu.png; sourceTree = "<group>"; };
+		ACF39BFD17A1D3D0001BE718 /* text_phyloWebsite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = text_phyloWebsite.png; sourceTree = "<group>"; };
+		ACF39BFE17A1D3D0001BE718 /* text_playPhylo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = text_playPhylo.png; sourceTree = "<group>"; };
+		ACF39BFF17A1D3D0001BE718 /* text_settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = text_settings.png; sourceTree = "<group>"; };
+		ACF39C0017A1D3D0001BE718 /* text_switchAccount.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = text_switchAccount.png; sourceTree = "<group>"; };
+		ACF39C0117A1D3D0001BE718 /* text_teamAlpha.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = text_teamAlpha.png; sourceTree = "<group>"; };
+		ACF39C0217A1D3D0001BE718 /* text_virtualPhyloWebsite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = text_virtualPhyloWebsite.png; sourceTree = "<group>"; };
+		ACF39C0317A1D3D0001BE718 /* text_wikipedia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = text_wikipedia.png; sourceTree = "<group>"; };
+		ACF39C0E17A1F0BC001BE718 /* topRect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = topRect.png; sourceTree = "<group>"; };
+		ACF39C0F17A1F0BE001BE718 /* botRect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = botRect.png; sourceTree = "<group>"; };
 		E0B97355177637D200B0BB9A /* 0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 0.png; sourceTree = "<group>"; };
 		E0B974EF177637D500B0BB9A /* Thumbs.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = Thumbs.db; sourceTree = "<group>"; };
 		E0B976991776384300B0BB9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -1480,6 +1527,7 @@
 		44B31B3217946BA400002191 /* Scenes and Layers */ = {
 			isa = PBXGroup;
 			children = (
+				ACA4C45D17A317AD00BDCC9A /* SettingsScene */,
 				E0B9769E1776384300B0BB9A /* IntroScene */,
 				E0B9769B1776384300B0BB9A /* HelloWorldScene */,
 				AC40D119177FF6A000E2C700 /* MainMenuScene */,
@@ -1607,6 +1655,7 @@
 		545B703817751BAD00B550D8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				ACA4C46117A3236B00BDCC9A /* Settings */,
 				AC40D110177FEB0600E2C700 /* Misc */,
 				E0B976A4177638DB00B0BB9A /* Game */,
 				E0B97354177637D200B0BB9A /* Cards */,
@@ -2015,7 +2064,6 @@
 			isa = PBXGroup;
 			children = (
 				ACCB11D617866A11000FF618 /* Shared Texture */,
-				AC89CCFA1781015200267A60 /* MainMenuLayer */,
 				AC89CCF91781013000267A60 /* LoginLayer */,
 			);
 			name = Misc;
@@ -2044,16 +2092,26 @@
 			name = LoginLayer;
 			sourceTree = "<group>";
 		};
-		AC89CCFA1781015200267A60 /* MainMenuLayer */ = {
+		ACA4C45D17A317AD00BDCC9A /* SettingsScene */ = {
 			isa = PBXGroup;
 			children = (
-				AC89CD0717810D3B00267A60 /* cardBackground.png */,
-				AC89CCFB1781019500267A60 /* deckBtn.png */,
-				AC89CCFC1781019600267A60 /* gameBtn.png */,
-				AC89CCFD1781019600267A60 /* settingsBtn.png */,
-				AC89CCF71780F4EF00267A60 /* switchAccount.png */,
+				ACA4C45E17A317ED00BDCC9A /* SettingsLayer.h */,
+				ACA4C45F17A317ED00BDCC9A /* SettingsLayer.m */,
 			);
-			name = MainMenuLayer;
+			name = SettingsScene;
+			sourceTree = "<group>";
+		};
+		ACA4C46117A3236B00BDCC9A /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				ACA4C46C17A329AA00BDCC9A /* setting_backMenu.png */,
+				ACA4C46217A3237C00BDCC9A /* setting_changeBG.png */,
+				ACA4C46317A3237C00BDCC9A /* setting_changeMusic.png */,
+				ACA4C46417A3237C00BDCC9A /* setting_saveChanges.png */,
+				ACA4C46517A3237C00BDCC9A /* setting_text.png */,
+				ACA4C46617A3237C00BDCC9A /* setting_title.png */,
+			);
+			name = Settings;
 			sourceTree = "<group>";
 		};
 		ACCB11D617866A11000FF618 /* Shared Texture */ = {
@@ -2085,11 +2143,39 @@
 			name = PlayerLayers;
 			sourceTree = "<group>";
 		};
+		ACF39BE317A1CFCE001BE718 /* MainMenu */ = {
+			isa = PBXGroup;
+			children = (
+				ACF39C0E17A1F0BC001BE718 /* topRect.png */,
+				ACF39C0F17A1F0BE001BE718 /* botRect.png */,
+				ACF39BFA17A1D3CF001BE718 /* text_cardOfTheDay.png */,
+				ACF39BFB17A1D3D0001BE718 /* text_deckBuilder.png */,
+				ACF39BFC17A1D3D0001BE718 /* text_mainMenu.png */,
+				ACF39BFD17A1D3D0001BE718 /* text_phyloWebsite.png */,
+				ACF39BFE17A1D3D0001BE718 /* text_playPhylo.png */,
+				ACF39BFF17A1D3D0001BE718 /* text_settings.png */,
+				ACF39C0017A1D3D0001BE718 /* text_switchAccount.png */,
+				ACF39C0117A1D3D0001BE718 /* text_teamAlpha.png */,
+				ACF39C0217A1D3D0001BE718 /* text_virtualPhyloWebsite.png */,
+				ACF39C0317A1D3D0001BE718 /* text_wikipedia.png */,
+				ACF39BF817A1D2CF001BE718 /* green2.png */,
+				ACF39BE417A1CFCE001BE718 /* cardOfTheDay.png */,
+				ACF39BE517A1CFCE001BE718 /* dove.jpg */,
+				ACF39BE617A1CFCE001BE718 /* klugFusion.jpg */,
+				ACF39BE717A1CFCE001BE718 /* menuTitle.png */,
+				ACF39BE817A1CFCE001BE718 /* navButton.png */,
+				ACF39BE917A1CFCE001BE718 /* smallButton.png */,
+				ACF39BEA17A1CFCE001BE718 /* swirl.jpg */,
+				ACF39BEB17A1CFCE001BE718 /* topCorner.png */,
+				ACF39BEC17A1CFCE001BE718 /* waterDroplets.jpg */,
+				ACF39BED17A1CFCE001BE718 /* websiteButton.png */,
+			);
+			path = MainMenu;
+			sourceTree = "<group>";
+		};
 		E0B97354177637D200B0BB9A /* Cards */ = {
 			isa = PBXGroup;
 			children = (
-				AC634D021793386A0039CA14 /* _0.png */,
-				AC634D031793386A0039CA14 /* _1.png */,
 				AC6349A0179335A70039CA14 /* 1.png */,
 				AC6349A1179335A70039CA14 /* 2.png */,
 				AC6349A2179335A70039CA14 /* 3.png */,
@@ -2560,6 +2646,7 @@
 		E0B976A4177638DB00B0BB9A /* Game */ = {
 			isa = PBXGroup;
 			children = (
+				ACF39BE317A1CFCE001BE718 /* MainMenu */,
 				AC1048041788F0D100C2D9E7 /* Game: Deck */,
 				E0B976A5177638DB00B0BB9A /* PlayerRegion */,
 			);
@@ -2657,11 +2744,6 @@
 				AC40D115177FEF9200E2C700 /* Others.png in Resources */,
 				AC40D118177FF57800E2C700 /* login.png in Resources */,
 				AC89CCF61780F42E00267A60 /* TopTitleBackGround.png in Resources */,
-				AC89CCF81780F4EF00267A60 /* switchAccount.png in Resources */,
-				AC89CCFE1781019600267A60 /* deckBtn.png in Resources */,
-				AC89CCFF1781019600267A60 /* gameBtn.png in Resources */,
-				AC89CD001781019600267A60 /* settingsBtn.png in Resources */,
-				AC89CD0817810D3B00267A60 /* cardBackground.png in Resources */,
 				ACCB11D817866B7A000FF618 /* mainMenu.png in Resources */,
 				AC1048061788F0E900C2D9E7 /* DeckChoose.png in Resources */,
 				54C09CC0178F7F38006FC5A8 /* background_main.png in Resources */,
@@ -3099,14 +3181,41 @@
 				AC634CFB179335AA0039CA14 /* 429.png in Resources */,
 				AC634CFC179335AA0039CA14 /* 430.png in Resources */,
 				AC634CFD179335AA0039CA14 /* 431.png in Resources */,
-				AC634D041793386A0039CA14 /* _0.png in Resources */,
-				AC634D051793386A0039CA14 /* _1.png in Resources */,
 				ACE6A2441793DD5600886FF0 /* unHide.png in Resources */,
 				ACE6A2471793E4BB00886FF0 /* arrowSwipeRev.png in Resources */,
 				ACE6A2481793E4BB00886FF0 /* unHideRev.png in Resources */,
 				ACBDA8B1179745570048B605 /* arrowSwipeCardExchange.png in Resources */,
 				ACBDA8B417974F480048B605 /* tempNo.png in Resources */,
 				ACBDA8B517974F480048B605 /* tempYes.png in Resources */,
+				ACF39BEE17A1CFCE001BE718 /* cardOfTheDay.png in Resources */,
+				ACF39BEF17A1CFCE001BE718 /* dove.jpg in Resources */,
+				ACF39BF017A1CFCE001BE718 /* klugFusion.jpg in Resources */,
+				ACF39BF117A1CFCE001BE718 /* menuTitle.png in Resources */,
+				ACF39BF217A1CFCE001BE718 /* navButton.png in Resources */,
+				ACF39BF317A1CFCE001BE718 /* smallButton.png in Resources */,
+				ACF39BF417A1CFCE001BE718 /* swirl.jpg in Resources */,
+				ACF39BF517A1CFCE001BE718 /* topCorner.png in Resources */,
+				ACF39BF617A1CFCE001BE718 /* waterDroplets.jpg in Resources */,
+				ACF39BF717A1CFCE001BE718 /* websiteButton.png in Resources */,
+				ACF39BF917A1D2CF001BE718 /* green2.png in Resources */,
+				ACF39C0417A1D3D0001BE718 /* text_cardOfTheDay.png in Resources */,
+				ACF39C0517A1D3D0001BE718 /* text_deckBuilder.png in Resources */,
+				ACF39C0617A1D3D0001BE718 /* text_mainMenu.png in Resources */,
+				ACF39C0717A1D3D0001BE718 /* text_phyloWebsite.png in Resources */,
+				ACF39C0817A1D3D0001BE718 /* text_playPhylo.png in Resources */,
+				ACF39C0917A1D3D0001BE718 /* text_settings.png in Resources */,
+				ACF39C0A17A1D3D0001BE718 /* text_switchAccount.png in Resources */,
+				ACF39C0B17A1D3D0001BE718 /* text_teamAlpha.png in Resources */,
+				ACF39C0C17A1D3D0001BE718 /* text_virtualPhyloWebsite.png in Resources */,
+				ACF39C0D17A1D3D0001BE718 /* text_wikipedia.png in Resources */,
+				ACF39C1017A1F0BE001BE718 /* topRect.png in Resources */,
+				ACF39C1117A1F0BE001BE718 /* botRect.png in Resources */,
+				ACA4C46717A3237C00BDCC9A /* setting_changeBG.png in Resources */,
+				ACA4C46817A3237C00BDCC9A /* setting_changeMusic.png in Resources */,
+				ACA4C46917A3237C00BDCC9A /* setting_saveChanges.png in Resources */,
+				ACA4C46A17A3237C00BDCC9A /* setting_text.png in Resources */,
+				ACA4C46B17A3237C00BDCC9A /* setting_title.png in Resources */,
+				ACA4C46D17A329AA00BDCC9A /* setting_backMenu.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3245,6 +3354,7 @@
 				AC0BFA6C1792428B0048AD89 /* CCSelectableItem.m in Sources */,
 				ACE6A23F1793983F00886FF0 /* PlayerLayerBot.m in Sources */,
 				ACE6A2421793989500886FF0 /* PlayerLayerTop.m in Sources */,
+				ACA4C46017A317ED00BDCC9A /* SettingsLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

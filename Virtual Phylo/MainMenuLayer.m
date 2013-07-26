@@ -39,11 +39,13 @@
         
         
         // add components created as children to this Layer (Notice there are added in a specific sequence)
-        [self setBackgroundColour];
+        [self setBackground];
         [self setTitle];
         [self setLeftMenu];
         [self setExampleCard];
         [self setUserInfo];
+        [self setLinks];
+        [self setStat];
         
     }
     return self;
@@ -60,11 +62,29 @@
 	[super dealloc];
 }
 
-// (Roger) Set up the background colour
-- (void) setBackgroundColour {
-    NSLog(@"Setting up Background Colour");
-    CCLayerColor *bgColour = [CCLayerColor layerWithColor:ccc4(0, 0, 102, 255)];
-    [self addChild:bgColour];
+//// (Roger) Set up the background colour
+//- (void) setBackgroundColour {
+//    NSLog(@"Setting up Background Colour");
+//    CCLayerColor *bgColour = [CCLayerColor layerWithColor:ccc4(0, 0, 102, 255)];
+//    [self addChild:bgColour];
+//}
+- (void) setBackground {
+    CGSize screenSize = [CCDirector sharedDirector].winSize;
+    NSLog(@"Setting up Game Table Background Image");
+    background = [CCSprite spriteWithFile: @"green2.png"];
+    background.scale = 1.1;
+    // (Roger) Set up the position as the center
+    background.position = ccp(screenSize.width / 2, screenSize.height / 2);
+    CCSprite *topBar = [CCSprite spriteWithFile:@"topRect.png"];
+    topBar.position = CGPointMake(screenSize.width/2 + 5, 730);
+    CCSprite *botBar = [CCSprite spriteWithFile:@"botRect.png"];
+    botBar.position = CGPointMake(screenSize.width/2 + 5, 13);
+    CCSprite *teamMembers = [CCSprite spriteWithFile:@"text_teamAlpha.png"];
+    teamMembers.position = CGPointMake(678, 13);
+    [self addChild:topBar];
+    [self addChild:botBar];
+    [self addChild:teamMembers];
+    [self addChild:background z:-2];
 }
 
 // (Roger) Set up the title at the top and miscellaneous
@@ -72,22 +92,18 @@
     NSLog(@"Setting up the Title at the top");
     
     // (Roger)create and initialize a Label
-    CCLabelTTF *label = [CCLabelTTF labelWithString:@"Main Menu" fontName:@"Verdana" fontSize:36];
+    CCSprite *label = [CCSprite spriteWithFile:@"text_mainMenu.png"];
     // ask director for the window size
     CGSize size = [[CCDirector sharedDirector] winSize];
     // (Roger)position the label on the top of the screen
-    label.position =  ccp( size.width /2 , 730);
-    
-    // (Roger) Add black background to the title
-    CCSprite *titleBackground = [CCSprite spriteWithFile:@"TopTitleBackGround.png"];
-    titleBackground.position = ccp(size.width / 2, 738);
+    label.position =  ccp( size.width /2 , 690);
     
     // (Roger) Create a menu to handle the 'switch account' request
-    CCMenuItemImage *switchAccountBtn = [CCMenuItemImage itemWithNormalImage:@"switchAccount.png" selectedImage:@"switchAccount.png" target:self selector:@selector(jumpToLogin)];
-    CCMenu *switchAccount = [CCMenu menuWithItems:switchAccountBtn, nil];
-    switchAccount.position = ccp(950, 728);
+    CCMenuItemImage *switchAccountBtn = [CCMenuItemImage itemWithNormalImage:@"text_switchAccount.png" selectedImage:@"text_switchAccount.png" target:self selector:@selector(jumpToLogin)];
     
-    [self addChild:titleBackground];
+    CCMenu *switchAccount = [CCMenu menuWithItems:switchAccountBtn, nil];
+    switchAccount.position = ccp(122, 725);
+
     [self addChild:switchAccount];
     [self addChild:label];
 }
@@ -95,13 +111,13 @@
 // (Roger) Set up the menu at the left side (contains 'Game', 'Deck', and 'Settings')
 -(void) setLeftMenu {
     NSLog(@"Setting up the main menu at the left side");
-    CCMenuItemImage *gameBtn = [CCMenuItemImage itemWithNormalImage:@"gameBtn.png" selectedImage:@"gameBtn.png" target:self selector:@selector(jumpToGame)];
-    CCMenuItemImage *deckBtn = [CCMenuItemImage itemWithNormalImage:@"deckBtn.png" selectedImage:@"deckBtn.png" target:self selector:@selector(jumpToDeck)];
-    CCMenuItemImage *settingsBtn = [CCMenuItemImage itemWithNormalImage:@"settingsBtn.png" selectedImage:@"settingsBtn.png" target:self selector:@selector(jumpToSettings)];
+    CCMenuItemImage *gameBtn = [CCMenuItemImage itemWithNormalImage:@"text_deckBuilder.png" selectedImage:@"text_deckBuilder.png" target:self selector:@selector(jumpToDeck)];
+    CCMenuItemImage *deckBtn = [CCMenuItemImage itemWithNormalImage:@"text_playPhylo.png" selectedImage:@"text_playPhylo.png" target:self selector:@selector(jumpToGame)];
+    CCMenuItemImage *settingsBtn = [CCMenuItemImage itemWithNormalImage:@"text_settings.png" selectedImage:@"text_settings.png" target:self selector:@selector(jumpToSettings)];
     CCMenu *leftMenu = [CCMenu menuWithItems: gameBtn, deckBtn, settingsBtn, nil];
     // Setting up the layout and position
     [leftMenu alignItemsVerticallyWithPadding: 100];
-    leftMenu.position = ccp(100, 280);
+    leftMenu.position = ccp(150, 340);
     
     [self addChild: leftMenu];
     
@@ -110,14 +126,11 @@
 // (Roger) Set up the 'Today's Card' Section
 -(void) setExampleCard {
     NSLog(@"Setting up the example card at the central area");
-    
-    // (Roger) Set up the general background
-    CCSprite *centralBackground = [CCSprite spriteWithFile:@"cardBackground.png"];
-    centralBackground.position = ccp(512, 250);
-    
+
     // (Roger) Set up the label - "Today's Card"
-    CCLabelTTF *areaTitle = [CCLabelTTF labelWithString:@"Today's Card" fontName:@"Verdana" fontSize:26];
-    areaTitle.position = ccp(512, 480);
+    CCSprite *areaTitle = [CCSprite spriteWithFile:@"text_cardOfTheDay.png"];
+    areaTitle.position = ccp(512, 580);
+    areaTitle.scale = 1.1;
     
     // (Roger) Randomly pick up a card as today's card
     // (Roger) Set the max card count as 50, otherwise it will cause exceptions due to the lack of sime cards
@@ -126,10 +139,9 @@
     NSString *cardPath = [NSString stringWithFormat:@"%d%@", cardIndex, @".png"];
     
     CCSprite *exampleCard = [CCSprite spriteWithFile:cardPath];
-    exampleCard.position = ccp(512, 230);
+    exampleCard.position = ccp(512, 340);
+    exampleCard.scale = 1.05;
 
-    
-    [self addChild:centralBackground];
     [self addChild:areaTitle];
     [self addChild:exampleCard];
 }
@@ -137,12 +149,35 @@
 // (Roger) Set up user information field
 // TO-DO: Need implementation
 -(void)setUserInfo {
-    NSLog(@"Setting up the user info bar below the top title");
-    CCLabelTTF *tempTitle = [CCLabelTTF labelWithString:@"testUser1" fontName:@"Verdana" fontSize:46];
-    tempTitle.position = ccp(512, 600);
-    [self addChild:tempTitle];
-    NSLog(@"bar done");
+    CCSprite *titleFrame = [CCSprite spriteWithFile:@"topCorner.png"];
+    titleFrame.position = ccp(900, 725);
+    [self addChild:titleFrame];
+}
 
+-(void)setLinks {
+    CCMenuItemImage *wikiLink = [CCMenuItemImage itemWithNormalImage:@"text_wikipedia.png" selectedImage:@"text_wikipedia.png" target:self selector:nil];
+    CCMenu *wikiLinkMenu = [CCMenu menuWithItems:wikiLink, nil];
+    wikiLinkMenu.position = ccp(512, 103);
+    [self addChild:wikiLinkMenu];
+    
+    CCMenuItemImage *virtualPhyloWebsite = [CCMenuItemImage itemWithNormalImage:@"text_virtualPhyloWebsite.png" selectedImage:@"text_virtualPhyloWebsite.png" target:self selector:nil];
+    CCMenuItemImage *phyloWebsite = [CCMenuItemImage itemWithNormalImage:@"text_phyloWebsite.png" selectedImage:@"text_phyloWebsite.png" target:self selector:nil];
+    CCMenu *linkMenu = [CCMenu menuWithItems:phyloWebsite, virtualPhyloWebsite, nil];
+    [linkMenu alignItemsVerticallyWithPadding: -7];
+    linkMenu.position = ccp(910, 80);
+    [self addChild:linkMenu];
+}
+
+-(void)setStat {
+    CCSprite *statTitle = [CCSprite spriteWithFile:@"smallButton.png"];
+    CCSprite *wins = [CCSprite spriteWithFile:@"smallButton.png"];
+    CCSprite *losses = [CCSprite spriteWithFile:@"smallButton.png"];
+    statTitle.position = ccp(940, 670);
+    wins.position = ccp(940, 630);
+    losses.position = ccp(940, 590);
+    [self addChild:statTitle];
+    [self addChild:wins];
+    [self addChild:losses];
 }
 
 // (Roger) Set up a button jumping back to log in screen (log out and/or relogging in)
@@ -161,8 +196,7 @@
     // TO-DO: To be implemented
 }
 - (void)jumpToSettings {
-    NSLog(@"Jump to Game scene");
-//    [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.5 scene:[CCMenuAdvancedTestLayer scene]]];
-    // TO-DO: To be implemented
+    NSLog(@"Jump to Settings scene");
+    [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.5 scene:[SettingsLayer scene]]];
 }
 @end

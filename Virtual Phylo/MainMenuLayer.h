@@ -11,14 +11,14 @@
 // (Roger) import HelloWorldLayer for jumping back
 #import "HelloWorldLayer.h"
 #import "CCMenuAdvancedTest.h"
-#import "MasterCard.h"
-
+#import "SettingsLayer.h"
 
 // Main Menu Screen
 // gives the option to switch between settings, login, and deck screens
 
 
 @interface MainMenuLayer : CCLayer {
+    CCSprite *background;
     
 }
 

@@ -76,7 +76,7 @@
     
     // add discard pile rect
     CCSprite *upperDeckDiscardPile = [CCSprite spriteWithFile:@"deckdiscardPile.png"];
-    upperDeckDiscardPile.position = ccp(964, 698);
+    upperDeckDiscardPile.position = ccp(970, 698);
     [self addChild:upperDeckDiscardPile];
     
     // add deck pile rect
@@ -99,7 +99,6 @@
     CGSize winSize = [[CCDirector sharedDirector] winSize];
     // (Roger) Setting up an NSMutableArray (To be corporated with CoreData function)
     // (Roger) Storing the Sprite instances
-//    NSMutableArray *cardArray = [NSMutableArray array];
     
     // Horizontal scroller
     for (int i = 0; i < 10; i++) {
@@ -108,10 +107,10 @@
         NSString *card_imageName = [NSString stringWithFormat:@"%d%@", i, @".png"];
        
         CCSprite *image = [CCSprite spriteWithFile:card_imageName];
+        // Reverse the image
         image.flipX = YES;
         image.flipY = YES;
 
-        
         image.position = ccp(page.contentSize.width/2, page.contentSize.height/2);
         // (Roger) The card dimensions are 264 * 407 (Width * Height)
         [image setScale: (float) 100 / 407];
@@ -160,14 +159,16 @@
         discard_card_index = cardIndex;
         
         // (Roger) Set up the attribute of the card
-        card.position = CGPointMake(1024-50, 768-71);
+        card.flipX = YES;
+        card.flipY = YES;
+        card.position = CGPointMake(1024-55, 768-71);
         card.tag = TOP_PLAYER_INDEX_TAG_BASE + cardIndex;
         [card setScale: (float) 100 / 407];
         
         // (Roger) Add it into the discard part
         [self addChild:card z:2];
     } else {
-        NSLog(@"Data Error");
+        NSLog(@"Data Error: Card Index = %d", cardIndex);
     }
 }
 

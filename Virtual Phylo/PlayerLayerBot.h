@@ -19,8 +19,6 @@
 // the layer that shows a players draw pile, discard pile, and hand
 // can be hidden from the screen to prevent opposing player from peaking at user's cards
 
-
-
 @interface PlayerLayerBot : CCLayer <CCItemsScrollerDelegate>{
     
 }
