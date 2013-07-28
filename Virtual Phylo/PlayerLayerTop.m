@@ -101,28 +101,38 @@
     // (Roger) Storing the Sprite instances
     
     // Horizontal scroller
-    for (int i = 0; i < 10; i++) {
-        CCSelectableItem *page = [[CCSelectableItem alloc] initWithNormalColor:ccc4(0,0,0,0) andSelectectedColor:ccc4(190, 150, 150, 255) andWidth:77 andHeight:100];
-        
-        NSString *card_imageName = [NSString stringWithFormat:@"%d%@", i, @".png"];
-       
-        CCSprite *image = [CCSprite spriteWithFile:card_imageName];
-        // Reverse the image
-        image.flipX = YES;
-        image.flipY = YES;
-
-        image.position = ccp(page.contentSize.width/2, page.contentSize.height/2);
-        // (Roger) The card dimensions are 264 * 407 (Width * Height)
-        [image setScale: (float) 100 / 407];
-        
-        image.tag = i + TOP_PLAYER_INDEX_TAG_BASE;
-        [page addChild:image];
-        
-        [cardsOnHand addObject:page];
+    CoreData *core = [CoreData sharedCore];
+    NSMutableArray *deckList = [core getGuestPlayerDeckList];
+    
+    // (Roger) Setting up the top player deck
+    for (int i = 0; i < deckList.count; i++) {
+        NSString *deckName = [deckList objectAtIndex:2*i];
+        if ([deckName isEqualToString:core.guestPlayerDeck]) {
+            NSArray *deckCardsArray = [deckList objectAtIndex: (2*i + 1)];
+            for (int j = 0; j < deckCardsArray.count; j++) {
+                int cardIndex = [[[deckList objectAtIndex: (2*i + 1)] objectAtIndex:j] integerValue];
+                NSLog(@"Load Card Index = %d", cardIndex);
+                NSString *cardFileName = [[NSString alloc] initWithFormat:@"%d%@", cardIndex, @".png"];
+                CCSelectableItem *page = [[CCSelectableItem alloc] initWithNormalColor:ccc4(0,0,0,0) andSelectectedColor:ccc4(190, 150, 150, 255) andWidth:77 andHeight:100];
+                CCSprite *image = [CCSprite spriteWithFile: cardFileName];
+                
+                image.position = ccp(page.contentSize.width/2, page.contentSize.height/2);
+                // The card dimensions are 264 * 407 (Width * Height)
+                [image setScale: (float) 100 / 407];
+                // (Roger) Set up the image tag (Notice the tag was added the top player index base)
+                image.tag = cardIndex + TOP_PLAYER_INDEX_TAG_BASE;
+                image.flipX = YES;
+                image.flipY = YES;
+                [page addChild:image];
+                
+                [cardsOnHand addObject:page];
+            }
+            // (Roger) Jump out of the for loop
+            break;
+        }
     }
     
     upperHandScroller = [CCItemsScroller itemsScrollerWithItems:cardsOnHand andOrientation:CCItemsScrollerHorizontal andRect:CGRectMake(186, 648, winSize.width - 300, 155)];
-    //    upperHandScoller.delegate = self;
     [self addChild:upperHandScroller z:2];
 }
 

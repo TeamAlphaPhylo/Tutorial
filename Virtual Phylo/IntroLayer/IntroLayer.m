@@ -2,7 +2,7 @@
 //  IntroLayer.m
 //  Virtual Phylo
 //
-//  Created by Darkroot on 6/21/13.
+//  Created by Petr Krakora on 6/21/13.
 //  Copyright Group_12 2013. All rights reserved.
 //
 
@@ -52,7 +52,7 @@
 			background = [CCSprite spriteWithFile:@"Default-Landscape~ipad.png"];
 		}
 		background.position = ccp(size.width/2, size.height/2);
-
+        
 		// add the label as a child to this Layer
 		[self addChild: background];
 	}
@@ -63,6 +63,6 @@
 -(void) onEnter
 {
 	[super onEnter];
-	[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:0.2 scene:[HelloWorldLayer scene] ]];
+	[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:0.3 scene:[HelloWorldLayer scene] ]];
 }
 @end

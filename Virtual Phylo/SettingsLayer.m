@@ -98,7 +98,7 @@
 }
 
 -(void)setStat {
-    CCSprite *statTitle = [CCSprite spriteWithFile:@"smallButton.png"];
+    CCSprite *statTitle = [CCSprite spriteWithFile:@"text_stat.png"];
     CCSprite *wins = [CCSprite spriteWithFile:@"smallButton.png"];
     CCSprite *losses = [CCSprite spriteWithFile:@"smallButton.png"];
     statTitle.position = ccp(940, 670);
@@ -107,12 +107,25 @@
     [self addChild:statTitle];
     [self addChild:wins];
     [self addChild:losses];
+    CoreData *core = [CoreData sharedCore];
+    CCLabelTTF *winStr = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%d", core.userWin] fontName:@"Verdana" fontSize:16];
+    CCLabelTTF *lossStr = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%d", core.userLoss]  fontName:@"Verdana" fontSize:16];
+    winStr.position = wins.position;
+    lossStr.position = losses.position;
+    [self addChild:winStr];
+    [self addChild:lossStr];
 }
 
 -(void)setUserInfo {
     CCSprite *titleFrame = [CCSprite spriteWithFile:@"topCorner.png"];
     titleFrame.position = ccp(900, 725);
+    
+    CoreData *core = [CoreData sharedCore];
+    CCLabelTTF *username = [CCLabelTTF labelWithString:core.userName fontName:@"Verdana" fontSize:26];
+    username.position = titleFrame.position;
+    
     [self addChild:titleFrame];
+    [self addChild:username];
 }
 
 - (void)jumpToMainMenu {

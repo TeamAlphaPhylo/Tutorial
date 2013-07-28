@@ -21,14 +21,7 @@
 
 @interface Game : CCLayer
 {
-//    @private
-//        id game_PlayerA;
-//        id game_playerB;
-//        id game_playedCardsA; // the cards player A has played on the playing field
-//        id game_playedCardsB; // the cards player B has played on the playing field
-//        id game_PlayerBarA; // where Player A's hand, draw and discard piles reside
-//        id game_PlayerBarB; // where Player B's hand, draw and discard piles reside
-//        int game_turnCount;
+    CCSprite *background;
 }
 
 +(CCScene *) scene;
@@ -40,12 +33,12 @@
 - (void) deckChooser;
 
 // allow user to choose chosen deck
-- (CCMenu*) AddChooseBtn;
+- (CCMenu*) AddChooseBtn: (NSString*) deckName;
 
 // jump to Main Menu Screen
 - (void)jumpToMainMenu;
 
 // jump to Guest Login Screen, to allow player 2 to pick his/her deck
-- (void)jumpToGuestLogin;
+- (void)jumpToGuestLogin: (id) sender;
 
 @end

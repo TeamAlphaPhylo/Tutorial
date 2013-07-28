@@ -83,6 +83,8 @@ static PlayerLayerTop *pTop = nil;
 -(id) init
 {
     if( (self=[super init]) ) {
+        CoreData *core = [CoreData sharedCore];
+        NSLog(@"Host Player Deck: %@, Guest Player Deck: %@", core.hostPlayerDeck, core.guestPlayerDeck);
         // (Roger) Initialize the starting touch point of the card
         startPosition = CGPointMake(0, 0);
         // (Roger) Initialize cardAtDiscardArea to be false
@@ -138,7 +140,7 @@ static PlayerLayerTop *pTop = nil;
     CGSize screenSize = [CCDirector sharedDirector].winSize;
     NSLog(@"Setting up Game Table Background Image");
     background = [CCSprite spriteWithFile: @"green.jpg"];
-    background.rotation = 90.0;
+//    background.rotation = 90.0;
     background.scale = 1.5;
     // (Roger) Set up the position as the center
     background.position = ccp(screenSize.width / 2, screenSize.height / 2);
@@ -384,7 +386,7 @@ static PlayerLayerTop *pTop = nil;
         CGPoint newPos = ccpAdd(self.position, translation);
         discardPilePosBottomX = discardPilePosBottomX - translation.x;
         discardPilePosBottomY = discardPilePosBottomY - translation.y;
-        discardPilePosTopX = discardPilePosTopX = translation.x;
+        discardPilePosTopX = discardPilePosTopX - translation.x;
         discardPilePosTopY = discardPilePosTopY - translation.y;
         origin.x = origin.x - translation.x;
         origin.y = origin.y - translation.y;
@@ -428,17 +430,17 @@ static PlayerLayerTop *pTop = nil;
             discardPilePosBottomY = -880;
         }
         
-        if (discardPilePosTopX < -277 + 1024) {
-            discardPilePosTopX = -277 + 1024;
+        if (discardPilePosTopX < (-277 + 1024 - 81)) {
+            discardPilePosTopX = -277 + 1024 - 81;
         }
-        if (discardPilePosTopX > 268 + 1024) {
-            discardPilePosTopX = 268 + 1024;
+        if (discardPilePosTopX > (268 + 1024 - 81)) {
+            discardPilePosTopX = 268 + 1024 - 81;
         }
-        if (discardPilePosTopY > 868 + 768) {
-            discardPilePosTopY = 868 + 768;
+        if (discardPilePosTopY > (868 + 768 - 120)) {
+            discardPilePosTopY = 868 + 768 - 120;
         }
-        if (discardPilePosTopY < -880 + 768) {
-            discardPilePosTopY = -880 + 768;
+        if (discardPilePosTopY < (-880 + 768 - 120)) {
+            discardPilePosTopY = -880 + 768 - 120;
         }
         
         self.position = [self boundLayerPos:newPos];

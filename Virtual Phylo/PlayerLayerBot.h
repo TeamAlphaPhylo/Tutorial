@@ -14,6 +14,7 @@
 #import "GameTable.h"
 @class GameTable;
 #import "ScrollerProtocols.h"
+#import "CoreData.h"
 
 // Player Layer
 // the layer that shows a players draw pile, discard pile, and hand

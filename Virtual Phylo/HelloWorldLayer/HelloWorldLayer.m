@@ -47,14 +47,14 @@
         
         // (Roger) Create a username field
         usernameField = [[UITextField alloc] initWithFrame:usernamePosition];
-        usernameField.text = @"Username";
+        usernameField.text = @"username";
         // (Roger) Regular text field with rounded corners
         usernameField.borderStyle = UITextBorderStyleRoundedRect;
         usernameField.delegate = self;
         
         // (Roger) Create a password field
         pwdField = [[UITextField alloc] initWithFrame:pwdPosition];
-        pwdField.text = @"Password";
+        pwdField.text = @"pass";
         pwdField.borderStyle = UITextBorderStyleRoundedRect;
         pwdField.delegate = self;
         
@@ -85,7 +85,6 @@
         [self addLoginFields];
         // (Roger) Enable the touch function
         self.touchEnabled = YES;
-        
     }
 	return self;
 }
@@ -117,11 +116,30 @@
 #pragma mark Verification Function
 // (Petr) Simple verfictional and Registeration (offline)
 - (void) verifyIdentity {
+    //checks if internet acess
+    bool connected = [self connectedToInternet];
+    if (connected)
+        [self verifyIdentityOnline];
+    
+    //get the documents directory:
     NSArray *paths = NSSearchPathForDirectoriesInDomains
     (NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
+    
+    //make a file name to write the data to using the documents directory:
     NSString *fileName = [NSString stringWithFormat:@"%@/textfile.txt",
                           documentsDirectory];
+    
+    if ([self checkExistance:@"textfile.txt"]) {
+        NSLog(@"Doesn't exist");
+        NSString *data = @"";
+        [data writeToFile: fileName
+               atomically:NO
+                 encoding:NSStringEncodingConversionAllowLossy
+                    error:nil];
+        NSLog(@"Made data file when none existed");
+    }
+    
     NSString *content = [[NSString alloc] initWithContentsOfFile:fileName
                                                     usedEncoding:nil
                                                            error:nil];
@@ -130,14 +148,21 @@
     bool *fail = true;
     
     NSLog(@"size is: %lu", (unsigned long)([usernames count] - 1));
+    NSLog(@"Contents are: %@", content);
     
     NSLog(@"Verifying Identity");
     for (int i = 0; i < (([usernames count] - 1)); i +=2) {
         NSLog(@"Testing username: %@ and password: %@", usernames[i], usernames[i+1]);
         if([usernameField.text isEqualToString: usernames[i]] && [pwdField.text isEqualToString: usernames[i+1]]) {
             NSLog(@"Identity Verified");
-            // TO-DO: Loading the user data into the main function
             fail = false;
+            
+            //User data persistent storage
+            CoreData *core = [CoreData sharedCore];
+            // (Roger) Load the user name
+            core.userName = [[NSString alloc] initWithString:usernames[i]];
+            [core parseStat:[Player getStats:core.userName]];
+            
             [self jumpToMainMenu];
             break;
         } else {
@@ -151,6 +176,9 @@
 
 //(Petr) Checks and registers new account
 - (void) registerAccount {
+    //Create user data file (it already checks if users exists)
+    [Player createPlayer:usernameField.text];
+    
     //get the documents directory:
     NSArray *paths = NSSearchPathForDirectoriesInDomains
     (NSDocumentDirectory, NSUserDomainMask, YES);
@@ -159,6 +187,17 @@
     //make a file name to write the data to using the documents directory:
     NSString *fileName = [NSString stringWithFormat:@"%@/textfile.txt",
                           documentsDirectory];
+    
+    if ([self checkExistance:@"textfile.txt"]) {
+        NSLog(@"Doesn't exist");
+        NSString *data = @"";
+        [data writeToFile: fileName
+               atomically:NO
+                 encoding:NSStringEncodingConversionAllowLossy
+                    error:nil];
+        NSLog(@"Made data file when none existed");
+    }
+
     
     NSString *contents = [[NSString alloc] initWithContentsOfFile:fileName encoding:nil error:nil];
     //Testing, displays content of file
@@ -181,6 +220,7 @@
     
     if (pass) {
         //Alert infromation and formating
+        //NSLog(@"Writting to data file");
         NSString *first = [NSString stringWithFormat:@"Username is: %@\n", usernameField.text];
         NSString *second = [NSString stringWithFormat:@"Password is: %@\n", pwdField.text];
         NSString *third = [NSString stringWithFormat:@"Is the infromation correct?\n"];
@@ -189,14 +229,16 @@
         UIAlertView* newaccount = [[UIAlertView alloc] initWithTitle:@"Created account"
                                                              message:message
                                                             delegate:self
-                                                   cancelButtonTitle:@"No"
+                                                   cancelButtonTitle:nil
                                                    otherButtonTitles:@"Yes", nil];
         [newaccount show];
         
         //save and write data to the documents directory
         NSString *data;
-        if ([contents isEqualToString:@""])
+        if ([contents isEqualToString:@""]) {
             data = [NSString stringWithFormat:@"%@,%@", usernameField.text, pwdField.text];
+            NSLog(@"%@", data);
+        }
         else
             data = [NSString stringWithFormat:@"%@,%@,%@", contents, usernameField.text, pwdField.text];
         
@@ -245,5 +287,29 @@
     [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[MainMenuLayer scene] ]];
 }
 
+//(Petr) Checks if online
+- (BOOL) connectedToInternet {
+    BOOL connected = ([NSString stringWithContentsOfURL:[NSURL URLWithString:@"http://www.google.co.in/"] encoding:NSASCIIStringEncoding error:nil]!=NULL)?YES:NO;
+    return connected;
+}
+
+- (void) verifyIdentityOnline {
+    
+}
+
+- (BOOL) checkExistance:(NSString *)name {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains
+    (NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *location = [NSString stringWithFormat:@"%@/textfile.txt",
+                          documentsDirectory];
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    
+    if (![fileManager fileExistsAtPath:location])
+        return true;
+    else
+        return false;
+}
 
 @end
+

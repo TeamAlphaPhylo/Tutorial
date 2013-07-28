@@ -1,7 +1,6 @@
 //
 //  GuestDeckChoose.h
-//  Virtual
-
+//  Virtual Phylo
 //
 //  Created by Roger Zhao on 2013-07-06.
 //  Copyright 2013 Group_12. All rights reserved.
@@ -17,7 +16,7 @@
 // allows player 2 to pick their deck from their list of created decks
 
 @interface GuestDeckChoose : CCLayer {
-    
+    CCSprite* background;
 }
 
 +(CCScene *) scene;
@@ -32,9 +31,9 @@
 - (void) deckChooser;
 
 // allow player to to choose chosen deck
-- (CCMenu*) AddChooseBtn;
+- (CCMenu*) AddChooseBtn: (NSString*) deckName;
 
 // jump to GuestLogin Screen
-- (void)jumpToGuestLogin;
+- (void)jumpToGameTable: (id) sender;
 
 @end

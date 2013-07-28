@@ -104,23 +104,34 @@
     
     // Horizontal scroller
     // (Roger) Notice the card index with 0 has been eliminated for debugging purpose (nil)
-    for (int i = 0; i < 10; i++) {
-        CCSelectableItem *page = [[CCSelectableItem alloc] initWithNormalColor:ccc4(0,0,0,0) andSelectectedColor:ccc4(190, 150, 150, 255) andWidth:77 andHeight:100];
-        
-        NSString *card_imageName = [NSString stringWithFormat:@"%d%@", i, @".png"];        
-
-        CCSprite *image = [CCSprite spriteWithFile: card_imageName];
-
-        image.position = ccp(page.contentSize.width/2, page.contentSize.height/2);
-        // The card dimensions are 264 * 407 (Width * Height)
-        [image setScale: (float) 100 / 407];
-        // (Roger) Set up the image tag (Notice the tag here only applies to the bottom player tag)
-        image.tag = i;
-        [page addChild:image];
-        
-        [cardsOnHand addObject:page];
-    }
+    CoreData *core = [CoreData sharedCore];
+    NSMutableArray *deckList = [core getHostPlayerDeckList];
     
+    // (Roger) Setting up the bottom player deck
+    for (int i = 0; i < deckList.count; i++) {
+        NSString *deckName = [deckList objectAtIndex:2*i];
+        if ([deckName isEqualToString:core.hostPlayerDeck]) {
+            NSArray *deckCardsArray = [deckList objectAtIndex: (2*i + 1)];
+            for (int j = 0; j < deckCardsArray.count; j++) {
+                int cardIndex = [[[deckList objectAtIndex: (2*i + 1)] objectAtIndex:j] integerValue];
+                NSLog(@"Load Card Index = %d", cardIndex);
+                NSString *cardFileName = [[NSString alloc] initWithFormat:@"%d%@", cardIndex, @".png"];
+                CCSelectableItem *page = [[CCSelectableItem alloc] initWithNormalColor:ccc4(0,0,0,0) andSelectectedColor:ccc4(190, 150, 150, 255) andWidth:77 andHeight:100];
+                CCSprite *image = [CCSprite spriteWithFile: cardFileName];
+                
+                image.position = ccp(page.contentSize.width/2, page.contentSize.height/2);
+                // The card dimensions are 264 * 407 (Width * Height)
+                [image setScale: (float) 100 / 407];
+                // (Roger) Set up the image tag (Notice the tag here only applies to the bottom player tag)
+                image.tag = cardIndex;
+                [page addChild:image];
+                
+                [cardsOnHand addObject:page];
+            }
+            // (Roger) Jump out of the for loop
+            break;
+        }
+    }
     lowerHandScroller = [CCItemsScroller itemsScrollerWithItems:cardsOnHand andOrientation:CCItemsScrollerHorizontal andRect:CGRectMake(106, 20, winSize.width - 300, 155)];
     [self addChild:lowerHandScroller z:2];
 }
