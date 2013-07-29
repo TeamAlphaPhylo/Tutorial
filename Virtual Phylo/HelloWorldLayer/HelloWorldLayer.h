@@ -10,13 +10,15 @@
 // When you import this file, you import all the cocos2d classes
 #import "cocos2d.h"
 #import "MainMenuLayer.h"
-#import "Player.h"
 #import "CurrentUsers.h"
+#import "Player.h"
+#import <AWSSimpleDB/AWSSimpleDB.h>
 
 // HelloWorldLayer
 @interface HelloWorldLayer : CCLayer <UIAlertViewDelegate, UITextFieldDelegate> {
     UITextField* usernameField;
     UITextField* pwdField;
+    AmazonSimpleDBClient *sdbClient;
 }
 
 // returns a CCScene that contains the HelloWorldLayer as the only child

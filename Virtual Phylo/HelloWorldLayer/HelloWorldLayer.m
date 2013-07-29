@@ -15,6 +15,8 @@
 
 #pragma mark - HelloWorldLayer
 
+#import <AWSRuntime/AWSRuntime.h>
+
 // HelloWorldLayer implementation
 @implementation HelloWorldLayer
 
@@ -78,6 +80,22 @@
         [menu alignItemsHorizontallyWithPadding: 40];
         menu.position = CGPointMake(510, 260);
         
+        //AWS instantiation
+        NSString *acesskey = @"AKIAJHPBKEETHIOUBAPQ";
+        NSString *secretkey = @"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";
+        sdbClient = [[AmazonSimpleDBClient alloc] initWithAccessKey:acesskey withSecretKey:secretkey];
+        sdbClient.endpoint = [AmazonEndpoints sdbEndpoint:US_WEST_2];
+        
+        //instantiation of domain not need already instantiated
+        
+//        SimpleDBCreateDomainRequest *createDomain = [[[SimpleDBCreateDomainRequest alloc] initWithDomainName:@"AccountData"]  autorelease];
+//        SimpleDBCreateDomainResponse *createDomainResponse = [sdbClient createDomain:createDomain];
+//        if(createDomainResponse.error != nil)
+//        {
+//            NSLog(@"Error: %@", createDomainResponse.error);
+//        }
+//        NSLog(@"Created a Domain");
+        
         [self addChild: menu];
         // This is where our first scene happens, where we should code stuff.
         
@@ -85,7 +103,6 @@
         [self addLoginFields];
         // (Roger) Enable the touch function
         self.touchEnabled = YES;
-        
     }
 	return self;
 }
@@ -117,47 +134,88 @@
 #pragma mark Verification Function
 // (Petr) Simple verfictional and Registeration (offline)
 - (void) verifyIdentity {
+    //get the documents directory:
     NSArray *paths = NSSearchPathForDirectoriesInDomains
     (NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
-    NSString *fileName = [NSString stringWithFormat:@"%@/textfile.txt",
-                          documentsDirectory];
-    NSString *content = [[NSString alloc] initWithContentsOfFile:fileName
-                                                    usedEncoding:nil
-                                                           error:nil];
-    NSArray *usernames = [content componentsSeparatedByString:@","];
     
-    bool *fail = true;
-    
-    NSLog(@"size is: %lu", (unsigned long)([usernames count] - 1));
-    
-    NSLog(@"Verifying Identity");
-    for (int i = 0; i < (([usernames count] - 1)); i +=2) {
-        NSLog(@"Testing username: %@ and password: %@", usernames[i], usernames[i+1]);
-        if([usernameField.text isEqualToString: usernames[i]] && [pwdField.text isEqualToString: usernames[i+1]]) {
-            NSLog(@"Identity Verified");
+    BOOL *fail = true;
+    BOOL *alreadyVerified = false;
+    BOOL connected = [self connectedToInternet];
+    if (connected) {
+        BOOL verified = [self verifyIdentityOnline];
+        if (verified) {
+            NSLog(@"Online verification passed");
+            NSString *sync = [Player getSync:usernameField.text];
+            NSLog(sync);
+            alreadyVerified = true;
+            if ([Player checkExistance:usernameField.text]) {
+                NSLog(@"It exists");
+                if (sync != NULL) {
+                    NSLog(@"Sync is null");
+                    [self updateData];
+                }
+                else
+                    NSLog(@"It actually doesn't");
+                    [self loadData];
+            }
+            else {
+                NSLog(@"It doesn't");
+                [self updateData];
+            }
             fail = false;
-            
-            //User data persistent storage
-            CurrentUsers* user = [[CurrentUsers alloc] init];
-            [user addUser:usernameField.text];
-
-            [self jumpToMainMenu:user];
-            break;
-        } else {
-            fail = true;
+            [self jumpToMainMenu];
         }
     }
-    if (fail)
-        [self showAlertView];
+    
+    
+    //make a file name to write the data to using the documents directory:
+    NSString *fileName = [NSString stringWithFormat:@"%@/textfile.txt",
+                          documentsDirectory];
+    
+  
+    if ([self checkExistance:@"textfile.txt"]) {
+        NSLog(@"Doesn't exist");
+        NSString *data = @"";
+        [data writeToFile: fileName
+               atomically:NO
+                 encoding:NSStringEncodingConversionAllowLossy
+                    error:nil];
+        NSLog(@"Made data file when none existed");
+    }
+    
+    if (!alreadyVerified) {
+        NSString *content = [[NSString alloc] initWithContentsOfFile:fileName
+                                                    usedEncoding:nil
+                                                           error:nil];
+        NSArray *usernames = [content componentsSeparatedByString:@","];
+    
+        NSLog(@"size is: %lu", (unsigned long)([usernames count] - 1));
+        NSLog(@"Contents are: %@", content);
+    
+        NSLog(@"Verifying Identity");
+        for (int i = 0; i < (([usernames count] - 1)); i +=2) {
+            NSLog(@"Testing username: %@ and password: %@", usernames[i], usernames[i+1]);
+            if([usernameField.text isEqualToString: usernames[i]] && [pwdField.text isEqualToString:            usernames[i+1]]) {
+                NSLog(@"Identity Verified");
+                fail = false;
+            
+                [self jumpToMainMenu];
+                break;
+            } else {
+                fail = true;
+            }
+        }
+        if (fail)
+            [self showAlertView];
+    }
     NSLog(@"Finishing Verifying");
 }
 
 //(Petr) Checks and registers new account
 - (void) registerAccount {
-    //Create class data file
-    Player* player = [[Player alloc] init];
-    [player createPlayer:usernameField.text];
+    //Create user data file (it already checks if users exists)
+    [Player createPlayer:usernameField.text];
     
     //get the documents directory:
     NSArray *paths = NSSearchPathForDirectoriesInDomains
@@ -167,6 +225,16 @@
     //make a file name to write the data to using the documents directory:
     NSString *fileName = [NSString stringWithFormat:@"%@/textfile.txt",
                           documentsDirectory];
+    
+    if ([self checkExistance:@"textfile.txt"]) {
+        NSLog(@"Doesn't exist");
+        NSString *data = @"";
+        [data writeToFile: fileName
+               atomically:NO
+                 encoding:NSStringEncodingConversionAllowLossy
+                    error:nil];
+        NSLog(@"Made data file when none existed");
+    }
     
     NSString *contents = [[NSString alloc] initWithContentsOfFile:fileName encoding:nil error:nil];
     //Testing, displays content of file
@@ -189,6 +257,7 @@
     
     if (pass) {
         //Alert infromation and formating
+        //NSLog(@"Writting to data file");
         NSString *first = [NSString stringWithFormat:@"Username is: %@\n", usernameField.text];
         NSString *second = [NSString stringWithFormat:@"Password is: %@\n", pwdField.text];
         NSString *third = [NSString stringWithFormat:@"Is the infromation correct?\n"];
@@ -203,8 +272,10 @@
         
         //save and write data to the documents directory
         NSString *data;
-        if ([contents isEqualToString:@""])
+        if ([contents isEqualToString:@""]) {
             data = [NSString stringWithFormat:@"%@,%@", usernameField.text, pwdField.text];
+            NSLog(data);
+        }
         else
             data = [NSString stringWithFormat:@"%@,%@,%@", contents, usernameField.text, pwdField.text];
         
@@ -217,6 +288,17 @@
                  encoding:NSStringEncodingConversionAllowLossy
                     error:nil];
         NSLog(@"New account made");
+        BOOL connected = [self connectedToInternet];
+        if (connected) {
+            NSLog(@"Also adding account online");
+            BOOL success = [self addAccountOnline];
+            if (success)
+                NSLog(@"Created online account successfully");
+            else
+                NSLog(@"Failed to create account online");
+        }
+        else
+            NSLog(@"Offline so not adding online");
         
     } else {
         message = [NSString stringWithFormat:@"Account already exists with username %@", usernameField.text];
@@ -245,7 +327,7 @@
 
 #pragma mark Switching Scene
 // (Roger) Switch the layer if the username and password are valid
-- (void)jumpToMainMenu:(NSObject *)user {
+- (void)jumpToMainMenu {
     NSLog(@"Dismissing/Releasing text fields");
     [usernameField removeFromSuperview];
     [pwdField removeFromSuperview];
@@ -253,5 +335,124 @@
     [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[MainMenuLayer scene] ]];
 }
 
+//(Petr) Checks if online
+- (BOOL) connectedToInternet {
+    BOOL connected = ([NSString stringWithContentsOfURL:[NSURL URLWithString:@"http://www.google.com"] encoding:NSASCIIStringEncoding error:nil]!=NULL)?YES:NO;
+    return connected;
+}
+
+- (BOOL) verifyIdentityOnline {
+    
+    SimpleDBGetAttributesRequest *gar = [[SimpleDBGetAttributesRequest alloc] initWithDomainName:@"AccountData" andItemName:usernameField.text];
+    SimpleDBGetAttributesResponse *response = [sdbClient getAttributes:gar];
+    
+    //NSString *nameget = [self getStringValueForAttribute:@"username" fromList:response.attributes];
+    NSString *passwordget = [self getStringValueForAttribute:@"password" fromList:response.attributes];
+    
+    if ([pwdField.text isEqualToString:passwordget])
+        return true;
+    else
+        return false;
+}
+
+-(BOOL)addAccountOnline {
+    SimpleDBReplaceableAttribute *usernameAttribute = [[[SimpleDBReplaceableAttribute alloc] initWithName:@"username" andValue:usernameField.text andReplace:YES] autorelease];
+    SimpleDBReplaceableAttribute *passwordAttribute  = [[[SimpleDBReplaceableAttribute alloc] initWithName:@"password" andValue:pwdField.text andReplace:YES] autorelease];
+    SimpleDBReplaceableAttribute *cardsAttribute  = [[[SimpleDBReplaceableAttribute alloc] initWithName:@"cards" andValue: @"0:0\nTrue\nDeckname;0!1!2!3!4!5!10!20!30" andReplace:YES] autorelease];
+    
+    NSMutableArray *attributes = [[[NSMutableArray alloc] initWithCapacity:1] autorelease];
+    [attributes addObject:usernameAttribute];
+    [attributes addObject:passwordAttribute];
+    [attributes addObject:cardsAttribute];
+    
+    SimpleDBPutAttributesRequest *putAttributesRequest = [[[SimpleDBPutAttributesRequest alloc] initWithDomainName:@"AccountData" andItemName:usernameField.text andAttributes:attributes] autorelease];
+    
+    SimpleDBPutAttributesResponse *putAttributesResponse = [sdbClient putAttributes:putAttributesRequest];
+    if(putAttributesResponse.error != nil)
+    {
+        NSLog(@"Error: %@", putAttributesResponse.error);
+        return false;
+    }
+    NSLog(@"Added data to database");
+    return true;
+}
+
+-(NSString *)getStringValueForAttribute:(NSString *)theAttribute fromList:(NSArray *)attributeList
+{
+    for (SimpleDBAttribute *attribute in attributeList) {
+        if ( [attribute.name isEqualToString:theAttribute]) {
+            return attribute.value;
+        }
+    }
+    return @"";
+}
+
+- (void)updateData {
+    NSString *sync = [Player getSync:usernameField.text];
+    if ([sync isEqualToString:@"True"]) {
+        NSLog(@"Data is already synced");
+        NSMutableArray *test = [Player getDecks:usernameField.text];
+        NSLog([test description]);
+    }
+    else {
+        NSLog(@"Updating data");
+        [self updateAccountOnline];
+    }
+}
+
+- (void)loadData {
+    SimpleDBGetAttributesRequest *gar = [[SimpleDBGetAttributesRequest alloc] initWithDomainName:@"AccountData" andItemName:usernameField.text];
+    SimpleDBGetAttributesResponse *response = [sdbClient getAttributes:gar];
+    
+    //NSString *nameget = [self getStringValueForAttribute:@"username" fromList:response.attributes];
+    NSString *cardGet = [self getStringValueForAttribute:@"cards" fromList:response.attributes];
+    NSLog(cardGet);
+    NSLog(usernameField.text);
+    [Player buildFile:usernameField.text data:cardGet];
+    
+}
+
+- (void)updateAccountOnline {
+    //get the documents directory:
+    NSArray *paths = NSSearchPathForDirectoriesInDomains
+    (NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *fileName = [NSString stringWithFormat:@"%@/%@.txt",
+                          documentsDirectory, usernameField.text];
+    NSString *contents = [[NSString alloc] initWithContentsOfFile:fileName encoding:nil error:nil];
+
+    NSLog(@"Data to be updated is : %@", contents);
+    SimpleDBReplaceableAttribute *usernameAttribute = [[[SimpleDBReplaceableAttribute alloc] initWithName:@"username" andValue:usernameField.text andReplace:YES] autorelease];
+    SimpleDBReplaceableAttribute *passwordAttribute  = [[[SimpleDBReplaceableAttribute alloc] initWithName:@"password" andValue:pwdField.text andReplace:YES] autorelease];
+    SimpleDBReplaceableAttribute *cardsAttribute  = [[[SimpleDBReplaceableAttribute alloc] initWithName:@"cards" andValue:contents andReplace:YES] autorelease];
+    
+    NSMutableArray *attributes = [[[NSMutableArray alloc] initWithCapacity:1] autorelease];
+    [attributes addObject:usernameAttribute];
+    [attributes addObject:passwordAttribute];
+    [attributes addObject:cardsAttribute];
+    
+    SimpleDBPutAttributesRequest *putAttributesRequest = [[[SimpleDBPutAttributesRequest alloc] initWithDomainName:@"AccountData" andItemName:usernameField.text andAttributes:attributes] autorelease];
+    
+    SimpleDBPutAttributesResponse *putAttributesResponse = [sdbClient putAttributes:putAttributesRequest];
+    if(putAttributesResponse.error != nil)
+    {
+        NSLog(@"Error: %@", putAttributesResponse.error);
+    }
+    NSLog(@"Updated the account for sure");
+}
+
+- (BOOL) checkExistance:(NSString *)name {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains
+    (NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *location = [NSString stringWithFormat:@"%@/textfile.txt",
+                          documentsDirectory];
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    
+    if (![fileManager fileExistsAtPath:location])
+        return true;
+    else
+        return false;
+}
 
 @end

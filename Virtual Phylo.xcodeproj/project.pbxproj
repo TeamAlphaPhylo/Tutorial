@@ -10,7 +10,6 @@
 		4478E409177B71370096B8FA /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = 4478E408177B71370096B8FA /* Card.m */; };
 		4478E414177B7C8A0096B8FA /* HelloWorldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4478E413177B7C8A0096B8FA /* HelloWorldLayer.m */; };
 		4478E417177B7CA30096B8FA /* IntroLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4478E416177B7CA30096B8FA /* IntroLayer.m */; };
-		4478E425177BB9480096B8FA /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 4478E424177BB9480096B8FA /* Player.m */; };
 		4478E42D177BBFCA0096B8FA /* CardSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 4478E42C177BBFC00096B8FA /* CardSprite.m */; };
 		4478E4361784E0E50096B8FA /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 4478E4351784E0E50096B8FA /* Game.m */; };
 		4478E43A17877F8B0096B8FA /* MasterCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 4478E43917877F8B0096B8FA /* MasterCard.m */; };
@@ -67,7 +66,6 @@
 		545B70CE17751BB200B550D8 /* CCParticleExamples.m in Sources */ = {isa = PBXBuildFile; fileRef = 545B70CD17751BB200B550D8 /* CCParticleExamples.m */; };
 		545B70D117751BB200B550D8 /* CCParticleSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 545B70D017751BB200B550D8 /* CCParticleSystem.m */; };
 		545B70D417751BB200B550D8 /* CCParticleSystemQuad.m in Sources */ = {isa = PBXBuildFile; fileRef = 545B70D317751BB200B550D8 /* CCParticleSystemQuad.m */; };
-		545B70D717751BB200B550D8 /* CCPhysicsDebugNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 545B70D617751BB200B550D8 /* CCPhysicsDebugNode.m */; };
 		545B70DA17751BB200B550D8 /* CCPhysicsSprite.mm in Sources */ = {isa = PBXBuildFile; fileRef = 545B70D917751BB200B550D8 /* CCPhysicsSprite.mm */; };
 		545B70DD17751BB200B550D8 /* CCProgressTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 545B70DC17751BB200B550D8 /* CCProgressTimer.m */; };
 		545B70E117751BB200B550D8 /* CCRenderTexture.m in Sources */ = {isa = PBXBuildFile; fileRef = 545B70E017751BB200B550D8 /* CCRenderTexture.m */; };
@@ -147,6 +145,9 @@
 		54E92CF417979652008AAECB /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = 54E92CF117979652008AAECB /* play.png */; };
 		54E92CF61797A978008AAECB /* AnimalData.txt in Resources */ = {isa = PBXBuildFile; fileRef = 54E92CF51797A978008AAECB /* AnimalData.txt */; };
 		54FCE5691792346D0095B434 /* DeckBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 54FCE5681792346D0095B434 /* DeckBuilder.m */; };
+		63BA476817A596D400A58F36 /* AWSRuntime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63BA476617A596D400A58F36 /* AWSRuntime.framework */; };
+		63BA476917A596D400A58F36 /* AWSSimpleDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63BA476717A596D400A58F36 /* AWSSimpleDB.framework */; };
+		63BA476D17A5C2DB00A58F36 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BA476B17A5BEDB00A58F36 /* Player.m */; };
 		AC1048061788F0E900C2D9E7 /* DeckChoose.png in Resources */ = {isa = PBXBuildFile; fileRef = AC1048051788F0E900C2D9E7 /* DeckChoose.png */; };
 		AC1048091788F7FE00C2D9E7 /* GameGuestLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = AC1048081788F7FE00C2D9E7 /* GameGuestLogin.m */; };
 		AC10480C178901D100C2D9E7 /* GuestDeckChoose.m in Sources */ = {isa = PBXBuildFile; fileRef = AC10480B178901D100C2D9E7 /* GuestDeckChoose.m */; };
@@ -193,8 +194,6 @@
 		4478E413177B7C8A0096B8FA /* HelloWorldLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelloWorldLayer.m; sourceTree = "<group>"; };
 		4478E415177B7CA30096B8FA /* IntroLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroLayer.h; sourceTree = "<group>"; };
 		4478E416177B7CA30096B8FA /* IntroLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroLayer.m; sourceTree = "<group>"; };
-		4478E423177BB9480096B8FA /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Player.h; path = Player/Player.h; sourceTree = "<group>"; };
-		4478E424177BB9480096B8FA /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Player.m; path = Player/Player.m; sourceTree = "<group>"; };
 		4478E42B177BBFC00096B8FA /* CardSprite.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CardSprite.h; path = CardSprite/CardSprite.h; sourceTree = "<group>"; };
 		4478E42C177BBFC00096B8FA /* CardSprite.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CardSprite.m; path = CardSprite/CardSprite.m; sourceTree = "<group>"; };
 		4478E4341784E0E50096B8FA /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Game.h; path = Game/Game.h; sourceTree = "<group>"; };
@@ -479,6 +478,10 @@
 		54E92CF51797A978008AAECB /* AnimalData.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AnimalData.txt; sourceTree = "<group>"; };
 		54FCE5671792346D0095B434 /* DeckBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeckBuilder.h; sourceTree = "<group>"; };
 		54FCE5681792346D0095B434 /* DeckBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeckBuilder.m; sourceTree = "<group>"; };
+		63BA476617A596D400A58F36 /* AWSRuntime.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSRuntime.framework; path = "Virtual Phylo/libs/AWSRuntime.framework"; sourceTree = "<group>"; };
+		63BA476717A596D400A58F36 /* AWSSimpleDB.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSSimpleDB.framework; path = "Virtual Phylo/libs/AWSSimpleDB.framework"; sourceTree = "<group>"; };
+		63BA476A17A5BEDB00A58F36 /* Player.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		63BA476B17A5BEDB00A58F36 /* Player.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
 		AC1048051788F0E900C2D9E7 /* DeckChoose.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DeckChoose.png; sourceTree = "<group>"; };
 		AC1048071788F7FE00C2D9E7 /* GameGuestLogin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameGuestLogin.h; sourceTree = "<group>"; };
 		AC1048081788F7FE00C2D9E7 /* GameGuestLogin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameGuestLogin.m; sourceTree = "<group>"; };
@@ -520,6 +523,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63BA476817A596D400A58F36 /* AWSRuntime.framework in Frameworks */,
+				63BA476917A596D400A58F36 /* AWSSimpleDB.framework in Frameworks */,
 				545B702417751BAD00B550D8 /* QuartzCore.framework in Frameworks */,
 				545B702617751BAD00B550D8 /* OpenGLES.framework in Frameworks */,
 				545B702817751BAD00B550D8 /* OpenAL.framework in Frameworks */,
@@ -548,8 +553,8 @@
 		4478E422177BB9360096B8FA /* Player */ = {
 			isa = PBXGroup;
 			children = (
-				4478E423177BB9480096B8FA /* Player.h */,
-				4478E424177BB9480096B8FA /* Player.m */,
+				63BA476A17A5BEDB00A58F36 /* Player.h */,
+				63BA476B17A5BEDB00A58F36 /* Player.m */,
 			);
 			name = Player;
 			sourceTree = "<group>";
@@ -590,6 +595,8 @@
 		545B701717751BAD00B550D8 = {
 			isa = PBXGroup;
 			children = (
+				63BA476617A596D400A58F36 /* AWSRuntime.framework */,
+				63BA476717A596D400A58F36 /* AWSSimpleDB.framework */,
 				545B703717751BAD00B550D8 /* Virtual Phylo */,
 				545B702217751BAD00B550D8 /* Frameworks */,
 				545B702117751BAD00B550D8 /* Products */,
@@ -1283,6 +1290,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63BA476D17A5C2DB00A58F36 /* Player.m in Sources */,
 				545B705417751BAE00B550D8 /* CCAction.m in Sources */,
 				545B705717751BAE00B550D8 /* CCActionCamera.m in Sources */,
 				545B705A17751BAE00B550D8 /* CCActionCatmullRom.m in Sources */,
@@ -1326,7 +1334,6 @@
 				545B70CE17751BB200B550D8 /* CCParticleExamples.m in Sources */,
 				545B70D117751BB200B550D8 /* CCParticleSystem.m in Sources */,
 				545B70D417751BB200B550D8 /* CCParticleSystemQuad.m in Sources */,
-				545B70D717751BB200B550D8 /* CCPhysicsDebugNode.m in Sources */,
 				545B70DA17751BB200B550D8 /* CCPhysicsSprite.mm in Sources */,
 				545B70DD17751BB200B550D8 /* CCProgressTimer.m in Sources */,
 				545B70E117751BB200B550D8 /* CCRenderTexture.m in Sources */,
@@ -1396,7 +1403,6 @@
 				4478E409177B71370096B8FA /* Card.m in Sources */,
 				4478E414177B7C8A0096B8FA /* HelloWorldLayer.m in Sources */,
 				4478E417177B7CA30096B8FA /* IntroLayer.m in Sources */,
-				4478E425177BB9480096B8FA /* Player.m in Sources */,
 				4478E42D177BBFCA0096B8FA /* CardSprite.m in Sources */,
 				AC40D11C177FF8DE00E2C700 /* MainMenuLayer.m in Sources */,
 				4478E4361784E0E50096B8FA /* Game.m in Sources */,
@@ -1459,6 +1465,10 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Virtual Phylo/libs\"",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Virtual Phylo/Prefix.pch";
@@ -1482,6 +1492,10 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Virtual Phylo/libs\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Virtual Phylo/Prefix.pch";
 				HEADER_SEARCH_PATHS = (

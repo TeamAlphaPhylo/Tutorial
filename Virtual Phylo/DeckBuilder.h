@@ -11,6 +11,7 @@
 #import "MainMenuLayer.h"
 #import "CCScrollLayer.h"
 #import "GameGuestLogin.h"
+#import "Player.h"
 
 @interface DeckBuilder : CCNode
 {

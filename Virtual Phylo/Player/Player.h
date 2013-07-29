@@ -10,10 +10,11 @@
 
 @interface Player : NSObject
 
-+ (void) createPlayer:(NSString *)username;
-+ (NSString *) createDeck:(NSString *)username deckname:(NSString *)deckname cards:(NSArray *)cards;
-+ (NSArray *) getDecks:(NSString *)username;
-+ (BOOL *) checkExistance:(NSString *)name;
+- (void) createPlayer:(NSString *)username;
+- (BOOL) createDeck:(NSString *)username deckName:(NSString *)deckname cardArray:(NSArray *)cards;
+- (NSArray *) getDecks:(NSString *)username;
+- (void) playerWin:(BOOL)win withusername:(NSString *)username ;
++ (BOOL) checkExistance:(NSString *)name;
 
 
 @end
