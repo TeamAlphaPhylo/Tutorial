@@ -108,8 +108,8 @@
     [self addChild:losses];
     // (Roger) Fetch the data from the coreData function
     CoreData *core = [CoreData sharedCore];
-    CCLabelTTF *winStr = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%d", core.guestPlayerWin] fontName:@"Verdana" fontSize:16];
-    CCLabelTTF *lossStr = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%d", core.guestPlayerLoss]  fontName:@"Verdana" fontSize:16];
+    CCLabelTTF *winStr = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"Wins: %d", core.guestPlayerWin] fontName:@"Verdana" fontSize:16];
+    CCLabelTTF *lossStr = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"Losses: %d", core.guestPlayerLoss]  fontName:@"Verdana" fontSize:16];
     winStr.position = wins.position;
     lossStr.position = losses.position;
     [self addChild:winStr];

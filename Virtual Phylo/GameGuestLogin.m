@@ -34,7 +34,6 @@
         // (Roger) Define the text box property
         CGRect usernamePosition = CGRectMake(450, 310, 200, 40);
         CGRect pwdPosition = CGRectMake(450, 385, 200, 40);
-        //CGRectMake(<#CGFloat x#>, <#CGFloat y#>, <#CGFloat width#>, <#CGFloat height#>);
         
         // (Roger) Create a username field
         usernameField = [[UITextField alloc] initWithFrame:usernamePosition];
@@ -56,7 +55,7 @@
         background.position = ccp(winSize.width/2, winSize.height/2);
         [self addChild:background];
         
-        CCSprite *loginbox = [CCSprite spriteWithFile:@"login_box.png"];
+        CCSprite *loginbox = [CCSprite spriteWithFile:@"guest_login_box.png"];
         loginbox.position = ccp(winSize.width/2, winSize.height/2);
         [self addChild:loginbox];
         

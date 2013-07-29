@@ -19,6 +19,8 @@
 @synthesize guestPlayerWin;
 @synthesize guestPlayerLoss;
 @synthesize guestPlayerDeck;
+@synthesize gameBG;
+@synthesize gameMusic;
 
 // (Roger) Implement the public constructor
 +(id) sharedCore {
@@ -39,6 +41,9 @@
         NSLog(@"CoreData Class Initialization");
         // (Roger) Be careful about the init, double check the syntax
         tempTest = [[NSString alloc] initWithString: @"Test for accessing the core data"];
+        // (Roger) Set default game music and background
+        gameBG = [[NSString alloc] initWithString:@"green.jpg"];
+        gameMusic = [[NSString alloc] initWithString:@"still.mp3"];
     }
     return self;
 }

@@ -85,12 +85,10 @@
     [self addChild:lowerDeckDrawPile];
     
     // add card_back image to deck pile rect
-    CCSprite *lowerDeckSprite = [CCSprite spriteWithFile:@"card_back.png"];
-    lowerDeckSprite.position = ccp(975, 70);
-    lowerDeckSprite.scale = .25;
-    [self addChild:lowerDeckSprite];
-
-    
+    CCMenuItemImage *lowerDeckButton = [CCMenuItemImage itemWithNormalImage:@"small_card_back.png" selectedImage:@"small_card_back.png" target:self selector:@selector(addRandomCard)];
+    CCMenu *lowerDeck = [CCMenu menuWithItems:lowerDeckButton, nil];
+    lowerDeck.position = ccp(975, 70);
+    [self addChild:lowerDeck];
 }
 
 - (void) addCardScroller {
@@ -186,6 +184,27 @@
         [self removeChild:tempCard cleanup:YES];
         discard_card_index = DEFAULT_DISCARD_INDEX;
     }
+}
+
+- (void) addRandomCard {
+    CCSelectableItem *page = [[CCSelectableItem alloc] initWithNormalColor:ccc4(0,0,0,0) andSelectectedColor:ccc4(190, 150, 150, 255) andWidth:77 andHeight:100];
+    
+    int randomIndex = arc4random() % 300;
+    NSString *card_imageName = [NSString stringWithFormat:@"%d%@", randomIndex, @".png"];
+    
+    CCSprite *image = [CCSprite spriteWithFile:card_imageName];
+    
+    image.position = ccp(page.contentSize.width/2, page.contentSize.height/2);
+    // The card dimensions are 264 * 407 (Width * Height)
+    [image setScale: (float) 100 / 407];
+    // (Roger) Set up the image tag (Notice the tag here only applies to the bottom player tag)
+    image.tag = randomIndex;
+    
+    [page addChild:image];
+    
+    [cardsOnHand addObject:page];
+    
+    [lowerHandScroller updateItems:cardsOnHand];
 }
 
 @end

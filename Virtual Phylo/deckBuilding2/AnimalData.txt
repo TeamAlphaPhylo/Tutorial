@@ -1,0 +1,310 @@
+Evening Grosbeak;Omnivore;3;5;2;Grassland,Forest,Urban;Bird;Cool,Warm;0
+Blue Jay;Omnivore;3;6;2;Forest,Grassland,Urban;Bird;Cool,Warm;1
+Ruby-Throated Hummingbird;Omnivore;3;5;4;Forest,Forest,Grassland;Bird;Cool,Warm;2
+Moose;Herbivore;2;8;5;Forest,Tundra,Freshwater;Mammal;Cold,Cool;3
+Zebra Finch;Omnivore;3;5;3;Grassland,Grassland,Forest;Bird;Cool,Warm;4
+Japanese Flying Squirrel;Omnivore;3;6;4;Forest,Forest,Forest;Mammal;Cool,Warm;5
+Beetroot;Photosynthetic;1;7;1;Urban,Grassland,Forest;Plant;Cool,Warm;6
+Green Darner;Carnivore;3;5;9;Freshwater,Freshwater,Freshwater;Insect;Warm;7
+Common Eider;Carnivore;3;6;5;Tundra,Ocean,Freshwater;Bird;Warm;8
+Palestine Oak;Photosynthetic;1;9;3;Forest,Forest,Desert;Plant;Warm,Hot;9
+Giraffe;Herbivore;2;9;3;Grassland,Desert,Forest;Mammal;Hot;10
+California Quail;Omnivore;3;6;2;Grassland,Grassland,Forest;Bird;Warm;11
+Common Chaffinch;Omnivore;3;5;2;Urban,Forest,Grassland;Bird;Hot;12
+China Rose;Photosynthetic;1;8;2;Urban,Forest,Grassland;Plant;Warm;13
+Red Squirrel;Omnivore;3;5;5;Forest,Forest,Urban;Mammal;Warm;14
+Puriri Moth;Herbivore;2;5;5;Forest,Forest,Forest;Insect;Warm;15
+Etruscan Shrew;Carnivore;3;5;6;Grassland,Forest,Freshwater;Mammal;Cool,Warm;16
+Nanday Parakeet;Herbivore;2;6;4;Forest,Grassland,Urban;Bird;Warm;17
+Cougar;Carnivore;3;8;5;Desert,Tundra,Grassland;Mammal;Warm;18
+Saucer Magnolia;Photosynthetic;1;9;1;Forest,Urban,Grassland;Plant;Cool,Warm;19
+Syrian Hamster;Omnivore;3;5;5;Urban,Grassland,Forest;Mammal;Cool,Warm;20
+Cacao Tree;Photosynthetic;1;9;3;Forest,Forest,Forest;Plant;Warm,Hot;21
+Malagasy Giant Chameleon;Omnivore;3;6;5;Grassland,Grassland,Urban;Reptile;Warm,Hot;22
+Apple Tree;Photosynthetic;1;9;3;Forest,Forest,Forest;Plant;Cool,Warm;23
+Bali Mynah;Omnivore;3;6;5;Forest,Forest,Forest;Bird;Warm;24
+Humpback Whale;Carnivore;3;9;9;Ocean,Ocean,Ocean;Mammal;Cold,Cool,Warm;25
+Spotted Salamander;Carnivore;3;5;7;Forest,Forest,Freshwater;0;Cool,Warm;26
+Red Fox;Omnivore;3;7;1;Tundra,Grassland,Forest;Mammal;Cold,Cool,Warm;27
+Pedunculate Oak;Photosynthetic;1;9;3;Forest,Forest,Forest;Plant;Warm;28
+Earthworm;Molecular;2;4;2;Forest,Grassland,Urban;0;Cool,Warm;29
+Nothobranchius Foerschi;Carnivore;3;4;9;Freshwater,Freshwater,Freshwater;Fish;Warm;30
+European Bee-eater;Carnivore;3;5;9;Desert,Forest,Freshwater;Bird;Warm;31
+Golden-rumped Elephant Shrew;Carnivore;3;6;8;Forest,Forest,Forest;Mammal;Warm,Hot;32
+Pink Fairy Armadillo;Omnivore;2;5;3;Desert,Grassland,Desert;Mammal;Warm,Hot;33
+Pollution;Event;0;0;0;Ocean,Ocean,Freshwater;0;0;34
+Escape!;Event;0;0;0;Forest,Grassland,Tundra;0;0;35
+Gentoo Penguin;Carnivore;3;2;7;Ocean,Ocean,Tundra;Bird;Cold;36
+Hoopoe;Omnivore;3;6;1;Grassland,Tundra,Forest;Bird;Cool,Warm,Hot;37
+Zooxanthellae;Photosynthetic;3;6;1;Grassland,Desert,Forest;Microbe;Cool,Warm,Hot;38
+Diatom;Photosynthetic;1;3;3;Ocean,Ocean,Ocean;Microbe;Cool,Warm;39
+Cyanobacteria;Photosynthetic;1;1;2;Ocean,Ocean,Ocean;Microbe;Cool,Warm,Hot;40
+Coralline algae;Photosynthetic;1;4;3;Ocean,Ocean,Ocean;Microbe;Cool,Warm;41
+Maiden's Hair;Photosynthetic;1;5;3;Ocean,Ocean,Ocean;Plant;Cool,Warm;42
+Brown macroalgae;Photosynthetic;1;8;3;Ocean,Ocean,Ocean;Microbe;Cool,Warm;43
+Brain Coral;Molecular Carbon;2;6;6;Ocean,Ocean,Ocean;0;Warm;44
+Sea Sparkle;Molecular Carbon;2;2;5;Ocean,Ocean,Ocean;Microbe;Cool,Warm;45
+Venus Sea Fan;Molecular Carbon;2;6;6;Ocean,Ocean,Ocean;0;Warm;46
+Great Star Coral;Molecular Carbon;2;7;6;Ocean,Ocean,Ocean;0;Warm;47
+Staghorn Coral;Molecular Carbon;2;7;6;Ocean,Ocean,Ocean;0;Warm;48
+Bluebell Sea Squirts;Molecular Carbon;2;4;5;Ocean,Ocean,Ocean;0;Warm;49
+Crown of Thorns Starfish;Carnivore;3;5;8;Ocean,Ocean,Ocean;0;Warm;50
+Spinyhead Blenny;Omnivore;3;4;4;Ocean,Ocean,Ocean;Fish;Warm;51
+Bubble-tip anemone;Molecular Carbon;2;5;4;Ocean,Ocean,Ocean;0;Warm;52
+Christmas Tree Worm;Molecular Carbon;2;4;6;Ocean,Ocean,Ocean;0;Warm;53
+Feather Duster Worm;Molecular Carbon;2;4;5;Ocean,Ocean,Ocean;0;Cool,Warm;54
+Whale Shark;Molecular Carbon;2;9;6;Ocean,Ocean,Ocean;Fish;Warm;55
+Pajama Cardinalfish;Carnivore;3;5;8;Ocean,Ocean,Ocean;Fish;Cool,Warm;56
+Stoplight Parrotfish;Omnivore;3;5;5;Ocean,Ocean,Ocean;Fish;Cool,Warm;57
+Clown Triggerfish;Carnivore;3;5;8;Ocean,Ocean,Ocean;Fish;Cool,Warm;58
+Nudibranch;Carnivore;3;4;9;Ocean,Ocean,Ocean;0;Cool,Warm;59
+Flamingo Tongue snail;Carnivore;3;4;9;Ocean,Ocean,Ocean;0;Cool,Warm;60
+Bigfin reef squid;Carnivore;3;6;8;Ocean,Ocean,Ocean;0;Cool,Warm;61
+Tiger shark;Carnivore;3;8;8;Ocean,Ocean,Ocean;Fish;Cool,Warm;62
+Bubblegum coral;Molecular Carbon;2;8;6;Ocean,Ocean,Ocean;0;Cool,Warm;63
+Caribbean Spiny lobster;Carnivore;3;5;7;Ocean,Ocean,Ocean;0;Cool,Warm;64
+Sea Cucumber;Omnivore;3;5;3;Ocean,Ocean,Ocean;0;Cool,Warm;65
+Lophelia Coral;Molecular Carbon;2;9;5;Ocean,Ocean,Ocean;0;Cold,Cool;66
+Redfish;Carnivore;3;6;8;Ocean,Ocean,Ocean;Fish;Cold,Cool;67
+Marine Protected Area;Event;0;0;0;Ocean,Ocean,Ocean;Habitat;0;68
+Coastal Development;Event;0;0;0;Ocean,Ocean,Ocean;0;0;69
+Coral Bleaching;Event;0;0;0;Ocean,Ocean,Ocean;0;0;70
+Ocean Acidification;Event;0;0;0;Ocean,Ocean,Ocean;0;0;71
+Bottom Trawling;Event;0;0;0;Ocean,Ocean,Ocean;0;0;72
+Too Many Scuba Divers;Event;0;0;0;Ocean,Ocean,Ocean;0;0;73
+Algae Takeover;Event;0;0;0;Ocean,Ocean,Ocean;0;0;74
+Rising Ocean Temperature;Event;0;0;0;Ocean,Ocean,Ocean;0;0;75
+Home Card;Starter;0;0;0;0;0;0;76
+Himalayan Blackberry;Photosynthetic;1;5;3;Forest,Grassland,Urban;Plant;Cool,Warm,Hot;77
+Killer Whale;Carnivore;3;9;10;Ocean,Ocean,Ocean;Fish;Cold,Cool;78
+Steller Sea Lion;Carnivore;3;8;8;Ocean,Ocean,Ocean;Mammal;Cold,Cool;79
+Zooplankton;Molecular Carbon;1;2;2;Ocean,Freshwater,Ocean;Microbe;Cool,Warm;80
+Mycorrhizal Fungi;Molecular Carbon;1;3;3;Urban,Forest,Grassland;Fungi;Cold,Cool,Warm,Hot;81
+Giant Kelp;Photosynthetic;1;8;4;Ocean,Ocean,Ocean;Plant;Cool,Warm;82
+Dragonfly;Carnivore;3;4;8;Freshwater,Freshwater,Grassland;Insect;Cool,Warm;83
+Sockeye Salmon;Carnivore;3;6;7;Ocean,Freshwater,Ocean;Fish;Cold,Cool;84
+Clark's Nutcracker;Omnivore;3;5;3;Forest,Tundra,Grassland;Bird;Cold,Cool;85
+European Honey Bee;Herbivore;2;4;5;Grassland,Urban,Forest;Insect;Cool,Warm,Hot;86
+Oil Spill;Event;0;0;0;Ocean,Ocean,Freshwater;0;0;87
+Marbled Murrelet;Carnivore;3;6;7;Tundra,Forest,Freshwater;Bird;Cool,Warm;88
+Species Protection;Event;0;0;0;0;0;0;89
+Moss Mite;Omnivore;3;4;9;Urban,Forest,Freshwater;Spider;Warm,Hot;90
+Whitebark Pine;Photosynthetic;1;9;3;Forest,Tundra,Tundra;Plant;Cold,Cool;91
+Black Bear;Omnivore;3;8;5;Forest,Freshwater,Grassland;Mammal;Cool,Warm;92
+Wildfire;Event;0;0;0;Forest,Grassland,Forest;0;0;93
+Habitat Loss;Event;0;0;0;Urban,Urban,Urban;0;0;94
+Earthworm;Herbivore;2;4;4;Tundra,Urban,Grassland;0;Cool,Warm;95
+Human;Omnivore;3;8;3;Forest,Grassland,Tundra,Urban,Desert,Freshwater,Ocean;Mammal;Cold,Cool,Warm,Hot;96
+Mosquito;Omnivore;3;4;5;Forest,Urban,Freshwater;Insect;Cool,Warm,Hot;97
+Blue Whale;Carnivore;3;9;9;Ocean,Ocean,Ocean;Mammal;Cold,Cool;98
+Climate Change;Event;0;0;0;0;0;0;99
+Three-spined Stickleback;Carnivore;3;5;5;Ocean,Freshwater,Freshwater;Fish;Cold,Cool;100
+Pacific Krill;Omnivore;2;4;6;Ocean,Ocean,Ocean;0;Cold,Cool;101
+Salal;Photosynthetic;1;5;2;Forest,Urban,Grassland;Plant;Cold,Cool,Warm;102
+Sea Otter;Carnivore;3;7;6;Ocean,Ocean,Ocean;Mammal;Cool,Warm;103
+Purple Sea Urchin;Herbivore;2;5;5;Ocean,Ocean,Grassland;0;Cool;104
+Phytoplankton;Photosynthetic;1;2;2;Freshwater,Ocean,Ocean;0;Cold,Cool,Warm;105
+Isothecium cristatum (Moss);Photosynthetic;1;5;2;Forest,Urban;Grassland;Plant;Cold,Cool,Warm,Hot;106
+Common Liverwort;Photosynthetic;1;5;2;Tundra;Forest;Grassland;Plant;Cold,Cool,Warm,Hot;107
+Leafy Seadragon;Carnivore;3;5;9;Ocean,Ocean,Ocean;Fish;Warm;108
+Eastern Paradise Whydah;Omnivore;3;6;3;Forest,Desert,Grassland;Bird;Warm,Hot;109
+Cockatiel;Herbivore;2;5;2;Grassland,Freshwater,Urban;Bird;Cool,Warm,Hot;110
+Red Panda;Omnivore;3;6;5;Forest,Forest,Forest;Mammal;Cool,Warm;111
+Southern Carmine Bee-Eater;Carnivore;3;5;7;Grassland,Freshwater,Grassland;Bird;Warm,Hot;112
+Bosemary Beetle;Herbivore;2;4;4;Urban,Urban,Grassland;Insect;Cool,Warm;113
+Domestic Goat;Herbivore;2;7;3;Forest,Desert,Grassland;Mammal;Cool,Warm;114
+Aleppo Pine;Photosynthesis;1;9;1;Forest,Desert,Forest;Plant;Cool,Warm,Hot;115
+Large Earth Bumblebee;Herbivore;2;4;4;Insect;Forest,Urban,Urban;Cool,Warm;116
+Tennessee Warbler;Omnivore;3;5;5;Forest,Forest,Forest;Bird;Cool,Warm;117
+Red Paper Wasp;Omnivore;2;4;3;Forest,Urban,Forest;Insect;Cool,Warm;118
+White Tiger;Carnivore;4;8;6;Forest,Forest,Grassland;Mammal;Cool,Warm,Hot;119
+Marine Debris;Event;0;0;0;0;0;0;120
+Linnaeus Card;Event;0;0;0;0;0;0;121
+Horned Puffin;Carnivore;3;5;7;Ocean,Tundra,Tundra;Bird;Cold,Cold;122
+West Indian Manatee;Omnivore;3;8;3;Ocean,Ocean,Freshwater;Mammal;Cool,Warm;123
+Pool Frog;Carnivore;3;5;6;Freshwater,Forest,Grassland;0;Cool,Warm;124
+American Bison;Herbivore;2;8;5;Grassland,Grassland,Grassland;Mammal;Cold,Cool,Warm;125
+Mountain Kingfisher;Carnivore;3;6;7;Forest,Freshwater,Forest;Bird;Cool,Warm,Hot;126
+Blue-headed Pitta;Carnivore;3;5;8;Forest,Forest,Forest;Bird;Warm,Hot;127
+Northern Mockingbird;Omnivore;3;5;3;Forest,Forest,Urban;Bird;Cool,Warm;128
+Red Rock Crab;Carnivore;3;5;7;Ocean,Ocean,Tundra;0;Cold,Cool,Warm;129
+American Robin;Omnivore;3;5;3;Forest,Forest,Urban;Bird;Cool,Warm;130
+Great White Shark;Carnivore;3;8;8;Ocean,Ocean,Ocean;Fish;Cool,Warm;131
+Unscented Dendrobium;Photosynthetic;1;5;2;Urban,Forest,Desert;Plant;Warm,Hot;132
+Orange Ball Buddleja;Photosynthetic;1;7;2;Forest,Forest,Urban;Plant;Cool,Warm;133
+Common Raven;Omnivore;3;6;1;Urban,Forest,Desert;Bird;Cool,Warm,Hot;134
+Suber Red Arowana;Carnivore;3;5;9;Freshwater,Freshwater,Freshwater;Fish;Warm;135
+Grunt Sculpin;Carnivore;3;5;8;Ocean,Ocean,Ocean;Fish;Cool,Warm;136
+Hydra Vulgaris;Carnivore;3;3;8;Freshwater,Freshwater,Freshwater;0;Cool,Warm;137
+Chaffinch;Omnivore;3;5;3;Grassland,Urban,Grassland;Bird;Cool,Warm;138
+Green Woodpecker;Carnivore;3;5;6;Grassland,Forest,Urban;Bird;Cool,Warm;139
+Copepod;Herbivore;2;3;3;Ocean,Freshwater,Ocean;0;Cold,Cool,Warm;140
+Eurasian Collared Dove;Omnivore;3;5;5;Urban,Grassland,Urban;Bird;Cool,Warm;141
+Common Redstart;Carnivore;3;5;6;Grassland,Urban,Forest;Bird;Cool,Warm;142
+Dunnock;Carnivore;3;5;6;Grassland,Urban,Forest;Bird;Cool,Warm;143
+Common Fruit Fly;Herbivore;2;4;4;Urban,Urban,Grassland;Insect;Cool,Warm;144
+Common Nightingale;Carnivore;3;5;7;Forest,Forest,Grassland;Bird;Cool,Warm;145
+Carrion Crow;Carnivore;3;6;8;Urban,Urban,Urban;Bird;Cool,Warm;146
+Cooper Iguana;Omnivore;3;5;4;Desert,Forest,Forest;Reptile;Warm;147
+Orange Heleconia;Photosynthetic;1;6;3;Forest,Forest,Urban;Plant;Warm;148
+Yellow Tang;Herbivore;2;5;6;Ocean,Ocean,Ocean;Fish;Warm;149
+White Stork;Carnivore;4;6;5;Grassland,Freshwater,Ocean;Bird;Cool,Warm,Hot;150
+Ringed Kingfisher;Omnivore;3;6;6;Freshwater,Forest,Ocean;Bird;Cool,Warm;151
+Japanese Cherry;Photosynthetic;1;9;2;Urban,Forest,Urban;Plant;Cool,Warm;152
+Yellowbelly Sea Snake;Carnivore;3;6;8;Ocean,Ocean,Ocean;Reptile;Warm;153
+Chilean Hazel;Photosynthetic;1;9;2;Forest,Forest,Urban;Plant;Cool,Warm;154
+Harpy Eagle;Carnivore;4;7;8;Forest,Forest,Forest;Bird;Warm,Hot;155
+Ulmo;Photosynthetic;1;9;3;Forest,Forest,Forest;Plant;Cool,Warm;156
+Sulphur-crested Cockatoo;Omnivore;3;6;4;Urban,Forest,Forest;Bird;Warm;157
+Red Fox;Omnivore;3;7;1;Desert,Grassland,Forest;Mammal;Cold,Cool,Warm;158
+Lesser Roadrunner;Omnivore;3;5;2;Grassland,Desert,Grassland;Bird;Warm,Hot;159
+White Cattleya Orchids;Photosynthetic;1;5;3;Forest,Forest,Urban;Plant;Warm;160
+Eurasian Nuthatch;Herbivore;2;5;3;Forest,Urban,Forest;Bird;Cool,Warm;161
+Chilean Myrtle;Photosynthesis;1;9;4;Forest,Forest,Forest;Plant;Warm;162
+Atlantic Blue Crab;Omnivore;3;6;3;Ocean,Freshwater,Ocean;0;Cool,Warm;163
+Fire Salamander;Carnivore;3;5;7;Forest,Freshwater,Forest;0;Cool,Warm;164
+Axolotl;Carnivore;3;5;9;Freshwater,Freshwater,Freshwater;0;Warm;165
+Luzon Bleeding-heart;Omnivore;2;5;4;Forest,Forest,Forest;Bird;Warm,Hot;166
+Spotted Hyena;Carnivore;3;8;6;Desert,Forest,Grassland;Mammal;Warm,Hot;167
+Pineapple Fish;Omnivore;3;5;5;Ocean,Ocean,Ocean;Fish;Warm;168
+House Centipede;Carnivore;2;4;7;Urban,Urban,Urban;0;Cool,Warm;169
+Domestic Sheep;Herbivore;2;7;3;Forest,Desert,Grassland;Mammal;Cool,Warm;170
+Rooster;Herbivore;2;6;3;Grassland,Grassland,Urban;Bird;Cool,Warm;171
+Killer Whale;Carnivore;4;2;9;Ocean,Ocean,Ocean;Mammal;Cold,Cool,Warm;172
+Chillean Firetree;1;5;2;Urban,Forest;Urban;Plant;Cool,Warm;173
+Greater Blue-ringed Octopus;Carnivore;3;5;9;Ocean,Ocean,Ocean;0;Warm;174
+Common Clione;Carnivore;4;2;4;Ocean,Ocean,Ocean;0;Cold;175
+Komodo Dragon;Carnivore;3;7;7;Grassland,Forest,Grassland;Reptile;Warm,Hot;176
+Blue Whale;Carnivore;3;9;9;Ocean,Ocean,Ocean;Mammal;Cold,Cool,Warm,Hot;177
+Great Cormorant;Carnivore;3;6;5;Freshwater,Ocean,Grassland;Bird;Cold,Cool,Warm,Hot;178
+Red-tailed Hawk;Carnivore;3;6;7;Desert,Grassland,Tundra;Bird;Cool,Warm;179
+Blue Passion Flower;Photosynthetic;1;9;3;Forest,Forest,Urban;Plant;Warm;180
+Cheetah;Carnivore;4;8;10;Grassland,Grassland,Grassland;Mammal;Warm,Hot;181
+Bluespotted Ribbontail;Carnivore;3;6;10;Ocean,Ocean,Ocean;0;Warm,Hot;182
+Painted Nettle;Photosynthesis;1;6;3;Urban,Urban,Urban;Plant;Warm,Hot;183
+Affrican Bush Elephant;Herbivore;2;8;4;Forest,Grassland,Grassland;Mammal;Warm,Hot;184
+Northern Pike;Carnivore;3;7;9;Freshwater,Freshwater,Freshwater;Fish;Cold,Cool;185
+Oxeye Daisy;Photosynthesis;1;4;2;Grassland,Forest,Urban;Plant;Cool,Warm;186
+Flower Hat Jelly;Carnivore;3;5;10;Ocean,Ocean,Ocean;0;Warm;187
+Peregrine Falcon;Carnivore;3;6;6;Grassland,Tundra,Urban;Bird;Cool,Warm;188
+Bull;Herbivore;2;8;4;Grassland,Grassland,Urban;Mammal;Cool,Warm;189
+Scarlet Macaw;Herbivore;2;6;5;Forest,Forest,Forest;Bird;Warm;190
+African Sacred Ibis;Carnivore;3;6;9;Freshwater,Ocean,Grassland;Bird;Warm;191
+Nine-banded Armadillo;Omnivore;3;6;6;Forest,Grassland,Forest;Mammal;Warm;192
+Wildfire;Event;0;0;0;Forest,Grassland,Forest;0;0;193
+Common Dandelion;Photosynthetic;1;5;2;Forest,Grassland,Urban;Plant;Cool,Warm;194
+Mandarin Duck;Herbivore;6;2;4;Freshwater,Forest,Urban;Bird;Cool,Warm;195
+Food Chain Disruption;Event;0;0;0;Forest,Forest,Forest;0;0;196
+Garden Strawberry;Photosynthetic;1;6;3;Grassland,Forest,Urban;Plant;Cool,Warm;197
+Bacterial Growth;Event;0;0;0;Grassland,Ocean,Urban;0;0;198
+Rock Pigeon;Herbivore;2;5;2;Urban,Forest,Grassland;Bird;Cool,Warm;199
+Red Kangaroo;Herbivore;2;7;5;Grassland,Grassland,Desert;Mammal;Warm,Hot;200
+Mosquito;Omnivore;3;4;4;Freshwater,Urban,Urban;Insect;Cool,Warm;201
+Protected Area;Event;0;0;0;Grassland,Grassland,Tundra;Habitat;Cool,Warm;202
+Geoffroy's Spider Monkey;Omnivore;3;6;6;Forest,Forest,Forest;Mammal;Warm;203
+Snow Leopard;Carnivore;4;7;10;Tundra,Tundra,Tundra;Mammal;Cold,Cool;204
+Mallard;Omnivore;3;6;4;Urban,Freshwater,Freshwater;Bird;Cool,Warm;205
+Plains Zebra;Herbivore;2;7;5;Grassland,Grassland,Grassland;Mammal;Warm,Hot;206
+Welcome Swallow;Carnivore;3;5;8;Urban,Urban,Grassland;Bird;Cool,Warm;207
+Baiji;Carnivore;3;7;10;Ocean,Ocean,Ocean;Mammal;Cool;208
+Pelican Eel;Carnivore;3;7;10;Ocean,Ocean,Ocean;0;Cold,Cool;209
+Snow Goose;Herbivore;2;6;5;Grassland,Grassland,Tundra;Bird;Cool,Warm;210
+Mandril;Omnivore;3;7;6;Forest,Forest,Forest;Mammal;Warm,Hot;211
+Reindeer;Herbivore;2;7;6;Forest,Tundra,Tundra;Mammal;Cold,Cool;212
+Forest Hike;Event;0;0;0;Forest,Forest,Forest;0;0;213
+Polar Bear;Carnivore;4;8;12;Tundra,Tundra,Ocean;Mammal;Cold;214
+European Holly;Photosynthetic;1;9;3;Forest,Forest,Urban;Plant;Cool,Warm;215
+European Robin;Omnivore;3;5;2;Forest,Grassland,Urban;Bird;Cold,Cool,Warm;216
+Forest;Event;0;0;0;Forest,Forest,Forest;0;Cold,Cool,Warm;217
+Arctic Fox;Omnivore;3;6;5;Tundra,Tundra,Grassland;Mammal;Cold,Cool;218
+Common Redpoll;Herbivore;2;5;4;Urban,Grassland,Grassland;Bird;Cold,Cool,Warm;219
+Escape!;Event;0;0;0;Forest,Grassland,Tundra;0;0;220
+Crab-Eating Raccoon;Omnivore;3;6;5;Forest,Forest,Forest;Mammal;Cool,Warm;221
+American Lotus;Photosynthetic;1;5;2;Freshwater,Freshwater,Freshtwater;Plant;Cool,Warm;222
+Phillipine Tarsier;Carnivore;3;5;10;Forest,Forest,Forest;Mammal;Cool,Warm;223
+Intertidal;Habitat;0;0;2;Ocean,Ocean,Ocean;0;Cool;224
+Buttercup Scorpion Weed;Photosynthetic;1;5;3;Forest,Grassland,Forest;Plant;Cool,Warm;228
+Tropical Forest;Habitat;0;0;2;Forest,Forest,Forest;Habitat;Warm,Hot;229
+Bacillus subtillis;Molecular Carbon;1;2;1;Freshwater,Fresthwater,Freshwater;Microbe;Cold,Cool,Warm,Hot;230
+Tritonia hombergii;Carnivore;3;5;9;Ocean,Ocean,Ocean;0;Cold,Cool;231
+Atamasco Lily;Photosynthetic;1;5;3;Forest,Forest,Grassland;Plant;Cool,Warm;232
+Wild Daffodil;Photosynthetic;1;5;3;Forest,Forest,Grassland;Plant;Cool,Warm;233
+Radish;Photosynthetic;1;5;4;Urban,Urban,Urban;Plant;Cool,Warm;234
+King's Hairstreak;Herbivore;2;4;6;Freshwater,Forest,Forest;Plant;Cool,Warm;235
+Home Card;Starter;0;0;0;0;0;0;236
+Red Clover;Photosynthetic;2;5;4;Urban,Grassland,Grassland;Plant;Cool,Warm;237
+Humpback Whale;Carnivore;3;9;10;Ocean,Ocean,Ocean;Mammal;Cold,Cool,Warm;238
+Pacific Sea Nettle;Carnivore;3;7;10;Ocean,Ocean,Ocean;0;Cool,Warm;239
+Gray Fox;Omnivore;4;6;4;Grassland,Forest,Forest;Mammal;Cool,Warm;240
+Green Sea Turtle;Herbivore;2;7;6;Ocean,Ocean,Ocean;Reptile;Cool,Warm;241
+Mountain Chorus Frog;Carnivore;3;4;8;Freshwater,Forest,Grassland;0;Cool;242
+Eurasian Otter;Omnivore;3;6;4;Freshwater,Forest,Grassland;Mammal;Cool,Warm;243
+Bald Eagle;Carnivore;3;6;8;Forest,Ocean,Freshwater;Bird;Cool,Warm;244
+Field Maple;Photosynthetic;1;9;4;Forest,Forest,Forest;Plant;Cool,Warm;245
+Evergreen Dogwood;Photosynthetic;1;9;4;Forest,Forest,Forest;Plant;Cool,Warm;246
+Field Poppy;Photosynthetic;1;6;2;Grassland,Forest,Urban;Plant;Cool,Warm;247
+Common Minke Whale;Carnivore;3;9;10;Ocean,Ocean,Ocean;Mammal;Cool;248
+Cow;Herbivore;2;7;6;Grassland,Grassland,Grassland;Mammal;Cool,Warm,Hot;249
+Garden Snail;Herbivore;2;4;5;Urban,Grassland,Forest;0;Cool,Warm;250
+Long-nosed Bandicoot;Omnivore;3;5;6;Forest,Forest,Grassland;Mammal;Cool,Warm;251
+Ring-tailed Lemur;Omnivore;3;6;6;Forest,Forest,Forest;Mammal;Warm,Hot;252
+Shore Crab;Carnivore;3;4;8;Ocean,Ocean,Grassland;0;Cool,Warm;253
+Dusky Dolphin;Carnivore;3;8;10;Ocean,Ocean,Ocean;Mammal;Cool,Warm;254
+Mute Swan;Omnivore;3;7;3;Freshwater,Ocean,Grassland;Bird;Cool,Warm;255
+Mallard;Omnivore;3;6;4;Urban,Freshwater,Freshwater;Bird;Cool,Warm;256
+Brook Trout;Carnivore;3;6;10;Freshwater,Freshwater,Freshwater;Fish;Cool,Warm;257
+Common Blackbird;Omnivore;3;6;4;Forest,Urban,Forest;Bird;Cool,Warm;258
+Antarctic Krill;Omnivore;3;4;6;Ocean,Ocean,Ocean;0;Cold,Cool;259
+Marbled Polecat;Omnivore;3;6;5;Desert,Grassland,Grassland;Mammal;Cool,Warm;260
+Ethiopian Wolf;Carnivore;3;7;9;Tundra,Grassland,Grassland;Mammal;Warm,Hot;261
+Wild Boar;Omnivore;3;7;4;Forest,Grassland,Tundra;Mammal;Cool,Warm;262
+Euglena velata;Herbivore;2;2;6;Freshwater,Freshwater,Ocean;Microbe;Cool,Warm;263
+Peacock Calanid;Herbivore;2;3;7;Ocean,Ocean,Ocean;0;Cool,Warm;264
+Blue Wildebeest;Herbivore;2;8;6;Forest,Grassland,Grassland;Mammal;Warm,Hot;265
+African Striped Weasel;Carnivore;3;6;9;Forest,Forest,Grassland;Mammal;Warm,Hot;266
+Giant Oarfish;Carnivore;3;9;10;Ocean,Ocean,Ocean;Fish;Cold,Cool;267
+Giant Green Anemone;Carnivore;3;6;10;Ocean,Grassland,Forest;0;Cold,Cool;268
+Dwarf Sand Snake;Carnivore;3;5;10;Grassland,Grassland,Grassland;Reptile;Warm,Hot;269
+Carb-eating Fox;Omnivore;3;7;5;Forest,Grassland,Grassland;Mammal;Cool,Warm;270
+Blue Bird-of-Paradise;Herbivore;2;5;7;Forest,Forest,Forest;Bird;Warm;271
+Atlantic Horseshoe Crab;Omnivore;3;6;6;Ocean,Ocean,Ocean;0;Cool,Warm;272
+Lesser Bushbaby;Omnivore;3;5;5;Grassland,Grassland,Forest;Mammal;Warm,Hot;273
+Rock Ptarmigan;Omnivore;3;6;6;Tundra,Tundra,Tundra;Bird;Cool,Warm;274
+Moose;Omnivore;2;8;5;Tundra,Forest,Freshwater;Mammal;Cold,Cool;275
+Bohemian Waxwing;Herbivore;2;5;8;Forest,Forest,Forest;Bird;Cool,Warm;276
+Long-eared Jerboa;Herbivore;2;5;6;Desrt,Desert,Desert;Mammal;Cool,Warm,Hot;277
+White-fronted Amazon;Herbivore;2;6;6;Forest,Forest,Forest;Bird;Warm,Hot;278
+Hoatzin;Herbivore;2;6;6;Forest,Forest,Forest;Bird;Warm,Hot;279
+White-nosed Coati;Omnivore;3;7;4;Desert,Grassland,Forest;Mammal;Cool,Warm;280
+California Barrel Cactus;Photosynthetic;1;8;6;Desert,Desert,Desert;Plant;Hot;281
+Increase Biodiversity;Event;0;0;0;Ocean,Grassland,Forest;0;0;282
+European Goldfinch;Omnivore;3;5;4;Urban,Forest,Forest;Bird;Cool,Warm;283
+Annamite Striped Rabbit;Herbivore;2;6;7;Forest,Forest,Grassland;Mammal;Warm;284
+Hypsibius dujardini;Herbivore;2;3;3;Freshwater,Freshwater,Ocean;0;Cold,Cool,Warm,Hot;285
+North Pacific Giant Octopus;Carnivore;3;8;10;Ocean,Ocean,Ocean;0;Cool,Warm;286
+Cactus Wren;Omnivore;3;5;5;Desert,Desert,Desert;Bird;Warm,Hot;287
+Long Nosed Butterfly Fish;Carnivore;3;5;10;Ocean,Ocean,Ocean;Fish;Cool,Warm;288
+Black-eyed Hermit Crab;Omnivore;3;4;5;Ocean,Grassland,Forest;0;Cool,Warm;289
+Savannah;Habitat;0;0;2;Tundra,Grassland,Grassland;0;Warm,Hot;290
+Gray Wolf;Carnivore;3;7;7;Tundra,Forest,Grassland;Mammal;Cold,Cool,Warm;291
+Humpback Turretfish;Carnivore;3;5;10;Ocean,Ocean,Ocean;Fish;Cool,Warm;292
+Eurasian Coot;Herbivore;2;5;5;Freshwater,Grassland,Forest;Bird;Cool,Warm;293
+Fragipani;Photosynthetic;1;9;5;Forest,Forest,Forest;Plant;Warm,Hot;294
+Home Card;Starter;0;0;0;0;0;0;295
+Eurasian Lynx;Carnivore;3;7;9;Forest,Forest,Grassland;Mammal;Cool,Warm;296
+Migration;Event;0;0;0;Grassland,Ocean,Urban;0;0;297
+Blackberry;Photosynthetic;1;7;4;Forest,Forest,Urban;Plant;Cool,Warm;298
+Bull Kelp;Photosynthetic;1;5;5;Ocean,Ocean,Ocean;0;Cool,Warm;299
+Leafy Sea Dragon;Carnivore;3;5;10;Ocean,Ocean,Ocean;Fish;Cool,Warm;300
+Pond;Habitat;0;0;2;Freshwater,Freshwater,Freshwater;0;Cool,Warm;301
+Ibex;Herbivore;2;8;7;Tundra,Tundra,Tundra;Mammal;Cold,Cool;302
+Facelina auriculata;Carnivore;3;4;10;Ocean,Ocean,Ocean;0;Cool,Warm;303
+Slender Sunfish;Carnivore;3;7;10;Ocean,Ocean,Ocean;Fish;Cool,Warm;304
+Serval;Carnivore;3;7;8;Tundra,Grassland,Freshwater;Mammal;Cool,Warm;305
+Dendronotus frondosus;Carnivore;3;4;10;Ocean,Ocean,Ocean;0;Cool,Warm;306
+Resplendant Quetzal;Omnivore;3;5;5;Forest,Forest,Forest;Bird;Cool,Warm;307
+Blackeyed Susan;Photosynthetic;1;5;4;Grassland,Forest,Forest;Plant;Cool,Warm;308
+Golden Lion Tamarin;Omnivore;3;6;6;Forest,Forest,Forest;Mammal;Warm,Hot;309
+European Garden Spider;Carnivore;3;4;10;Urban,Urban,Urban;0;Cool,Warm;310
+Overpopulation;Event;0;0;0;Forest,Ocean,Grassland;0;0;311
+North American Beaver;Herbivore;2;6;5;Forest,Grassland,Freshwater;Mammal;Cool,Warm;312

@@ -105,8 +105,8 @@
     [self addChild:wins];
     [self addChild:losses];
     CoreData *core = [CoreData sharedCore];
-    CCLabelTTF *winStr = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%d", core.userWin] fontName:@"Verdana" fontSize:16];
-    CCLabelTTF *lossStr = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%d", core.userLoss]  fontName:@"Verdana" fontSize:16];
+    CCLabelTTF *winStr = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"Wins: %d", core.userWin] fontName:@"Verdana" fontSize:16];
+    CCLabelTTF *lossStr = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"Losses: %d", core.userLoss]  fontName:@"Verdana" fontSize:16];
     winStr.position = wins.position;
     lossStr.position = losses.position;
     [self addChild:winStr];

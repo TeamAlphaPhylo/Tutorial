@@ -26,7 +26,7 @@
         
         //instantiates 0 wins 0 loses on creation of player
         // (Roger) Set up the default deck over here 
-        NSString *data = @"0;0\nTrue\nDefault;0!1!2!3!4!5!10!20!30";
+        NSString *data = @"0;0\nTrue\nDefault;0!1!2!3!4!5!6!7!8!9!10!11!12!13";
         
         NSLog(@"%@", data);
         

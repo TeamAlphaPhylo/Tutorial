@@ -22,6 +22,8 @@
     int userLoss;
     int guestPlayerWin;
     int guestPlayerLoss;
+    NSString *gameBG;
+    NSString *gameMusic;
 }
 
 // (Roger) Declare a string here
@@ -35,6 +37,8 @@
 @property int guestPlayerWin;
 @property int guestPlayerLoss;
 @property (nonatomic, retain) NSString *guestUserName;
+@property (nonatomic, retain) NSString *gameBG;
+@property (nonatomic, retain) NSString *gameMusic;
 
 // (Roger) Declare a "quasi-constructor" for accessing the object 
 + (id)sharedCore;

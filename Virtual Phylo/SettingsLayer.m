@@ -8,8 +8,10 @@
 
 #import "SettingsLayer.h"
 
-
 @implementation SettingsLayer
+@synthesize showCase;
+@synthesize gameBg;
+@synthesize gameMusic;
 
 +(CCScene *) scene
 {
@@ -41,7 +43,8 @@
         [self setTitle];
         [self setUserInfo];
         [self setStat];
-        
+        [self setChangeBG];
+        [self setChangeMusic];
     }
     return self;
 }
@@ -70,6 +73,24 @@
     botBar.position = CGPointMake(screenSize.width/2 + 5, 13);
     CCSprite *teamMembers = [CCSprite spriteWithFile:@"text_teamAlpha.png"];
     teamMembers.position = CGPointMake(678, 13);
+    // (Roger) The frame width is 265 pixel
+    CCSprite *frame = [CCSprite spriteWithFile:@"frame.png"];
+    frame.position = CGPointMake(screenSize.width / 2, screenSize.height/2);
+    CCSprite *defaultBg = [CCSprite spriteWithFile:@"green.jpg"];
+    defaultBg.scale = 265 / defaultBg.contentSize.width;
+    defaultBg.position = frame.position;
+    showCase = defaultBg;
+    gameBg = @"green.jpg";
+    
+    CCMenuItemImage *saveBtn = [CCMenuItemImage itemWithNormalImage:@"setting_saveChanges.png" selectedImage:@"setting_saveChanges.png" target:self selector:@selector(saveChanges)];
+    CCMenu *menu = [CCMenu menuWithItems:saveBtn, nil];
+    menu.position = ccp(512, 130);
+    [self addChild:menu];
+    
+    // (Roger) Adding Frames and Default Background
+    [self addChild:frame];
+    [self addChild:defaultBg];
+    
     [self addChild:topBar];
     [self addChild:botBar];
     [self addChild:teamMembers];
@@ -108,8 +129,8 @@
     [self addChild:wins];
     [self addChild:losses];
     CoreData *core = [CoreData sharedCore];
-    CCLabelTTF *winStr = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%d", core.userWin] fontName:@"Verdana" fontSize:16];
-    CCLabelTTF *lossStr = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%d", core.userLoss]  fontName:@"Verdana" fontSize:16];
+    CCLabelTTF *winStr = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"Wins: %d", core.userWin] fontName:@"Verdana" fontSize:16];
+    CCLabelTTF *lossStr = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"Losses: %d", core.userLoss]  fontName:@"Verdana" fontSize:16];
     winStr.position = wins.position;
     lossStr.position = losses.position;
     [self addChild:winStr];
@@ -128,8 +149,89 @@
     [self addChild:username];
 }
 
+-(void)setChangeBG {
+    CCSprite *changeBG = [CCSprite spriteWithFile:@"setting_changeBG.png"];
+    changeBG.position = ccp(175, 425);
+    [self addChild:changeBG];
+    
+    // (Roger) Add menu
+    CCMenuItemImage *item0 = [CCMenuItemImage itemWithNormalImage:@"green_btn.png" selectedImage:@"green_btn.png" target:self selector:@selector(setGameBkg:)];
+    item0.userData = @"green.jpg";
+    CCMenuItemImage *item1 = [CCMenuItemImage itemWithNormalImage:@"water_droplets.png" selectedImage:@"water_droplets.png" target:self selector:@selector(setGameBkg:)];
+    item1.userData = @"waterDroplets.jpg";
+    CCMenuItemImage *item2 = [CCMenuItemImage itemWithNormalImage:@"dave_btn.png" selectedImage:@"dave_btn.png" target:self selector:@selector(setGameBkg:)];
+    item2.userData = @"dove.jpg";
+    CCMenuItemImage *item3 = [CCMenuItemImage itemWithNormalImage:@"klug_fusion.png" selectedImage:@"klug_fusion.png" target:self selector:@selector(setGameBkg:)];
+    item3.userData = @"klugFusion.jpg";
+    
+    CCMenu *menu = [CCMenu menuWithItems:item0, item1, item2, item3, nil];
+    menu.position = ccp(207, 328);
+    [menu alignItemsVerticallyWithPadding:5];
+    [self addChild:menu];
+}
+
+-(void)setChangeMusic {
+    CCSprite *changeMusic = [CCSprite spriteWithFile:@"setting_changeMusic.png"];
+    changeMusic.position = ccp(850, 425);
+    [self addChild:changeMusic];
+    
+    // (Roger) Add menu
+    CCMenuItemImage *item0 = [CCMenuItemImage itemWithNormalImage:@"rylynn.png" selectedImage:@"rylynn.png" target:self selector:@selector(setGameBkg:)];
+    item0.userData = @"Rylynn.mp3";
+    CCMenuItemImage *item1 = [CCMenuItemImage itemWithNormalImage:@"blue_liquid.png" selectedImage:@"blue_liquid.png" target:self selector:@selector(setGameBkg:)];
+    item1.userData = @"BlueLiquid.m4a";
+    CCMenuItemImage *item2 = [CCMenuItemImage itemWithNormalImage:@"these_moments.png" selectedImage:@"these_moments.png" target:self selector:@selector(setGameBkg:)];
+    item2.userData = @"TheseMoments.m4a";
+    CCMenuItemImage *item3 = [CCMenuItemImage itemWithNormalImage:@"kokomo.png" selectedImage:@"kokomo.png" target:self selector:@selector(setGameBkg:)];
+    item3.userData = @"Kokomo.m4a";
+    CCMenuItemImage *item4 = [CCMenuItemImage itemWithNormalImage:@"remedios.png" selectedImage:@"remedios.png" target:self selector:@selector(setGameBkg:)];
+    item4.userData = @"still.mp3";
+    CCMenuItemImage *item5 = [CCMenuItemImage itemWithNormalImage:@"royal_treasure.png" selectedImage:@"royal_treasure.png" target:self selector:@selector(setGameBkg:)];
+    item5.userData = @"RoyalTreasure.mp3";
+    CCMenuItemImage *item6 = [CCMenuItemImage itemWithNormalImage:@"Maybe.png" selectedImage:@"Maybe.png" target:self selector:@selector(setGameBkg:)];
+    item6.userData = @"MayBe.mp3";
+    
+    CCMenu *menu = [CCMenu menuWithItems:item0, item1, item2, item3, item4, item5, item6, nil];
+    menu.position = ccp(834, 271);
+    [menu alignItemsVerticallyWithPadding:5];
+    [self addChild:menu];
+}
+
 - (void)jumpToMainMenu {
     NSLog(@"Jump back to Main Menu scene");
     [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.5 scene:[MainMenuLayer scene] ]];
+}
+
+// (Roger) Update the current Game background
+- (void)setGameBkg: (id)sender {
+    NSString *fileName = [sender userData];
+    gameBg = [[NSString alloc] initWithString:fileName];
+    // (Roger) Remove the child first
+    [self removeChild:showCase];
+    showCase = [CCSprite spriteWithFile:gameBg];
+    showCase.scale = 265 / showCase.contentSize.width;
+    CGSize screenSize = [CCDirector sharedDirector].winSize;
+    showCase.position = CGPointMake(screenSize.width / 2, screenSize.height/2);
+    [self addChild:showCase];
+}
+
+- (void)setGameBGM: (id)sender {
+    NSString *fileName = [sender userData];
+    gameMusic = [[NSString alloc] initWithString:fileName];
+    
+}
+
+- (void)saveChanges {
+    CoreData *core = [CoreData sharedCore];
+    core.gameMusic = gameMusic;
+    core.gameBG = gameBg;
+    NSLog(@"Creating alert view ...");
+	
+	UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"Save Changes"
+														message:@"Successfully Saved Changes"
+													   delegate:self
+											  cancelButtonTitle:@"Back"
+											  otherButtonTitles:nil];
+	[alertView show];
 }
 @end

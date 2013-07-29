@@ -16,6 +16,7 @@
 @class PlayerLayerTop;
 #import "CoreData.h"
 #import "ScrollerProtocols.h"
+#import "GameMenu.h"
 
 // GamePlaying Screen
 // The interface where two players use their decks to play the Phylo Trading Card Game

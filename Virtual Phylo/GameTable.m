@@ -11,8 +11,6 @@
     After the tag numbers have been partitioned, we can use those tags to identify which card belongs to whom, and with the implementation of the paradigm functions, we can easily identify or make any upgrade to the card capacity. (Current capacity is 1000 cards)
  */
 
-// To-do: Movable sprites to be fixed
-
 #import "GameTable.h"
 #define DISCARD_ADD 2000
 #define DUPLICATE_BASE 10000
@@ -67,6 +65,10 @@ static PlayerLayerTop *pTop = nil;
     _pTop.touchEnabled = YES;
     _pTop.tag = 9997;
     pTop = _pTop;
+    
+    // (Roger) Add the game menu
+    GameMenu *menu = [GameMenu node];
+    [scene addChild:menu z:1];
     
 	// 'layer' is an autorelease object.
 	GameTable *layer = [GameTable node];
@@ -124,22 +126,33 @@ static PlayerLayerTop *pTop = nil;
 // (Roger) This part is supposed to be connected with the data that either stored in the user space or stored in the corefunction
 - (void) addSprites {
     CGSize winSize = [CCDirector sharedDirector].winSize;
-    for(int i = 0; i < 5; i++) {
-        NSString *card_imageName = [NSString stringWithFormat:@"%d%@", i, @".png"];
-        CCSprite *card = [CCSprite spriteWithFile:card_imageName];
-        float offsetFraction = ((float)(i+1))/ 5;
-        card.position = CGPointMake(winSize.width*offsetFraction, winSize.height/2);
-        card.scale = 0.4;
-        [self addChild:card z:2 tag:i];
-        [cardsOnTable addObject:card];
-    }
+    // (Roger) Adding home cards
+    NSString *card_imageName = [NSString stringWithFormat:@"236.png"];
+    CCSprite *card = [CCSprite spriteWithFile:card_imageName];
+    card.position = CGPointMake(winSize.width / 2 + 52, winSize.height/2);
+    card.scale = 0.4;
+    [self addChild:card z:2 tag:236];
+    
+    [cardsOnTable addObject:card];
+
+    
+    NSString *card_imageName_Rev = [NSString stringWithFormat:@"295.png"];
+    CCSprite *card_Rev = [CCSprite spriteWithFile:card_imageName_Rev];
+    card_Rev.position = CGPointMake(winSize.width / 2 - 52, winSize.height/2);
+    card_Rev.scale = 0.4;
+    card_Rev.flipX = YES;
+    card_Rev.flipY = YES;
+    [self addChild:card_Rev z:2 tag:295 + 1000];
+    
+    [cardsOnTable addObject:card_Rev];
 }
 
 // (Roger) Set up the background
 - (void) setBackground {
     CGSize screenSize = [CCDirector sharedDirector].winSize;
     NSLog(@"Setting up Game Table Background Image");
-    background = [CCSprite spriteWithFile: @"green.jpg"];
+    CoreData *core = [CoreData sharedCore];
+    background = [CCSprite spriteWithFile: core.gameBG];
 //    background.rotation = 90.0;
     background.scale = 1.5;
     // (Roger) Set up the position as the center

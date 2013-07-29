@@ -185,8 +185,8 @@
     [self addChild:wins];
     [self addChild:losses];
     CoreData *core = [CoreData sharedCore];
-    CCLabelTTF *winStr = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%d", core.userWin] fontName:@"Verdana" fontSize:16];
-    CCLabelTTF *lossStr = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%d", core.userLoss]  fontName:@"Verdana" fontSize:16];
+    CCLabelTTF *winStr = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"Wins: %d", core.userWin] fontName:@"Verdana" fontSize:16];
+    CCLabelTTF *lossStr = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"Losses: %d", core.userLoss]  fontName:@"Verdana" fontSize:16];
     winStr.position = wins.position;
     lossStr.position = losses.position;
     [self addChild:winStr];
@@ -206,7 +206,8 @@
     [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.5 scene:[Game scene]]];
 }
 - (void)jumpToDeck {
-    // TO-DO: To be implemented
+    NSLog(@"Jump to Deck scene");
+    [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.5 scene:[Deck scene]]];
 }
 - (void)jumpToSettings {
     NSLog(@"Jump to Settings scene");

@@ -12,6 +12,7 @@
 #import "HelloWorldLayer.h"
 #import "CCMenuAdvancedTest.h"
 #import "SettingsLayer.h"
+#import "Deck.h"
 
 // Main Menu Screen
 // gives the option to switch between settings, login, and deck screens

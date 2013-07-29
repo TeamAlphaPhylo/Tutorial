@@ -43,7 +43,6 @@
         // (Roger) Define the text box property
         CGRect usernamePosition = CGRectMake(450, 310, 200, 40);
         CGRect pwdPosition = CGRectMake(450, 385, 200, 40);
-        //CGRectMake(<#CGFloat x#>, <#CGFloat y#>, <#CGFloat width#>, <#CGFloat height#>);
         
         // (Roger) Create a username field
         usernameField = [[UITextField alloc] initWithFrame:usernamePosition];

@@ -13,7 +13,13 @@
 
 @interface SettingsLayer : CCLayer {
     CCSprite *background;
+    NSString *gameBG;
+    NSString *gameMusic;
 }
+
+@property(nonatomic, retain) CCSprite* showCase;
+@property (nonatomic, retain) NSString *gameBg;
+@property (nonatomic, retain) NSString *gameMusic;
 
 +(CCScene *) scene;
 // adds title image with other necessary images
@@ -27,5 +33,8 @@
 
 // jump to Deck Screen
 -(void)jumpToMainMenu;
+
+-(void)setGameBkg:(id)sender;
+
 
 @end

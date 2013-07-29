@@ -21,11 +21,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Virtual Phylo/GameTable.m"
-         timestampString = "396558998.500162"
+         timestampString = "396741675.682741"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "53"
-         endingLineNumber = "53"
+         startingLineNumber = "51"
+         endingLineNumber = "51"
          landmarkName = "+scene"
          landmarkType = "5">
       </FileBreakpoint>
@@ -47,24 +47,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Virtual Phylo/GameTable.m"
-         timestampString = "396735040.609075"
+         timestampString = "396741675.682741"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "127"
-         endingLineNumber = "127"
-         landmarkName = "-addSprites"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "Virtual Phylo/GameTable.m"
-         timestampString = "396735040.609075"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "130"
-         endingLineNumber = "130"
+         startingLineNumber = "129"
+         endingLineNumber = "129"
          landmarkName = "-addSprites"
          landmarkType = "5">
       </FileBreakpoint>
@@ -73,11 +60,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Virtual Phylo/PlayerLayerBot.m"
-         timestampString = "396736139.264746"
+         timestampString = "396746937.590329"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "135"
-         endingLineNumber = "135"
+         startingLineNumber = "133"
+         endingLineNumber = "133"
          landmarkName = "-addCardScroller"
          landmarkType = "5">
       </FileBreakpoint>
@@ -86,11 +73,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Virtual Phylo/GameTable.m"
-         timestampString = "396735040.609075"
+         timestampString = "396757435.38198"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "214"
-         endingLineNumber = "214"
+         startingLineNumber = "227"
+         endingLineNumber = "227"
          landmarkName = "-ccTouchBegan:withEvent:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -99,11 +86,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Virtual Phylo/GameTable.m"
-         timestampString = "396735040.609075"
+         timestampString = "396741675.682741"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "115"
-         endingLineNumber = "115"
+         startingLineNumber = "117"
+         endingLineNumber = "117"
          landmarkName = "-init"
          landmarkType = "5">
       </FileBreakpoint>
@@ -138,11 +125,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Virtual Phylo/CoreData.m"
-         timestampString = "396731756.181422"
+         timestampString = "396755458.816698"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "103"
-         endingLineNumber = "103"
+         startingLineNumber = "108"
+         endingLineNumber = "108"
          landmarkName = "@implementation CoreData"
          landmarkType = "3">
       </FileBreakpoint>
@@ -151,11 +138,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Virtual Phylo/HelloWorldLayer/HelloWorldLayer.m"
-         timestampString = "396730904.163732"
+         timestampString = "396743220.629077"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "181"
-         endingLineNumber = "181"
+         startingLineNumber = "180"
+         endingLineNumber = "180"
          landmarkName = "-registerAccount"
          landmarkType = "5">
       </FileBreakpoint>
