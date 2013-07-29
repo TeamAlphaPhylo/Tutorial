@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="F5I-PT-98I">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="Pgr-GD-DVo">
+            <objects>
+                <viewController id="F5I-PT-98I" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="W0W-xs-hg8">
+                        <rect key="frame" x="0.0" y="20" width="1024" height="748"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="center" image="waterdroplets.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="5dc-zZ-CC3"/>
+                            <imageView userInteractionEnabled="NO" contentMode="bottom" image="playerRegion.png" translatesAutoresizingMaskIntoConstraints="NO" id="rnS-ki-yaV">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="Vc2-7d-Vsz"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="center" image="hand.png" translatesAutoresizingMaskIntoConstraints="NO" id="L7V-tZ-od4"/>
+                            <imageView userInteractionEnabled="NO" contentMode="top" image="playerRegion.png" translatesAutoresizingMaskIntoConstraints="NO" id="SUH-nT-rBk">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="5Nh-qk-XyR"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="center" image="deckdiscardPile.png" translatesAutoresizingMaskIntoConstraints="NO" id="L2R-um-NQR"/>
+                            <imageView userInteractionEnabled="NO" contentMode="center" image="deckdiscardPile.png" translatesAutoresizingMaskIntoConstraints="NO" id="R8Y-o8-MuW"/>
+                            <imageView userInteractionEnabled="NO" contentMode="center" image="deckdiscardPile.png" translatesAutoresizingMaskIntoConstraints="NO" id="8WK-VY-KfR"/>
+                            <imageView userInteractionEnabled="NO" contentMode="center" image="deckdiscardPile.png" translatesAutoresizingMaskIntoConstraints="NO" id="JQI-F1-cas"/>
+                            <imageView userInteractionEnabled="NO" contentMode="center" image="hand.png" translatesAutoresizingMaskIntoConstraints="NO" id="yL4-79-HXE"/>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="8WK-VY-KfR" firstAttribute="leading" secondItem="R8Y-o8-MuW" secondAttribute="leading" type="default" id="2ZC-3i-dTz"/>
+                            <constraint firstItem="5dc-zZ-CC3" firstAttribute="bottom" secondItem="W0W-xs-hg8" secondAttribute="bottom" type="default" id="BAP-aa-mwG"/>
+                            <constraint firstItem="SUH-nT-rBk" firstAttribute="leading" secondItem="W0W-xs-hg8" secondAttribute="leading" type="default" id="E65-Ip-AzQ"/>
+                            <constraint firstItem="rnS-ki-yaV" firstAttribute="leading" secondItem="W0W-xs-hg8" secondAttribute="leading" type="default" id="GLp-ey-e2L"/>
+                            <constraint firstItem="JQI-F1-cas" firstAttribute="leading" secondItem="W0W-xs-hg8" secondAttribute="leading" constant="8" id="H9N-fR-UPR"/>
+                            <constraint firstItem="L7V-tZ-od4" firstAttribute="leading" secondItem="W0W-xs-hg8" secondAttribute="leading" constant="184" id="NEc-ry-EIS"/>
+                            <constraint firstItem="R8Y-o8-MuW" firstAttribute="top" secondItem="L2R-um-NQR" secondAttribute="top" type="default" id="OL3-Hx-zP0"/>
+                            <constraint firstItem="yL4-79-HXE" firstAttribute="centerY" secondItem="L2R-um-NQR" secondAttribute="centerY" type="default" id="PlX-iw-hoJ"/>
+                            <constraint firstItem="8WK-VY-KfR" firstAttribute="leading" secondItem="L7V-tZ-od4" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="SCF-yt-kd1"/>
+                            <constraint firstItem="yL4-79-HXE" firstAttribute="leading" secondItem="L2R-um-NQR" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="XTz-sC-Xwu"/>
+                            <constraint firstItem="5dc-zZ-CC3" firstAttribute="top" secondItem="W0W-xs-hg8" secondAttribute="top" type="default" id="a8w-n4-9ni"/>
+                            <constraint firstItem="JQI-F1-cas" firstAttribute="leading" secondItem="L2R-um-NQR" secondAttribute="leading" type="default" id="aJP-S6-MTa"/>
+                            <constraint firstItem="L7V-tZ-od4" firstAttribute="centerY" secondItem="8WK-VY-KfR" secondAttribute="centerY" type="default" id="bqR-Kp-oBX"/>
+                            <constraint firstItem="JQI-F1-cas" firstAttribute="top" secondItem="W0W-xs-hg8" secondAttribute="top" constant="9" id="gdm-m4-fcU"/>
+                            <constraint firstAttribute="bottom" secondItem="L2R-um-NQR" secondAttribute="bottom" constant="7" id="haA-tI-WRV"/>
+                            <constraint firstItem="rnS-ki-yaV" firstAttribute="top" secondItem="W0W-xs-hg8" secondAttribute="top" type="default" id="ihu-hm-Ajd"/>
+                            <constraint firstItem="SUH-nT-rBk" firstAttribute="bottom" secondItem="W0W-xs-hg8" secondAttribute="bottom" type="default" id="qwE-H0-3gh"/>
+                            <constraint firstItem="JQI-F1-cas" firstAttribute="top" secondItem="8WK-VY-KfR" secondAttribute="top" type="default" id="rIx-ad-ICu"/>
+                            <constraint firstItem="5dc-zZ-CC3" firstAttribute="trailing" secondItem="W0W-xs-hg8" secondAttribute="trailing" type="default" id="rgr-wu-Y81"/>
+                            <constraint firstItem="5dc-zZ-CC3" firstAttribute="leading" secondItem="W0W-xs-hg8" secondAttribute="leading" type="default" id="toy-2g-Udl"/>
+                        </constraints>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fzi-mB-WgF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-301" y="-223"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="deckdiscardPile.png" width="81" height="120"/>
+        <image name="hand.png" width="742" height="118"/>
+        <image name="playerRegion.png" width="1024" height="154"/>
+        <image name="waterdroplets.jpg" width="1920" height="1200"/>
+    </resources>
+    <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>

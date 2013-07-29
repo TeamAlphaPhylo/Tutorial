@@ -1,0 +1,31 @@
+Evening Grosbeak;Omnivore;3;5;2;Grass,Leaf,City;Animalia,Chordata,Aves;Cool,Warm;0
+Blue Jay;Omnivore;3;6;2;Leaf,Grass,City;Animalia,Chordata,Aves;Cool,Warm;1
+Ruby-Throated Hummingbird;Omnivore;3;5;4;Leaf,Leaf,Grass;Animalia,Chordata,Aves;Cool,Warm;2
+Moose;Herbivore;2;8;5;Leaf,Ground,Pond;Animalia,Chordata,Mammalia;Cold,Cool;3
+Zebra Finch;Omnivore;3;5;3;Grass,Grass,Leaf;Animalia,Chordata,Aves;Cool,Warm;4
+Japanese Flying Squirrel;Omnivore;3;6;4;Leaf,Leaf,Leaf;Animalia,Chordata,Mammalia;Cool,Warm;5
+Beetroot;Photosynthetic;1;7;1;City,Grass,Leaf;Plantae,Angiosperms,Eudicots;Cool,Warm;6
+Green Darner;Carnivore;3;5;9;Pond,Pond,Pond;Animalia,Arthropoda,Insecta;Warm;7
+Common Eider;Carnivore;3;6;5;Ground,Ocean,Pond;Animalia,Chordata,Aves;Warm;8
+Palestine Oak;Photosynthetic;1;9;3;Leaf,Leaf,Sand;Plantae,Angiosperms,Eudicots;Warm,Hot;9
+Giraffe;Herbivore;2;9;3;Grass,Sand,Leaf;Animalia,Chordata,Mammalia;Hot;10
+California Quail;Omnivore;3;6;2;Grass,Grass,Leaf;Animalia,Chordata,Aves;Warm;11
+Common Chaffinch;Omnivore;3;5;2;City,Leaf,Grass;Animalia,Chordata,Aves;Hot;12
+China Rose;Photosynthetic;1;8;2;City,Leaf,Grass;Plantae,Angiosperms,Eudicots;Warm;13
+Red Squirrel;Omnivore;3;5;5;Leaf,Leaf,City;Animalia,Chordata,Mammalia;Warm;14
+Puriri Moth;Herbivore;2;5;5;Leaf,Leaf,Leaf;Animalia,Arthropoda,Insecta;Warm;15
+Etruscan Shrew;Carnivore;3;5;6;Grass,Leaf,Pond;Animalia,Chordata,Mammalia;Cool,Warm;16
+Nanday Parakeet;Herbivore;2;6;4;Leaf,Grass,City;Animalia,Chordata,Aves;Warm;17
+Cougar;Carnivore;3;8;5;Sand,Ground,Grass;Animalia,Chordata,Mammalia;Warm;18
+Saucer Magnolia;Photosynthetic;1;9;1;Leaf,City,Grass;Plantae,Angiosperms,Magnoliids;Cool,Warm;19
+Syrian Hamster;Omnivore;3;5;5;City,Grass,Leaf;Animalia,Chordata,Mammalia;Cool,Warm;20
+Cacao Tree;Photosynthetic;1;9;3;Leaf,Leaf,Leaf;Plantae,Angiosperms,Eudicots;Warm,Hot;21
+Malagasy Giant Chameleon;Omnivore;3;6;5;Grass,Grass,City;Animalia,Chordata,Reptilia;Warm,Hot;22
+Apple Tree;Photosynthetic;1;9;3;Leaf,Leaf,Leaf;Plantae,Angiosperms,Eudicots;Cool,Warm;23
+Bali Mynah;Omnivore;3;6;5;Leaf,Leaf,Leaf;Animalia,Chordata,Aves;Warm;24
+Humpback Whale;Carnivore;3;9;9;Ocean,Ocean,Ocean;Animalia,Chordata,Mammalia;Cold,Cool,Warm;25
+Spotted Salamander;Carnivore;3;5;7;Leaf,Leaf,Pond;Animalia,Chordata,Amphibia;Cool,Warm;26
+Red Fox;Omnivore;3;7;1;Ground,Grass,Leaf;Animalia,Chordata,Mammalia;Cold,Cool,Warm;27
+Pedunculate Oak;Photosynthetic;1;9;3;Leaf,Leaf,Leaf;Plantae,Angiosperms,Eudicots;Warm;28
+Earthworm;Molecular;2;4;2;Leaf,Grass,City;Animalia,Annelida,Clitellata;Cool,Warm;29
+Nothobranchius Foerschi;Carnivore;3;4;9;Pond,Pond,Pond;Animalia,Chordata,Actinopterygii;Warm;30
